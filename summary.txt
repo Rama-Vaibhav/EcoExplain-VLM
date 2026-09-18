@@ -1,0 +1,14 @@
+============================================================
+ECOEXPLAIN-VLM PILOT SUMMARY 
+============================================================
+Study area: Kanha Tiger Reserve
+Windows: T0 Jan–Feb 2022, T1 Jan–Feb 2023 (matched season)
+Pilot patches: 36 (human-validated 100%)
+Reference mix: {'stable': 14, 'decline': 13, 'increase': 9}
+Auto candidate vs human reference agreement: 47% (17/36)
+Five sources per patch: S2, S1, CHIRPS, ERA5, DEM
+Deliverable: dataset.jsonl with 512x512 T0/T1, tensors, Otsu triplets
+Mean Otsu boxes per patch: 0.6
+JSONL path: /Users/vaibhav/Desktop/Independent Study/is work/DataSet Extractor/ecoexplain_vlm_dataset/dataset.jsonl
+Note: Otsu gives pixel-level drops; human label is patch-level.
+============================================================

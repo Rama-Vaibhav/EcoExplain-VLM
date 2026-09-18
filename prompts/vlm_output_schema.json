@@ -1,0 +1,8 @@
+{
+  "change_class": "stable",
+  "disturbance_present": false,
+  "supporting_evidence": ["NDVI remained stable", "EVI remained stable"],
+  "conflicting_evidence": ["VH decreased slightly"],
+  "explanation": "Optical indicators remained stable; the small VH reduction alone is insufficient to establish disturbance.",
+  "confidence": 0.76
+}

@@ -1,0 +1,155 @@
+{
+  "ready_for_scale": true,
+  "summary": {
+    "pass": 13,
+    "warn": 3,
+    "fail": 0
+  },
+  "checks": [
+    {
+      "name": "human_validation",
+      "status": "pass",
+      "message": "19/19 patches validated in final_labels.csv",
+      "details": {
+        "validated": 19,
+        "total": 19
+      }
+    },
+    {
+      "name": "candidate_reference_agreement",
+      "status": "pass",
+      "message": "8/19 (42.1%) candidate vs reference agreement",
+      "details": {
+        "agree": 8,
+        "total": 19
+      }
+    },
+    {
+      "name": "selected_patches_sync",
+      "status": "warn",
+      "message": "Patch ID mismatch between repos",
+      "details": {
+        "child_only": [
+          "p00086",
+          "p00126",
+          "p00279",
+          "p00312",
+          "p00374"
+        ],
+        "parent_only": [
+          "p00695",
+          "p00796",
+          "p03073",
+          "p04622"
+        ]
+      }
+    },
+    {
+      "name": "raw_geotiffs",
+      "status": "pass",
+      "message": "366/366 patches have 15 GeoTIFFs each",
+      "details": {
+        "incomplete": 0
+      }
+    },
+    {
+      "name": "triplets.json",
+      "status": "pass",
+      "message": "366 DIP records; expected 366",
+      "details": {
+        "missing_ids": []
+      }
+    },
+    {
+      "name": "patch_scalars.json",
+      "status": "pass",
+      "message": "0 patches with null scalar keys in patch_scalars.json",
+      "details": {
+        "issues": []
+      }
+    },
+    {
+      "name": "jsonl_schema",
+      "status": "pass",
+      "message": "366 records; 0 schema errors",
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "ollama_explanations",
+      "status": "warn",
+      "message": "ollama=0, fallback=366",
+      "details": {
+        "fallback": 366
+      }
+    },
+    {
+      "name": "reference_class_sync",
+      "status": "pass",
+      "message": "JSONL reference_class matches final_labels.csv",
+      "details": {
+        "mismatches": []
+      }
+    },
+    {
+      "name": "coordinate_leak",
+      "status": "pass",
+      "message": "0 records leak lat/lon to VLM-facing JSON",
+      "details": {}
+    },
+    {
+      "name": "core_asset_paths",
+      "status": "pass",
+      "message": "All T0/T1 JPGs and S1 tensors exist",
+      "details": {
+        "sample_missing": []
+      }
+    },
+    {
+      "name": "sar_tensor_sanity",
+      "status": "pass",
+      "message": "S1 tensors are 512\u00d7512\u00d72 finite arrays (0 bad)",
+      "details": {}
+    },
+    {
+      "name": "jsonl_triplets_id_sync",
+      "status": "pass",
+      "message": "dataset.jsonl IDs match triplets.json",
+      "details": {}
+    },
+    {
+      "name": "stable_zero_box_policy",
+      "status": "pass",
+      "message": "No stable patches carry Otsu boxes",
+      "details": {
+        "ids": []
+      }
+    },
+    {
+      "name": "decline_without_boxes",
+      "status": "warn",
+      "message": "4 decline patches have 0 Otsu boxes (patch vs pixel mismatch)",
+      "details": {
+        "ids": [
+          "p03545",
+          "p03635",
+          "p04310",
+          "p04416"
+        ]
+      }
+    },
+    {
+      "name": "otsu_box_count",
+      "status": "pass",
+      "message": "6 total boxes; mean 0.02/patch",
+      "details": {}
+    }
+  ],
+  "blockers": [],
+  "warnings": [
+    "selected_patches_sync",
+    "ollama_explanations",
+    "decline_without_boxes"
+  ]
+}

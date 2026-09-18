@@ -1,0 +1,27 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+credentials.json
+token.json
+
+# Heavy rasters (too large for GitHub; keep locally)
+data/processed_images/
+!data/processed_images/.gitkeep
+data/evidence_masks/
+!data/evidence_masks/.gitkeep
+data/raw_tiffs/
+!data/raw_tiffs/.gitkeep
+data/drive_inbox/
+!data/drive_inbox/.gitkeep
+data/outcasts/
+data/pilot_reference/
+
+# LaTeX build junk
+slides/*.aux
+slides/*.log
+slides/*.nav
+slides/*.out
+slides/*.snm
+slides/*.toc

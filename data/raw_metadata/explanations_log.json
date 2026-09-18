@@ -1,0 +1,2198 @@
+[
+  {
+    "scene_id": "p00000",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00028",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00031",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00044",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00052",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00086",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00100",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00109",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00126",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00133",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00154",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00166",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00183",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00264",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00267",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00279",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00293",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00296",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00297",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00298",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00312",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00325",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00328",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00339",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00355",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00374",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00385",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00402",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00453",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00466",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00469",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00491",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00525",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00564",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00575",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00587",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00593",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00631",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00641",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00657",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00662",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00701",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00719",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00745",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00799",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00850",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00860",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00863",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00865",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00867",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00878",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00883",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00888",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00910",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00916",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00919",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00929",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00937",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00946",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00972",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00974",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00981",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00985",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p00995",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01041",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01066",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01113",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01116",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01125",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01129",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01145",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01162",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01170",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01194",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01206",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01210",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01242",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01247",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01252",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01264",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01266",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01278",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01289",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01299",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01325",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01338",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01350",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01368",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01371",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01375",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01415",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01429",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01444",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01448",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01462",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01466",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01485",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01498",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01571",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01621",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01648",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01727",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01729",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01735",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01788",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01793",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01822",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01832",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01866",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01873",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01875",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01890",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01899",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01929",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01947",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01963",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01988",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p01992",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02026",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02032",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02076",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02084",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02090",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02091",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02094",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02113",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02128",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02139",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02149",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02186",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02203",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02243",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02267",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02284",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02334",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02366",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02382",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02393",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02419",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02436",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02442",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02463",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02466",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02523",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02531",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02533",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02547",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02580",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02621",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02637",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02640",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02642",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02666",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02668",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02674",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02698",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02706",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02780",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02783",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02803",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02805",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02824",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02829",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02836",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02839",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02843",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02890",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02918",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02927",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p02934",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03009",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03029",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03032",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03035",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03038",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03046",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03067",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03122",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03191",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03198",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03217",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03228",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03230",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03232",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03243",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03323",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03338",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03340",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03371",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03400",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03428",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03489",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03504",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03508",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03515",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03525",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03538",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03539",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03545",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03547",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03570",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03585",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03586",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03587",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03591",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03592",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03620",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03622",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03627",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03635",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03642",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03668",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03683",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03689",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03691",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03698",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03714",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03734",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03745",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03801",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03805",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03825",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03829",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03847",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03849",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03865",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03867",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03893",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03903",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03908",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03922",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03931",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03943",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03944",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03976",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03991",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p03998",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04010",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04016",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04018",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04035",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04038",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04040",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04057",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04059",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04093",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04096",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04105",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04120",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04123",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04125",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04128",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04145",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04146",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04174",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04187",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04189",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04203",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04238",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04268",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04292",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04305",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04310",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04316",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04328",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04339",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04345",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04348",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04370",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04374",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04387",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04395",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04399",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04414",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04416",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04431",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04436",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04489",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04502",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04508",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04524",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04529",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04534",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04538",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04574",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04577",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04592",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04618",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04627",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04630",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04671",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04686",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04689",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04729",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04774",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04777",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04779",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04794",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04804",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04806",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04822",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04831",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04835",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04872",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04887",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04890",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04892",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04898",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04911",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04926",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04938",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04956",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04977",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04994",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p04996",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05015",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05036",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05043",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05073",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05075",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05082",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05089",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05098",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05107",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05112",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05117",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05122",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05125",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05129",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05191",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05194",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05209",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05214",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05227",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05273",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05274",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05279",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05286",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05299",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05320",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05332",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05360",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05371",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05384",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05393",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05418",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05422",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05472",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05486",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05499",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05511",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05530",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05551",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05602",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05604",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05614",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05615",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05623",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05632",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05685",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05719",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05725",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05758",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05761",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05771",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  },
+  {
+    "scene_id": "p05796",
+    "source": "fallback",
+    "model": null,
+    "error": "Ollama is not running or no local model could be reached (tried ['llama3', 'phi3']). Last error: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download. Start the daemon with `ollama serve` and pull `llama3` or `phi3`."
+  }
+]

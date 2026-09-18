@@ -1,0 +1,42 @@
+# EcoExplain-VLM pilot — Kanha Tiger Reserve
+# Matches Dataset_Extraction.ipynb + roadmap §5 evidence card inputs
+
+project:
+  gcp_project_id: "chintaphaniramavaibhav1"
+  name: "ecoexplain_vlm_kanha_pilot"
+
+study_area:
+  roi_bbox: [80.433, 22.117, 81.050, 22.450]  # Kanha official boundary
+  name: "Kanha Tiger Reserve"
+
+temporal:
+  before_start: "2022-01-01"
+  before_end: "2022-02-28"
+  after_start: "2023-01-01"
+  after_end: "2023-02-28"
+  climatology_start: "2015-01-01"
+  climatology_end: "2021-12-31"
+  season_label: "dry_season_jan_feb"
+
+patch:
+  patch_pixels: 64
+  pixel_size_m: 10
+  max_cloud_pct: 20
+  pilot_target: 36
+  full_target: 400
+
+export:
+  mode: "local"           # local | drive | local_then_drive
+  drive_folder: "ecoexplain_vlm_raw_tiffs"
+  drive_inbox: "data/drive_inbox"   # drop manually downloaded files here
+  raw_tiffs: "data/raw_tiffs"
+
+classes:
+  active: ["stable", "decline", "increase"]
+  all: ["stable", "decline", "increase", "fire", "uncertain"]
+  fire_enabled: false
+
+vlm:
+  image_size: [512, 512]
+  ollama_model: "llama3"
+  exclude_demo_from_jsonl: true

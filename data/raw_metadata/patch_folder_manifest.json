@@ -1,0 +1,84 @@
+{
+  "exports_per_patch": 15,
+  "outcasts": {
+    "p00695": {
+      "files_moved": 14,
+      "reason": "incomplete_export"
+    },
+    "p00796": {
+      "files_moved": 14,
+      "reason": "incomplete_export"
+    },
+    "p03073": {
+      "files_moved": 14,
+      "reason": "incomplete_export"
+    },
+    "p03209": {
+      "files_moved": 14,
+      "reason": "incomplete_export"
+    },
+    "p04622": {
+      "files_moved": 14,
+      "reason": "incomplete_export"
+    },
+    "p04819": {
+      "files_moved": 14,
+      "reason": "incomplete_export"
+    }
+  },
+  "pilot_reference": {
+    "p00460": {
+      "files_moved": 15,
+      "reason": "pre_372_pilot"
+    },
+    "p00534": {
+      "files_moved": 15,
+      "reason": "pre_372_pilot"
+    },
+    "p00660": {
+      "files_moved": 15,
+      "reason": "pre_372_pilot"
+    },
+    "p00668": {
+      "files_moved": 15,
+      "reason": "pre_372_pilot"
+    },
+    "p01561": {
+      "files_moved": 15,
+      "reason": "pre_372_pilot"
+    },
+    "p01745": {
+      "files_moved": 15,
+      "reason": "pre_372_pilot"
+    },
+    "p02432": {
+      "files_moved": 15,
+      "reason": "pre_372_pilot"
+    },
+    "p02718": {
+      "files_moved": 15,
+      "reason": "pre_372_pilot"
+    },
+    "p02742": {
+      "files_moved": 15,
+      "reason": "pre_372_pilot"
+    },
+    "p02976": {
+      "files_moved": 15,
+      "reason": "pre_372_pilot"
+    },
+    "p03276": {
+      "files_moved": 15,
+      "reason": "pre_372_pilot"
+    },
+    "p03305": {
+      "files_moved": 15,
+      "reason": "pre_372_pilot"
+    },
+    "p05612": {
+      "files_moved": 15,
+      "reason": "pre_372_pilot"
+    }
+  },
+  "selected_patches_rows": 366
+}
