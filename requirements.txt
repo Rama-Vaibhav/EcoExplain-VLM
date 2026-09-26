@@ -14,3 +14,8 @@ ipykernel>=6.29
 PyYAML>=6.0
 google-api-python-client>=2.100
 google-auth-oauthlib>=1.1
+# Optional for notebooks 05–08 VLM eval:
+# torch
+# torchvision  # required for Qwen2-VL (07)
+# transformers
+# accelerate

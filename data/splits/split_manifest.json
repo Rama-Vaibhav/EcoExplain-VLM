@@ -1,0 +1,32 @@
+{
+  "n_total": 366,
+  "seed": 42,
+  "fractions": {
+    "train": 0.7,
+    "dev": 0.15,
+    "test": 0.15
+  },
+  "counts": {
+    "train": 256,
+    "dev": 55,
+    "test": 55
+  },
+  "class_balance": {
+    "train": {
+      "decline": 84,
+      "increase": 85,
+      "stable": 87
+    },
+    "dev": {
+      "decline": 18,
+      "increase": 18,
+      "stable": 19
+    },
+    "test": {
+      "decline": 18,
+      "increase": 19,
+      "stable": 18
+    }
+  },
+  "note": "Stratified on candidate_class. Train/eval labels are candidate_class unless reference_class is set."
+}
