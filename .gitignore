@@ -18,6 +18,8 @@ data/drive_inbox/
 data/outcasts/
 data/pilot_reference/
 
+results/checkpoints/
+
 # LaTeX build junk
 slides/*.aux
 slides/*.log
