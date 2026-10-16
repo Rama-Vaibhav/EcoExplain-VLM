@@ -155,8 +155,61 @@ def load_split_ids(splits_dir: Path, split: str) -> list[str]:
     return df["patch_id"].astype(str).tolist()
 
 
-def encoder_text(record: dict[str, Any]) -> str:
+MINIMAL_VISION_PROMPT = (
+    "Two forest RGB patches: image 1 = T0 (Jan–Feb 2022), image 2 = T1 (Jan–Feb 2023). "
+    "No spectral tables — judge change from the images only."
+)
+
+# Tokens that name the gold label or the analyst's class decision.
+LABEL_LEAK_TOKENS = (
+    "candidate_class",
+    "vegetation_trend",
+    "reference_class",
+    "partial_mismatch",
+)
+
+
+def clean_evidence_text(record: dict[str, Any]) -> str:
+    """Condition C measurements with the gold label and the inference line removed."""
+    import re
+
+    raw = str((record.get("text") or {}).get("condition_c_user_prompt") or "")
+    kept: list[str] = []
+    for line in raw.splitlines():
+        low = line.lower().strip()
+        if low.startswith("inference for"):
+            continue
+        if low.startswith("respond with class"):
+            continue
+        for tok in LABEL_LEAK_TOKENS:
+            line = re.sub(rf"{tok}\s*=\s*\S+", "", line, flags=re.IGNORECASE)
+            line = re.sub(rf"\b{tok}\b", "", line, flags=re.IGNORECASE)
+        if line.strip():
+            kept.append(line.rstrip())
+    return "\n".join(kept).strip()
+
+
+def text_has_label_leak(text: str, gold: Optional[str] = None) -> Optional[str]:
+    """Return the leaked token, or None. Gold is matched only as '=label', not as a bare word."""
+    import re
+
+    low = (text or "").lower()
+    for tok in LABEL_LEAK_TOKENS:
+        if tok in low:
+            return tok
+    if gold and re.search(rf"=\s*{re.escape(gold)}\b", text or "", flags=re.IGNORECASE):
+        return f"={gold}"
+    return None
+
+
+def encoder_text(record: dict[str, Any], *, text_mode: str = "full") -> str:
     """String that goes to the text tokenizer / LLM prefix."""
+    if text_mode == "minimal":
+        return MINIMAL_VISION_PROMPT
+    if text_mode == "evidence_only":
+        return clean_evidence_text(record)
+    if text_mode != "full":
+        raise ValueError(f"Unknown text_mode {text_mode!r}")
     text = (record.get("text") or {}).get("condition_c_user_prompt")
     if text:
         return str(text)
@@ -204,13 +257,15 @@ def records_for_split(jsonl_path: Path, splits_dir: Path, split: str) -> list[di
     return [r for r in load_jsonl(jsonl_path) if r["id"] in want]
 
 
-def condition_c_sample(record: dict[str, Any], root: Path) -> dict[str, Any]:
+def condition_c_sample(
+    record: dict[str, Any], root: Path, *, text_mode: str = "full"
+) -> dict[str, Any]:
     """One training/eval example for any combo."""
     t0, t1 = load_t0_t1(record, root)
     return {
         "id": record["id"],
         "images": [t0, t1],  # vision encoder input (two RGB chips)
-        "input_text": encoder_text(record),  # text encoder / LLM prefix
+        "input_text": encoder_text(record, text_mode=text_mode),
         "target_text": target_text(record),
         "label": record.get("candidate_class"),
         "label_id": CLASSES.index(record["candidate_class"]) if record.get("candidate_class") in CLASSES else -1,

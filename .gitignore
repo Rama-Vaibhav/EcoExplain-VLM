@@ -19,6 +19,10 @@ data/outcasts/
 data/pilot_reference/
 
 results/checkpoints/
+results/explain/panels/
+results/explain/*.png
+results/explain/*.pdf
+results/explain/*.html
 
 # LaTeX build junk
 slides/*.aux

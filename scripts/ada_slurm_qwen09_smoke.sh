@@ -3,6 +3,7 @@
 #   sbatch scripts/ada_slurm_qwen09_smoke.sh
 
 #SBATCH --job-name=eco-q09-smoke
+#SBATCH --partition=u22
 #SBATCH --account=research
 #SBATCH --qos=low
 #SBATCH --gres=gpu:1
@@ -10,10 +11,12 @@
 #SBATCH --mem=16G
 #SBATCH --time=02:00:00
 #SBATCH --output=results/slurm-qwen09-smoke-%j.log
-#SBATCH --error=results/slurm-qwen09-smoke-%j.err
+#SBATCH --error=results/slurm-qwen09-smoke-%j.log
 ##SBATCH --partition=gpu
 
 set -euo pipefail
+# PyTorch / HF write to stderr; keep one log (same gotcha as the full job).
+exec 2>&1
 REPO="${SLURM_SUBMIT_DIR:-$HOME/EcoExplain-VLM}"
 cd "$REPO"
 # module load python/3.10 cuda/12.1

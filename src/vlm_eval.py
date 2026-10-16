@@ -18,6 +18,7 @@ from src.vlm_combos import (
     get_combo,
     records_for_split,
     resolve_checkpoint,
+    text_has_label_leak,
 )
 
 # Same generation settings for a fair comparison (override per combo if needed).
@@ -53,6 +54,64 @@ PALIGEMMA_PROMPT_SUFFIX = (
     "Two forest RGB chips: first image T0, second T1. "
     "Vegetation change class — answer with exactly one word: stable, decline, or increase."
 )
+
+# Explain mode. Qwen and LLaVA get the JSON instruction. PaliGemma and BLIP-2 get one sentence.
+EXPLAIN_JSON_ASK = (
+    "\n\nImage 1 is a forest patch in Jan–Feb 2022, image 2 is the same patch in Jan–Feb 2023. "
+    "First describe in one sentence what visibly changed between the two images. "
+    "Then decide whether vegetation is stable, declined, or increased. "
+    "Justify your decision in 2–3 sentences in your own words, citing the specific numbers that support it, "
+    "and mention any evidence that contradicts it. If climate (rainfall, soil moisture, temperature) "
+    "could explain the change, say so as a possibility, not a certainty. Do not repeat the table. "
+    'Answer as JSON: {"visual_change": "...", "change_class": "stable|decline|increase", '
+    '"justification": "...", "supporting_evidence": ["..."], "conflicting_evidence": ["..."], '
+    '"possible_driver": "...", "confidence": 0.0}'
+)
+
+EXPLAIN_SHORT_ASK = (
+    "Left image is 2022, right image is 2023. "
+    "class: stable or decline or increase. reason: one sentence."
+)
+
+EXPLAIN_JSON_ASK_STRUCTURED = (
+    "\n\nImages: 2022 (left/first) vs 2023 (right/second). Follow steps in order.\n"
+    "Step 1 — Copy exactly 3 strings from ALLOWED_FACTS (verbatim) into supporting_evidence.\n"
+    "Step 2 — Set change_class using CLASS_RULE and NDVI Δ only (stable, decline, or increase).\n"
+    "Step 3 — Write justification as ONE sentence that mentions NDVI only; "
+    "do not mention rainfall, temperature, or soil unless those lines were copied in Step 1.\n"
+    "Set conflicting_evidence to [] and possible_driver to \"\" (empty). "
+    "Do not state causes or climate drivers.\n"
+    'Reply with JSON only: {"visual_change": "one short phrase", "change_class": "stable|decline|increase", '
+    '"justification": "...", "supporting_evidence": ["...", "...", "..."], '
+    '"conflicting_evidence": [], "possible_driver": "", "confidence": 0.5}'
+)
+
+EXPLAIN_SHORT_ASK_STRUCTURED = (
+    "Use ONLY the NDVI line and CLASS_RULE above. "
+    "Reply exactly: class: stable or decline or increase. "
+    "reason: one sentence mentioning NDVI numbers only."
+)
+
+
+def explain_ask_suffix(style: str, answer_format: str) -> str:
+    """Legacy vs cite-only structured instructions for explain mode."""
+    structured = style == "structured"
+    if answer_format == "json":
+        return EXPLAIN_JSON_ASK_STRUCTURED if structured else EXPLAIN_JSON_ASK
+    return "\n" + (EXPLAIN_SHORT_ASK_STRUCTURED if structured else EXPLAIN_SHORT_ASK)
+
+EXPLAIN_MAX_NEW_TOKENS = {
+    "llava15_clip_mlp_vicuna": 256,
+    "llava16_clip_mlp_vicuna": 256,
+    "qwen_vl_custom_mlp_qwen": 256,
+    "paligemma_siglip_linear_gemma": 80,
+    "blip2_clip_qformer_opt": 80,
+}
+
+SHORT_EXPLAIN_COMBOS = {
+    "paligemma_siglip_linear_gemma",
+    "blip2_clip_qformer_opt",
+}
 
 
 def format_accuracy_pct(acc: Optional[float]) -> str:
@@ -104,6 +163,76 @@ def parse_class(text: str) -> Optional[str]:
     if hits:
         return hits[-1].group(1)
     return None
+
+
+def _empty_explanation() -> dict[str, Any]:
+    return {
+        "visual_change": "",
+        "change_class": None,
+        "justification": "",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": None,
+        "format": "fallback",
+    }
+
+
+def _loads_json_object(blob: str) -> Optional[dict[str, Any]]:
+    blob = blob.strip()
+    if not blob:
+        return None
+    try:
+        obj = json.loads(blob)
+    except json.JSONDecodeError:
+        return None
+    return obj if isinstance(obj, dict) else None
+
+
+def parse_explanation(text: str) -> dict[str, Any]:
+    """JSON explanation, then `class:` / `reason:`, then parse_class plus the raw text."""
+    raw = (text or "").strip()
+    parsed = _empty_explanation()
+    obj = None
+    fence = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", raw, flags=re.DOTALL | re.IGNORECASE)
+    if fence:
+        obj = _loads_json_object(fence.group(1))
+    if obj is None:
+        start, end = raw.find("{"), raw.rfind("}")
+        if start >= 0 and end > start:
+            obj = _loads_json_object(raw[start : end + 1])
+    if obj is not None:
+        parsed["format"] = "json"
+        parsed["visual_change"] = str(obj.get("visual_change") or "")
+        parsed["justification"] = str(obj.get("justification") or "")
+        parsed["possible_driver"] = str(obj.get("possible_driver") or "")
+        for key in ("supporting_evidence", "conflicting_evidence", "evidence_bullets"):
+            val = obj.get(key) or []
+            if isinstance(val, str):
+                val = [val]
+            parsed[key] = [str(x) for x in val]
+        if not parsed["supporting_evidence"] and parsed.get("evidence_bullets"):
+            parsed["supporting_evidence"] = list(parsed["evidence_bullets"])
+        conf = obj.get("confidence")
+        try:
+            parsed["confidence"] = None if conf is None else float(conf)
+        except (TypeError, ValueError):
+            parsed["confidence"] = None
+        parsed["change_class"] = parse_class(str(obj.get("change_class") or "")) or parse_class(raw)
+        return parsed
+
+    cls_m = re.search(r"\bclass\s*[:=]\s*(stable|decline|increase)\b", raw, flags=re.IGNORECASE)
+    reason_m = re.search(r"\breason\s*[:=]\s*(.+)", raw, flags=re.IGNORECASE | re.DOTALL)
+    if cls_m or reason_m:
+        parsed["format"] = "short"
+        parsed["change_class"] = cls_m.group(1).lower() if cls_m else parse_class(raw)
+        parsed["justification"] = (reason_m.group(1).strip() if reason_m else raw)
+        return parsed
+
+    parsed["change_class"] = parse_class(raw)
+    parsed["justification"] = raw
+    parsed["format"] = "fallback"
+    return parsed
 
 
 def environment_report() -> dict[str, Any]:
@@ -225,14 +354,28 @@ def load_hf_model(combo: VLMCombo):
     return processor, model, device
 
 
-def collate(records, root: Path, n: Optional[int] = None) -> list[dict[str, Any]]:
+def collate(
+    records,
+    root: Path,
+    n: Optional[int] = None,
+    *,
+    text_mode: str = "full",
+) -> list[dict[str, Any]]:
     out = []
     subset = records if n is None else records[:n]
     for rec in subset:
         try:
-            out.append(condition_c_sample(rec, root))
+            sample = condition_c_sample(rec, root, text_mode=text_mode)
         except FileNotFoundError as exc:
             print("SKIP", rec.get("id"), exc)
+            continue
+        if text_mode != "full":
+            leak = text_has_label_leak(sample["input_text"], sample.get("label"))
+            if leak:
+                raise AssertionError(
+                    f"{sample.get('id')} text_mode={text_mode} still contains label leak {leak}"
+                )
+        out.append(sample)
     return out
 
 
@@ -267,10 +410,21 @@ def generate_one(
     gen_kw: dict[str, Any],
     *,
     max_side: Optional[int] = None,
+    answer_format: str = "classify",
 ) -> str:
     import torch
 
-    prompt_text = (sample["input_text"][:1800] + CLASS_ASK).strip()
+    if sample.get("ask_suffix") is not None:
+        suffix = sample["ask_suffix"]
+        if not str(suffix).startswith("\n") and answer_format == "short":
+            suffix = "\n" + str(suffix)
+    elif answer_format == "json":
+        suffix = EXPLAIN_JSON_ASK
+    elif answer_format == "short":
+        suffix = "\n" + EXPLAIN_SHORT_ASK
+    else:
+        suffix = CLASS_ASK
+    prompt_text = (sample["input_text"][:2200] + suffix).strip()
     images = sample["images"]
     if max_side:
         resized = []
@@ -289,16 +443,42 @@ def generate_one(
             scale = min(1.0, max_side / max(w, h))
             if scale < 1:
                 stitched = stitched.resize((max(1, int(w * scale)), max(1, int(h * scale))))
-        inputs = processor(images=stitched, text=BLIP2_PROMPT, return_tensors="pt")
+        if answer_format == "short":
+            body = (sample["input_text"] or "").strip()
+            if "CLASS_RULE:" in body:
+                blip_text = body + explain_ask_suffix(
+                    "structured" if "ALLOWED_FACTS" in body else "legacy", "short"
+                )
+            else:
+                ndvi_line = next((ln for ln in body.splitlines() if "NDVI" in ln), "")
+                blip_text = (ndvi_line + "\n" + EXPLAIN_SHORT_ASK.lstrip()).strip()
+        else:
+            blip_text = BLIP2_PROMPT
+        inputs = processor(images=stitched, text=blip_text, return_tensors="pt")
     elif "PaliGemma" in proc_name:
         # Processor requires one <image> token per image, at the start of text.
         # Long Condition C paragraphs trigger "not trained to answer" refusals.
         brief = (sample["input_text"] or "").split("\n")
-        hint = next((ln for ln in brief if "NDVI" in ln or "candidate_class" in ln), "")
-        hint = hint[:400].strip()
-        body = PALIGEMMA_PROMPT_SUFFIX
-        if hint:
-            body = hint + "\n" + body
+        if answer_format == "short":
+            if "ALLOWED_FACTS" in (sample["input_text"] or ""):
+                body = (sample["input_text"] or "").strip() + explain_ask_suffix("structured", "short")
+            else:
+                ndvi_line = next((ln for ln in brief if ln.startswith("NDVI")), "")
+                body = (ndvi_line + "\n" + EXPLAIN_SHORT_ASK.lstrip()).strip()
+        else:
+            # One-word mode only. Skip any line that still names the gold field.
+            hint = next(
+                (
+                    ln
+                    for ln in brief
+                    if "NDVI" in ln and "candidate_class" not in ln.lower()
+                ),
+                "",
+            )
+            hint = hint[:400].strip()
+            body = PALIGEMMA_PROMPT_SUFFIX
+            if hint:
+                body = hint + "\n" + body
         prompt_text = ("<image>" * len(images)) + body
         try:
             inputs = processor(images=images, text=prompt_text, return_tensors="pt")

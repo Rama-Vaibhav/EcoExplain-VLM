@@ -123,6 +123,58 @@ Outputs:
 
 ---
 
+## Explanation mode
+
+Models can be asked for a short justification as well as a class. Prompts in this mode do **not** include `candidate_class`. New files go to `results/explain/` and do not replace `results/vlm_combo_*.json`.
+
+```bash
+# 0 leaks required
+python scripts/check_no_leak.py
+
+# Prompt check on 3 test patches, no model download
+python scripts/run_explain.py --dry-run --limit 3
+
+# Recommended: structured cite-only prompts (writes explain_structured_<combo>.json)
+python scripts/run_explain.py --mode explain --prompt-style structured --combo qwen_vl_custom_mlp_qwen
+
+# One model at a time on a 16 GB Mac (laptop checkpoints, greedy decoding)
+python scripts/run_explain.py --limit 3 --combo qwen_vl_custom_mlp_qwen
+python scripts/run_explain.py --combo llava15_clip_mlp_vicuna
+python scripts/run_explain.py --combo paligemma_siglip_linear_gemma
+python scripts/run_explain.py --combo blip2_clip_qformer_opt
+
+# Scores, panels, PDF, and HTML
+python scripts/score_explanations.py
+python scripts/make_explanation_report.py
+python scripts/make_explanation_report.py --ids p00052,p00010
+```
+
+`--mode both` (the default) writes `explain_<combo_id>.json` and a leak-free one-word file `oneword_<combo_id>.json`. Qwen and LLaVA are asked for JSON (`max_new_tokens` 256). PaliGemma and BLIP-2 get `class:` / `reason:` (`max_new_tokens` 80).
+
+**Ada (GPU, Mac can be off)** — run all structured explain evals on the cluster:
+
+```bash
+cd ~/EcoExplain-VLM && mkdir -p results/explain
+# Sync latest code first (scp/rsync src/ scripts/ from your Mac)
+sbatch scripts/ada_slurm_explain_structured.sh
+# Smoke: EXPLAIN_LIMIT=5 sbatch --export=ALL,EXPLAIN_LIMIT=5 scripts/ada_slurm_explain_structured.sh
+# Subset: EXPLAIN_COMBOS="qwen_vl_custom_mlp_qwen llava15_clip_mlp_vicuna" sbatch --export=ALL,EXPLAIN_COMBOS scripts/ada_slurm_explain_structured.sh
+tail -f results/slurm-explain-structured-<jobid>.log
+```
+
+Pull artifacts: `results/explain/explain_structured_*.json`, `explanation_scores.csv`, and the Slurm log.
+
+Optional follow-on jobs (explanation-target LoRA, not required for structured zero-shot explain):
+
+```bash
+sbatch scripts/ada_slurm_explain_targets.sh
+sbatch scripts/ada_slurm_qwen_explain.sh
+```
+
+The target job keeps a train patch only when Qwen2-VL-7B matches the gold class and every checkable claim matches the measured deltas. The LoRA job reads `data/explain_targets/train_targets.jsonl` and writes `results/explain/explain_qwen_vl_finetuned_ecoexplain.json`.
+
+---
+
 ## Environment (laptop eval)
 
 ```bash
