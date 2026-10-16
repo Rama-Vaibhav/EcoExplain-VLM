@@ -13,6 +13,7 @@ from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 ROOT = Path(__file__).resolve().parents[1]
 OUT1 = ROOT / "results" / "result1.png"
 OUT2 = ROOT / "results" / "result2.png"
+OUT_DETAIL = ROOT / "results" / "ecoexplain_vlm_pipeline.png"
 COMP = ROOT / "results" / "vlm_combo_comparison.json"
 
 # Language side actually used at eval (LAPTOP=True checkpoints); not paper 7B names.
@@ -132,6 +133,146 @@ def draw_flowchart(path: Path) -> None:
     )
 
     fig.savefig(path, bbox_inches="tight", pad_inches=0.35, facecolor=fig.get_facecolor())
+    plt.close(fig)
+
+
+def draw_detailed_pipeline(path: Path) -> None:
+    fig, ax = plt.subplots(figsize=(18, 12), dpi=220)
+    ax.set_xlim(0, 18)
+    ax.set_ylim(0, 12)
+    ax.axis("off")
+    fig.patch.set_facecolor("#f7f8f6")
+    ax.set_facecolor("#f7f8f6")
+
+    palette = {
+        "source": ("#e4f0e6", "#427753"),
+        "prep": ("#e5eef5", "#356b8c"),
+        "evidence": ("#f8edda", "#a46d22"),
+        "dataset": ("#e9e7f2", "#65588b"),
+        "eval": ("#e1eef0", "#34747b"),
+        "output": ("#f0e7e4", "#9a5a48"),
+    }
+
+    def node(x, y, w, h, title, body, kind, title_size=10.5, body_size=8.0):
+        fill, edge = palette[kind]
+        patch = FancyBboxPatch(
+            (x, y), w, h,
+            boxstyle="round,pad=0.035,rounding_size=0.10",
+            linewidth=1.35,
+            edgecolor=edge,
+            facecolor=fill,
+        )
+        ax.add_patch(patch)
+        ax.text(
+            x + 0.16, y + h - 0.22, title,
+            ha="left", va="top", fontsize=title_size, weight="bold", color="#20313a",
+        )
+        ax.text(
+            x + 0.16, y + h - 0.52, body,
+            ha="left", va="top", fontsize=body_size, color="#34434a",
+            linespacing=1.35,
+        )
+
+    def arrow(x1, y1, x2, y2, color="#5d6b70", style="solid", width=1.25):
+        ax.add_patch(FancyArrowPatch(
+            (x1, y1), (x2, y2),
+            arrowstyle="-|>", mutation_scale=13, linewidth=width,
+            linestyle=style, color=color, connectionstyle="arc3,rad=0.0",
+        ))
+
+    ax.text(9, 11.62, "EcoExplain-VLM | End-to-End Research Pipeline",
+            ha="center", va="center", fontsize=19, weight="bold", color="#1d3038")
+    ax.text(9, 11.24,
+            "Kanha Tiger Reserve  ·  matched dry-season windows: Jan–Feb 2022 (T0) and Jan–Feb 2023 (T1)",
+            ha="center", va="center", fontsize=10.5, color="#53636a")
+
+    ax.text(0.65, 10.85, "01  MULTIMODAL INPUTS", fontsize=8.5, weight="bold", color="#637178")
+    sources = [
+        ("Sentinel-2 optical", "RGB + 10 bands\nNDVI · EVI · NDMI · NBR"),
+        ("Sentinel-1 SAR", "VV / VH backscatter\ndominant orbit pass"),
+        ("CHIRPS rainfall", "Jan–Feb rainfall totals\npatch-level context"),
+        ("ERA5-Land", "temperature + soil-moisture\nanomalies vs 2015–2021"),
+        ("NASADEM terrain", "elevation · slope · aspect\nstatic terrain context"),
+    ]
+    source_x = [0.65, 4.02, 7.39, 10.76, 14.13]
+    for x, (title, body) in zip(source_x, sources):
+        node(x, 9.42, 3.05, 1.18, title, body, "source", title_size=9.3, body_size=7.25)
+
+    ax.text(0.65, 9.12, "02  PREPROCESSING & SPATIAL ALIGNMENT", fontsize=8.5, weight="bold", color="#637178")
+    node(
+        0.65, 7.92, 16.53, 0.92,
+        "Earth Engine export and patch harmonization",
+        "Kanha AOI + matched date filters  →  cloud/quality masking and temporal composites  →  common patch geometry (64 × 64 pixels at 10 m)\n"
+        "Export paired T0/T1 rasters; retain native scale for coarse climate products and terrain context.",
+        "prep", title_size=10.2, body_size=8.0,
+    )
+    for x in [2.175, 5.545, 8.915, 12.285, 15.655]:
+        arrow(x, 9.42, x, 8.88, width=1.0)
+
+    ax.text(0.65, 7.58, "03  PATCH-LEVEL CHANGE & EVIDENCE", fontsize=8.5, weight="bold", color="#637178")
+    node(
+        0.65, 5.92, 5.15, 1.40,
+        "Optical change features",
+        "Compute T1 − T0 for NDVI and NBR.\nUse index stacks and paired RGB chips\nto describe vegetation change.",
+        "prep", title_size=9.6, body_size=7.8,
+    )
+    node(
+        6.43, 5.92, 5.15, 1.40,
+        "DIP / Otsu disturbance extraction",
+        "Threshold negative ΔNDVI / ΔNBR signals.\nCreate masks, contours, bounding boxes,\nand severity triplets; inspect QA panels.",
+        "evidence", title_size=9.6, body_size=7.8,
+    )
+    node(
+        12.20, 5.92, 5.15, 1.40,
+        "Aligned multimodal patch stack",
+        "Pad / resize imagery, masks, and sensor tensors\nto the 512 × 512 VLM canvas; transform\nbounding boxes consistently.",
+        "prep", title_size=9.6, body_size=7.8,
+    )
+    arrow(6.10, 7.92, 3.23, 7.32)
+    arrow(9.0, 7.92, 9.0, 7.32)
+    arrow(11.90, 7.92, 14.78, 7.32)
+    arrow(5.80, 6.62, 6.43, 6.62)
+    arrow(12.20, 6.62, 11.58, 6.62)
+
+    ax.text(0.65, 5.58, "04  RECORD ASSEMBLY", fontsize=8.5, weight="bold", color="#637178")
+    node(
+        2.0, 4.15, 14.0, 1.15,
+        "Evidence card + structured JSONL record",
+        "T0/T1 RGB · Sentinel-2 optical/indices · Sentinel-1 · rainfall · ERA5-Land · DEM · ΔNDVI/ΔNBR rasters and masks · disturbance triplets\n"
+        "Attach candidate_class and reference_class separately; include measured context and explanation text. Strip coordinates from VLM-facing records.",
+        "evidence", title_size=10.2, body_size=8.0,
+    )
+    arrow(9.0, 5.92, 9.0, 5.30)
+
+    ax.text(0.65, 3.81, "05  DATASET FREEZE & EVALUATION", fontsize=8.5, weight="bold", color="#637178")
+    node(
+        2.0, 2.48, 14.0, 1.05,
+        "Freeze dataset and stratified splits (seed 42)",
+        "366 patch records  ·  Train 256 (LoRA training)  ·  Dev 55 (development)  ·  Test 55 (held-out benchmark)",
+        "dataset", title_size=10.2, body_size=8.2,
+    )
+    arrow(9.0, 4.15, 9.0, 3.53)
+
+    node(
+        0.65, 0.64, 7.65, 1.35,
+        "Zero-shot Condition C benchmark",
+        "Same held-out test patches; paired RGB + evidence text.\nLLaVA-1.5 · PaliGemma · Qwen2-VL · BLIP-2\nParse stable / decline / increase; compare accuracy.",
+        "eval", title_size=9.5, body_size=7.6,
+    )
+    node(
+        9.70, 0.64, 7.65, 1.35,
+        "Qwen2-VL LoRA fine-tune + test",
+        "Train on the train split; evaluate on the same held-out test split.\nSave fine-tuned predictions and comparison\nartifacts alongside zero-shot results.",
+        "output", title_size=9.5, body_size=7.6,
+    )
+    arrow(5.0, 2.48, 4.5, 1.99)
+    arrow(13.0, 2.48, 13.5, 1.99)
+
+    ax.text(9, 0.25,
+            "Outputs: frozen split manifest · per-model predictions / result JSON · merged comparison report  |  Explanation quality still requires independent validation",
+            ha="center", va="center", fontsize=8.1, color="#53636a")
+
+    fig.savefig(path, bbox_inches="tight", pad_inches=0.24, facecolor=fig.get_facecolor())
     plt.close(fig)
 
 
@@ -301,8 +442,10 @@ def main() -> None:
     OUT1.parent.mkdir(parents=True, exist_ok=True)
     draw_flowchart(OUT1)
     draw_results_table(OUT2)
+    draw_detailed_pipeline(OUT_DETAIL)
     print("wrote", OUT1)
     print("wrote", OUT2)
+    print("wrote", OUT_DETAIL)
 
 
 if __name__ == "__main__":

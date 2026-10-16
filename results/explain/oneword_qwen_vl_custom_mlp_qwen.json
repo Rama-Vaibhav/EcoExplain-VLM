@@ -1,0 +1,51 @@
+{
+  "combo_id": "qwen_vl_custom_mlp_qwen",
+  "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+  "laptop": true,
+  "mode": "oneword",
+  "prompt_mode": "evidence_only",
+  "answer_format": "classify",
+  "generation": {
+    "max_new_tokens": 48,
+    "do_sample": false
+  },
+  "n_eval": 3,
+  "n_parsed_class": 3,
+  "accuracy": 0.3333333333333333,
+  "seconds": 6.52,
+  "predictions": [
+    {
+      "id": "p00052",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "Stable",
+      "parsed": null,
+      "prompt_mode": "evidence_only",
+      "answer_format": "classify",
+      "seconds": 2.22
+    },
+    {
+      "id": "p00086",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "Stable",
+      "parsed": null,
+      "prompt_mode": "evidence_only",
+      "answer_format": "classify",
+      "seconds": 2.14
+    },
+    {
+      "id": "p00575",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "Stable",
+      "parsed": null,
+      "prompt_mode": "evidence_only",
+      "answer_format": "classify",
+      "seconds": 2.07
+    }
+  ]
+}

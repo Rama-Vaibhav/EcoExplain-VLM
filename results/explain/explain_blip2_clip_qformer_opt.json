@@ -1,0 +1,1118 @@
+{
+  "combo_id": "blip2_clip_qformer_opt",
+  "hf_model_id": "Salesforce/blip2-opt-2.7b",
+  "laptop": true,
+  "mode": "explain",
+  "prompt_mode": "explain",
+  "answer_format": "short",
+  "generation": {
+    "max_new_tokens": 80,
+    "do_sample": false
+  },
+  "n_eval": 55,
+  "n_parsed_class": 55,
+  "accuracy": 0.32727272727272727,
+  "seconds": 25.89,
+  "predictions": [
+    {
+      "id": "p00052",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.315 -> 0.293 (Δ -0.021); 20.2% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 2.04
+    },
+    {
+      "id": "p00086",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.346 -> 0.338 (Δ -0.008); 3.6% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.44
+    },
+    {
+      "id": "p00575",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.625 -> 0.575 (Δ -0.050); 48.9% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p00701",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.581 -> 0.585 (Δ +0.004); 4.3% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p00850",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.695 -> 0.681 (Δ -0.014); 2.7% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p00863",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.682 -> 0.666 (Δ -0.017); 9.8% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p00883",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.723 -> 0.688 (Δ -0.035); 23.0% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.44
+    },
+    {
+      "id": "p00937",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.683 -> 0.652 (Δ -0.032); 20.9% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p01162",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.657 -> 0.681 (Δ +0.024); 0.3% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p01206",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.522 -> 0.490 (Δ -0.031); 31.8% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p01415",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.573 -> 0.556 (Δ -0.016); 11.2% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p01621",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.529 -> 0.502 (Δ -0.028); 25.5% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p01648",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.722 -> 0.693 (Δ -0.029); 13.8% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p01988",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.544 -> 0.548 (Δ +0.004); 3.2% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p02128",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.681 -> 0.640 (Δ -0.041); 38.0% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p02139",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.697 -> 0.673 (Δ -0.024); 11.4% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p02334",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.703 -> 0.685 (Δ -0.018); 6.0% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p02668",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.572 -> 0.579 (Δ +0.007); 6.1% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p02674",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.528 -> 0.489 (Δ -0.040); 37.6% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p02803",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.455 -> 0.437 (Δ -0.018); 14.8% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p02890",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.662 -> 0.638 (Δ -0.025); 27.4% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p03067",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.625 -> 0.628 (Δ +0.003); 5.9% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p03122",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.646 -> 0.602 (Δ -0.044); 45.9% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p03228",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.697 -> 0.654 (Δ -0.043); 40.0% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p03243",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.703 -> 0.705 (Δ +0.002); 3.0% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p03515",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.583 -> 0.610 (Δ +0.027); 0.2% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p03538",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.670 -> 0.669 (Δ -0.001); 4.7% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p03592",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.646 -> 0.611 (Δ -0.036); 34.0% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p03635",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.660 -> 0.678 (Δ +0.017); 0.6% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p03689",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.620 -> 0.628 (Δ +0.008); 3.4% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p03801",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.456 -> 0.459 (Δ +0.003); 4.5% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p03867",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.549 -> 0.539 (Δ -0.011); 16.8% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p03991",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.657 -> 0.656 (Δ -0.001); 3.6% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p04040",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.590 -> 0.625 (Δ +0.035); 3.7% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p04059",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.555 -> 0.522 (Δ -0.033); 33.7% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p04145",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.544 -> 0.521 (Δ -0.022); 22.4% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p04174",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.612 -> 0.575 (Δ -0.036); 33.7% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p04203",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.550 -> 0.560 (Δ +0.010); 0.4% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p04268",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.637 -> 0.639 (Δ +0.002); 2.9% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.45
+    },
+    {
+      "id": "p04399",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.656 -> 0.621 (Δ -0.035); 31.5% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p04508",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.599 -> 0.594 (Δ -0.005); 4.8% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p04577",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.649 -> 0.660 (Δ +0.011); 0.7% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p04671",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.645 -> 0.651 (Δ +0.005); 1.8% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p04777",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.630 -> 0.641 (Δ +0.011); 1.7% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p04806",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.594 -> 0.547 (Δ -0.047); 40.9% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p04892",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.718 -> 0.663 (Δ -0.054); 56.9% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p04898",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.707 -> 0.670 (Δ -0.037); 29.8% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.44
+    },
+    {
+      "id": "p04996",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.679 -> 0.643 (Δ -0.036); 44.8% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p05015",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.613 -> 0.653 (Δ +0.040); 0.1% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p05082",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.450 -> 0.417 (Δ -0.033); 31.4% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.44
+    },
+    {
+      "id": "p05117",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.589 -> 0.659 (Δ +0.070); 0.3% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p05122",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.662 -> 0.670 (Δ +0.008); 2.1% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p05384",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.458 -> 0.450 (Δ -0.007); 9.8% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    },
+    {
+      "id": "p05511",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "NDVI 0.556 -> 0.550 (Δ -0.005); 10.1% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.44
+    },
+    {
+      "id": "p05771",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "NDVI 0.580 -> 0.544 (Δ -0.035); 32.1% of pixels dropped by more than 0.05\nLeft image is 2022, right image is 2023. class: stable or decline or increase. reason: one sentence.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "one sentence.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "short"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "short",
+      "seconds": 0.43
+    }
+  ]
+}

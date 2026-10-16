@@ -1,0 +1,1189 @@
+{
+  "combo_id": "qwen_vl_custom_mlp_qwen",
+  "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+  "laptop": true,
+  "mode": "explain",
+  "prompt_mode": "explain",
+  "prompt_style": "structured",
+  "answer_format": "json",
+  "generation": {
+    "max_new_tokens": 256,
+    "do_sample": false
+  },
+  "n_eval": 55,
+  "n_parsed_class": 55,
+  "accuracy": 0.6363636363636364,
+  "seconds": 1008.78,
+  "predictions": [
+    {
+      "id": "p00052",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.315 in 2022 to 0.293 in 2023, which is a decrease of 0.022. This indicates a decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ -0.006 | NDMI Δ -0.008 | NBR Δ -0.010\",\n    \"Green cover in RGB 1.00 -> 0.99\",\n    \"SAR VV Δ -0.15 dB, VH Δ -0.17 dB\",\n    \"Rainfall Jan–Feb 69.3 -> 25.4 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.043 | Temperature anomaly -1.6 -> +0.9 °C\",\n    \"Elevation 600 m, slope 3°",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.315 in 2022 to 0.293 in 2023, which is a decrease of 0.022. This indicates a decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ -0.006 | NDMI Δ -0.008 | NBR Δ -0.010\",\n    \"Green cover in RGB 1.00 -> 0.99\",\n    \"SAR VV Δ -0.15 dB, VH Δ -0.17 dB\",\n    \"Rainfall Jan–Feb 69.3 -> 25.4 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.043 | Temperature anomaly -1.6 -> +0.9 °C\",\n    \"Elevation 600 m, slope 3°",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 19.29
+    },
+    {
+      "id": "p00086",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.346 -> 0.338 (Δ -0.008)\",\n    \"EVI Δ +0.007 | NDMI Δ +0.011 | NBR Δ +0.013\",\n    \"Green cover in RGB 0.98 -> 0.98\",\n    \"SAR VV Δ -0.17 dB, VH Δ -0.10 dB\",\n    \"Rainfall Jan–Feb 62.5 -> 22.4 mm\",\n    \"Soil moisture anomaly +0.037 -> -0.051 | Temperature anomaly -1.5 -> +1.1 °C\",\n    \"Elevation 773 m, slope 8°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.346 -> 0.338 (Δ -0.008)\",\n    \"EVI Δ +0.007 | NDMI Δ +0.011 | NBR Δ +0.013\",\n    \"Green cover in RGB 0.98 -> 0.98\",\n    \"SAR VV Δ -0.17 dB, VH Δ -0.10 dB\",\n    \"Rainfall Jan–Feb 62.5 -> 22.4 mm\",\n    \"Soil moisture anomaly +0.037 -> -0.051 | Temperature anomaly -1.5 -> +1.1 °C\",\n    \"Elevation 773 m, slope 8°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 16.74
+    },
+    {
+      "id": "p00575",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.625 in 2022 to 0.575 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"NDVI Δ ≤ −0.02 → decline\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No specific climate drivers mentioned in the provided data.\",\n  \"confidence\": 0.5\n}\n```",
+      "parsed": {
+        "visual_change": "NDVI Δ ≤ −0.02 → decline",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased from 0.625 in 2022 to 0.575 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in green cover.",
+        "supporting_evidence": [
+          "NDVI Δ ≤ −0.02 → decline",
+          "NDVI Δ ≤ −0.02 → decline",
+          "NDVI Δ ≤ −0.02 → decline"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "No specific climate drivers mentioned in the provided data.",
+        "confidence": 0.5,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 13.42
+    },
+    {
+      "id": "p00701",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.581 -> 0.585 (Δ +0.004)\",\n    \"NDVI 0.581 -> 0.585 (Δ +0.004)\",\n    \"NDVI 0.581 -> 0.585 (Δ +0.004)\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No specific climate drivers were mentioned in the ALLOWED_FACTS, so no possible driver can be inferred.\"\n}\n```",
+      "parsed": {
+        "visual_change": "NDVI Δ between −0.02 and +0.02 → stable",
+        "change_class": "stable",
+        "justification": "The NDVI values show a small change within the allowed Δ range, indicating no significant change in green cover.",
+        "supporting_evidence": [
+          "NDVI 0.581 -> 0.585 (Δ +0.004)",
+          "NDVI 0.581 -> 0.585 (Δ +0.004)",
+          "NDVI 0.581 -> 0.585 (Δ +0.004)"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "No specific climate drivers were mentioned in the ALLOWED_FACTS, so no possible driver can be inferred.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 13.59
+    },
+    {
+      "id": "p00850",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.695 -> 0.681 (Δ -0.014)\",\n    \"EVI Δ +0.003 | NDMI Δ +0.016 | NBR Δ +0.022\",\n    \"Green cover in RGB 1.00 -> 0.99\",\n    \"SAR VV Δ +0.06 dB, VH Δ +0.16 dB\",\n    \"Rainfall Jan–Feb 80.6 -> 28.5 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.043 | Temperature anomaly -1.5 -> +0.9 °C\",\n    \"Elevation 731 m, slope 14°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.695 -> 0.681 (Δ -0.014)\",\n    \"EVI Δ +0.003 | NDMI Δ +0.016 | NBR Δ +0.022\",\n    \"Green cover in RGB 1.00 -> 0.99\",\n    \"SAR VV Δ +0.06 dB, VH Δ +0.16 dB\",\n    \"Rainfall Jan–Feb 80.6 -> 28.5 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.043 | Temperature anomaly -1.5 -> +0.9 °C\",\n    \"Elevation 731 m, slope 14°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 16.98
+    },
+    {
+      "id": "p00863",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.682 -> 0.666 (Δ -0.017)\",\n    \"EVI Δ +0.015 | NDMI Δ +0.025 | NBR Δ +0.032\",\n    \"Green cover in RGB 0.88 -> 0.86\",\n    \"SAR VV Δ -0.53 dB, VH Δ -0.41 dB\",\n    \"Rainfall Jan–Feb 77.6 -> 27.5 mm\",\n    \"Soil moisture anomaly +0.023 -> -0.045 | Temperature anomaly -1.5 -> +1.0 °C\",\n    \"Elevation 801 m, slope 5°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.682 -> 0.666 (Δ -0.017)\",\n    \"EVI Δ +0.015 | NDMI Δ +0.025 | NBR Δ +0.032\",\n    \"Green cover in RGB 0.88 -> 0.86\",\n    \"SAR VV Δ -0.53 dB, VH Δ -0.41 dB\",\n    \"Rainfall Jan–Feb 77.6 -> 27.5 mm\",\n    \"Soil moisture anomaly +0.023 -> -0.045 | Temperature anomaly -1.5 -> +1.0 °C\",\n    \"Elevation 801 m, slope 5°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 16.73
+    },
+    {
+      "id": "p00883",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.723 in 2022 to 0.688 in 2023, which is within the allowed range of -0.02, indicating a stable decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ +0.002 | NDMI Δ -0.007 | NBR Δ -0.003\",\n    \"Green cover in RGB 1.00 -> 1.00\",\n    \"SAR VV Δ -0.33 dB, VH Δ -0.26 dB\",\n    \"Rainfall Jan–Feb 65.4 -> 23.7 mm\",\n    \"Soil moisture anomaly +0.032 -> -0.049 | Temperature anomaly -1.5 -> +1.1 °C\",\n    \"Elevation 754 m, slope 1",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.723 in 2022 to 0.688 in 2023, which is within the allowed range of -0.02, indicating a stable decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ +0.002 | NDMI Δ -0.007 | NBR Δ -0.003\",\n    \"Green cover in RGB 1.00 -> 1.00\",\n    \"SAR VV Δ -0.33 dB, VH Δ -0.26 dB\",\n    \"Rainfall Jan–Feb 65.4 -> 23.7 mm\",\n    \"Soil moisture anomaly +0.032 -> -0.049 | Temperature anomaly -1.5 -> +1.1 °C\",\n    \"Elevation 754 m, slope 1",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 17.22
+    },
+    {
+      "id": "p00937",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.683 in 2022 to 0.652 in 2023, which is within the allowed range of -0.02, indicating a stable decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ +0.001 | NDMI Δ +0.029 | NBR Δ +0.038\",\n    \"Green cover in RGB 1.00 -> 1.00\",\n    \"SAR VV Δ -0.22 dB, VH Δ -0.34 dB\",\n    \"Rainfall Jan–Feb 65.2 -> 25.2 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.041 | Temperature anomaly -1.6 -> +0.9 °C\",\n    \"Elevation 572 m, slope 3",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.683 in 2022 to 0.652 in 2023, which is within the allowed range of -0.02, indicating a stable decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ +0.001 | NDMI Δ +0.029 | NBR Δ +0.038\",\n    \"Green cover in RGB 1.00 -> 1.00\",\n    \"SAR VV Δ -0.22 dB, VH Δ -0.34 dB\",\n    \"Rainfall Jan–Feb 65.2 -> 25.2 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.041 | Temperature anomaly -1.6 -> +0.9 °C\",\n    \"Elevation 572 m, slope 3",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 17.25
+    },
+    {
+      "id": "p01162",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≥ +0.02 → increase\",\n  \"change_class\": \"increase\",\n  \"justification\": \"The NDVI value increased from 0.657 in 2022 to 0.681 in 2023, indicating an increase in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.657 -> 0.681 (Δ +0.024)\",\n    \"EVI Δ +0.051 | NDMI Δ +0.105 | NBR Δ +0.117\",\n    \"Green cover in RGB 0.87 -> 0.98\",\n    \"SAR VV Δ -0.13 dB, VH Δ -0.35 dB\",\n    \"Rainfall Jan–Feb 75.2 -> 26.7 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.045 | Temperature anomaly -1.5 -> +1.0 °C\",\n    \"Elevation 770 m, slope 8°\"\n  ],\n  \"conf",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "increase",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≥ +0.02 → increase\",\n  \"change_class\": \"increase\",\n  \"justification\": \"The NDVI value increased from 0.657 in 2022 to 0.681 in 2023, indicating an increase in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.657 -> 0.681 (Δ +0.024)\",\n    \"EVI Δ +0.051 | NDMI Δ +0.105 | NBR Δ +0.117\",\n    \"Green cover in RGB 0.87 -> 0.98\",\n    \"SAR VV Δ -0.13 dB, VH Δ -0.35 dB\",\n    \"Rainfall Jan–Feb 75.2 -> 26.7 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.045 | Temperature anomaly -1.5 -> +1.0 °C\",\n    \"Elevation 770 m, slope 8°\"\n  ],\n  \"conf",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 17.23
+    },
+    {
+      "id": "p01206",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.522 in 2022 to 0.490 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.522 -> 0.490 (Δ -0.031)\",\n    \"EVI Δ -0.004 | NDMI Δ -0.030 | NBR Δ -0.035\",\n    \"Green cover in RGB 0.64 -> 0.44\",\n    \"SAR VV Δ -0.58 dB, VH Δ -0.84 dB\",\n    \"Rainfall Jan–Feb 54.3 -> 21.9 mm\",\n    \"Soil moisture anomaly +0.023 -> -0.038 | Temperature anomaly -1.6 -> +0.7 °C",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.522 in 2022 to 0.490 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.522 -> 0.490 (Δ -0.031)\",\n    \"EVI Δ -0.004 | NDMI Δ -0.030 | NBR Δ -0.035\",\n    \"Green cover in RGB 0.64 -> 0.44\",\n    \"SAR VV Δ -0.58 dB, VH Δ -0.84 dB\",\n    \"Rainfall Jan–Feb 54.3 -> 21.9 mm\",\n    \"Soil moisture anomaly +0.023 -> -0.038 | Temperature anomaly -1.6 -> +0.7 °C",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 17.41
+    },
+    {
+      "id": "p01415",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.573 -> 0.556 (Δ -0.016)\",\n    \"EVI Δ +0.002 | NDMI Δ +0.019 | NBR Δ +0.030\",\n    \"Green cover in RGB 0.77 -> 0.73\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No specific climate drivers were mentioned in the ALLOWED_FACTS, so no possible driver can be inferred.\"\n}\n```",
+      "parsed": {
+        "visual_change": "NDVI Δ between −0.02 and +0.02 → stable",
+        "change_class": "stable",
+        "justification": "The NDVI values show a small change within the allowed range, indicating no significant change in green cover.",
+        "supporting_evidence": [
+          "NDVI 0.573 -> 0.556 (Δ -0.016)",
+          "EVI Δ +0.002 | NDMI Δ +0.019 | NBR Δ +0.030",
+          "Green cover in RGB 0.77 -> 0.73"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "No specific climate drivers were mentioned in the ALLOWED_FACTS, so no possible driver can be inferred.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 12.82
+    },
+    {
+      "id": "p01621",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI value decreased by less than 0.02, indicating a stable trend.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.529 -> 0.502 (Δ -0.028)\",\n    \"EVI Δ +0.001 | NDMI Δ +0.040 | NBR Δ +0.048\",\n    \"Green cover in RGB 0.52 -> 0.34\",\n    \"SAR VV Δ -0.76 dB, VH Δ -0.78 dB\",\n    \"Rainfall Jan–Feb 58.4 -> 23.0 mm\",\n    \"Soil moisture anomaly +0.023 -> -0.039 | Temperature anomaly -1.6 -> +0.8 °C\",\n    \"Elevation 550 m, slope 3°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No specific climate drivers mentioned in the provided data.\",",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI value decreased by less than 0.02, indicating a stable trend.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.529 -> 0.502 (Δ -0.028)\",\n    \"EVI Δ +0.001 | NDMI Δ +0.040 | NBR Δ +0.048\",\n    \"Green cover in RGB 0.52 -> 0.34\",\n    \"SAR VV Δ -0.76 dB, VH Δ -0.78 dB\",\n    \"Rainfall Jan–Feb 58.4 -> 23.0 mm\",\n    \"Soil moisture anomaly +0.023 -> -0.039 | Temperature anomaly -1.6 -> +0.8 °C\",\n    \"Elevation 550 m, slope 3°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No specific climate drivers mentioned in the provided data.\",",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 16.77
+    },
+    {
+      "id": "p01648",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.722 in 2022 to 0.693 in 2023, indicating a decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ -0.000 | NDMI Δ -0.000 | NBR Δ +0.001\",\n    \"Green cover in RGB 1.00 -> 1.00\",\n    \"SAR VV Δ -0.26 dB, VH Δ -0.10 dB\",\n    \"Rainfall Jan–Feb 83.6 -> 29.1 mm\",\n    \"Soil moisture anomaly +0.021 -> -0.043 | Temperature anomaly -1.5 -> +0.9 °C\",\n    \"Elevation 741 m, slope 9°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.722 in 2022 to 0.693 in 2023, indicating a decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ -0.000 | NDMI Δ -0.000 | NBR Δ +0.001\",\n    \"Green cover in RGB 1.00 -> 1.00\",\n    \"SAR VV Δ -0.26 dB, VH Δ -0.10 dB\",\n    \"Rainfall Jan–Feb 83.6 -> 29.1 mm\",\n    \"Soil moisture anomaly +0.021 -> -0.043 | Temperature anomaly -1.5 -> +0.9 °C\",\n    \"Elevation 741 m, slope 9°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 16.84
+    },
+    {
+      "id": "p01988",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.544 -> 0.548 (Δ +0.004)\",\n    \"NDVI 0.544 -> 0.548 (Δ +0.004)\",\n    \"NDVI 0.544 -> 0.548 (Δ +0.004)\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No specific climate drivers were mentioned in the ALLOWED_FACTS, so it is not possible to determine a possible driver for the visual change.\"\n}\n```",
+      "parsed": {
+        "visual_change": "NDVI Δ between −0.02 and +0.02 → stable",
+        "change_class": "stable",
+        "justification": "The NDVI values show a small change within the allowed range, indicating no significant change in vegetation health.",
+        "supporting_evidence": [
+          "NDVI 0.544 -> 0.548 (Δ +0.004)",
+          "NDVI 0.544 -> 0.548 (Δ +0.004)",
+          "NDVI 0.544 -> 0.548 (Δ +0.004)"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "No specific climate drivers were mentioned in the ALLOWED_FACTS, so it is not possible to determine a possible driver for the visual change.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 13.73
+    },
+    {
+      "id": "p02128",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.681 in 2022 to 0.640 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ -0.007 | NDMI Δ -0.031 | NBR Δ -0.028\",\n    \"Green cover in RGB 0.99 -> 0.98\",\n    \"SAR VV Δ -0.42 dB, VH Δ -0.23 dB\",\n    \"Rainfall Jan–Feb 71.8 -> 27.0 mm\",\n    \"Soil moisture anomaly +0.023 -> -0.040 | Temperature anomaly -1.6 -> +0.8 °C\",\n    \"Elevation 596 m, slope",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.681 in 2022 to 0.640 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ -0.007 | NDMI Δ -0.031 | NBR Δ -0.028\",\n    \"Green cover in RGB 0.99 -> 0.98\",\n    \"SAR VV Δ -0.42 dB, VH Δ -0.23 dB\",\n    \"Rainfall Jan–Feb 71.8 -> 27.0 mm\",\n    \"Soil moisture anomaly +0.023 -> -0.040 | Temperature anomaly -1.6 -> +0.8 °C\",\n    \"Elevation 596 m, slope",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 18.04
+    },
+    {
+      "id": "p02139",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.697 in 2022 to 0.673 in 2023, which is a decrease of 0.024. This indicates a decline in green cover, as the NDVI is a measure of green cover in the vegetation index.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.697 -> 0.673 (Δ -0.024)\",\n    \"EVI Δ +0.005 | NDMI Δ +0.001 | NBR Δ +0.006\",\n    \"Green cover in RGB 0.93 -> 0.91\",\n    \"SAR VV Δ -0.23 dB, VH Δ -0.00 dB\",\n    \"Rainfall Jan–Feb 85.1 -> 30.7 mm\",\n    \"Soil moisture anomaly +0.021 -> -0.041 | Temperature",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.697 in 2022 to 0.673 in 2023, which is a decrease of 0.024. This indicates a decline in green cover, as the NDVI is a measure of green cover in the vegetation index.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.697 -> 0.673 (Δ -0.024)\",\n    \"EVI Δ +0.005 | NDMI Δ +0.001 | NBR Δ +0.006\",\n    \"Green cover in RGB 0.93 -> 0.91\",\n    \"SAR VV Δ -0.23 dB, VH Δ -0.00 dB\",\n    \"Rainfall Jan–Feb 85.1 -> 30.7 mm\",\n    \"Soil moisture anomaly +0.021 -> -0.041 | Temperature",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 18.43
+    },
+    {
+      "id": "p02334",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.703 -> 0.685 (Δ -0.018)\",\n    \"EVI Δ -0.007 | NDMI Δ -0.015 | NBR Δ -0.009\",\n    \"Green cover in RGB 1.00 -> 0.99\",\n    \"SAR VV Δ -0.38 dB, VH Δ -0.17 dB\",\n    \"Rainfall Jan–Feb 82.7 -> 30.3 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.041 | Temperature anomaly -1.6 -> +0.8 °C\",\n    \"Elevation 659 m, slope 6°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.703 -> 0.685 (Δ -0.018)\",\n    \"EVI Δ -0.007 | NDMI Δ -0.015 | NBR Δ -0.009\",\n    \"Green cover in RGB 1.00 -> 0.99\",\n    \"SAR VV Δ -0.38 dB, VH Δ -0.17 dB\",\n    \"Rainfall Jan–Feb 82.7 -> 30.3 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.041 | Temperature anomaly -1.6 -> +0.8 °C\",\n    \"Elevation 659 m, slope 6°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 19.98
+    },
+    {
+      "id": "p02668",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.572 -> 0.579 (Δ +0.007)\",\n    \"EVI Δ +0.013 | NDMI Δ +0.043 | NBR Δ +0.061\",\n    \"Green cover in RGB 0.69 -> 0.75\",\n    \"SAR VV Δ -0.46 dB, VH Δ -0.55 dB\",\n    \"Rainfall Jan–Feb 66.6 -> 23.7 mm\",\n    \"Soil moisture anomaly +0.023 -> -0.046 | Temperature anomaly -1.5 -> +1.0 °C\",\n    \"Elevation 662 m, slope 4°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.572 -> 0.579 (Δ +0.007)\",\n    \"EVI Δ +0.013 | NDMI Δ +0.043 | NBR Δ +0.061\",\n    \"Green cover in RGB 0.69 -> 0.75\",\n    \"SAR VV Δ -0.46 dB, VH Δ -0.55 dB\",\n    \"Rainfall Jan–Feb 66.6 -> 23.7 mm\",\n    \"Soil moisture anomaly +0.023 -> -0.046 | Temperature anomaly -1.5 -> +1.0 °C\",\n    \"Elevation 662 m, slope 4°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 19.29
+    },
+    {
+      "id": "p02674",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.528 in 2022 to 0.489 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in vegetation cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ -0.002 | NDMI Δ +0.002 | NBR Δ +0.013\",\n    \"Green cover in RGB 0.38 -> 0.36\",\n    \"SAR VV Δ -0.61 dB, VH Δ -0.68 dB\",\n    \"Rainfall Jan–Feb 71.5 -> 25.0 mm\",\n    \"Soil moisture anomaly +0.024 -> -0.047 | Temperature anomaly -1.5 -> +1.0 °C\",\n    \"Elevation 716 m, slope",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.528 in 2022 to 0.489 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in vegetation cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ -0.002 | NDMI Δ +0.002 | NBR Δ +0.013\",\n    \"Green cover in RGB 0.38 -> 0.36\",\n    \"SAR VV Δ -0.61 dB, VH Δ -0.68 dB\",\n    \"Rainfall Jan–Feb 71.5 -> 25.0 mm\",\n    \"Soil moisture anomaly +0.024 -> -0.047 | Temperature anomaly -1.5 -> +1.0 °C\",\n    \"Elevation 716 m, slope",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 19.29
+    },
+    {
+      "id": "p02803",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.455 -> 0.437 (Δ -0.018)\",\n    \"EVI Δ -0.004 | NDMI Δ -0.008 | NBR Δ +0.005\",\n    \"Green cover in RGB 0.33 -> 0.22\",\n    \"SAR VV Δ -0.82 dB, VH Δ -1.11 dB\",\n    \"Rainfall Jan–Feb 59.9 -> 22.7 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.039 | Temperature anomaly -1.6 -> +0.7 °C\",\n    \"Elevation 508 m, slope 5°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.455 -> 0.437 (Δ -0.018)\",\n    \"EVI Δ -0.004 | NDMI Δ -0.008 | NBR Δ +0.005\",\n    \"Green cover in RGB 0.33 -> 0.22\",\n    \"SAR VV Δ -0.82 dB, VH Δ -1.11 dB\",\n    \"Rainfall Jan–Feb 59.9 -> 22.7 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.039 | Temperature anomaly -1.6 -> +0.7 °C\",\n    \"Elevation 508 m, slope 5°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 19.13
+    },
+    {
+      "id": "p02890",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.662 in 2022 to 0.638 in 2023, which is within the allowed range of -0.025, indicating a stable or slight decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ +0.006 | NDMI Δ +0.007 | NBR Δ +0.021\",\n    \"Green cover in RGB 0.79 -> 0.79\",\n    \"SAR VV Δ -0.20 dB, VH Δ -0.07 dB\",\n    \"Rainfall Jan–Feb 75.2 -> 25.4 mm\",\n    \"Soil moisture anomaly +0.033 -> -0.049 | Temperature anomaly -1.5 -> +1.0 °C\",\n    \"Elevation 778 m,",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.662 in 2022 to 0.638 in 2023, which is within the allowed range of -0.025, indicating a stable or slight decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ +0.006 | NDMI Δ +0.007 | NBR Δ +0.021\",\n    \"Green cover in RGB 0.79 -> 0.79\",\n    \"SAR VV Δ -0.20 dB, VH Δ -0.07 dB\",\n    \"Rainfall Jan–Feb 75.2 -> 25.4 mm\",\n    \"Soil moisture anomaly +0.033 -> -0.049 | Temperature anomaly -1.5 -> +1.0 °C\",\n    \"Elevation 778 m,",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 19.71
+    },
+    {
+      "id": "p03067",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.625 -> 0.628 (Δ +0.003)\",\n    \"NDVI 0.625 -> 0.628 (Δ +0.003)\",\n    \"NDVI 0.625 -> 0.628 (Δ +0.003)\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No specific climate drivers were mentioned in the ALLOWED_FACTS, so no possible driver can be inferred.\",\n  \"confidence\": 0.5\n}\n```",
+      "parsed": {
+        "visual_change": "NDVI Δ between −0.02 and +0.02 → stable",
+        "change_class": "stable",
+        "justification": "The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.",
+        "supporting_evidence": [
+          "NDVI 0.625 -> 0.628 (Δ +0.003)",
+          "NDVI 0.625 -> 0.628 (Δ +0.003)",
+          "NDVI 0.625 -> 0.628 (Δ +0.003)"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "No specific climate drivers were mentioned in the ALLOWED_FACTS, so no possible driver can be inferred.",
+        "confidence": 0.5,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 16.28
+    },
+    {
+      "id": "p03122",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.646 in 2022 to 0.602 in 2023, which is a decrease of 0.044. This indicates a decline in green cover, as the NDVI is a measure of green cover in the image.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.646 -> 0.602 (Δ -0.044)\",\n    \"EVI Δ -0.015 | NDMI Δ -0.029 | NBR Δ -0.026\",\n    \"Green cover in RGB 0.89 -> 0.87\",\n    \"SAR VV Δ -0.47 dB, VH Δ -0.43 dB\",\n    \"Rainfall Jan–Feb 66.3 -> 24.3 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.039 | Temperature anomaly",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.646 in 2022 to 0.602 in 2023, which is a decrease of 0.044. This indicates a decline in green cover, as the NDVI is a measure of green cover in the image.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.646 -> 0.602 (Δ -0.044)\",\n    \"EVI Δ -0.015 | NDMI Δ -0.029 | NBR Δ -0.026\",\n    \"Green cover in RGB 0.89 -> 0.87\",\n    \"SAR VV Δ -0.47 dB, VH Δ -0.43 dB\",\n    \"Rainfall Jan–Feb 66.3 -> 24.3 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.039 | Temperature anomaly",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 22.76
+    },
+    {
+      "id": "p03228",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.697 in 2022 to 0.654 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ -0.043\",\n    \"EVI Δ -0.016\",\n    \"NDMI Δ -0.044\",\n    \"Jan–Feb rainfall 70.3 mm in 2022 and 25.3 mm in 2023\",\n    \"Temperature anomaly -1.6 °C in 2022 and +0.8 °C in 2023\",\n    \"SAR VV Δ -0.52 dB, VH Δ -0.51 dB\",\n    \"Elevation 617 m, slope 4°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.697 in 2022 to 0.654 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ -0.043\",\n    \"EVI Δ -0.016\",\n    \"NDMI Δ -0.044\",\n    \"Jan–Feb rainfall 70.3 mm in 2022 and 25.3 mm in 2023\",\n    \"Temperature anomaly -1.6 °C in 2022 and +0.8 °C in 2023\",\n    \"SAR VV Δ -0.52 dB, VH Δ -0.51 dB\",\n    \"Elevation 617 m, slope 4°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 20.41
+    },
+    {
+      "id": "p03243",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.703 -> 0.705 (Δ +0.002)\",\n    \"NDVI 0.703 -> 0.705 (Δ +0.002)\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No specific climate drivers were mentioned in the ALLOWED_FACTS, so it is not possible to determine a possible driver for the NDVI change.\"\n}\n```",
+      "parsed": {
+        "visual_change": "NDVI Δ between −0.02 and +0.02 → stable",
+        "change_class": "stable",
+        "justification": "The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.",
+        "supporting_evidence": [
+          "NDVI 0.703 -> 0.705 (Δ +0.002)",
+          "NDVI 0.703 -> 0.705 (Δ +0.002)"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "No specific climate drivers were mentioned in the ALLOWED_FACTS, so it is not possible to determine a possible driver for the NDVI change.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 14.35
+    },
+    {
+      "id": "p03515",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≥ +0.02 → increase\",\n  \"change_class\": \"increase\",\n  \"justification\": \"The NDVI value increased from 0.583 in 2022 to 0.610 in 2023, indicating an increase in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≥ +0.02 → increase\",\n    \"EVI Δ +0.025 | NDMI Δ +0.043 | NBR Δ +0.051\",\n    \"Green cover in RGB 0.76 -> 0.87\",\n    \"SAR VV Δ -0.47 dB, VH Δ -0.62 dB\",\n    \"Rainfall Jan–Feb 65.2 -> 23.9 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.039 | Temperature anomaly -1.6 -> +0.8 °C\",\n    \"Elevation 503 m, slope 3°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "increase",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≥ +0.02 → increase\",\n  \"change_class\": \"increase\",\n  \"justification\": \"The NDVI value increased from 0.583 in 2022 to 0.610 in 2023, indicating an increase in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≥ +0.02 → increase\",\n    \"EVI Δ +0.025 | NDMI Δ +0.043 | NBR Δ +0.051\",\n    \"Green cover in RGB 0.76 -> 0.87\",\n    \"SAR VV Δ -0.47 dB, VH Δ -0.62 dB\",\n    \"Rainfall Jan–Feb 65.2 -> 23.9 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.039 | Temperature anomaly -1.6 -> +0.8 °C\",\n    \"Elevation 503 m, slope 3°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 20.14
+    },
+    {
+      "id": "p03538",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.670 -> 0.669 (Δ -0.001)\",\n    \"EVI Δ +0.002 | NDMI Δ +0.003 | NBR Δ +0.012\",\n    \"Green cover in RGB 0.97 -> 0.95\",\n    \"SAR VV Δ -0.56 dB, VH Δ -0.41 dB\",\n    \"Rainfall Jan–Feb 79.4 -> 28.1 mm\",\n    \"Soil moisture anomaly +0.020 -> -0.040 | Temperature anomaly -1.5 -> +0.8 °C\",\n    \"Elevation 630 m, slope 6°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.670 -> 0.669 (Δ -0.001)\",\n    \"EVI Δ +0.002 | NDMI Δ +0.003 | NBR Δ +0.012\",\n    \"Green cover in RGB 0.97 -> 0.95\",\n    \"SAR VV Δ -0.56 dB, VH Δ -0.41 dB\",\n    \"Rainfall Jan–Feb 79.4 -> 28.1 mm\",\n    \"Soil moisture anomaly +0.020 -> -0.040 | Temperature anomaly -1.5 -> +0.8 °C\",\n    \"Elevation 630 m, slope 6°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 19.79
+    },
+    {
+      "id": "p03592",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.646 in 2022 to 0.611 in 2023, which is within the allowed range of -0.02, indicating a stable decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ -0.002 | NDMI Δ -0.009 | NBR Δ -0.004\",\n    \"Green cover in RGB 0.74 -> 0.76\",\n    \"SAR VV Δ -0.91 dB, VH Δ -0.58 dB\",\n    \"Rainfall Jan–Feb 77.7 -> 26.2 mm\",\n    \"Soil moisture anomaly +0.033 -> -0.049 | Temperature anomaly -1.6 -> +1.0 °C\",\n    \"Elevation 702 m, slope 4",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.646 in 2022 to 0.611 in 2023, which is within the allowed range of -0.02, indicating a stable decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ -0.002 | NDMI Δ -0.009 | NBR Δ -0.004\",\n    \"Green cover in RGB 0.74 -> 0.76\",\n    \"SAR VV Δ -0.91 dB, VH Δ -0.58 dB\",\n    \"Rainfall Jan–Feb 77.7 -> 26.2 mm\",\n    \"Soil moisture anomaly +0.033 -> -0.049 | Temperature anomaly -1.6 -> +1.0 °C\",\n    \"Elevation 702 m, slope 4",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 19.67
+    },
+    {
+      "id": "p03635",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ between −0.02 and +0.02 → stable\",\n    \"NDVI Δ between −0.02 and +0.02 → stable\",\n    \"NDVI Δ between −0.02 and +0.02 → stable\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No specific climate drivers were mentioned in the ALLOWED_FACTS, so no possible driver can be inferred.\"\n}\n```",
+      "parsed": {
+        "visual_change": "NDVI Δ between −0.02 and +0.02 → stable",
+        "change_class": "stable",
+        "justification": "The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ between −0.02 and +0.02 → stable",
+          "NDVI Δ between −0.02 and +0.02 → stable",
+          "NDVI Δ between −0.02 and +0.02 → stable"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "No specific climate drivers were mentioned in the ALLOWED_FACTS, so no possible driver can be inferred.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 13.93
+    },
+    {
+      "id": "p03689",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.620 -> 0.628 (Δ +0.008)\",\n    \"EVI Δ +0.020 | NDMI Δ +0.021 | NBR Δ +0.035\",\n    \"Green cover in RGB 0.84 -> 0.98\",\n    \"SAR VV Δ -0.73 dB, VH Δ -0.64 dB\",\n    \"Rainfall Jan–Feb 75.4 -> 25.6 mm\",\n    \"Soil moisture anomaly +0.030 -> -0.048 | Temperature anomaly -1.5 -> +1.0 °C\",\n    \"Elevation 687 m, slope 5°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.620 -> 0.628 (Δ +0.008)\",\n    \"EVI Δ +0.020 | NDMI Δ +0.021 | NBR Δ +0.035\",\n    \"Green cover in RGB 0.84 -> 0.98\",\n    \"SAR VV Δ -0.73 dB, VH Δ -0.64 dB\",\n    \"Rainfall Jan–Feb 75.4 -> 25.6 mm\",\n    \"Soil moisture anomaly +0.030 -> -0.048 | Temperature anomaly -1.5 -> +1.0 °C\",\n    \"Elevation 687 m, slope 5°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 19.33
+    },
+    {
+      "id": "p03801",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.456 -> 0.459 (Δ +0.003)\",\n    \"NDVI 0.456 -> 0.459 (Δ +0.003)\",\n    \"NDVI 0.456 -> 0.459 (Δ +0.003)\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No specific climate drivers were mentioned in the ALLOWED_FACTS, so no possible driver can be inferred.\"\n}\n```",
+      "parsed": {
+        "visual_change": "NDVI Δ between −0.02 and +0.02 → stable",
+        "change_class": "stable",
+        "justification": "The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.",
+        "supporting_evidence": [
+          "NDVI 0.456 -> 0.459 (Δ +0.003)",
+          "NDVI 0.456 -> 0.459 (Δ +0.003)",
+          "NDVI 0.456 -> 0.459 (Δ +0.003)"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "No specific climate drivers were mentioned in the ALLOWED_FACTS, so no possible driver can be inferred.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 15.49
+    },
+    {
+      "id": "p03867",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.549 -> 0.539 (Δ -0.011)\",\n    \"EVI Δ +0.010 | NDMI Δ +0.011 | NBR Δ +0.026\",\n    \"Green cover in RGB 0.62 -> 0.54\",\n    \"SAR VV Δ -0.78 dB, VH Δ -0.75 dB\",\n    \"Rainfall Jan–Feb 63.4 -> 22.7 mm\",\n    \"Soil moisture anomaly +0.021 -> -0.045 | Temperature anomaly -1.4 -> +0.9 °C\",\n    \"Elevation 694 m, slope 8°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.549 -> 0.539 (Δ -0.011)\",\n    \"EVI Δ +0.010 | NDMI Δ +0.011 | NBR Δ +0.026\",\n    \"Green cover in RGB 0.62 -> 0.54\",\n    \"SAR VV Δ -0.78 dB, VH Δ -0.75 dB\",\n    \"Rainfall Jan–Feb 63.4 -> 22.7 mm\",\n    \"Soil moisture anomaly +0.021 -> -0.045 | Temperature anomaly -1.4 -> +0.9 °C\",\n    \"Elevation 694 m, slope 8°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 19.92
+    },
+    {
+      "id": "p03991",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.657 -> 0.656 (Δ -0.001)\",\n    \"EVI Δ +0.006 | NDMI Δ +0.021 | NBR Δ +0.033\",\n    \"Green cover in RGB 0.93 -> 0.96\",\n    \"SAR VV Δ -0.55 dB, VH Δ -0.35 dB\",\n    \"Rainfall Jan–Feb 78.3 -> 27.0 mm\",\n    \"Soil moisture anomaly +0.031 -> -0.049 | Temperature anomaly -1.6 -> +1.0 °C\",\n    \"Elevation 722 m, slope 4°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.657 -> 0.656 (Δ -0.001)\",\n    \"EVI Δ +0.006 | NDMI Δ +0.021 | NBR Δ +0.033\",\n    \"Green cover in RGB 0.93 -> 0.96\",\n    \"SAR VV Δ -0.55 dB, VH Δ -0.35 dB\",\n    \"Rainfall Jan–Feb 78.3 -> 27.0 mm\",\n    \"Soil moisture anomaly +0.031 -> -0.049 | Temperature anomaly -1.6 -> +1.0 °C\",\n    \"Elevation 722 m, slope 4°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 19.32
+    },
+    {
+      "id": "p04040",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≥ +0.02 → increase\",\n  \"change_class\": \"increase\",\n  \"justification\": \"The NDVI value increased from 0.590 in 2022 to 0.625 in 2023, indicating an increase in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.590 -> 0.625 (Δ +0.035)\",\n    \"EVI Δ +0.029 | NDMI Δ +0.025 | NBR Δ +0.049\",\n    \"Green cover in RGB 0.74 -> 0.73\",\n    \"SAR VV Δ -0.08 dB, VH Δ +0.05 dB\",\n    \"Rainfall Jan–Feb 76.4 -> 27.2 mm\",\n    \"Soil moisture anomaly +0.019 -> -0.040 | Temperature anomaly -1.4 -> +0.8 °C\",\n    \"Elevation 749 m, slope 9°\"\n  ],\n  \"conf",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "increase",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≥ +0.02 → increase\",\n  \"change_class\": \"increase\",\n  \"justification\": \"The NDVI value increased from 0.590 in 2022 to 0.625 in 2023, indicating an increase in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.590 -> 0.625 (Δ +0.035)\",\n    \"EVI Δ +0.029 | NDMI Δ +0.025 | NBR Δ +0.049\",\n    \"Green cover in RGB 0.74 -> 0.73\",\n    \"SAR VV Δ -0.08 dB, VH Δ +0.05 dB\",\n    \"Rainfall Jan–Feb 76.4 -> 27.2 mm\",\n    \"Soil moisture anomaly +0.019 -> -0.040 | Temperature anomaly -1.4 -> +0.8 °C\",\n    \"Elevation 749 m, slope 9°\"\n  ],\n  \"conf",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 20.45
+    },
+    {
+      "id": "p04059",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI value decreased by less than 0.02, indicating a stable trend.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.555 in 2022 -> NDVI 0.522 in 2023 (Δ -0.033)\",\n    \"EVI Δ -0.028\",\n    \"NDMI Δ -0.035\",\n    \"Jan–Feb rainfall 58.9 mm in 2022 -> 21.5 mm in 2023\",\n    \"Temperature anomaly -1.4 °C in 2022 -> +0.9 °C in 2023\",\n    \"SAR VV Δ -0.67 dB, VH Δ -0.73 dB\",\n    \"Elevation 653 m, slope 10°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"NDVI\",\n  \"confidence\": 0.5\n}\n```",
+      "parsed": {
+        "visual_change": "NDVI Δ ≤ −0.02",
+        "change_class": "stable",
+        "justification": "The NDVI value decreased by less than 0.02, indicating a stable trend.",
+        "supporting_evidence": [
+          "NDVI 0.555 in 2022 -> NDVI 0.522 in 2023 (Δ -0.033)",
+          "EVI Δ -0.028",
+          "NDMI Δ -0.035",
+          "Jan–Feb rainfall 58.9 mm in 2022 -> 21.5 mm in 2023",
+          "Temperature anomaly -1.4 °C in 2022 -> +0.9 °C in 2023",
+          "SAR VV Δ -0.67 dB, VH Δ -0.73 dB",
+          "Elevation 653 m, slope 10°"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "NDVI",
+        "confidence": 0.5,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 20.99
+    },
+    {
+      "id": "p04145",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.544 in 2022 to 0.521 in 2023, indicating a decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ +0.003 | NDMI Δ +0.009 | NBR Δ +0.021\",\n    \"Green cover in RGB 0.58 -> 0.48\",\n    \"SAR VV Δ -0.84 dB, VH Δ -1.04 dB\",\n    \"Rainfall Jan–Feb 74.8 -> 26.8 mm\",\n    \"Soil moisture anomaly +0.019 -> -0.041 | Temperature anomaly -1.4 -> +0.8 °C\",\n    \"Elevation 743 m, slope 7°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.544 in 2022 to 0.521 in 2023, indicating a decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ +0.003 | NDMI Δ +0.009 | NBR Δ +0.021\",\n    \"Green cover in RGB 0.58 -> 0.48\",\n    \"SAR VV Δ -0.84 dB, VH Δ -1.04 dB\",\n    \"Rainfall Jan–Feb 74.8 -> 26.8 mm\",\n    \"Soil moisture anomaly +0.019 -> -0.041 | Temperature anomaly -1.4 -> +0.8 °C\",\n    \"Elevation 743 m, slope 7°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 20.11
+    },
+    {
+      "id": "p04174",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.612 in 2022 to 0.575 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.612 -> 0.575 (Δ -0.036)\",\n    \"EVI Δ -0.006 | NDMI Δ -0.012 | NBR Δ -0.007\",\n    \"Green cover in RGB 0.75 -> 0.68\",\n    \"SAR VV Δ -0.82 dB, VH Δ -0.59 dB\",\n    \"Rainfall Jan–Feb 65.7 -> 23.4 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.046 | Temperature anomaly -1.5 -> +0.9 °C",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.612 in 2022 to 0.575 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.612 -> 0.575 (Δ -0.036)\",\n    \"EVI Δ -0.006 | NDMI Δ -0.012 | NBR Δ -0.007\",\n    \"Green cover in RGB 0.75 -> 0.68\",\n    \"SAR VV Δ -0.82 dB, VH Δ -0.59 dB\",\n    \"Rainfall Jan–Feb 65.7 -> 23.4 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.046 | Temperature anomaly -1.5 -> +0.9 °C",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 20.64
+    },
+    {
+      "id": "p04203",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.550 -> 0.560 (Δ +0.010)\",\n    \"NDVI 0.550 -> 0.560 (Δ +0.010)\",\n    \"NDVI 0.550 -> 0.560 (Δ +0.010)\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No specific climate drivers were mentioned in the ALLOWED_FACTS, so no possible driver can be inferred.\",\n  \"confidence\": 0.5\n}\n```",
+      "parsed": {
+        "visual_change": "NDVI Δ between −0.02 and +0.02 → stable",
+        "change_class": "stable",
+        "justification": "The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.",
+        "supporting_evidence": [
+          "NDVI 0.550 -> 0.560 (Δ +0.010)",
+          "NDVI 0.550 -> 0.560 (Δ +0.010)",
+          "NDVI 0.550 -> 0.560 (Δ +0.010)"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "No specific climate drivers were mentioned in the ALLOWED_FACTS, so no possible driver can be inferred.",
+        "confidence": 0.5,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 15.95
+    },
+    {
+      "id": "p04268",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.637 -> 0.639 (Δ +0.002)\",\n    \"NDVI 0.637 -> 0.639 (Δ +0.002)\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No specific climate drivers were mentioned in the ALLOWED_FACTS, so it is not possible to determine a possible driver for the NDVI change.\"\n}\n```",
+      "parsed": {
+        "visual_change": "NDVI Δ between −0.02 and +0.02 → stable",
+        "change_class": "stable",
+        "justification": "The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.",
+        "supporting_evidence": [
+          "NDVI 0.637 -> 0.639 (Δ +0.002)",
+          "NDVI 0.637 -> 0.639 (Δ +0.002)"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "No specific climate drivers were mentioned in the ALLOWED_FACTS, so it is not possible to determine a possible driver for the NDVI change.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 14.37
+    },
+    {
+      "id": "p04399",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.656 in 2022 to 0.621 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ -0.035\",\n    \"EVI Δ -0.005\",\n    \"NDMI Δ -0.018\",\n    \"SAR VV Δ -0.41 dB, VH Δ -0.11 dB\",\n    \"Rainfall Jan–Feb 82.1 mm in 2022 and 29.2 mm in 2023\",\n    \"Temperature anomaly -1.6 °C in 2022 and +1.0 °C in 2023\",\n    \"Elevation 752 m, slope 10°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.656 in 2022 to 0.621 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ -0.035\",\n    \"EVI Δ -0.005\",\n    \"NDMI Δ -0.018\",\n    \"SAR VV Δ -0.41 dB, VH Δ -0.11 dB\",\n    \"Rainfall Jan–Feb 82.1 mm in 2022 and 29.2 mm in 2023\",\n    \"Temperature anomaly -1.6 °C in 2022 and +1.0 °C in 2023\",\n    \"Elevation 752 m, slope 10°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 19.71
+    },
+    {
+      "id": "p04508",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.599 -> 0.594 (Δ -0.005)\",\n    \"EVI Δ +0.002 | NDMI Δ +0.000 | NBR Δ +0.016\",\n    \"Green cover in RGB 0.95 -> 0.88\",\n    \"SAR VV Δ -0.28 dB, VH Δ -0.23 dB\",\n    \"Rainfall Jan–Feb 67.7 -> 23.9 mm\",\n    \"Soil moisture anomaly +0.021 -> -0.039 | Temperature anomaly -1.5 -> +0.7 °C\",\n    \"Elevation 572 m, slope 4°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.599 -> 0.594 (Δ -0.005)\",\n    \"EVI Δ +0.002 | NDMI Δ +0.000 | NBR Δ +0.016\",\n    \"Green cover in RGB 0.95 -> 0.88\",\n    \"SAR VV Δ -0.28 dB, VH Δ -0.23 dB\",\n    \"Rainfall Jan–Feb 67.7 -> 23.9 mm\",\n    \"Soil moisture anomaly +0.021 -> -0.039 | Temperature anomaly -1.5 -> +0.7 °C\",\n    \"Elevation 572 m, slope 4°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 20.88
+    },
+    {
+      "id": "p04577",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.649 -> 0.660 (Δ +0.011)\",\n    \"NDVI 0.660 -> 0.670 (Δ +0.009)\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No specific climate drivers were mentioned in the ALLOWED_FACTS, so it is not possible to determine a possible driver for the NDVI change.\"\n}\n```",
+      "parsed": {
+        "visual_change": "NDVI Δ between −0.02 and +0.02 → stable",
+        "change_class": "stable",
+        "justification": "The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.",
+        "supporting_evidence": [
+          "NDVI 0.649 -> 0.660 (Δ +0.011)",
+          "NDVI 0.660 -> 0.670 (Δ +0.009)"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "No specific climate drivers were mentioned in the ALLOWED_FACTS, so it is not possible to determine a possible driver for the NDVI change.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 14.39
+    },
+    {
+      "id": "p04671",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.645 -> 0.651 (Δ +0.005)\",\n    \"EVI Δ +0.015 | NDMI Δ +0.015 | NBR Δ +0.026\",\n    \"Green cover in RGB 0.96 -> 0.95\",\n    \"SAR VV Δ -0.63 dB, VH Δ -0.62 dB\",\n    \"Rainfall Jan–Feb 62.6 -> 23.0 mm\",\n    \"Soil moisture anomaly +0.020 -> -0.045 | Temperature anomaly -1.4 -> +0.9 °C\",\n    \"Elevation 669 m, slope 4°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.645 -> 0.651 (Δ +0.005)\",\n    \"EVI Δ +0.015 | NDMI Δ +0.015 | NBR Δ +0.026\",\n    \"Green cover in RGB 0.96 -> 0.95\",\n    \"SAR VV Δ -0.63 dB, VH Δ -0.62 dB\",\n    \"Rainfall Jan–Feb 62.6 -> 23.0 mm\",\n    \"Soil moisture anomaly +0.020 -> -0.045 | Temperature anomaly -1.4 -> +0.9 °C\",\n    \"Elevation 669 m, slope 4°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 19.91
+    },
+    {
+      "id": "p04777",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.630 -> 0.641 (Δ +0.011)\",\n    \"EVI Δ +0.008 | NDMI Δ +0.035 | NBR Δ +0.050\",\n    \"Green cover in RGB 0.94 -> 0.96\",\n    \"SAR VV Δ -0.66 dB, VH Δ -0.73 dB\",\n    \"Rainfall Jan–Feb 63.9 -> 23.5 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.046 | Temperature anomaly -1.5 -> +0.9 °C\",\n    \"Elevation 670 m, slope 4°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.630 -> 0.641 (Δ +0.011)\",\n    \"EVI Δ +0.008 | NDMI Δ +0.035 | NBR Δ +0.050\",\n    \"Green cover in RGB 0.94 -> 0.96\",\n    \"SAR VV Δ -0.66 dB, VH Δ -0.73 dB\",\n    \"Rainfall Jan–Feb 63.9 -> 23.5 mm\",\n    \"Soil moisture anomaly +0.022 -> -0.046 | Temperature anomaly -1.5 -> +0.9 °C\",\n    \"Elevation 670 m, slope 4°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 19.82
+    },
+    {
+      "id": "p04806",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.594 in 2022 to 0.547 in 2023, indicating a decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ -0.022 | NDMI Δ -0.031 | NBR Δ -0.022\",\n    \"Green cover in RGB 0.92 -> 0.61\",\n    \"SAR VV Δ -0.23 dB, VH Δ -0.00 dB\",\n    \"Rainfall Jan–Feb 67.5 -> 23.4 mm\",\n    \"Soil moisture anomaly +0.020 -> -0.039 | Temperature anomaly -1.5 -> +0.7 °C\",\n    \"Elevation 581 m, slope 6°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.594 in 2022 to 0.547 in 2023, indicating a decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ -0.022 | NDMI Δ -0.031 | NBR Δ -0.022\",\n    \"Green cover in RGB 0.92 -> 0.61\",\n    \"SAR VV Δ -0.23 dB, VH Δ -0.00 dB\",\n    \"Rainfall Jan–Feb 67.5 -> 23.4 mm\",\n    \"Soil moisture anomaly +0.020 -> -0.039 | Temperature anomaly -1.5 -> +0.7 °C\",\n    \"Elevation 581 m, slope 6°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 20.51
+    },
+    {
+      "id": "p04892",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.718 in 2022 to 0.663 in 2023, indicating a decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ -0.054\",\n    \"EVI Δ -0.010\",\n    \"NDMI Δ -0.023\",\n    \"SAR VV Δ -0.05 dB, VH Δ +0.20 dB\",\n    \"Rainfall Jan–Feb 72.1 -> 26.2 mm\",\n    \"Temperature anomaly -1.6 -> +1.0 °C\",\n    \"Elevation 792 m, slope 17°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"NDVI change\",\n  \"confidence\": 0.5\n}\n```",
+      "parsed": {
+        "visual_change": "NDVI Δ ≤ −0.02 → decline",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased from 0.718 in 2022 to 0.663 in 2023, indicating a decline in green cover.",
+        "supporting_evidence": [
+          "NDVI Δ -0.054",
+          "EVI Δ -0.010",
+          "NDMI Δ -0.023",
+          "SAR VV Δ -0.05 dB, VH Δ +0.20 dB",
+          "Rainfall Jan–Feb 72.1 -> 26.2 mm",
+          "Temperature anomaly -1.6 -> +1.0 °C",
+          "Elevation 792 m, slope 17°"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "NDVI change",
+        "confidence": 0.5,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 18.31
+    },
+    {
+      "id": "p04898",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.707 in 2022 to 0.670 in 2023, which is within the allowed range of -0.02, indicating a stable decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ -0.019 | NDMI Δ -0.054 | NBR Δ -0.052\",\n    \"Green cover in RGB 1.00 -> 1.00\",\n    \"SAR VV Δ -0.76 dB, VH Δ -0.53 dB\",\n    \"Rainfall Jan–Feb 73.4 -> 26.9 mm\",\n    \"Soil moisture anomaly +0.033 -> -0.049 | Temperature anomaly -1.6 -> +1.0 °C\",\n    \"Elevation 695 m, slope 4",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.707 in 2022 to 0.670 in 2023, which is within the allowed range of -0.02, indicating a stable decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ -0.019 | NDMI Δ -0.054 | NBR Δ -0.052\",\n    \"Green cover in RGB 1.00 -> 1.00\",\n    \"SAR VV Δ -0.76 dB, VH Δ -0.53 dB\",\n    \"Rainfall Jan–Feb 73.4 -> 26.9 mm\",\n    \"Soil moisture anomaly +0.033 -> -0.049 | Temperature anomaly -1.6 -> +1.0 °C\",\n    \"Elevation 695 m, slope 4",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 19.92
+    },
+    {
+      "id": "p04996",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.679 in 2022 to 0.643 in 2023, which is a decrease of 0.036. This indicates a decline in green cover, as the NDVI is a measure of green cover in the image.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.679 -> 0.643 (Δ -0.036)\",\n    \"EVI Δ -0.009 | NDMI Δ -0.028 | NBR Δ -0.018\",\n    \"Green cover in RGB 0.91 -> 0.94\",\n    \"SAR VV Δ -0.44 dB, VH Δ -0.53 dB\",\n    \"Rainfall Jan–Feb 71.5 -> 26.3 mm\",\n    \"Soil moisture anomaly +0.031 -> -0.049 | Temperature anomaly",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.679 in 2022 to 0.643 in 2023, which is a decrease of 0.036. This indicates a decline in green cover, as the NDVI is a measure of green cover in the image.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.679 -> 0.643 (Δ -0.036)\",\n    \"EVI Δ -0.009 | NDMI Δ -0.028 | NBR Δ -0.018\",\n    \"Green cover in RGB 0.91 -> 0.94\",\n    \"SAR VV Δ -0.44 dB, VH Δ -0.53 dB\",\n    \"Rainfall Jan–Feb 71.5 -> 26.3 mm\",\n    \"Soil moisture anomaly +0.031 -> -0.049 | Temperature anomaly",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 20.07
+    },
+    {
+      "id": "p05015",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≥ +0.02 → increase\",\n  \"change_class\": \"increase\",\n  \"justification\": \"The NDVI value increased from 0.613 in 2022 to 0.653 in 2023, indicating an increase in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.613 -> 0.653 (Δ +0.040)\",\n    \"EVI Δ +0.029 | NDMI Δ +0.068 | NBR Δ +0.089\",\n    \"Green cover in RGB 0.89 -> 0.98\",\n    \"SAR VV Δ +0.09 dB, VH Δ -0.40 dB\",\n    \"Rainfall Jan–Feb 68.4 -> 24.0 mm\",\n    \"Soil moisture anomaly +0.020 -> -0.039 | Temperature anomaly -1.5 -> +0.7 °C\",\n    \"Elevation 513 m, slope 4°\"\n  ],\n  \"conf",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "increase",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≥ +0.02 → increase\",\n  \"change_class\": \"increase\",\n  \"justification\": \"The NDVI value increased from 0.613 in 2022 to 0.653 in 2023, indicating an increase in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.613 -> 0.653 (Δ +0.040)\",\n    \"EVI Δ +0.029 | NDMI Δ +0.068 | NBR Δ +0.089\",\n    \"Green cover in RGB 0.89 -> 0.98\",\n    \"SAR VV Δ +0.09 dB, VH Δ -0.40 dB\",\n    \"Rainfall Jan–Feb 68.4 -> 24.0 mm\",\n    \"Soil moisture anomaly +0.020 -> -0.039 | Temperature anomaly -1.5 -> +0.7 °C\",\n    \"Elevation 513 m, slope 4°\"\n  ],\n  \"conf",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 19.85
+    },
+    {
+      "id": "p05082",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.450 in 2022 to 0.417 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ -0.002 | NDMI Δ +0.010 | NBR Δ +0.016\",\n    \"Green cover in RGB 0.24 -> 0.21\",\n    \"SAR VV Δ -0.91 dB, VH Δ -1.38 dB\",\n    \"Rainfall Jan–Feb 62.0 -> 23.4 mm\",\n    \"Soil moisture anomaly +0.024 -> -0.047 | Temperature anomaly -1.5 -> +0.9 °C\",\n    \"Elevation 638 m, slope",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.450 in 2022 to 0.417 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≤ −0.02 → decline\",\n    \"EVI Δ -0.002 | NDMI Δ +0.010 | NBR Δ +0.016\",\n    \"Green cover in RGB 0.24 -> 0.21\",\n    \"SAR VV Δ -0.91 dB, VH Δ -1.38 dB\",\n    \"Rainfall Jan–Feb 62.0 -> 23.4 mm\",\n    \"Soil moisture anomaly +0.024 -> -0.047 | Temperature anomaly -1.5 -> +0.9 °C\",\n    \"Elevation 638 m, slope",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 19.5
+    },
+    {
+      "id": "p05117",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≥ +0.02 → increase\",\n  \"change_class\": \"increase\",\n  \"justification\": \"The NDVI value increased from 0.589 in 2022 to 0.659 in 2023, which is a stable increase.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≥ +0.02 → increase\",\n    \"EVI Δ +0.043 | NDMI Δ +0.106 | NBR Δ +0.133\",\n    \"Green cover in RGB 0.76 -> 0.99\",\n    \"SAR VV Δ +0.03 dB, VH Δ -0.51 dB\",\n    \"Rainfall Jan–Feb 67.3 -> 23.8 mm\",\n    \"Soil moisture anomaly +0.020 -> -0.039 | Temperature anomaly -1.5 -> +0.7 °C\",\n    \"Elevation 498 m, slope 5°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No specific",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "increase",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≥ +0.02 → increase\",\n  \"change_class\": \"increase\",\n  \"justification\": \"The NDVI value increased from 0.589 in 2022 to 0.659 in 2023, which is a stable increase.\",\n  \"supporting_evidence\": [\n    \"NDVI Δ ≥ +0.02 → increase\",\n    \"EVI Δ +0.043 | NDMI Δ +0.106 | NBR Δ +0.133\",\n    \"Green cover in RGB 0.76 -> 0.99\",\n    \"SAR VV Δ +0.03 dB, VH Δ -0.51 dB\",\n    \"Rainfall Jan–Feb 67.3 -> 23.8 mm\",\n    \"Soil moisture anomaly +0.020 -> -0.039 | Temperature anomaly -1.5 -> +0.7 °C\",\n    \"Elevation 498 m, slope 5°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No specific",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 20.55
+    },
+    {
+      "id": "p05122",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.662 -> 0.670 (Δ +0.008)\",\n    \"EVI Δ +0.006 | NDMI Δ +0.005 | NBR Δ +0.014\",\n    \"Green cover in RGB 0.95 -> 0.94\",\n    \"SAR VV Δ -0.04 dB, VH Δ -0.31 dB\",\n    \"Rainfall Jan–Feb 66.1 -> 23.6 mm\",\n    \"Soil moisture anomaly +0.020 -> -0.040 | Temperature anomaly -1.5 -> +0.7 °C\",\n    \"Elevation 522 m, slope 9°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.662 -> 0.670 (Δ +0.008)\",\n    \"EVI Δ +0.006 | NDMI Δ +0.005 | NBR Δ +0.014\",\n    \"Green cover in RGB 0.95 -> 0.94\",\n    \"SAR VV Δ -0.04 dB, VH Δ -0.31 dB\",\n    \"Rainfall Jan–Feb 66.1 -> 23.6 mm\",\n    \"Soil moisture anomaly +0.020 -> -0.040 | Temperature anomaly -1.5 -> +0.7 °C\",\n    \"Elevation 522 m, slope 9°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 20.04
+    },
+    {
+      "id": "p05384",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.458 -> 0.450 (Δ -0.007)\",\n    \"EVI Δ +0.006 | NDMI Δ +0.017 | NBR Δ +0.025\",\n    \"Green cover in RGB 0.39 -> 0.46\",\n    \"SAR VV Δ -0.61 dB, VH Δ -1.06 dB\",\n    \"Rainfall Jan–Feb 60.9 -> 23.2 mm\",\n    \"Soil moisture anomaly +0.023 -> -0.046 | Temperature anomaly -1.5 -> +0.9 °C\",\n    \"Elevation 629 m, slope 5°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.458 -> 0.450 (Δ -0.007)\",\n    \"EVI Δ +0.006 | NDMI Δ +0.017 | NBR Δ +0.025\",\n    \"Green cover in RGB 0.39 -> 0.46\",\n    \"SAR VV Δ -0.61 dB, VH Δ -1.06 dB\",\n    \"Rainfall Jan–Feb 60.9 -> 23.2 mm\",\n    \"Soil moisture anomaly +0.023 -> -0.046 | Temperature anomaly -1.5 -> +0.9 °C\",\n    \"Elevation 629 m, slope 5°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"No",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 20.01
+    },
+    {
+      "id": "p05511",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.556 -> 0.550 (Δ -0.005)\",\n    \"EVI Δ -0.002 | NDMI Δ +0.004 | NBR Δ +0.020\",\n    \"Green cover in RGB 0.76 -> 0.81\",\n    \"SAR VV Δ -0.24 dB, VH Δ -0.32 dB\",\n    \"Rainfall Jan–Feb 66.3 -> 22.9 mm\",\n    \"Soil moisture anomaly +0.019 -> -0.039 | Temperature anomaly -1.5 -> +0.7 °C\",\n    \"Elevation 531 m, slope 5°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ between −0.02 and +0.02 → stable\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The NDVI values show a small change within the allowed Δ range, indicating no significant change in vegetation health.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.556 -> 0.550 (Δ -0.005)\",\n    \"EVI Δ -0.002 | NDMI Δ +0.004 | NBR Δ +0.020\",\n    \"Green cover in RGB 0.76 -> 0.81\",\n    \"SAR VV Δ -0.24 dB, VH Δ -0.32 dB\",\n    \"Rainfall Jan–Feb 66.3 -> 22.9 mm\",\n    \"Soil moisture anomaly +0.019 -> -0.039 | Temperature anomaly -1.5 -> +0.7 °C\",\n    \"Elevation 531 m, slope 5°\"\n  ],\n  \"conflicting_evidence\": [],\n  \"possible_driver\": \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 20.55
+    },
+    {
+      "id": "p05771",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.580 in 2022 to 0.544 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.580 -> 0.544 (Δ -0.035)\",\n    \"EVI Δ +0.003 | NDMI Δ +0.000 | NBR Δ +0.011\",\n    \"Green cover in RGB 0.77 -> 0.69\",\n    \"SAR VV Δ -0.95 dB, VH Δ -0.67 dB\",\n    \"Rainfall Jan–Feb 61.9 -> 24.1 mm\",\n    \"Soil moisture anomaly +0.018 -> -0.042 | Temperature anomaly -1.4 -> +0.9 °C",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "```json\n{\n  \"visual_change\": \"NDVI Δ ≤ −0.02 → decline\",\n  \"change_class\": \"stable|decline|increase\",\n  \"justification\": \"The NDVI value decreased from 0.580 in 2022 to 0.544 in 2023, which is within the allowed range of -0.02, indicating a stable or slight decline in green cover.\",\n  \"supporting_evidence\": [\n    \"NDVI 0.580 -> 0.544 (Δ -0.035)\",\n    \"EVI Δ +0.003 | NDMI Δ +0.000 | NBR Δ +0.011\",\n    \"Green cover in RGB 0.77 -> 0.69\",\n    \"SAR VV Δ -0.95 dB, VH Δ -0.67 dB\",\n    \"Rainfall Jan–Feb 61.9 -> 24.1 mm\",\n    \"Soil moisture anomaly +0.018 -> -0.042 | Temperature anomaly -1.4 -> +0.9 °C",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 20.18
+    }
+  ]
+}

@@ -1,0 +1,1118 @@
+{
+  "combo_id": "llava15_clip_mlp_vicuna",
+  "hf_model_id": "llava-hf/llava-interleave-qwen-0.5b-hf",
+  "laptop": true,
+  "mode": "explain",
+  "prompt_mode": "explain",
+  "answer_format": "json",
+  "generation": {
+    "max_new_tokens": 256,
+    "do_sample": false
+  },
+  "n_eval": 55,
+  "n_parsed_class": 55,
+  "accuracy": 0.2909090909090909,
+  "seconds": 424.13,
+  "predictions": [
+    {
+      "id": "p00052",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "The first image shows a forest patch with green vegetation, while the second image shows the same patch in Jan–Feb 2023. The differences between the two images are:\n\n1. The first image has a green color with no visible changes, while the second image has a green color with a slight decrease in green intensity.\n2. The first image has a green color with no visible changes, while the second image has a green color with a slight increase in green intensity.\n3. The first image has a green color with no visible changes, while the second image has a green color with a slight decrease in green intensity.\n4. The first image has a green color with no visible changes, while the second image has a green color with a slight increase in green intensity.\n5. The first image has a green color with no visible changes, while the second image has a green color with a slight decrease in green intensity.\n6. The first image has a green color with no visible changes, while the second image has a green color with a slight increase in green intensity.\n7. The first image has a green color with no visible changes, while the second image has a green color with a slight decrease in green intensity.\n8. The first image has a green color",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The first image shows a forest patch with green vegetation, while the second image shows the same patch in Jan–Feb 2023. The differences between the two images are:\n\n1. The first image has a green color with no visible changes, while the second image has a green color with a slight decrease in green intensity.\n2. The first image has a green color with no visible changes, while the second image has a green color with a slight increase in green intensity.\n3. The first image has a green color with no visible changes, while the second image has a green color with a slight decrease in green intensity.\n4. The first image has a green color with no visible changes, while the second image has a green color with a slight increase in green intensity.\n5. The first image has a green color with no visible changes, while the second image has a green color with a slight decrease in green intensity.\n6. The first image has a green color with no visible changes, while the second image has a green color with a slight increase in green intensity.\n7. The first image has a green color with no visible changes, while the second image has a green color with a slight decrease in green intensity.\n8. The first image has a green color",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 54.59
+    },
+    {
+      "id": "p00086",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.98. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declined, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also negative, which is a sign of a decrease in temperature, but the evidence for this change is not clear. The elevation of 773 m and the slope of 8° are not directly related to the vegetation's health, but they could be indicators of the vegetation's health. The presence of a decrease in saturation in the color does not necessarily mean that the vegetation is declining, but it does suggest that the vegetation is not healthy. The evidence for this change is not clear, but it is consistent with the decrease in saturation and the decrease in saturation in the color. The presence of a decrease in saturation in the color does not necessarily mean that the vegetation is declining, but",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.98. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declined, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also negative, which is a sign of a decrease in temperature, but the evidence for this change is not clear. The elevation of 773 m and the slope of 8° are not directly related to the vegetation's health, but they could be indicators of the vegetation's health. The presence of a decrease in saturation in the color does not necessarily mean that the vegetation is declining, but it does suggest that the vegetation is not healthy. The evidence for this change is not clear, but it is consistent with the decrease in saturation and the decrease in saturation in the color. The presence of a decrease in saturation in the color does not necessarily mean that the vegetation is declining, but",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 15.08
+    },
+    {
+      "id": "p00575",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the consistent green cover in the RGB 0.74 image. The saturation and brightness of the vegetation are not significantly affected by the change in the image. In contrast, the vegetation in the same image appears to have declined, as indicated by the decrease in the saturation and brightness of the green cover. The temperature anomaly in the image also suggests a decrease in vegetation cover, but this is not directly related to the change in vegetation. The evidence that contradicts this change is the presence of a temperature anomaly in the image, which is not directly related to the vegetation change.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the consistent green cover in the RGB 0.74 image. The saturation and brightness of the vegetation are not significantly affected by the change in the image. In contrast, the vegetation in the same image appears to have declined, as indicated by the decrease in the saturation and brightness of the green cover. The temperature anomaly in the image also suggests a decrease in vegetation cover, but this is not directly related to the change in vegetation. The evidence that contradicts this change is the presence of a temperature anomaly in the image, which is not directly related to the vegetation change.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.0
+    },
+    {
+      "id": "p00701",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.92. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of 558 m and slope of 5° are also consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color also supports the decline in vegetation in the forest patch in Jan–Feb 2023.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.92. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of 558 m and slope of 5° are also consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color also supports the decline in vegetation in the forest patch in Jan–Feb 2023.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 5.14
+    },
+    {
+      "id": "p00850",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 1.00. The saturation and brightness of the patches are consistent with a healthy forest environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, with the saturation and brightness of the patches decreasing. The saturation and brightness of the patches are also decreasing, indicating a decline in vegetation. The evidence that contradicts this is the presence of a decrease in vegetation in the same patch in Jan–Feb 2023.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 1.00. The saturation and brightness of the patches are consistent with a healthy forest environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, with the saturation and brightness of the patches decreasing. The saturation and brightness of the patches are also decreasing, indicating a decline in vegetation. The evidence that contradicts this is the presence of a decrease in vegetation in the same patch in Jan–Feb 2023.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 3.7
+    },
+    {
+      "id": "p00863",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.88. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in the saturation level. The evidence for this change is the reduction in saturation and the decrease in saturation level. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation cover. The elevation of the vegetation in the forest patch is also decreasing, which is consistent with the decline in vegetation cover. The slope of the vegetation in the forest patch is also decreasing, which is consistent with the decline in vegetation cover. The presence of a decrease in the saturation level and the decrease in the saturation level in the vegetation in the forest patch in Jan–Feb 2023 are consistent with the decline in vegetation cover. The evidence for this change is the decrease in the saturation level and the decrease in the saturation level in the vegetation in the forest patch in Jan–Feb 2023. The temperature anomaly in Jan",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.88. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in the saturation level. The evidence for this change is the reduction in saturation and the decrease in saturation level. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation cover. The elevation of the vegetation in the forest patch is also decreasing, which is consistent with the decline in vegetation cover. The slope of the vegetation in the forest patch is also decreasing, which is consistent with the decline in vegetation cover. The presence of a decrease in the saturation level and the decrease in the saturation level in the vegetation in the forest patch in Jan–Feb 2023 are consistent with the decline in vegetation cover. The evidence for this change is the decrease in the saturation level and the decrease in the saturation level in the vegetation in the forest patch in Jan–Feb 2023. The temperature anomaly in Jan",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.48
+    },
+    {
+      "id": "p00883",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 1.00. The saturation and brightness of the patches are consistent with a healthy forest environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, with the saturation and brightness of the patches decreasing. The saturation and brightness of the patches are also decreasing, indicating a decline in vegetation. The evidence that contradicts this is the presence of a temperature anomaly in Jan–Feb 2023, which is not present in the forest patch in Jan–Feb 2022. The evidence that supports this is the presence of a moisture anomaly in Jan–Feb 2023, which is not present in the forest patch in Jan–Feb 2022. The evidence that contradicts this is the presence of a temperature anomaly in Jan–Feb 2023, which is not present in the forest patch in Jan–Feb 2022. The evidence that supports this is the presence of a moisture anomaly in Jan–Feb 2023, which is not present in the forest patch in Jan–Feb 2022",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 1.00. The saturation and brightness of the patches are consistent with a healthy forest environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, with the saturation and brightness of the patches decreasing. The saturation and brightness of the patches are also decreasing, indicating a decline in vegetation. The evidence that contradicts this is the presence of a temperature anomaly in Jan–Feb 2023, which is not present in the forest patch in Jan–Feb 2022. The evidence that supports this is the presence of a moisture anomaly in Jan–Feb 2023, which is not present in the forest patch in Jan–Feb 2022. The evidence that contradicts this is the presence of a temperature anomaly in Jan–Feb 2023, which is not present in the forest patch in Jan–Feb 2022. The evidence that supports this is the presence of a moisture anomaly in Jan–Feb 2023, which is not present in the forest patch in Jan–Feb 2022",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.48
+    },
+    {
+      "id": "p00937",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "The visual changes between the two images are as follows:\n\n1. The first image shows a forest patch with green vegetation, while the second image shows the same patch but with a different color palette and vegetation density.\n2. The first image has a green color bias, while the second image has a more neutral color palette with green and brown tones.\n3. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n4. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n5. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n6. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n7. The first image has a higher number of pixels dropped by more than 0.05, while the",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "The visual changes between the two images are as follows:\n\n1. The first image shows a forest patch with green vegetation, while the second image shows the same patch but with a different color palette and vegetation density.\n2. The first image has a green color bias, while the second image has a more neutral color palette with green and brown tones.\n3. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n4. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n5. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n6. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n7. The first image has a higher number of pixels dropped by more than 0.05, while the",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.49
+    },
+    {
+      "id": "p01162",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.87. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of the vegetation is also decreasing, which is consistent with the decline in saturation in the color. The soil moisture anomaly is also decreasing, which is consistent with the decline in saturation in the color. The elevation of the vegetation is also decreasing, which is consistent with the decrease in saturation in the color. The rainfall in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The soil moisture anomaly is also decreasing, which is consistent with the decrease in saturation in the color. The elevation of the vegetation is also decreasing, which is consistent with",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.87. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of the vegetation is also decreasing, which is consistent with the decline in saturation in the color. The soil moisture anomaly is also decreasing, which is consistent with the decline in saturation in the color. The elevation of the vegetation is also decreasing, which is consistent with the decrease in saturation in the color. The rainfall in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The soil moisture anomaly is also decreasing, which is consistent with the decrease in saturation in the color. The elevation of the vegetation is also decreasing, which is consistent with",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.68
+    },
+    {
+      "id": "p01206",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the consistent green cover in the RGB 0.64 image. The saturation and brightness of the vegetation are not significantly affected by the change in the image. In contrast, the vegetation in the same image appears to have declined in Jan–Feb 2023, as indicated by the decrease in the saturation and brightness of the vegetation. The evidence for this change is the reduction in the saturation and brightness of the vegetation in the image. The presence of a temperature anomaly in the image suggests that the temperature in the forest patch has fluctuated, which is not a direct indication of vegetation decline. The presence of a moisture anomaly in the image also suggests that the moisture levels in the forest patch have fluctuated, which is not a direct indication of vegetation decline. The elevation of the forest patch in Jan–Feb 2022 is 520 m, and the slope of the forest patch is 3°, which are not directly related to the vegetation in the image. The presence of a rainfall anomaly in the image suggests that the rainfall in the forest patch has fluctuated, which is not a direct indication of vegetation decline. The presence of a",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the consistent green cover in the RGB 0.64 image. The saturation and brightness of the vegetation are not significantly affected by the change in the image. In contrast, the vegetation in the same image appears to have declined in Jan–Feb 2023, as indicated by the decrease in the saturation and brightness of the vegetation. The evidence for this change is the reduction in the saturation and brightness of the vegetation in the image. The presence of a temperature anomaly in the image suggests that the temperature in the forest patch has fluctuated, which is not a direct indication of vegetation decline. The presence of a moisture anomaly in the image also suggests that the moisture levels in the forest patch have fluctuated, which is not a direct indication of vegetation decline. The elevation of the forest patch in Jan–Feb 2022 is 520 m, and the slope of the forest patch is 3°, which are not directly related to the vegetation in the image. The presence of a rainfall anomaly in the image suggests that the rainfall in the forest patch has fluctuated, which is not a direct indication of vegetation decline. The presence of a",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.51
+    },
+    {
+      "id": "p01415",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.77. The saturation and brightness of the patches are consistent with a healthy forest environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, with the saturation and brightness of the patches decreasing. The saturation and brightness of the patches are also decreasing, indicating a decline in vegetation. The evidence that contradicts this is the presence of a temperature anomaly in Jan–Feb 2023, which is not present in the same patch in Jan–Feb 2022. The evidence that supports this is the presence of a moisture anomaly in Jan–Feb 2023, which is not present in the same patch in Jan–Feb 2022. The evidence that contradicts this is the presence of a temperature anomaly in Jan–Feb 2023, which is not present in the same patch in Jan–Feb 2022. The evidence that supports this is the presence of a moisture anomaly in Jan–Feb 2023, which is not present in the same patch in Jan–Feb 2022",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.77. The saturation and brightness of the patches are consistent with a healthy forest environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, with the saturation and brightness of the patches decreasing. The saturation and brightness of the patches are also decreasing, indicating a decline in vegetation. The evidence that contradicts this is the presence of a temperature anomaly in Jan–Feb 2023, which is not present in the same patch in Jan–Feb 2022. The evidence that supports this is the presence of a moisture anomaly in Jan–Feb 2023, which is not present in the same patch in Jan–Feb 2022. The evidence that contradicts this is the presence of a temperature anomaly in Jan–Feb 2023, which is not present in the same patch in Jan–Feb 2022. The evidence that supports this is the presence of a moisture anomaly in Jan–Feb 2023, which is not present in the same patch in Jan–Feb 2022",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.49
+    },
+    {
+      "id": "p01621",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.52. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the reduction in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of 550 m and the slope of 3° are also decreasing in Jan–Feb 2023, which is consistent with the decline in vegetation. The presence of a decrease in saturation in the color and the decrease in saturation in the color are also consistent with the decline in vegetation. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of 550 m and the slope of 3° are also decreasing",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.52. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the reduction in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of 550 m and the slope of 3° are also decreasing in Jan–Feb 2023, which is consistent with the decline in vegetation. The presence of a decrease in saturation in the color and the decrease in saturation in the color are also consistent with the decline in vegetation. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of 550 m and the slope of 3° are also decreasing",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.54
+    },
+    {
+      "id": "p01648",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The visual changes between the two images are as follows:\n\n1. The first image shows a green patch with no visible vegetation, while the second image shows a forest patch with green vegetation.\n2. The first image has a green color with no visible changes, while the second image has a green color with a slight decrease in green intensity.\n3. The first image has a green color with no visible changes, while the second image has a green color with a slight increase in green intensity.\n4. The first image has a green color with no visible changes, while the second image has a green color with a slight decrease in green intensity.\n5. The first image has a green color with no visible changes, while the second image has a green color with a slight increase in green intensity.\n6. The first image has a green color with no visible changes, while the second image has a green color with a slight decrease in green intensity.\n7. The first image has a green color with no visible changes, while the second image has a green color with a slight increase in green intensity.\n8. The first image has a green color with no visible changes, while the second image has a green color with a slight decrease in green intensity.\n9. The first image has a green color",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The visual changes between the two images are as follows:\n\n1. The first image shows a green patch with no visible vegetation, while the second image shows a forest patch with green vegetation.\n2. The first image has a green color with no visible changes, while the second image has a green color with a slight decrease in green intensity.\n3. The first image has a green color with no visible changes, while the second image has a green color with a slight increase in green intensity.\n4. The first image has a green color with no visible changes, while the second image has a green color with a slight decrease in green intensity.\n5. The first image has a green color with no visible changes, while the second image has a green color with a slight increase in green intensity.\n6. The first image has a green color with no visible changes, while the second image has a green color with a slight decrease in green intensity.\n7. The first image has a green color with no visible changes, while the second image has a green color with a slight increase in green intensity.\n8. The first image has a green color with no visible changes, while the second image has a green color with a slight decrease in green intensity.\n9. The first image has a green color",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.53
+    },
+    {
+      "id": "p01988",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.54. The saturation of the colors is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the RGB 0.54. The saturation of the colors is also decreasing in the same area. The temperature anomaly in Jan–Feb 2023 is also decreasing, with a temperature anomaly of -1.5°C, which is not present in the same area in Jan–Feb 2022. The elevation of 770 m and slope of 10° are also consistent with the vegetation's decline in the same area in Jan–Feb 2023. The presence of a decrease in saturation in the RGB 0.54 in the same area in Jan–Feb 2022 is not present in the same area in Jan–Feb 2023. The evidence that contradicts this change is the presence of a decrease in saturation in the RGB 0.54 in the",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.54. The saturation of the colors is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the RGB 0.54. The saturation of the colors is also decreasing in the same area. The temperature anomaly in Jan–Feb 2023 is also decreasing, with a temperature anomaly of -1.5°C, which is not present in the same area in Jan–Feb 2022. The elevation of 770 m and slope of 10° are also consistent with the vegetation's decline in the same area in Jan–Feb 2023. The presence of a decrease in saturation in the RGB 0.54 in the same area in Jan–Feb 2022 is not present in the same area in Jan–Feb 2023. The evidence that contradicts this change is the presence of a decrease in saturation in the RGB 0.54 in the",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.51
+    },
+    {
+      "id": "p02128",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.99. The saturation and brightness of the patches are consistent with a healthy forest environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, with the saturation and brightness of the patches decreasing. The saturation and brightness of the patches are also decreasing, indicating a decline in vegetation. The evidence that contradicts this is the presence of rain, soil moisture anomalies, and temperature anomalies, which are not present in the same patch in Jan–Feb 2023. The elevation of 596 m and slope of 4° are also not present in the same patch in Jan–Feb 2023. The presence of snow in the same patch in Jan–Feb 2023 does not contradict the vegetation decline in the same patch in Jan–Feb 2022.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.99. The saturation and brightness of the patches are consistent with a healthy forest environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, with the saturation and brightness of the patches decreasing. The saturation and brightness of the patches are also decreasing, indicating a decline in vegetation. The evidence that contradicts this is the presence of rain, soil moisture anomalies, and temperature anomalies, which are not present in the same patch in Jan–Feb 2023. The elevation of 596 m and slope of 4° are also not present in the same patch in Jan–Feb 2023. The presence of snow in the same patch in Jan–Feb 2023 does not contradict the vegetation decline in the same patch in Jan–Feb 2022.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 5.39
+    },
+    {
+      "id": "p02139",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.93. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in the saturation level. The evidence for this change is the reduction in saturation and the decrease in saturation level. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of the vegetation is also decreasing, which is consistent with the decline in vegetation. The slope of the vegetation is also decreasing, which is consistent with the decline in vegetation. The presence of a decrease in the saturation level and the decrease in the saturation level are consistent with the decline in vegetation. The evidence for this change is the decrease in the saturation level and the decrease in the saturation level. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of the vegetation is also decreasing, which is consistent with the decline in vegetation. The slope of the vegetation is",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.93. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in the saturation level. The evidence for this change is the reduction in saturation and the decrease in saturation level. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of the vegetation is also decreasing, which is consistent with the decline in vegetation. The slope of the vegetation is also decreasing, which is consistent with the decline in vegetation. The presence of a decrease in the saturation level and the decrease in the saturation level are consistent with the decline in vegetation. The evidence for this change is the decrease in the saturation level and the decrease in the saturation level. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of the vegetation is also decreasing, which is consistent with the decline in vegetation. The slope of the vegetation is",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.51
+    },
+    {
+      "id": "p02334",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 1.00. The saturation and brightness of the patches are consistent with a healthy forest environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, with the saturation and brightness of the patches decreasing. The saturation and brightness of the patches are also decreasing, indicating a decline in vegetation. The evidence that contradicts this is the presence of a temperature anomaly in Jan–Feb 2023, which is not present in the forest patch in Jan–Feb 2022. The evidence that supports this is the presence of a moisture anomaly in Jan–Feb 2023, which is not present in the forest patch in Jan–Feb 2022. The evidence that contradicts this is the presence of a temperature anomaly in Jan–Feb 2023, which is not present in the forest patch in Jan–Feb 2022. The evidence that supports this is the presence of a moisture anomaly in Jan–Feb 2023, which is not present in the forest patch in Jan–Feb 2022",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 1.00. The saturation and brightness of the patches are consistent with a healthy forest environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, with the saturation and brightness of the patches decreasing. The saturation and brightness of the patches are also decreasing, indicating a decline in vegetation. The evidence that contradicts this is the presence of a temperature anomaly in Jan–Feb 2023, which is not present in the forest patch in Jan–Feb 2022. The evidence that supports this is the presence of a moisture anomaly in Jan–Feb 2023, which is not present in the forest patch in Jan–Feb 2022. The evidence that contradicts this is the presence of a temperature anomaly in Jan–Feb 2023, which is not present in the forest patch in Jan–Feb 2022. The evidence that supports this is the presence of a moisture anomaly in Jan–Feb 2023, which is not present in the forest patch in Jan–Feb 2022",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.55
+    },
+    {
+      "id": "p02668",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.69. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the reduction in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of 662 m and the slope of 4° are also decreasing in Jan–Feb 2023, which is consistent with the decline in vegetation. The presence of a decrease in saturation in the color and the decrease in saturation in the color are also consistent with the decline in vegetation. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of 662 m and the slope of 4° are also decreasing",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.69. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the reduction in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of 662 m and the slope of 4° are also decreasing in Jan–Feb 2023, which is consistent with the decline in vegetation. The presence of a decrease in saturation in the color and the decrease in saturation in the color are also consistent with the decline in vegetation. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of 662 m and the slope of 4° are also decreasing",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.53
+    },
+    {
+      "id": "p02674",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the consistent green cover in the RGB 0.38 image. The saturation and brightness of the vegetation are not significantly affected by the change in the image. In contrast, the vegetation in the same image appears to have declined, as indicated by the decrease in the saturation and brightness of the green cover. The temperature anomaly in the image also suggests a decrease in vegetation cover, which is consistent with the decline in vegetation. The presence of a rainfall anomaly in the image also indicates a decrease in vegetation cover, which is consistent with the decline in vegetation. The elevation of the vegetation in the image is also consistent with the decline in vegetation cover. The slope of the vegetation in the image is also consistent with the decline in vegetation cover. The presence of a temperature anomaly in the image also suggests a decrease in vegetation cover, which is consistent with the decline in vegetation. The presence of a moisture anomaly in the image also suggests a decrease in vegetation cover, which is consistent with the decline in vegetation. The presence of a temperature anomaly in the image also suggests a decrease in vegetation cover, which is consistent with the decline in vegetation. The presence of a rainfall anomaly in the image",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the consistent green cover in the RGB 0.38 image. The saturation and brightness of the vegetation are not significantly affected by the change in the image. In contrast, the vegetation in the same image appears to have declined, as indicated by the decrease in the saturation and brightness of the green cover. The temperature anomaly in the image also suggests a decrease in vegetation cover, which is consistent with the decline in vegetation. The presence of a rainfall anomaly in the image also indicates a decrease in vegetation cover, which is consistent with the decline in vegetation. The elevation of the vegetation in the image is also consistent with the decline in vegetation cover. The slope of the vegetation in the image is also consistent with the decline in vegetation cover. The presence of a temperature anomaly in the image also suggests a decrease in vegetation cover, which is consistent with the decline in vegetation. The presence of a moisture anomaly in the image also suggests a decrease in vegetation cover, which is consistent with the decline in vegetation. The presence of a temperature anomaly in the image also suggests a decrease in vegetation cover, which is consistent with the decline in vegetation. The presence of a rainfall anomaly in the image",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.53
+    },
+    {
+      "id": "p02803",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the consistent green cover in RGB 0.33. The saturation of the color is also consistent, indicating that the vegetation is not affected by the changes in the environment.\n\nIn contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as evidenced by the decrease in the saturation of the color, and the presence of a decrease in the saturation of the color. The saturation of the color is also decreasing, indicating that the vegetation is not stable.\n\nThe evidence that contradicts this is the presence of a decrease in the saturation of the color in the vegetation in the same patch in Jan–Feb 2023, which is not present in the vegetation in the forest patch in Jan–Feb 2022.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the consistent green cover in RGB 0.33. The saturation of the color is also consistent, indicating that the vegetation is not affected by the changes in the environment.\n\nIn contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as evidenced by the decrease in the saturation of the color, and the presence of a decrease in the saturation of the color. The saturation of the color is also decreasing, indicating that the vegetation is not stable.\n\nThe evidence that contradicts this is the presence of a decrease in the saturation of the color in the vegetation in the same patch in Jan–Feb 2023, which is not present in the vegetation in the forest patch in Jan–Feb 2022.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.85
+    },
+    {
+      "id": "p02890",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.79. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of 778 m and slope of 12° are also decreasing, which is consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color also supports the decline in vegetation in the forest patch in Jan–Feb 2023.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.79. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of 778 m and slope of 12° are also decreasing, which is consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color also supports the decline in vegetation in the forest patch in Jan–Feb 2023.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 5.36
+    },
+    {
+      "id": "p03067",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.85. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of 650 m and slope of 5° are also consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color also supports the decline in vegetation in the forest patch in Jan–Feb 2023.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.85. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of 650 m and slope of 5° are also consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color also supports the decline in vegetation in the forest patch in Jan–Feb 2023.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 5.2
+    },
+    {
+      "id": "p03122",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.89, the saturation of the colors, and the presence of a clear boundary between the green and brown areas. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in the saturation of the colors, the presence of a clear boundary between the green and brown areas, and the decrease in the saturation of the colors. The evidence that contradicts this change is the presence of a temperature anomaly in Jan–Feb 2023, which is +0.8 °C, which is not present in the same image in Jan–Feb 2022.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.89, the saturation of the colors, and the presence of a clear boundary between the green and brown areas. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in the saturation of the colors, the presence of a clear boundary between the green and brown areas, and the decrease in the saturation of the colors. The evidence that contradicts this change is the presence of a temperature anomaly in Jan–Feb 2023, which is +0.8 °C, which is not present in the same image in Jan–Feb 2022.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.69
+    },
+    {
+      "id": "p03228",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.98 -> 0.98 and the saturation of the colors. The saturation of the colors is also higher in the second image, indicating a more vibrant and varied color palette.\n\nThe vegetation in the forest patch in Jan–Feb 2023 is declined, as evidenced by the decrease in the saturation of the colors and the loss of some greenery. The saturation of the colors is also lower in the second image, indicating a more muted and less vibrant color palette.\n\nThe evidence that contradicts the change in vegetation is the presence of a temperature anomaly in the second image, which is higher than the first image. This suggests that the temperature in the second image may have been higher than in the first image, leading to a change in vegetation.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.98 -> 0.98 and the saturation of the colors. The saturation of the colors is also higher in the second image, indicating a more vibrant and varied color palette.\n\nThe vegetation in the forest patch in Jan–Feb 2023 is declined, as evidenced by the decrease in the saturation of the colors and the loss of some greenery. The saturation of the colors is also lower in the second image, indicating a more muted and less vibrant color palette.\n\nThe evidence that contradicts the change in vegetation is the presence of a temperature anomaly in the second image, which is higher than the first image. This suggests that the temperature in the second image may have been higher than in the first image, leading to a change in vegetation.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 5.17
+    },
+    {
+      "id": "p03243",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.98. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of the vegetation in the forest patch in Jan–Feb 2022 is also decreasing, which is consistent with the decline in saturation in the color. The soil moisture anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of the vegetation in the forest patch in Jan–Feb 2022 is also decreasing, which is consistent with the decline in saturation in the color. The rainfall in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.98. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of the vegetation in the forest patch in Jan–Feb 2022 is also decreasing, which is consistent with the decline in saturation in the color. The soil moisture anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of the vegetation in the forest patch in Jan–Feb 2022 is also decreasing, which is consistent with the decline in saturation in the color. The rainfall in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.79
+    },
+    {
+      "id": "p03515",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.76, which is consistent with the patch's original color. The saturation and brightness of the patches are also consistent with the original color, indicating that the vegetation is not affected by the changes in the image.\n\nIn contrast, the vegetation in the same patch in Jan–Feb 2023 is declined, as evidenced by the decrease in the saturation and brightness of the patches, which suggests that the vegetation has lost some of its green color. The saturation and brightness of the patches are also lower in the image, indicating that the vegetation is not as vibrant as it was in the previous image.\n\nTherefore, the evidence that supports the decision to decline the vegetation in the forest patch in Jan–Feb 2023 is the decrease in the saturation and brightness of the patches, which is consistent with the decline in the vegetation. The evidence that contradicts this decision is the increase in the saturation and brightness of the patches, which is not consistent with the decline in the vegetation.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.76, which is consistent with the patch's original color. The saturation and brightness of the patches are also consistent with the original color, indicating that the vegetation is not affected by the changes in the image.\n\nIn contrast, the vegetation in the same patch in Jan–Feb 2023 is declined, as evidenced by the decrease in the saturation and brightness of the patches, which suggests that the vegetation has lost some of its green color. The saturation and brightness of the patches are also lower in the image, indicating that the vegetation is not as vibrant as it was in the previous image.\n\nTherefore, the evidence that supports the decision to decline the vegetation in the forest patch in Jan–Feb 2023 is the decrease in the saturation and brightness of the patches, which is consistent with the decline in the vegetation. The evidence that contradicts this decision is the increase in the saturation and brightness of the patches, which is not consistent with the decline in the vegetation.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.32
+    },
+    {
+      "id": "p03538",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.97. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of more pixels dropped by more than 0.05. The saturation of the color is also decreasing, and the saturation of the color in the vegetation is decreasing. The temperature anomaly in Jan–Feb 2023 is also decreasing, with a temperature anomaly of -1.5°C, which is not present in the vegetation in the same patch in Jan–Feb 2022. The elevation of 630 m and slope of 6° are also consistent with the vegetation in the same patch in Jan–Feb 2023, but the saturation of the color is decreasing, and the saturation of the color in the vegetation is decreasing. The evidence that contradicts the change in vegetation is the presence of more pixels dropped by more than 0.05 in the vegetation in the same patch in Jan–Feb 2023.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.97. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of more pixels dropped by more than 0.05. The saturation of the color is also decreasing, and the saturation of the color in the vegetation is decreasing. The temperature anomaly in Jan–Feb 2023 is also decreasing, with a temperature anomaly of -1.5°C, which is not present in the vegetation in the same patch in Jan–Feb 2022. The elevation of 630 m and slope of 6° are also consistent with the vegetation in the same patch in Jan–Feb 2023, but the saturation of the color is decreasing, and the saturation of the color in the vegetation is decreasing. The evidence that contradicts the change in vegetation is the presence of more pixels dropped by more than 0.05 in the vegetation in the same patch in Jan–Feb 2023.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 7.33
+    },
+    {
+      "id": "p03592",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.74. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of the vegetation in the forest patch in Jan–Feb 2022 is also decreasing, which is consistent with the decline in saturation in the color. The slope of the vegetation in the forest patch in Jan–Feb 2022 is also decreasing, which is consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color in the vegetation in the forest patch in Jan–Feb 2023 is consistent with the decline in saturation in the color. The elevation of the vegetation in the forest patch in Jan–Feb 2022",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.74. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of the vegetation in the forest patch in Jan–Feb 2022 is also decreasing, which is consistent with the decline in saturation in the color. The slope of the vegetation in the forest patch in Jan–Feb 2022 is also decreasing, which is consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color in the vegetation in the forest patch in Jan–Feb 2023 is consistent with the decline in saturation in the color. The elevation of the vegetation in the forest patch in Jan–Feb 2022",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 7.47
+    },
+    {
+      "id": "p03635",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 1.00. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declined, as indicated by the saturation of the color being reduced to 1.00% and the saturation of the color being reduced to 0.05% in the second image. The evidence for this change is the decrease in saturation and saturation levels. The temperature anomaly in the second image is also consistent with the decline in vegetation, as it is -1.5°C, which is not a healthy temperature for vegetation growth. The elevation of 614 m and slope of 6° are also consistent with the decline in vegetation in the second image. The presence of rain and soil moisture anomalies in the second image are also consistent with the decline in vegetation in the second image. The elevation of 614 m and slope of 6° are consistent with the decline in vegetation in the second image. The presence of rain and temperature anomalies in the second image are also consistent with the decline in vegetation in the second image. The",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 1.00. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declined, as indicated by the saturation of the color being reduced to 1.00% and the saturation of the color being reduced to 0.05% in the second image. The evidence for this change is the decrease in saturation and saturation levels. The temperature anomaly in the second image is also consistent with the decline in vegetation, as it is -1.5°C, which is not a healthy temperature for vegetation growth. The elevation of 614 m and slope of 6° are also consistent with the decline in vegetation in the second image. The presence of rain and soil moisture anomalies in the second image are also consistent with the decline in vegetation in the second image. The elevation of 614 m and slope of 6° are consistent with the decline in vegetation in the second image. The presence of rain and temperature anomalies in the second image are also consistent with the decline in vegetation in the second image. The",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 7.81
+    },
+    {
+      "id": "p03689",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "The visual changes between the two images are as follows:\n\n1. The first image shows a forest patch with green vegetation, while the second image shows the same patch but with a different color palette and vegetation density.\n2. The first image has a green color bias, while the second image has a more neutral color palette with green and brown tones.\n3. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n4. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n5. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n6. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n7. The first image has a higher number of pixels dropped by more than 0.05, while the",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "The visual changes between the two images are as follows:\n\n1. The first image shows a forest patch with green vegetation, while the second image shows the same patch but with a different color palette and vegetation density.\n2. The first image has a green color bias, while the second image has a more neutral color palette with green and brown tones.\n3. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n4. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n5. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n6. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n7. The first image has a higher number of pixels dropped by more than 0.05, while the",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.3
+    },
+    {
+      "id": "p03801",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.26. The saturation of the colors is also consistent, indicating that the vegetation is not affected by the changes in the environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as evidenced by the decrease in saturation and the presence of a decrease in the saturation of the colors. The temperature anomaly in Jan–Feb 2023 is also decreasing, with a decrease in the temperature anomaly. The elevation of the vegetation is also decreasing, with a decrease in elevation. The slope of the vegetation is also decreasing, with a decrease in slope. The presence of a decrease in the saturation of the colors in the vegetation in Jan–Feb 2023 is consistent with the decline in vegetation in the same patch in Jan–Feb 2023. The presence of a decrease in the saturation of the colors in the vegetation in Jan–Feb 2023 is consistent with the decline in vegetation in the same patch in Jan–Feb 2023. The presence of a decrease in the saturation of the colors in the vegetation in Jan–Feb",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.26. The saturation of the colors is also consistent, indicating that the vegetation is not affected by the changes in the environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as evidenced by the decrease in saturation and the presence of a decrease in the saturation of the colors. The temperature anomaly in Jan–Feb 2023 is also decreasing, with a decrease in the temperature anomaly. The elevation of the vegetation is also decreasing, with a decrease in elevation. The slope of the vegetation is also decreasing, with a decrease in slope. The presence of a decrease in the saturation of the colors in the vegetation in Jan–Feb 2023 is consistent with the decline in vegetation in the same patch in Jan–Feb 2023. The presence of a decrease in the saturation of the colors in the vegetation in Jan–Feb 2023 is consistent with the decline in vegetation in the same patch in Jan–Feb 2023. The presence of a decrease in the saturation of the colors in the vegetation in Jan–Feb",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.41
+    },
+    {
+      "id": "p03867",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.62. The saturation of the colors is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in the saturation of the colors. The evidence for this change is the reduction in the saturation of the colors, which is a common indicator of declining vegetation health. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is a sign of declining vegetation health. The elevation of the vegetation in the forest patch in Jan–Feb 2022 is 694 m, which is higher than the elevation of the vegetation in the same patch in Jan–Feb 2023, which is 694 m. The slope of the vegetation in the forest patch in Jan–Feb 2022 is 8°, which is higher than the slope of the vegetation in the same patch in Jan–Feb 2023, which is 8°. The presence of a decrease in the saturation of the colors",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.62. The saturation of the colors is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in the saturation of the colors. The evidence for this change is the reduction in the saturation of the colors, which is a common indicator of declining vegetation health. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is a sign of declining vegetation health. The elevation of the vegetation in the forest patch in Jan–Feb 2022 is 694 m, which is higher than the elevation of the vegetation in the same patch in Jan–Feb 2023, which is 694 m. The slope of the vegetation in the forest patch in Jan–Feb 2022 is 8°, which is higher than the slope of the vegetation in the same patch in Jan–Feb 2023, which is 8°. The presence of a decrease in the saturation of the colors",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.47
+    },
+    {
+      "id": "p03991",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.93. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of 722 m and the slope of 4° are also decreasing, which is consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color also supports the decline in vegetation in the forest patch in Jan–Feb 2023.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.93. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of 722 m and the slope of 4° are also decreasing, which is consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color also supports the decline in vegetation in the forest patch in Jan–Feb 2023.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.86
+    },
+    {
+      "id": "p04040",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.74. The saturation of the colors is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in the saturation of the colors. The evidence for this change is the decrease in saturation and the decrease in the saturation of the colors. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in the vegetation's health. The elevation of the vegetation in the forest patch in Jan–Feb 2022 is also decreasing, which is consistent with the decline in the vegetation's health. The slope of the vegetation in the forest patch in Jan–Feb 2022 is also decreasing, which is consistent with the decline in the vegetation's health. The presence of a decrease in the saturation of the colors in the vegetation in the forest patch in Jan–Feb 2022 is consistent with the decline in the vegetation's health. The presence of a decrease in the saturation of the colors in the vegetation in",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.74. The saturation of the colors is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in the saturation of the colors. The evidence for this change is the decrease in saturation and the decrease in the saturation of the colors. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in the vegetation's health. The elevation of the vegetation in the forest patch in Jan–Feb 2022 is also decreasing, which is consistent with the decline in the vegetation's health. The slope of the vegetation in the forest patch in Jan–Feb 2022 is also decreasing, which is consistent with the decline in the vegetation's health. The presence of a decrease in the saturation of the colors in the vegetation in the forest patch in Jan–Feb 2022 is consistent with the decline in the vegetation's health. The presence of a decrease in the saturation of the colors in the vegetation in",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 9.24
+    },
+    {
+      "id": "p04059",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "The visual changes between the two images are as follows:\n\n1. The first image shows a forest patch with green vegetation, while the second image shows the same patch but with a different color palette and vegetation density.\n2. The first image has a green color bias, while the second image has a more neutral color palette with green and brown tones.\n3. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n4. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n5. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n6. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n7. The first image has a higher number of pixels dropped by more than 0.05, while the",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "The visual changes between the two images are as follows:\n\n1. The first image shows a forest patch with green vegetation, while the second image shows the same patch but with a different color palette and vegetation density.\n2. The first image has a green color bias, while the second image has a more neutral color palette with green and brown tones.\n3. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n4. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n5. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n6. The first image has a higher number of pixels dropped by more than 0.05, while the second image has a lower number of pixels dropped by less than 0.05.\n7. The first image has a higher number of pixels dropped by more than 0.05, while the",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.81
+    },
+    {
+      "id": "p04145",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.58. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in the saturation level. The evidence for this change is the reduction in the saturation level and the decrease in the saturation level. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in the vegetation's health. The elevation of the vegetation in the same patch in Jan–Feb 2023 is also decreasing, which is consistent with the decline in the vegetation's health. The presence of a decrease in the saturation level and the decrease in the saturation level in the same patch in Jan–Feb 2023 are consistent with the decline in the vegetation's health. The evidence for this change is the decrease in the saturation level and the decrease in the saturation level in the same patch in Jan–Feb 2023. The temperature anomaly in Jan–Feb 2023 is also decreasing,",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.58. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in the saturation level. The evidence for this change is the reduction in the saturation level and the decrease in the saturation level. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in the vegetation's health. The elevation of the vegetation in the same patch in Jan–Feb 2023 is also decreasing, which is consistent with the decline in the vegetation's health. The presence of a decrease in the saturation level and the decrease in the saturation level in the same patch in Jan–Feb 2023 are consistent with the decline in the vegetation's health. The evidence for this change is the decrease in the saturation level and the decrease in the saturation level in the same patch in Jan–Feb 2023. The temperature anomaly in Jan–Feb 2023 is also decreasing,",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.79
+    },
+    {
+      "id": "p04174",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.75. The saturation of the colors is also consistent with the vegetation's coloration. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a reddish-brown coloration. The evidence for this change is the reduction in saturation and the reddish-brown coloration. The temperature anomaly in Jan–Feb 2023 is also decreasing, with a temperature anomaly of -1.5°C, which is not present in the vegetation in the same patch in Jan–Feb 2022. The evidence for this change is the temperature anomaly and the presence of a temperature anomaly of +0.9°C. The presence of a decrease in saturation and the reddish-brown coloration in the vegetation in the same patch in Jan–Feb 2023 are not consistent with the vegetation's coloration in the same patch in Jan–Feb 2022. The evidence for this change is the decrease in saturation and the reddish-brown coloration in the vegetation in the same patch",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.75. The saturation of the colors is also consistent with the vegetation's coloration. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a reddish-brown coloration. The evidence for this change is the reduction in saturation and the reddish-brown coloration. The temperature anomaly in Jan–Feb 2023 is also decreasing, with a temperature anomaly of -1.5°C, which is not present in the vegetation in the same patch in Jan–Feb 2022. The evidence for this change is the temperature anomaly and the presence of a temperature anomaly of +0.9°C. The presence of a decrease in saturation and the reddish-brown coloration in the vegetation in the same patch in Jan–Feb 2023 are not consistent with the vegetation's coloration in the same patch in Jan–Feb 2022. The evidence for this change is the decrease in saturation and the reddish-brown coloration in the vegetation in the same patch",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.6
+    },
+    {
+      "id": "p04203",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.81. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the reduction in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of the vegetation is also decreasing, which is consistent with the decline in vegetation. The slope of the vegetation is also decreasing, which is consistent with the decline in vegetation. The presence of a decrease in saturation in the color is consistent with the decline in vegetation. The presence of a decrease in saturation in the color is consistent with the decline in vegetation. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of the vegetation is also decreasing, which is consistent with the decline in vegetation. The slope of the vegetation is also decreasing, which is",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.81. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the reduction in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of the vegetation is also decreasing, which is consistent with the decline in vegetation. The slope of the vegetation is also decreasing, which is consistent with the decline in vegetation. The presence of a decrease in saturation in the color is consistent with the decline in vegetation. The presence of a decrease in saturation in the color is consistent with the decline in vegetation. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of the vegetation is also decreasing, which is consistent with the decline in vegetation. The slope of the vegetation is also decreasing, which is",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.61
+    },
+    {
+      "id": "p04268",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.97. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declined, as indicated by the decrease in the saturation of the color and the presence of a decrease in the saturation of the color. The evidence for this change is not provided in the images provided.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.97. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declined, as indicated by the decrease in the saturation of the color and the presence of a decrease in the saturation of the color. The evidence for this change is not provided in the images provided.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.17
+    },
+    {
+      "id": "p04399",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.94. The saturation and brightness of the patches are consistent with a healthy forest environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in the number of pixels dropped by more than 0.05. The saturation and brightness of the patches are also decreasing, suggesting a decline in vegetation cover. The evidence that contradicts this is the presence of a temperature anomaly, which is not present in the same patch in Jan–Feb 2023.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.94. The saturation and brightness of the patches are consistent with a healthy forest environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in the number of pixels dropped by more than 0.05. The saturation and brightness of the patches are also decreasing, suggesting a decline in vegetation cover. The evidence that contradicts this is the presence of a temperature anomaly, which is not present in the same patch in Jan–Feb 2023.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 5.44
+    },
+    {
+      "id": "p04508",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.95. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declined, as indicated by the decrease in the saturation of the color and the presence of a decrease in the saturation of the color. The evidence for this change is not provided in the provided images.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.95. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declined, as indicated by the decrease in the saturation of the color and the presence of a decrease in the saturation of the color. The evidence for this change is not provided in the provided images.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.17
+    },
+    {
+      "id": "p04577",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.99. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of 665 m and slope of 5° are also decreasing, which is consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color also supports the decline in vegetation in the forest patch in Jan–Feb 2023.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.99. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of 665 m and slope of 5° are also decreasing, which is consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color also supports the decline in vegetation in the forest patch in Jan–Feb 2023.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.88
+    },
+    {
+      "id": "p04671",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.96. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of 669 m and slope of 4° are also decreasing, which is consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color also supports the decline in vegetation in the forest patch in Jan–Feb 2023.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.96. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of 669 m and slope of 4° are also decreasing, which is consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color also supports the decline in vegetation in the forest patch in Jan–Feb 2023.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.78
+    },
+    {
+      "id": "p04777",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.94. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of 670 m and slope of 4° are also decreasing, which is consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color also supports the decline in vegetation in the forest patch in Jan–Feb 2023.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.94. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of 670 m and slope of 4° are also decreasing, which is consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color also supports the decline in vegetation in the forest patch in Jan–Feb 2023.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.72
+    },
+    {
+      "id": "p04806",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.92. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in the saturation of the color and the presence of more pixels dropped by more than 0.05. The saturation of the color is also decreasing, and the saturation of the color is decreasing. The temperature anomaly in Jan–Feb 2023 is also decreasing, with a temperature anomaly of -1.5°C, which is not present in the same patch in Jan–Feb 2022. The elevation of 581 m and slope of 6° are also consistent with the vegetation's health in the same patch in Jan–Feb 2022, but the temperature anomaly is not present in the same patch in Jan–Feb 2023. The evidence that contradicts the change in vegetation is the presence of more pixels dropped by more than 0.05 in the same patch in Jan–Feb 2023, which is not present",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.92. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in the saturation of the color and the presence of more pixels dropped by more than 0.05. The saturation of the color is also decreasing, and the saturation of the color is decreasing. The temperature anomaly in Jan–Feb 2023 is also decreasing, with a temperature anomaly of -1.5°C, which is not present in the same patch in Jan–Feb 2022. The elevation of 581 m and slope of 6° are also consistent with the vegetation's health in the same patch in Jan–Feb 2022, but the temperature anomaly is not present in the same patch in Jan–Feb 2023. The evidence that contradicts the change in vegetation is the presence of more pixels dropped by more than 0.05 in the same patch in Jan–Feb 2023, which is not present",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.57
+    },
+    {
+      "id": "p04892",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 1.00. The saturation and brightness of the patches are consistent with a healthy forest environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in the saturation and brightness of the patches. The saturation and brightness of the patches are also decreasing, which is consistent with a decline in vegetation. The evidence that contradicts this is the presence of rain, soil moisture anomalies, and temperature anomalies, which are not present in the same patch in Jan–Feb 2023. The presence of these anomalies suggests that the vegetation in the same patch in Jan–Feb 2023 is not healthy.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 1.00. The saturation and brightness of the patches are consistent with a healthy forest environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in the saturation and brightness of the patches. The saturation and brightness of the patches are also decreasing, which is consistent with a decline in vegetation. The evidence that contradicts this is the presence of rain, soil moisture anomalies, and temperature anomalies, which are not present in the same patch in Jan–Feb 2023. The presence of these anomalies suggests that the vegetation in the same patch in Jan–Feb 2023 is not healthy.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.14
+    },
+    {
+      "id": "p04898",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 1.00. The saturation and brightness of the patches are consistent with a healthy forest environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in the saturation and brightness of the patches. The saturation and brightness of the patches are also decreasing, which is consistent with a decline in vegetation. The evidence that contradicts this is the presence of a temperature anomaly, which is not present in the same patch in Jan–Feb 2023.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 1.00. The saturation and brightness of the patches are consistent with a healthy forest environment. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in the saturation and brightness of the patches. The saturation and brightness of the patches are also decreasing, which is consistent with a decline in vegetation. The evidence that contradicts this is the presence of a temperature anomaly, which is not present in the same patch in Jan–Feb 2023.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.86
+    },
+    {
+      "id": "p04996",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.91. The saturation of the colors is also consistent with the vegetation's coloration. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a yellowish hue, which is indicative of the loss of greenery. The evidence for this change is the decrease in saturation and the presence of a yellowish hue, which are not present in the first image. The temperature anomaly in the second image is also consistent with the decline in vegetation, but the presence of a temperature anomaly does not necessarily mean that the vegetation is declining. The evidence for this change is the presence of a temperature anomaly, which is not present in the first image. The presence of a moisture anomaly in the second image is also consistent with the decline in vegetation, but the presence of a moisture anomaly does not necessarily mean that the vegetation is declining. The evidence for this change is the presence of a moisture anomaly, which is not present in the first image. The elevation of the vegetation in the second image is also consistent with the decline in vegetation, but the elevation",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.91. The saturation of the colors is also consistent with the vegetation's coloration. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a yellowish hue, which is indicative of the loss of greenery. The evidence for this change is the decrease in saturation and the presence of a yellowish hue, which are not present in the first image. The temperature anomaly in the second image is also consistent with the decline in vegetation, but the presence of a temperature anomaly does not necessarily mean that the vegetation is declining. The evidence for this change is the presence of a temperature anomaly, which is not present in the first image. The presence of a moisture anomaly in the second image is also consistent with the decline in vegetation, but the presence of a moisture anomaly does not necessarily mean that the vegetation is declining. The evidence for this change is the presence of a moisture anomaly, which is not present in the first image. The elevation of the vegetation in the second image is also consistent with the decline in vegetation, but the elevation",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.37
+    },
+    {
+      "id": "p05015",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.89. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the reduction in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of 513 m and the slope of 4° are also decreasing in Jan–Feb 2023, which is consistent with the decline in vegetation. The presence of a decrease in saturation in the color and the decrease in saturation in the color are also consistent with the decline in vegetation. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of 513 m and the slope of 4° are also decreasing",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.89. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the reduction in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of 513 m and the slope of 4° are also decreasing in Jan–Feb 2023, which is consistent with the decline in vegetation. The presence of a decrease in saturation in the color and the decrease in saturation in the color are also consistent with the decline in vegetation. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of 513 m and the slope of 4° are also decreasing",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.34
+    },
+    {
+      "id": "p05082",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.24. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, with the saturation of the color decreasing and the saturation of the color in the vegetation decreasing. The evidence for this change is the presence of a decrease in the saturation of the color in the vegetation, which is consistent with the decline in the vegetation. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in the vegetation. The elevation of the vegetation in the forest patch in Jan–Feb 2022 is 638 m, and the slope of the vegetation is 6°, which is consistent with the decline in the vegetation. The presence of a decrease in the saturation of the color in the vegetation in the forest patch in Jan–Feb 2023 is consistent with the decline in the vegetation. The evidence for this change is the decrease in the saturation of the color in the vegetation, which is consistent with the decline in the vegetation. The temperature anomaly in",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.24. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, with the saturation of the color decreasing and the saturation of the color in the vegetation decreasing. The evidence for this change is the presence of a decrease in the saturation of the color in the vegetation, which is consistent with the decline in the vegetation. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in the vegetation. The elevation of the vegetation in the forest patch in Jan–Feb 2022 is 638 m, and the slope of the vegetation is 6°, which is consistent with the decline in the vegetation. The presence of a decrease in the saturation of the color in the vegetation in the forest patch in Jan–Feb 2023 is consistent with the decline in the vegetation. The evidence for this change is the decrease in the saturation of the color in the vegetation, which is consistent with the decline in the vegetation. The temperature anomaly in",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.27
+    },
+    {
+      "id": "p05117",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.76. The saturation of the color is also consistent with the vegetation's coloration. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color of the vegetation. The evidence for this change is the decrease in saturation and the decrease in saturation in the color of the vegetation in the same patch in Jan–Feb 2023.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.76. The saturation of the color is also consistent with the vegetation's coloration. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color of the vegetation. The evidence for this change is the decrease in saturation and the decrease in saturation in the color of the vegetation in the same patch in Jan–Feb 2023.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.62
+    },
+    {
+      "id": "p05122",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.95. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the reduction in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of 522 m and the slope of 9° are also consistent with the decline in vegetation. The presence of a decrease in saturation and the decrease in saturation in the color are consistent with the decline in vegetation. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of 522 m and the slope of 9° are also consistent with the decline in vegetation. The presence of a decrease in saturation and the decrease in",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.95. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the reduction in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of 522 m and the slope of 9° are also consistent with the decline in vegetation. The presence of a decrease in saturation and the decrease in saturation in the color are consistent with the decline in vegetation. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in vegetation. The elevation of 522 m and the slope of 9° are also consistent with the decline in vegetation. The presence of a decrease in saturation and the decrease in",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.34
+    },
+    {
+      "id": "p05384",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the consistent green cover in the RGB color map. The saturation and brightness of the vegetation are consistent with a healthy state. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and brightness, and the presence of a decrease in vegetation cover. The saturation and brightness of the vegetation in the same patch in Jan–Feb 2023 are also consistent with a decline in vegetation cover. The evidence that contradicts this change is the presence of a decrease in vegetation cover in the same patch in Jan–Feb 2023.",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the consistent green cover in the RGB color map. The saturation and brightness of the vegetation are consistent with a healthy state. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and brightness, and the presence of a decrease in vegetation cover. The saturation and brightness of the vegetation in the same patch in Jan–Feb 2023 are also consistent with a decline in vegetation cover. The evidence that contradicts this change is the presence of a decrease in vegetation cover in the same patch in Jan–Feb 2023.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 5.22
+    },
+    {
+      "id": "p05511",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.76. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of 531 m and the slope of 5° are also consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color does not necessarily mean that the vegetation is stable. The evidence for this change is the decrease in saturation in the color. The evidence for this change is the decrease in saturation in the color. The evidence for this change is the decrease in saturation in the color. The evidence for this change is the decrease in saturation in the color. The evidence for this change is the decrease in saturation in the color. The evidence for this change is",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.76. The saturation of the color is also consistent with the vegetation's health. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the color. The evidence for this change is the decrease in saturation and the decrease in saturation in the color. The temperature anomaly in Jan–Feb 2023 is also decreasing, which is consistent with the decline in saturation in the color. The elevation of 531 m and the slope of 5° are also consistent with the decline in saturation in the color. The presence of a decrease in saturation in the color does not necessarily mean that the vegetation is stable. The evidence for this change is the decrease in saturation in the color. The evidence for this change is the decrease in saturation in the color. The evidence for this change is the decrease in saturation in the color. The evidence for this change is the decrease in saturation in the color. The evidence for this change is the decrease in saturation in the color. The evidence for this change is",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.28
+    },
+    {
+      "id": "p05771",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.77. The saturation of the colors is also consistent with the vegetation's coloration. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the RGB 0.77 image. The saturation in the NDBI image is also decreasing, and the NBR image shows a decrease in saturation. The temperature anomaly in the NDBI image is positive, while the temperature anomaly in the NBR image is negative. The elevation in the NDBI image is 646 m, and the slope in the NDBI image is 4°. The moisture anomaly in the NDBI image is positive, while the moisture anomaly in the NBR image is negative. The temperature anomaly in the NDBI image is positive, while the temperature anomaly in the NBR image is negative. The rainfall in Jan–Feb 2022 is positive, while the rainfall in Jan–Feb 2023 is negative. The soil moisture anomaly in the NDBI image",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "The vegetation in the forest patch in Jan–Feb 2022 is stable, as evidenced by the green cover in RGB 0.77. The saturation of the colors is also consistent with the vegetation's coloration. In contrast, the vegetation in the same patch in Jan–Feb 2023 is declining, as indicated by the decrease in saturation and the presence of a decrease in saturation in the RGB 0.77 image. The saturation in the NDBI image is also decreasing, and the NBR image shows a decrease in saturation. The temperature anomaly in the NDBI image is positive, while the temperature anomaly in the NBR image is negative. The elevation in the NDBI image is 646 m, and the slope in the NDBI image is 4°. The moisture anomaly in the NDBI image is positive, while the moisture anomaly in the NBR image is negative. The temperature anomaly in the NDBI image is positive, while the temperature anomaly in the NBR image is negative. The rainfall in Jan–Feb 2022 is positive, while the rainfall in Jan–Feb 2023 is negative. The soil moisture anomaly in the NDBI image",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.23
+    }
+  ]
+}

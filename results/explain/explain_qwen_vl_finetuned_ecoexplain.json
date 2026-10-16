@@ -1,0 +1,1428 @@
+{
+  "combo_id": "qwen_vl_finetuned_ecoexplain",
+  "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+  "adapter_dir": "results/checkpoints/qwen2vl_lora_explain",
+  "laptop": false,
+  "finetuned": true,
+  "mode": "explain",
+  "prompt_mode": "explain",
+  "answer_format": "json",
+  "generation": {
+    "max_new_tokens": 256,
+    "do_sample": false
+  },
+  "n_eval": 55,
+  "n_parsed_class": 55,
+  "accuracy": 0.6181818181818182,
+  "seconds": 935.41,
+  "predictions": [
+    {
+      "id": "p00052",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"Green cover in RGB 1.00 -> 0.99\", \"change_class\": \"stable\", \"justification\": \"The green cover in the RGB image has decreased from 1.00 to 0.99, indicating a decline in vegetation. The supporting evidence is the NDVI value which dropped from 0.315 to 0.293, which is a significant decrease. The conflicting evidence is the temperature anomaly which increased from -1.6 to +0.9 °C, suggesting that temperature changes could also affect the vegetation. The elevation and slope values are not relevant to the vegetation change.\", \"possible_driver\": \"The decrease in green cover could be due to factors such as climate change, deforestation, or changes in land use, but without more information, it is difficult to determine the exact cause.\"}",
+      "parsed": {
+        "visual_change": "Green cover in RGB 1.00 -> 0.99",
+        "change_class": "stable",
+        "justification": "The green cover in the RGB image has decreased from 1.00 to 0.99, indicating a decline in vegetation. The supporting evidence is the NDVI value which dropped from 0.315 to 0.293, which is a significant decrease. The conflicting evidence is the temperature anomaly which increased from -1.6 to +0.9 °C, suggesting that temperature changes could also affect the vegetation. The elevation and slope values are not relevant to the vegetation change.",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "The decrease in green cover could be due to factors such as climate change, deforestation, or changes in land use, but without more information, it is difficult to determine the exact cause.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.4,
+      "n_claims": 5
+    },
+    {
+      "id": "p00086",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.346 to 0.338\", \"change_class\": \"decline\", \"justification\": \"The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value decreased by 0.008, which is a significant change.\", \"supporting_evidence\": [\"NDVI Δ -0.008\"], \"conflicting_evidence\": [\"NDVI Δ +0.007 | NDMI Δ +0.011 | NBR Δ +0.013\"], \"possible_driver\": \"The decrease in NDVI could be due to factors such as changes in climate, soil moisture, or other environmental factors that affect vegetation health.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.346 to 0.338",
+        "change_class": "decline",
+        "justification": "The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value decreased by 0.008, which is a significant change.",
+        "supporting_evidence": [
+          "NDVI Δ -0.008"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ +0.007 | NDMI Δ +0.011 | NBR Δ +0.013"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to factors such as changes in climate, soil moisture, or other environmental factors that affect vegetation health.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.0,
+      "n_claims": 5
+    },
+    {
+      "id": "p00575",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"Green cover in RGB decreased from 0.74 to 0.42\", \"change_class\": \"decline\", \"justification\": \"The NDVI value dropped from 0.625 to 0.575, indicating a decrease in green cover. The EVI and NDMI also decreased, with EVI dropping by 0.004 and NDMI by 0.007. The green cover in RGB decreased from 0.74 to 0.42, which is a significant reduction. The SAR VV and VH values decreased by 0.22 and 0.41 dB, respectively, which could be due to changes in the vegetation cover. The rainfall and soil moisture anomalies also decreased, with rainfall dropping by 72.5 mm and soil moisture by 0.027 mm. The elevation and slope remained the same, but the temperature increased by 1.5 °C. The conflicting evidence includes the slight increase in temperature and the decrease in rainfall, which could be due to natural variations in climate.\", \"supporting_evidence\": [\"NDVI dropped from 0.625 to 0.575\", \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "{\"visual_change\": \"Green cover in RGB decreased from 0.74 to 0.42\", \"change_class\": \"decline\", \"justification\": \"The NDVI value dropped from 0.625 to 0.575, indicating a decrease in green cover. The EVI and NDMI also decreased, with EVI dropping by 0.004 and NDMI by 0.007. The green cover in RGB decreased from 0.74 to 0.42, which is a significant reduction. The SAR VV and VH values decreased by 0.22 and 0.41 dB, respectively, which could be due to changes in the vegetation cover. The rainfall and soil moisture anomalies also decreased, with rainfall dropping by 72.5 mm and soil moisture by 0.027 mm. The elevation and slope remained the same, but the temperature increased by 1.5 °C. The conflicting evidence includes the slight increase in temperature and the decrease in rainfall, which could be due to natural variations in climate.\", \"supporting_evidence\": [\"NDVI dropped from 0.625 to 0.575\", \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.6666666666666666,
+      "n_claims": 15
+    },
+    {
+      "id": "p00701",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI increased from 0.581 to 0.585, indicating a greening of the forest patch\", \"change_class\": \"increased\", \"justification\": \"The NDVI value increased by 0.004, which is a significant change from the previous year. This suggests that the forest patch is becoming more green and healthy.\", \"supporting_evidence\": [\"NDVI Δ +0.004\"], \"conflicting_evidence\": [\"NDVI Δ +0.004\", \"NDVI Δ +0.004\"], \"possible_driver\": \"The increase in NDVI could be due to an increase in rainfall or temperature, which are known to affect vegetation growth. However, the table does not provide specific evidence for these factors, so it is not a certainty.\"}",
+      "parsed": {
+        "visual_change": "NDVI increased from 0.581 to 0.585, indicating a greening of the forest patch",
+        "change_class": "increase",
+        "justification": "The NDVI value increased by 0.004, which is a significant change from the previous year. This suggests that the forest patch is becoming more green and healthy.",
+        "supporting_evidence": [
+          "NDVI Δ +0.004"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ +0.004",
+          "NDVI Δ +0.004"
+        ],
+        "possible_driver": "The increase in NDVI could be due to an increase in rainfall or temperature, which are known to affect vegetation growth. However, the table does not provide specific evidence for these factors, so it is not a certainty.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.14285714285714285,
+      "n_claims": 7
+    },
+    {
+      "id": "p00850",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.695 to 0.681\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.014, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.014\"], \"conflicting_evidence\": [\"EVI Δ +0.003 | NDMI Δ +0.016 | NBR Δ +0.022\"], \"possible_driver\": \"The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the NDVI value is a sensitive indicator of vegetation health, and a significant drop in NDVI is likely to be caused by a decline in vegetation health.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.695 to 0.681",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.014, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.014"
+        ],
+        "conflicting_evidence": [
+          "EVI Δ +0.003 | NDMI Δ +0.016 | NBR Δ +0.022"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the NDVI value is a sensitive indicator of vegetation health, and a significant drop in NDVI is likely to be caused by a decline in vegetation health.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.0,
+      "n_claims": 6
+    },
+    {
+      "id": "p00863",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"Green cover in RGB has decreased from 0.88 to 0.86\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased from 0.682 to 0.666, which is a decrease of 0.017. This indicates a decline in green cover. Additionally, the EVI and NDMI values also decreased, with EVI decreasing by 0.015 and NDMI by 0.025. The NBR value increased by 0.032, which is not significant enough to explain the overall decline in green cover. The SAR VV and VH values decreased by 0.53 and 0.41 dB, respectively, which could be due to changes in the vegetation cover. The rainfall and soil moisture values decreased by 77.6 and 27.5 mm, respectively, which could also contribute to the decline in green cover. The elevation and slope values did not change significantly, which suggests that the change in green cover is not due to changes in elevation or slope. The temperature values increased by 1.5 and -1.0 °C, which could be due",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "{\"visual_change\": \"Green cover in RGB has decreased from 0.88 to 0.86\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased from 0.682 to 0.666, which is a decrease of 0.017. This indicates a decline in green cover. Additionally, the EVI and NDMI values also decreased, with EVI decreasing by 0.015 and NDMI by 0.025. The NBR value increased by 0.032, which is not significant enough to explain the overall decline in green cover. The SAR VV and VH values decreased by 0.53 and 0.41 dB, respectively, which could be due to changes in the vegetation cover. The rainfall and soil moisture values decreased by 77.6 and 27.5 mm, respectively, which could also contribute to the decline in green cover. The elevation and slope values did not change significantly, which suggests that the change in green cover is not due to changes in elevation or slope. The temperature values increased by 1.5 and -1.0 °C, which could be due",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.4666666666666667,
+      "n_claims": 15
+    },
+    {
+      "id": "p00883",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.723 to 0.688\", \"change_class\": \"decline\", \"justification\": \"The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value decreased by 0.035, which is a significant change.\", \"supporting_evidence\": [\"NDVI Δ -0.035\"], \"conflicting_evidence\": [\"NDVI Δ -0.035\", \"NDVI Δ -0.035\"], \"possible_driver\": \"The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline in NDVI cannot be determined from the provided data alone.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.723 to 0.688",
+        "change_class": "decline",
+        "justification": "The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value decreased by 0.035, which is a significant change.",
+        "supporting_evidence": [
+          "NDVI Δ -0.035"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.035",
+          "NDVI Δ -0.035"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline in NDVI cannot be determined from the provided data alone.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 1.0,
+      "n_claims": 6
+    },
+    {
+      "id": "p00937",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI decreased from 0.683 to 0.652\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.032, which is a significant drop in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.032\"], \"conflicting_evidence\": [\"NDVI Δ +0.001 | NDMI Δ +0.029 | NBR Δ +0.038\"], \"possible_driver\": \"The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the NDVI value is a good indicator of vegetation health, and a decrease in NDVI suggests a decline in vegetation.\"}",
+      "parsed": {
+        "visual_change": "NDVI decreased from 0.683 to 0.652",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.032, which is a significant drop in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.032"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ +0.001 | NDMI Δ +0.029 | NBR Δ +0.038"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the NDVI value is a good indicator of vegetation health, and a decrease in NDVI suggests a decline in vegetation.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.7142857142857143,
+      "n_claims": 7
+    },
+    {
+      "id": "p01162",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"Green cover in RGB increased from 0.87 to 0.98\", \"change_class\": \"increased\", \"justification\": \"The green cover in the RGB image increased from 0.87 to 0.98, which is a significant change in the green cover percentage. This indicates an increase in vegetation cover.\", \"supporting_evidence\": [\"NDVI Δ +0.024\", \"EVI Δ +0.051 | NDMI Δ +0.105 | NBR Δ +0.117\"], \"conflicting_evidence\": [\"Green cover in RGB 0.87 -> 0.98\"], \"possible_driver\": \"The increase in green cover could be attributed to an increase in rainfall, as the rainfall anomaly increased from 75.2 to 26.7 mm, which would likely lead to an increase in vegetation cover due to increased water availability.\"}",
+      "parsed": {
+        "visual_change": "Green cover in RGB increased from 0.87 to 0.98",
+        "change_class": "increase",
+        "justification": "The green cover in the RGB image increased from 0.87 to 0.98, which is a significant change in the green cover percentage. This indicates an increase in vegetation cover.",
+        "supporting_evidence": [
+          "NDVI Δ +0.024",
+          "EVI Δ +0.051 | NDMI Δ +0.105 | NBR Δ +0.117"
+        ],
+        "conflicting_evidence": [
+          "Green cover in RGB 0.87 -> 0.98"
+        ],
+        "possible_driver": "The increase in green cover could be attributed to an increase in rainfall, as the rainfall anomaly increased from 75.2 to 26.7 mm, which would likely lead to an increase in vegetation cover due to increased water availability.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.7142857142857143,
+      "n_claims": 7
+    },
+    {
+      "id": "p01206",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.522 to 0.490\", \"change_class\": \"decline\", \"justification\": \"The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value dropped by 0.031, which is a significant decrease.\", \"supporting_evidence\": [\"NDVI Δ -0.031\"], \"conflicting_evidence\": [\"NDVI Δ -0.031\", \"NDVI Δ -0.031\"], \"possible_driver\": \"The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline in NDVI cannot be determined from the provided data alone.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.522 to 0.490",
+        "change_class": "decline",
+        "justification": "The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value dropped by 0.031, which is a significant decrease.",
+        "supporting_evidence": [
+          "NDVI Δ -0.031"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.031",
+          "NDVI Δ -0.031"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline in NDVI cannot be determined from the provided data alone.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 1.0,
+      "n_claims": 8
+    },
+    {
+      "id": "p01415",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.573 to 0.556\", \"change_class\": \"decline\", \"justification\": \"The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value decreased by 0.016, which is a significant change.\", \"supporting_evidence\": [\"NDVI Δ -0.016\"], \"conflicting_evidence\": [\"NDVI Δ -0.016\", \"NDVI Δ -0.016\"], \"possible_driver\": \"The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline in NDVI cannot be determined from the provided data alone.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.573 to 0.556",
+        "change_class": "decline",
+        "justification": "The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value decreased by 0.016, which is a significant change.",
+        "supporting_evidence": [
+          "NDVI Δ -0.016"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.016",
+          "NDVI Δ -0.016"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline in NDVI cannot be determined from the provided data alone.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.0,
+      "n_claims": 6
+    },
+    {
+      "id": "p01621",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"Green cover in RGB has decreased from 0.52 to 0.34\", \"change_class\": \"decline\", \"justification\": \"The NDVI value has decreased from 0.529 to 0.502, which is a decrease of 0.027. This decrease in NDVI is a clear indicator of a decline in green cover. Additionally, the EVI and NDMI values have both decreased, with EVI decreasing by 0.001 and NDMI decreasing by 0.040. This suggests a decrease in green cover. The SAR VV and VH values have both decreased by 0.76 dB and 0.78 dB, respectively, which is a decrease in the amount of green cover. The rainfall anomaly has decreased from 58.4 mm to 23.0 mm, which is a decrease of 35.4 mm. The soil moisture anomaly has increased from +0.023 to -0.039, which is an increase of -0.062. The temperature anomaly has increased from -1.6 °C to +0.8 °C, which is an",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "{\"visual_change\": \"Green cover in RGB has decreased from 0.52 to 0.34\", \"change_class\": \"decline\", \"justification\": \"The NDVI value has decreased from 0.529 to 0.502, which is a decrease of 0.027. This decrease in NDVI is a clear indicator of a decline in green cover. Additionally, the EVI and NDMI values have both decreased, with EVI decreasing by 0.001 and NDMI decreasing by 0.040. This suggests a decrease in green cover. The SAR VV and VH values have both decreased by 0.76 dB and 0.78 dB, respectively, which is a decrease in the amount of green cover. The rainfall anomaly has decreased from 58.4 mm to 23.0 mm, which is a decrease of 35.4 mm. The soil moisture anomaly has increased from +0.023 to -0.039, which is an increase of -0.062. The temperature anomaly has increased from -1.6 °C to +0.8 °C, which is an",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.6666666666666666,
+      "n_claims": 15
+    },
+    {
+      "id": "p01648",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.722 to 0.693\", \"change_class\": \"decline\", \"justification\": \"The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value decreased by 0.029 units, which is a significant change.\", \"supporting_evidence\": [\"NDVI Δ -0.029\"], \"conflicting_evidence\": [\"NDVI Δ -0.029\", \"NDVI Δ -0.000 | NDMI Δ -0.000 | NBR Δ +0.001\"], \"possible_driver\": \"The decrease in NDVI could be due to factors such as changes in climate, soil moisture, or other environmental factors that affect vegetation health.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.722 to 0.693",
+        "change_class": "decline",
+        "justification": "The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value decreased by 0.029 units, which is a significant change.",
+        "supporting_evidence": [
+          "NDVI Δ -0.029"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.029",
+          "NDVI Δ -0.000 | NDMI Δ -0.000 | NBR Δ +0.001"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to factors such as changes in climate, soil moisture, or other environmental factors that affect vegetation health.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.8,
+      "n_claims": 5
+    },
+    {
+      "id": "p01988",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI increased from 0.544 to 0.548\", \"change_class\": \"increased\", \"justification\": \"The NDVI value increased by 0.004, which is a significant change from the previous year. This indicates that the vegetation in the forest patch has grown or become more green.\", \"supporting_evidence\": [\"NDVI Δ +0.004\"], \"conflicting_evidence\": [\"NDVI Δ +0.004 | NDMI Δ +0.004 | NBR Δ +0.007\"], \"possible_driver\": \"The increase in NDVI could be due to factors such as increased rainfall, temperature, or soil moisture, but without more specific data, it is difficult to determine the exact cause.\"}",
+      "parsed": {
+        "visual_change": "NDVI increased from 0.544 to 0.548",
+        "change_class": "increase",
+        "justification": "The NDVI value increased by 0.004, which is a significant change from the previous year. This indicates that the vegetation in the forest patch has grown or become more green.",
+        "supporting_evidence": [
+          "NDVI Δ +0.004"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ +0.004 | NDMI Δ +0.004 | NBR Δ +0.007"
+        ],
+        "possible_driver": "The increase in NDVI could be due to factors such as increased rainfall, temperature, or soil moisture, but without more specific data, it is difficult to determine the exact cause.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.14285714285714285,
+      "n_claims": 7
+    },
+    {
+      "id": "p02128",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.681 to 0.640\", \"change_class\": \"decline\", \"justification\": \"The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value decreased by 0.041, which is a significant change.\", \"supporting_evidence\": [\"NDVI Δ -0.041\"], \"conflicting_evidence\": [\"NDVI Δ -0.041\", \"NDVI Δ -0.041\"], \"possible_driver\": \"The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline in NDVI cannot be determined from the provided data alone.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.681 to 0.640",
+        "change_class": "decline",
+        "justification": "The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value decreased by 0.041, which is a significant change.",
+        "supporting_evidence": [
+          "NDVI Δ -0.041"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.041",
+          "NDVI Δ -0.041"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline in NDVI cannot be determined from the provided data alone.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 1.0,
+      "n_claims": 6
+    },
+    {
+      "id": "p02139",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.697 to 0.673\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.024, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.024\"], \"conflicting_evidence\": [\"NDVI Δ -0.024\", \"NDVI Δ -0.024\"], \"possible_driver\": \"The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline cannot be determined from the provided data alone.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.697 to 0.673",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.024, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.024"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.024",
+          "NDVI Δ -0.024"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline cannot be determined from the provided data alone.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 1.0,
+      "n_claims": 5
+    },
+    {
+      "id": "p02334",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.703 to 0.685\", \"change_class\": \"decline\", \"justification\": \"The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value decreased by 0.018, which is a significant change.\", \"supporting_evidence\": [\"NDVI Δ -0.018\"], \"conflicting_evidence\": [\"EVI Δ -0.007 | NDMI Δ -0.015 | NBR Δ -0.009\"], \"possible_driver\": \"The decrease in NDVI could be due to factors such as changes in climate, soil moisture, or temperature, but the specific driver cannot be determined from the provided data alone.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.703 to 0.685",
+        "change_class": "decline",
+        "justification": "The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value decreased by 0.018, which is a significant change.",
+        "supporting_evidence": [
+          "NDVI Δ -0.018"
+        ],
+        "conflicting_evidence": [
+          "EVI Δ -0.007 | NDMI Δ -0.015 | NBR Δ -0.009"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to factors such as changes in climate, soil moisture, or temperature, but the specific driver cannot be determined from the provided data alone.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.0,
+      "n_claims": 5
+    },
+    {
+      "id": "p02668",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI increased from 0.572 to 0.579\", \"change_class\": \"increased\", \"justification\": \"The NDVI value increased by 0.007, which is a significant change from the previous year. This indicates that the vegetation in the forest patch has grown or become more green.\", \"supporting_evidence\": [\"NDVI Δ +0.007\"], \"conflicting_evidence\": [\"EVI Δ +0.013 | NDMI Δ +0.043 | NBR Δ +0.061\"], \"possible_driver\": \"The increase in NDVI could be due to an increase in rainfall or temperature, which would lead to an increase in green vegetation. However, the decrease in temperature anomaly suggests that the increase in NDVI might not be solely due to temperature changes.\"}",
+      "parsed": {
+        "visual_change": "NDVI increased from 0.572 to 0.579",
+        "change_class": "increase",
+        "justification": "The NDVI value increased by 0.007, which is a significant change from the previous year. This indicates that the vegetation in the forest patch has grown or become more green.",
+        "supporting_evidence": [
+          "NDVI Δ +0.007"
+        ],
+        "conflicting_evidence": [
+          "EVI Δ +0.013 | NDMI Δ +0.043 | NBR Δ +0.061"
+        ],
+        "possible_driver": "The increase in NDVI could be due to an increase in rainfall or temperature, which would lead to an increase in green vegetation. However, the decrease in temperature anomaly suggests that the increase in NDVI might not be solely due to temperature changes.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.4444444444444444,
+      "n_claims": 9
+    },
+    {
+      "id": "p02674",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The NDVI value dropped from 0.528 to 0.489, indicating a decrease in vegetation health.\", \"change_class\": \"decline\", \"justification\": \"The NDVI value is a measure of vegetation health, and a decrease in NDVI suggests a decline in vegetation. The NDVI value dropped by 0.040, which is a significant change.\", \"supporting_evidence\": [\"NDVI Δ -0.040\"], \"conflicting_evidence\": [\"EVI Δ -0.002 | NDMI Δ +0.002 | NBR Δ +0.013\"], \"possible_driver\": \"The drop in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline in NDVI cannot be determined from the provided data alone.\"}",
+      "parsed": {
+        "visual_change": "The NDVI value dropped from 0.528 to 0.489, indicating a decrease in vegetation health.",
+        "change_class": "decline",
+        "justification": "The NDVI value is a measure of vegetation health, and a decrease in NDVI suggests a decline in vegetation. The NDVI value dropped by 0.040, which is a significant change.",
+        "supporting_evidence": [
+          "NDVI Δ -0.040"
+        ],
+        "conflicting_evidence": [
+          "EVI Δ -0.002 | NDMI Δ +0.002 | NBR Δ +0.013"
+        ],
+        "possible_driver": "The drop in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline in NDVI cannot be determined from the provided data alone.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.8333333333333334,
+      "n_claims": 6
+    },
+    {
+      "id": "p02803",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"Green cover in RGB has decreased from 0.33 to 0.22\", \"change_class\": \"decline\", \"justification\": \"The green cover in the RGB channel has decreased from 0.33 to 0.22, which is a significant reduction in green vegetation. This is the only visible change in the image, and it is the only number that has decreased.\", \"supporting_evidence\": [\"NDVI Δ -0.018\", \"EVI Δ -0.004 | NDMI Δ -0.008 | NBR Δ +0.005\"], \"conflicting_evidence\": [\"SAR VV Δ -0.82 dB, VH Δ -1.11 dB\"], \"possible_driver\": \"The decrease in green cover could be due to a variety of factors, such as changes in climate, soil moisture, or human activity. Without more information, it is difficult to determine the exact cause of the decline.\"}",
+      "parsed": {
+        "visual_change": "Green cover in RGB has decreased from 0.33 to 0.22",
+        "change_class": "decline",
+        "justification": "The green cover in the RGB channel has decreased from 0.33 to 0.22, which is a significant reduction in green vegetation. This is the only visible change in the image, and it is the only number that has decreased.",
+        "supporting_evidence": [
+          "NDVI Δ -0.018",
+          "EVI Δ -0.004 | NDMI Δ -0.008 | NBR Δ +0.005"
+        ],
+        "conflicting_evidence": [
+          "SAR VV Δ -0.82 dB, VH Δ -1.11 dB"
+        ],
+        "possible_driver": "The decrease in green cover could be due to a variety of factors, such as changes in climate, soil moisture, or human activity. Without more information, it is difficult to determine the exact cause of the decline.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.6,
+      "n_claims": 5
+    },
+    {
+      "id": "p02890",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.662 to 0.638\", \"change_class\": \"decline\", \"justification\": \"The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value decreased by 0.025 units, which is a significant change.\", \"supporting_evidence\": [\"NDVI Δ -0.025\"], \"conflicting_evidence\": [\"NDVI Δ -0.025\", \"NDVI Δ -0.025\"], \"possible_driver\": \"The decrease in NDVI could be due to a variety of factors, including changes in climate conditions, soil moisture, or other environmental factors. However, the specific cause of the decline in NDVI cannot be determined from the provided data alone.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.662 to 0.638",
+        "change_class": "decline",
+        "justification": "The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value decreased by 0.025 units, which is a significant change.",
+        "supporting_evidence": [
+          "NDVI Δ -0.025"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.025",
+          "NDVI Δ -0.025"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to a variety of factors, including changes in climate conditions, soil moisture, or other environmental factors. However, the specific cause of the decline in NDVI cannot be determined from the provided data alone.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 1.0,
+      "n_claims": 6
+    },
+    {
+      "id": "p03067",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI increased from 0.625 to 0.628, indicating a greener forest patch\"}, {\"change_class\": \"increased\", \"justification\": \"The NDVI value increased by 0.003, which is a significant change from 0.625 to 0.628, suggesting an increase in vegetation cover\"}, {\"supporting_evidence\": [\"NDVI Δ +0.003\"]}, {\"conflicting_evidence\": [\"NDVI Δ +0.005 | NDMI Δ +0.035 | NBR Δ +0.046\"], \"possible_driver\": \"The increase in NDVI could be attributed to an increase in vegetation cover, as the NDVI is a measure of vegetation health and density.\"}",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "increase",
+        "justification": "{\"visual_change\": \"NDVI increased from 0.625 to 0.628, indicating a greener forest patch\"}, {\"change_class\": \"increased\", \"justification\": \"The NDVI value increased by 0.003, which is a significant change from 0.625 to 0.628, suggesting an increase in vegetation cover\"}, {\"supporting_evidence\": [\"NDVI Δ +0.003\"]}, {\"conflicting_evidence\": [\"NDVI Δ +0.005 | NDMI Δ +0.035 | NBR Δ +0.046\"], \"possible_driver\": \"The increase in NDVI could be attributed to an increase in vegetation cover, as the NDVI is a measure of vegetation health and density.\"}",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.0,
+      "n_claims": 3
+    },
+    {
+      "id": "p03122",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI value dropped from 0.646 to 0.602\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.044, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.044\"], \"conflicting_evidence\": [\"NDVI Δ -0.044\", \"NDVI Δ -0.044\"], \"possible_driver\": \"The NDVI value dropped, which could be due to a variety of factors such as changes in climate, soil moisture, or other environmental factors. However, without more specific information about the surrounding environment, it is difficult to determine the exact cause of the decline.\"}",
+      "parsed": {
+        "visual_change": "NDVI value dropped from 0.646 to 0.602",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.044, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.044"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.044",
+          "NDVI Δ -0.044"
+        ],
+        "possible_driver": "The NDVI value dropped, which could be due to a variety of factors such as changes in climate, soil moisture, or other environmental factors. However, without more specific information about the surrounding environment, it is difficult to determine the exact cause of the decline.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 1.0,
+      "n_claims": 5
+    },
+    {
+      "id": "p03228",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.697 to 0.654\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.043, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.043\"], \"conflicting_evidence\": [\"NDVI Δ -0.043\", \"NDVI Δ -0.043\"], \"possible_driver\": \"The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline cannot be determined from the provided data alone.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.697 to 0.654",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.043, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.043"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.043",
+          "NDVI Δ -0.043"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline cannot be determined from the provided data alone.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 1.0,
+      "n_claims": 5
+    },
+    {
+      "id": "p03243",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI increased from 0.703 to 0.705, indicating a greener forest patch\"}, {\"change_class\": \"increased\", \"justification\": \"The NDVI value increased by 0.002, which is a positive change, suggesting an increase in vegetation cover\"}, {\"supporting_evidence\": [\"NDVI 0.703 -> 0.705 (Δ +0.002)\"]}, {\"conflicting_evidence\": [\"NDVI 0.703 -> 0.705 (Δ +0.002)\"]}, {\"possible_driver\": \"The increase in NDVI could be attributed to an increase in rainfall, as the rainfall anomaly increased from 86.8 to 30.6 mm, which is a significant increase in moisture content in the soil, leading to greener vegetation.\"}",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "increase",
+        "justification": "{\"visual_change\": \"NDVI increased from 0.703 to 0.705, indicating a greener forest patch\"}, {\"change_class\": \"increased\", \"justification\": \"The NDVI value increased by 0.002, which is a positive change, suggesting an increase in vegetation cover\"}, {\"supporting_evidence\": [\"NDVI 0.703 -> 0.705 (Δ +0.002)\"]}, {\"conflicting_evidence\": [\"NDVI 0.703 -> 0.705 (Δ +0.002)\"]}, {\"possible_driver\": \"The increase in NDVI could be attributed to an increase in rainfall, as the rainfall anomaly increased from 86.8 to 30.6 mm, which is a significant increase in moisture content in the soil, leading to greener vegetation.\"}",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.0,
+      "n_claims": 5
+    },
+    {
+      "id": "p03515",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI increased from 0.583 to 0.610\", \"change_class\": \"increased\", \"justification\": \"The NDVI value increased by 0.027, which is a significant change from the previous year. This indicates that the vegetation in the forest patch has grown or become more green.\", \"supporting_evidence\": [\"NDVI Δ +0.027\"], \"conflicting_evidence\": [\"NDVI Δ +0.027\"], \"possible_driver\": \"The increase in NDVI could be due to factors such as increased rainfall, temperature, or soil moisture, but without more specific data, it is difficult to determine the exact cause.\"}",
+      "parsed": {
+        "visual_change": "NDVI increased from 0.583 to 0.610",
+        "change_class": "increase",
+        "justification": "The NDVI value increased by 0.027, which is a significant change from the previous year. This indicates that the vegetation in the forest patch has grown or become more green.",
+        "supporting_evidence": [
+          "NDVI Δ +0.027"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ +0.027"
+        ],
+        "possible_driver": "The increase in NDVI could be due to factors such as increased rainfall, temperature, or soil moisture, but without more specific data, it is difficult to determine the exact cause.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.8571428571428571,
+      "n_claims": 7
+    },
+    {
+      "id": "p03538",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.670 to 0.669\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.001, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.001\"], \"conflicting_evidence\": [\"NDVI Δ -0.001\", \"NDVI Δ -0.001\"], \"possible_driver\": \"The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, without more specific information about the surrounding environment, it is difficult to determine the exact cause of the decline.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.670 to 0.669",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.001, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.001"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.001",
+          "NDVI Δ -0.001"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, without more specific information about the surrounding environment, it is difficult to determine the exact cause of the decline.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.0,
+      "n_claims": 5
+    },
+    {
+      "id": "p03592",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.646 to 0.611\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.036, which is a significant drop in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.036\"], \"conflicting_evidence\": [\"NDVI Δ -0.002 | NDMI Δ -0.009 | NBR Δ -0.004\"], \"possible_driver\": \"The decrease in NDVI could be due to a variety of factors, including changes in climate conditions, soil moisture, or other environmental factors. However, the specific cause of the decline cannot be determined from the provided data alone.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.646 to 0.611",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.036, which is a significant drop in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.036"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.002 | NDMI Δ -0.009 | NBR Δ -0.004"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to a variety of factors, including changes in climate conditions, soil moisture, or other environmental factors. However, the specific cause of the decline cannot be determined from the provided data alone.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.8,
+      "n_claims": 5
+    },
+    {
+      "id": "p03635",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"Green cover in RGB 1.00 -> 1.00\", \"change_class\": \"stable\", \"justification\": \"The green cover in the RGB channel has remained constant from 1.00 in Jan–Feb 2022 to 1.00 in Jan–Feb 2023, indicating no change in vegetation cover.\", \"supporting_evidence\": [\"NDVI Δ +0.017\", \"EVI Δ +0.010 | NDMI Δ +0.012 | NBR Δ +0.025\"], \"conflicting_evidence\": [\"Green cover in RGB 1.00 -> 1.00\"], \"possible_driver\": \"The change in NDVI and EVI values suggests that the vegetation cover has remained stable, but the change in NDMI and NBR values indicates a slight increase in green cover, which could be due to factors such as increased rainfall or soil moisture, but without more information it is not possible to determine the exact cause of the change.\"}",
+      "parsed": {
+        "visual_change": "Green cover in RGB 1.00 -> 1.00",
+        "change_class": "stable",
+        "justification": "The green cover in the RGB channel has remained constant from 1.00 in Jan–Feb 2022 to 1.00 in Jan–Feb 2023, indicating no change in vegetation cover.",
+        "supporting_evidence": [
+          "NDVI Δ +0.017",
+          "EVI Δ +0.010 | NDMI Δ +0.012 | NBR Δ +0.025"
+        ],
+        "conflicting_evidence": [
+          "Green cover in RGB 1.00 -> 1.00"
+        ],
+        "possible_driver": "The change in NDVI and EVI values suggests that the vegetation cover has remained stable, but the change in NDMI and NBR values indicates a slight increase in green cover, which could be due to factors such as increased rainfall or soil moisture, but without more information it is not possible to determine the exact cause of the change.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.4,
+      "n_claims": 5
+    },
+    {
+      "id": "p03689",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"Green cover in RGB increased from 0.84 to 0.98\", \"change_class\": \"increased\", \"justification\": \"The green cover in the RGB channel increased from 0.84 to 0.98, which is a significant increase in green cover. This indicates that vegetation has increased in the forest patch between the two images.\", \"supporting_evidence\": [\"NDVI Δ +0.008\", \"EVI Δ +0.020 | NDMI Δ +0.021 | NBR Δ +0.035\"], \"conflicting_evidence\": [\"Green cover in RGB 0.84 -> 0.98\"], \"possible_driver\": \"The increase in green cover could be due to an increase in rainfall, as the rainfall anomaly in Jan–Feb 2022 was 75.4 mm, which is higher than the 25.6 mm in Jan–Feb 2023, and the soil moisture anomaly in Jan–Feb 2022 was +0.030, which is higher than the -0.048 in Jan–Feb 2023.\"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "increase",
+        "justification": "{\"visual_change\": \"Green cover in RGB increased from 0.84 to 0.98\", \"change_class\": \"increased\", \"justification\": \"The green cover in the RGB channel increased from 0.84 to 0.98, which is a significant increase in green cover. This indicates that vegetation has increased in the forest patch between the two images.\", \"supporting_evidence\": [\"NDVI Δ +0.008\", \"EVI Δ +0.020 | NDMI Δ +0.021 | NBR Δ +0.035\"], \"conflicting_evidence\": [\"Green cover in RGB 0.84 -> 0.98\"], \"possible_driver\": \"The increase in green cover could be due to an increase in rainfall, as the rainfall anomaly in Jan–Feb 2022 was 75.4 mm, which is higher than the 25.6 mm in Jan–Feb 2023, and the soil moisture anomaly in Jan–Feb 2022 was +0.030, which is higher than the -0.048 in Jan–Feb 2023.\"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.6666666666666666,
+      "n_claims": 6
+    },
+    {
+      "id": "p03801",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI increased from 0.456 to 0.459\", \"change_class\": \"increased\", \"justification\": \"The NDVI value increased by 0.003, which is a significant change from the previous year. This indicates that the vegetation in the patch has grown or become more green.\", \"supporting_evidence\": [\"NDVI Δ +0.003\"], \"conflicting_evidence\": [\"NDVI Δ +0.007 | NDMI Δ +0.018 | NBR Δ +0.042\"], \"possible_driver\": \"The increase in NDVI could be due to an increase in rainfall, which would lead to more green vegetation. However, the decrease in temperature anomaly and soil moisture anomaly could also contribute to the increase in vegetation due to the warming effect of the increased rainfall.\"}",
+      "parsed": {
+        "visual_change": "NDVI increased from 0.456 to 0.459",
+        "change_class": "increase",
+        "justification": "The NDVI value increased by 0.003, which is a significant change from the previous year. This indicates that the vegetation in the patch has grown or become more green.",
+        "supporting_evidence": [
+          "NDVI Δ +0.003"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ +0.007 | NDMI Δ +0.018 | NBR Δ +0.042"
+        ],
+        "possible_driver": "The increase in NDVI could be due to an increase in rainfall, which would lead to more green vegetation. However, the decrease in temperature anomaly and soil moisture anomaly could also contribute to the increase in vegetation due to the warming effect of the increased rainfall.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.125,
+      "n_claims": 8
+    },
+    {
+      "id": "p03867",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"NDVI value dropped by 0.011\", \"change_class\": \"decline\", \"justification\": \"The NDVI value dropped from 0.549 to 0.539, indicating a decrease in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.011\"], \"conflicting_evidence\": [\"NDVI Δ -0.011 | NDMI Δ +0.011 | NBR Δ +0.026\"], \"possible_driver\": \"The NDVI value dropped, which is a common indicator of vegetation decline, suggesting that the vegetation in the forest patch has declined.\"}",
+      "parsed": {
+        "visual_change": "NDVI value dropped by 0.011",
+        "change_class": "decline",
+        "justification": "The NDVI value dropped from 0.549 to 0.539, indicating a decrease in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.011"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.011 | NDMI Δ +0.011 | NBR Δ +0.026"
+        ],
+        "possible_driver": "The NDVI value dropped, which is a common indicator of vegetation decline, suggesting that the vegetation in the forest patch has declined.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.0,
+      "n_claims": 5
+    },
+    {
+      "id": "p03991",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.657 to 0.656\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.001, which is a significant change in vegetation health. The NDVI is a measure of greenness and vegetation health, and a decrease in this value indicates a decline in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.001\"], \"conflicting_evidence\": [\"NDVI Δ -0.001\", \"NDVI Δ -0.001\"], \"possible_driver\": \"The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, without more specific information about the surrounding environment, it is difficult to determine the exact cause of the decline.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.657 to 0.656",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.001, which is a significant change in vegetation health. The NDVI is a measure of greenness and vegetation health, and a decrease in this value indicates a decline in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.001"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.001",
+          "NDVI Δ -0.001"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, without more specific information about the surrounding environment, it is difficult to determine the exact cause of the decline.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.0,
+      "n_claims": 6
+    },
+    {
+      "id": "p04040",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"Green cover in RGB has decreased from 0.74 to 0.73\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased from 0.590 to 0.625, which is a decrease of 0.035. This indicates a decrease in green cover. Additionally, the EVI and NDMI values also decreased, with EVI decreasing by 0.029 and NDMI decreasing by 0.025. The NBR value increased by 0.049, which is not significant enough to explain the decrease in green cover. The green cover in RGB decreased from 0.74 to 0.73, which is a decrease of 0.01, which is also not significant enough to explain the decrease in green cover. The elevation and slope values did not change, which suggests that the change in green cover is not due to changes in elevation or slope. The rainfall and temperature values did not change, which suggests that the change in green cover is not due to changes in rainfall or temperature. The soil moisture anomaly and temperature anomaly values did not change, which suggests that the change in green cover",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "{\"visual_change\": \"Green cover in RGB has decreased from 0.74 to 0.73\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased from 0.590 to 0.625, which is a decrease of 0.035. This indicates a decrease in green cover. Additionally, the EVI and NDMI values also decreased, with EVI decreasing by 0.029 and NDMI decreasing by 0.025. The NBR value increased by 0.049, which is not significant enough to explain the decrease in green cover. The green cover in RGB decreased from 0.74 to 0.73, which is a decrease of 0.01, which is also not significant enough to explain the decrease in green cover. The elevation and slope values did not change, which suggests that the change in green cover is not due to changes in elevation or slope. The rainfall and temperature values did not change, which suggests that the change in green cover is not due to changes in rainfall or temperature. The soil moisture anomaly and temperature anomaly values did not change, which suggests that the change in green cover",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.09090909090909091,
+      "n_claims": 11
+    },
+    {
+      "id": "p04059",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI value dropped from 0.555 to 0.522\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.033, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.033\"], \"conflicting_evidence\": [\"NDVI Δ -0.033\"], \"possible_driver\": \"The NDVI value is a measure of vegetation health, and a decrease in NDVI suggests a decline in vegetation health. This could be due to a variety of factors, such as changes in climate, soil conditions, or human activities that affect vegetation growth.\"}",
+      "parsed": {
+        "visual_change": "NDVI value dropped from 0.555 to 0.522",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.033, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.033"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.033"
+        ],
+        "possible_driver": "The NDVI value is a measure of vegetation health, and a decrease in NDVI suggests a decline in vegetation health. This could be due to a variety of factors, such as changes in climate, soil conditions, or human activities that affect vegetation growth.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 1.0,
+      "n_claims": 5
+    },
+    {
+      "id": "p04145",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"Green cover in RGB has decreased from 0.58 to 0.48\", \"change_class\": \"decline\", \"justification\": \"The NDVI value dropped from 0.544 to 0.521, indicating a decrease in green cover. The EVI and NDMI also show a decrease in green cover, with EVI dropping by 0.003 and NDMI by 0.009. The green cover in RGB has decreased from 0.58 to 0.48, which is a significant reduction in green cover.\", \"supporting_evidence\": [\"NDVI 0.544 -> 0.521 (Δ -0.022); 22.4% of pixels dropped by more than 0.05\"], \"conflicting_evidence\": [\"Elevation 743 m, slope 7°\"], \"possible_driver\": \"The decrease in green cover could be due to a decrease in rainfall or an increase in temperature, as the temperature anomaly has increased by 1.4°C, which could affect the vegetation growth.\"}",
+      "parsed": {
+        "visual_change": "Green cover in RGB has decreased from 0.58 to 0.48",
+        "change_class": "decline",
+        "justification": "The NDVI value dropped from 0.544 to 0.521, indicating a decrease in green cover. The EVI and NDMI also show a decrease in green cover, with EVI dropping by 0.003 and NDMI by 0.009. The green cover in RGB has decreased from 0.58 to 0.48, which is a significant reduction in green cover.",
+        "supporting_evidence": [
+          "NDVI 0.544 -> 0.521 (Δ -0.022); 22.4% of pixels dropped by more than 0.05"
+        ],
+        "conflicting_evidence": [
+          "Elevation 743 m, slope 7°"
+        ],
+        "possible_driver": "The decrease in green cover could be due to a decrease in rainfall or an increase in temperature, as the temperature anomaly has increased by 1.4°C, which could affect the vegetation growth.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.6666666666666666,
+      "n_claims": 12
+    },
+    {
+      "id": "p04174",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI value dropped from 0.612 to 0.575\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.036, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.036\"], \"conflicting_evidence\": [\"NDVI Δ -0.036\", \"NDVI Δ -0.036\"], \"possible_driver\": \"The NDVI value dropped by more than 0.05, which is a threshold for vegetation decline. This suggests that the vegetation in the patch has declined.\"}",
+      "parsed": {
+        "visual_change": "NDVI value dropped from 0.612 to 0.575",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.036, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.036"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.036",
+          "NDVI Δ -0.036"
+        ],
+        "possible_driver": "The NDVI value dropped by more than 0.05, which is a threshold for vegetation decline. This suggests that the vegetation in the patch has declined.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 1.0,
+      "n_claims": 5
+    },
+    {
+      "id": "p04203",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI increased from 0.550 to 0.560\", \"change_class\": \"increased\", \"justification\": \"The NDVI value increased by 0.010, which is a positive change. This indicates that the vegetation in the forest patch has become greener, suggesting an increase in vegetation cover.\", \"supporting_evidence\": [\"NDVI Δ +0.010\"], \"conflicting_evidence\": [\"NDVI Δ +0.010\"], \"possible_driver\": \"The increase in NDVI could be due to an increase in rainfall or temperature, as both factors can affect vegetation growth. However, the table does not provide specific evidence for these factors, so it is not a certainty.\"}",
+      "parsed": {
+        "visual_change": "NDVI increased from 0.550 to 0.560",
+        "change_class": "increase",
+        "justification": "The NDVI value increased by 0.010, which is a positive change. This indicates that the vegetation in the forest patch has become greener, suggesting an increase in vegetation cover.",
+        "supporting_evidence": [
+          "NDVI Δ +0.010"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ +0.010"
+        ],
+        "possible_driver": "The increase in NDVI could be due to an increase in rainfall or temperature, as both factors can affect vegetation growth. However, the table does not provide specific evidence for these factors, so it is not a certainty.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.14285714285714285,
+      "n_claims": 7
+    },
+    {
+      "id": "p04268",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI increased from 0.637 to 0.639\", \"change_class\": \"increased\", \"justification\": \"The NDVI value increased by 0.002, which is a positive change. This indicates that the vegetation cover in the forest patch has increased.\", \"supporting_evidence\": [\"NDVI Δ +0.002\"], \"conflicting_evidence\": [\"NDVI Δ +0.002\", \"NDVI Δ +0.002\", \"NDVI Δ +0.002\"], \"possible_driver\": \"The increase in NDVI could be due to an increase in vegetation cover, which is a common response to increased rainfall and soil moisture. The increase in NDVI is a positive indicator of vegetation health and growth.\"}",
+      "parsed": {
+        "visual_change": "NDVI increased from 0.637 to 0.639",
+        "change_class": "increase",
+        "justification": "The NDVI value increased by 0.002, which is a positive change. This indicates that the vegetation cover in the forest patch has increased.",
+        "supporting_evidence": [
+          "NDVI Δ +0.002"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ +0.002",
+          "NDVI Δ +0.002",
+          "NDVI Δ +0.002"
+        ],
+        "possible_driver": "The increase in NDVI could be due to an increase in vegetation cover, which is a common response to increased rainfall and soil moisture. The increase in NDVI is a positive indicator of vegetation health and growth.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.0,
+      "n_claims": 10
+    },
+    {
+      "id": "p04399",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI value dropped from 0.656 to 0.621\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.035, which is a significant drop in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.035\"], \"conflicting_evidence\": [\"NDVI Δ -0.005 | NDMI Δ -0.018 | NBR Δ -0.012\"], \"possible_driver\": \"The NDVI value is a measure of vegetation health, and a decrease in NDVI suggests a decline in vegetation cover.\"}",
+      "parsed": {
+        "visual_change": "NDVI value dropped from 0.656 to 0.621",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.035, which is a significant drop in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.035"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.005 | NDMI Δ -0.018 | NBR Δ -0.012"
+        ],
+        "possible_driver": "The NDVI value is a measure of vegetation health, and a decrease in NDVI suggests a decline in vegetation cover.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.6666666666666666,
+      "n_claims": 6
+    },
+    {
+      "id": "p04508",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.599 to 0.594\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.005, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.005\"], \"conflicting_evidence\": [\"NDVI Δ -0.002 | NDMI Δ +0.000 | NBR Δ +0.016\"], \"possible_driver\": \"The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline cannot be determined from the provided data alone.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.599 to 0.594",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.005, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.005"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.002 | NDMI Δ +0.000 | NBR Δ +0.016"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline cannot be determined from the provided data alone.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.0,
+      "n_claims": 5
+    },
+    {
+      "id": "p04577",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI increased from 0.649 to 0.660\", \"change_class\": \"increased\", \"justification\": \"The NDVI value increased by 0.011, which is a positive change. This indicates that the vegetation cover has increased in the forest patch.\", \"supporting_evidence\": [\"0.649 -> 0.660 (Δ +0.011)\"], \"conflicting_evidence\": [\"0.7% of pixels dropped by more than 0.05\"], \"possible_driver\": \"The increase in NDVI could be due to an increase in vegetation cover, which is a common response to increased rainfall and soil moisture. The increase in NDVI is also consistent with the observed increase in rainfall and temperature, which are known to positively affect vegetation growth.\"}",
+      "parsed": {
+        "visual_change": "NDVI increased from 0.649 to 0.660",
+        "change_class": "increase",
+        "justification": "The NDVI value increased by 0.011, which is a positive change. This indicates that the vegetation cover has increased in the forest patch.",
+        "supporting_evidence": [
+          "0.649 -> 0.660 (Δ +0.011)"
+        ],
+        "conflicting_evidence": [
+          "0.7% of pixels dropped by more than 0.05"
+        ],
+        "possible_driver": "The increase in NDVI could be due to an increase in vegetation cover, which is a common response to increased rainfall and soil moisture. The increase in NDVI is also consistent with the observed increase in rainfall and temperature, which are known to positively affect vegetation growth.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.125,
+      "n_claims": 8
+    },
+    {
+      "id": "p04671",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI increased from 0.645 to 0.651\", \"change_class\": \"increased\", \"justification\": \"The NDVI value increased by 0.005, which is a significant change from the previous year. This indicates that the vegetation cover has increased.\", \"supporting_evidence\": [\"NDVI Δ +0.005\"], \"conflicting_evidence\": [\"NDVI Δ +0.005\"], \"possible_driver\": \"The increase in NDVI could be due to an increase in rainfall or temperature, which are known to affect vegetation growth.\"}",
+      "parsed": {
+        "visual_change": "NDVI increased from 0.645 to 0.651",
+        "change_class": "increase",
+        "justification": "The NDVI value increased by 0.005, which is a significant change from the previous year. This indicates that the vegetation cover has increased.",
+        "supporting_evidence": [
+          "NDVI Δ +0.005"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ +0.005"
+        ],
+        "possible_driver": "The increase in NDVI could be due to an increase in rainfall or temperature, which are known to affect vegetation growth.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.14285714285714285,
+      "n_claims": 7
+    },
+    {
+      "id": "p04777",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI increased from 0.630 to 0.641\", \"change_class\": \"increased\", \"justification\": \"The NDVI value increased by 0.011, which is a significant change from the previous year. This indicates that the vegetation in the forest patch has grown or become more green.\", \"supporting_evidence\": [\"NDVI Δ +0.011\"], \"conflicting_evidence\": [\"NDVI Δ +0.011\"], \"possible_driver\": \"The increase in NDVI could be due to factors such as increased rainfall, temperature, or soil moisture, but without more specific data, it is difficult to determine the exact cause.\"}",
+      "parsed": {
+        "visual_change": "NDVI increased from 0.630 to 0.641",
+        "change_class": "increase",
+        "justification": "The NDVI value increased by 0.011, which is a significant change from the previous year. This indicates that the vegetation in the forest patch has grown or become more green.",
+        "supporting_evidence": [
+          "NDVI Δ +0.011"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ +0.011"
+        ],
+        "possible_driver": "The increase in NDVI could be due to factors such as increased rainfall, temperature, or soil moisture, but without more specific data, it is difficult to determine the exact cause.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.14285714285714285,
+      "n_claims": 7
+    },
+    {
+      "id": "p04806",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"Green cover in RGB decreased from 0.92 to 0.61\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased from 0.594 to 0.547, indicating a decrease in green cover. The EVI and NDMI values also decreased, with EVI dropping by 0.022 and NDMI by 0.031. The green cover in RGB decreased from 0.92 to 0.61, which is a significant reduction in green cover. The SAR VV and VH values decreased by 0.23 dB and 0.00 dB, respectively, which could be due to changes in the vegetation cover. The rainfall anomaly decreased from 67.5 to 23.4 mm, which could be a contributing factor to the decline in green cover. The soil moisture anomaly increased from +0.020 to -0.039, which could be a result of the decrease in green cover. The temperature anomaly increased from -1.5 to +0.7 °C, which could be a result of the decrease in green cover. The elevation and slope values",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "{\"visual_change\": \"Green cover in RGB decreased from 0.92 to 0.61\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased from 0.594 to 0.547, indicating a decrease in green cover. The EVI and NDMI values also decreased, with EVI dropping by 0.022 and NDMI by 0.031. The green cover in RGB decreased from 0.92 to 0.61, which is a significant reduction in green cover. The SAR VV and VH values decreased by 0.23 dB and 0.00 dB, respectively, which could be due to changes in the vegetation cover. The rainfall anomaly decreased from 67.5 to 23.4 mm, which could be a contributing factor to the decline in green cover. The soil moisture anomaly increased from +0.020 to -0.039, which could be a result of the decrease in green cover. The temperature anomaly increased from -1.5 to +0.7 °C, which could be a result of the decrease in green cover. The elevation and slope values",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.6875,
+      "n_claims": 16
+    },
+    {
+      "id": "p04892",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.718 to 0.663\", \"change_class\": \"decline\", \"justification\": \"The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value dropped by 0.054, which is a significant decrease.\", \"supporting_evidence\": [\"NDVI Δ -0.054\"], \"conflicting_evidence\": [\"NDVI Δ -0.054\", \"NDVI Δ -0.054\"], \"possible_driver\": \"The decrease in NDVI could be due to factors such as changes in climate, soil moisture, or other environmental factors that affect vegetation health. However, without more information on these factors, it is difficult to determine the exact cause of the decline.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.718 to 0.663",
+        "change_class": "decline",
+        "justification": "The NDVI value is a measure of vegetation health, and a decrease in NDVI indicates a decline in vegetation health. The NDVI value dropped by 0.054, which is a significant decrease.",
+        "supporting_evidence": [
+          "NDVI Δ -0.054"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.054",
+          "NDVI Δ -0.054"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to factors such as changes in climate, soil moisture, or other environmental factors that affect vegetation health. However, without more information on these factors, it is difficult to determine the exact cause of the decline.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 1.0,
+      "n_claims": 7
+    },
+    {
+      "id": "p04898",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.707 to 0.670\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.037, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.037\"], \"conflicting_evidence\": [\"NDVI Δ -0.019 | NDMI Δ -0.054 | NBR Δ -0.052\"], \"possible_driver\": \"The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the NDVI value is a common indicator of vegetation health, and a decrease in this value suggests a decline in vegetation.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.707 to 0.670",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.037, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.037"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.019 | NDMI Δ -0.054 | NBR Δ -0.052"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the NDVI value is a common indicator of vegetation health, and a decrease in this value suggests a decline in vegetation.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 1.0,
+      "n_claims": 5
+    },
+    {
+      "id": "p04996",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI value dropped from 0.679 to 0.643\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.036, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.036\"], \"conflicting_evidence\": [\"NDVI Δ -0.036\"], \"possible_driver\": \"The NDVI value is a measure of vegetation health, and a decrease in NDVI suggests a decline in vegetation health. This could be due to a variety of factors, such as changes in climate, soil conditions, or human activities that affect vegetation growth.\"}",
+      "parsed": {
+        "visual_change": "NDVI value dropped from 0.679 to 0.643",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.036, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.036"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.036"
+        ],
+        "possible_driver": "The NDVI value is a measure of vegetation health, and a decrease in NDVI suggests a decline in vegetation health. This could be due to a variety of factors, such as changes in climate, soil conditions, or human activities that affect vegetation growth.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 1.0,
+      "n_claims": 5
+    },
+    {
+      "id": "p05015",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"Green cover in RGB increased from 0.89 to 0.98\", \"change_class\": \"increased\", \"justification\": \"The green cover in the RGB channel increased from 0.89 to 0.98, which is a significant change in the vegetation cover. This indicates an increase in greenery in the forest patch.\", \"supporting_evidence\": [\"NDVI Δ +0.040\", \"EVI Δ +0.029 | NDMI Δ +0.068 | NBR Δ +0.089\"], \"conflicting_evidence\": [\"Green cover in RGB 0.89 -> 0.98\"], \"possible_driver\": \"The increase in green cover could be attributed to an increase in rainfall, as the rainfall anomaly increased from 68.4 to 24.0 mm, which would likely lead to an increase in vegetation cover.\"}",
+      "parsed": {
+        "visual_change": "Green cover in RGB increased from 0.89 to 0.98",
+        "change_class": "increase",
+        "justification": "The green cover in the RGB channel increased from 0.89 to 0.98, which is a significant change in the vegetation cover. This indicates an increase in greenery in the forest patch.",
+        "supporting_evidence": [
+          "NDVI Δ +0.040",
+          "EVI Δ +0.029 | NDMI Δ +0.068 | NBR Δ +0.089"
+        ],
+        "conflicting_evidence": [
+          "Green cover in RGB 0.89 -> 0.98"
+        ],
+        "possible_driver": "The increase in green cover could be attributed to an increase in rainfall, as the rainfall anomaly increased from 68.4 to 24.0 mm, which would likely lead to an increase in vegetation cover.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.6,
+      "n_claims": 5
+    },
+    {
+      "id": "p05082",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI value dropped from 0.450 to 0.417\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.033, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.033\"], \"conflicting_evidence\": [\"NDVI Δ -0.033\"], \"possible_driver\": \"The NDVI value dropped by 0.033, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.\", \"confidence\": 0.0}",
+      "parsed": {
+        "visual_change": "NDVI value dropped from 0.450 to 0.417",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.033, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.033"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.033"
+        ],
+        "possible_driver": "The NDVI value dropped by 0.033, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.",
+        "confidence": 0.0,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 1.0,
+      "n_claims": 5
+    },
+    {
+      "id": "p05117",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI increased from 0.589 to 0.659\", \"change_class\": \"increased\", \"justification\": \"The NDVI value increased by 0.070, which is a significant change from the previous year. This indicates that the vegetation in the forest patch has grown or become more green.\", \"supporting_evidence\": [\"NDVI Δ +0.070\"], \"conflicting_evidence\": [\"NDVI Δ +0.043 | NDMI Δ +0.106 | NBR Δ +0.133\"], \"possible_driver\": \"The increase in NDVI could be due to factors such as increased rainfall, temperature, or soil moisture, but without more specific data, it is difficult to determine the exact cause.\"}",
+      "parsed": {
+        "visual_change": "NDVI increased from 0.589 to 0.659",
+        "change_class": "increase",
+        "justification": "The NDVI value increased by 0.070, which is a significant change from the previous year. This indicates that the vegetation in the forest patch has grown or become more green.",
+        "supporting_evidence": [
+          "NDVI Δ +0.070"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ +0.043 | NDMI Δ +0.106 | NBR Δ +0.133"
+        ],
+        "possible_driver": "The increase in NDVI could be due to factors such as increased rainfall, temperature, or soil moisture, but without more specific data, it is difficult to determine the exact cause.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.8571428571428571,
+      "n_claims": 7
+    },
+    {
+      "id": "p05122",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI increased from 0.662 to 0.670\", \"change_class\": \"increased\", \"justification\": \"The NDVI value increased by 0.008, which is a significant change from the previous year. This indicates that the vegetation in the forest patch has grown or become more green.\", \"supporting_evidence\": [\"NDVI Δ +0.008\"], \"conflicting_evidence\": [\"EVI Δ +0.006 | NDMI Δ +0.005 | NBR Δ +0.014\"], \"possible_driver\": \"The increase in NDVI could be due to factors such as increased rainfall, temperature, or soil moisture, but without more specific data, it is difficult to determine the exact cause.\"}",
+      "parsed": {
+        "visual_change": "NDVI increased from 0.662 to 0.670",
+        "change_class": "increase",
+        "justification": "The NDVI value increased by 0.008, which is a significant change from the previous year. This indicates that the vegetation in the forest patch has grown or become more green.",
+        "supporting_evidence": [
+          "NDVI Δ +0.008"
+        ],
+        "conflicting_evidence": [
+          "EVI Δ +0.006 | NDMI Δ +0.005 | NBR Δ +0.014"
+        ],
+        "possible_driver": "The increase in NDVI could be due to factors such as increased rainfall, temperature, or soil moisture, but without more specific data, it is difficult to determine the exact cause.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.14285714285714285,
+      "n_claims": 7
+    },
+    {
+      "id": "p05384",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.458 to 0.450\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.007, which is a significant drop in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.007\"], \"conflicting_evidence\": [\"NDVI Δ -0.007 | NDMI Δ +0.017 | NBR Δ +0.025\"], \"possible_driver\": \"The decrease in NDVI could be due to a variety of factors, including changes in climate conditions, soil moisture, or other environmental factors. However, without more specific information about the surrounding environment, it is difficult to determine the exact cause of the decline.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.458 to 0.450",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.007, which is a significant drop in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.007"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.007 | NDMI Δ +0.017 | NBR Δ +0.025"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to a variety of factors, including changes in climate conditions, soil moisture, or other environmental factors. However, without more specific information about the surrounding environment, it is difficult to determine the exact cause of the decline.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.0,
+      "n_claims": 5
+    },
+    {
+      "id": "p05511",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.556 to 0.550\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.005, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.005\"], \"conflicting_evidence\": [\"NDVI Δ -0.002 | NDMI Δ +0.004 | NBR Δ +0.020\"], \"possible_driver\": \"The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline cannot be determined from the provided data alone.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.556 to 0.550",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.005, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.005"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.002 | NDMI Δ +0.004 | NBR Δ +0.020"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, the specific cause of the decline cannot be determined from the provided data alone.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 0.0,
+      "n_claims": 5
+    },
+    {
+      "id": "p05771",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"NDVI value decreased from 0.580 to 0.544\", \"change_class\": \"decline\", \"justification\": \"The NDVI value decreased by 0.035, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.\", \"supporting_evidence\": [\"NDVI Δ -0.035\"], \"conflicting_evidence\": [\"NDVI Δ -0.035\", \"NDVI Δ -0.035\"], \"possible_driver\": \"The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, without more specific information about the surrounding environment, it is difficult to determine the exact cause of the decline.\"}",
+      "parsed": {
+        "visual_change": "NDVI value decreased from 0.580 to 0.544",
+        "change_class": "decline",
+        "justification": "The NDVI value decreased by 0.035, which is a significant drop in vegetation health. This is a clear indicator of a decline in vegetation health.",
+        "supporting_evidence": [
+          "NDVI Δ -0.035"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ -0.035",
+          "NDVI Δ -0.035"
+        ],
+        "possible_driver": "The decrease in NDVI could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors. However, without more specific information about the surrounding environment, it is difficult to determine the exact cause of the decline.",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "faithfulness": 1.0,
+      "n_claims": 5
+    }
+  ],
+  "note": "Scored further by scripts/score_explanations.py. Does not replace class-only result JSON."
+}

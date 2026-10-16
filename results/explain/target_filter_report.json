@@ -1,0 +1,7 @@
+{
+  "split": "train",
+  "teacher": "Qwen/Qwen2-VL-2B-Instruct",
+  "seen": 256,
+  "kept": 28,
+  "path": "/home2/cprv67ab97/EcoExplain-VLM/data/explain_targets/train_targets.jsonl"
+}

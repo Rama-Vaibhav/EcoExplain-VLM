@@ -1,0 +1,5 @@
+combo_id,prompt_style,source_file,n_eval,n_parsed_class,accuracy,mean_checkable_claims,pct_correct_claims,hallucination_rate,self_consistency,mean_rouge_l_evidence,mean_rouge_l_template,distinct_2,near_duplicate_share
+blip2_clip_qformer_opt,legacy,explain_blip2_clip_qformer_opt.json,55,55,0.32727272727272727,0.0,,0.0,,0.0,0.0,0.01818181818181818,1.0
+llava15_clip_mlp_vicuna,structured,explain_structured_llava15_clip_mlp_vicuna.json,55,51,0.45098039215686275,2.327272727272727,0.7109375,0.34545454545454546,0.9069767441860465,0.24993243254530811,0.1323226591527239,0.1964229683087543,0.34545454545454546
+paligemma_siglip_linear_gemma,legacy,explain_paligemma_siglip_linear_gemma.json,55,36,0.3333333333333333,0.0,,0.0,,0.0,0.0028647989221939826,0.0,1.0
+qwen_vl_custom_mlp_qwen,structured,explain_structured_qwen_vl_custom_mlp_qwen.json,55,55,0.6363636363636364,2.8545454545454545,0.7579617834394905,0.36363636363636365,1.0,0.5656368874940424,0.23084633511023994,0.20803212851405622,0.09090909090909091

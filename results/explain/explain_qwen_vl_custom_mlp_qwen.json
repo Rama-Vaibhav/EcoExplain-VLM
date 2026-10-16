@@ -1,0 +1,93 @@
+{
+  "combo_id": "qwen_vl_custom_mlp_qwen",
+  "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+  "laptop": true,
+  "mode": "explain",
+  "prompt_mode": "explain",
+  "answer_format": "json",
+  "generation": {
+    "max_new_tokens": 256,
+    "do_sample": false
+  },
+  "n_eval": 3,
+  "n_parsed_class": 3,
+  "accuracy": 1.0,
+  "seconds": 42.36,
+  "predictions": [
+    {
+      "id": "p00052",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"Green cover in RGB has decreased from 1.00 to 0.99\",\n  \"change_class\": \"decline\",\n  \"justification\": \"The green cover in the RGB image has decreased from 1.00 to 0.99, which is a significant reduction in green cover. This is the only number that directly supports the decline in vegetation.\",\n  \"supporting_evidence\": [\"NDVI Δ -0.021\", \"EVI Δ -0.006 | NDMI Δ -0.008 | NBR Δ -0.010\"],\n  \"conflicting_evidence\": [\"SAR VV Δ -0.15 dB, VH Δ -0.17 dB\"],\n  \"possible_driver\": \"The decrease in green cover could be due to a variety of factors, including changes in climate (rainfall, soil moisture, temperature), but the specific cause cannot be determined from the provided data.\",\n  \"confidence\": 0.0\n}\n```",
+      "parsed": {
+        "visual_change": "Green cover in RGB has decreased from 1.00 to 0.99",
+        "change_class": "decline",
+        "justification": "The green cover in the RGB image has decreased from 1.00 to 0.99, which is a significant reduction in green cover. This is the only number that directly supports the decline in vegetation.",
+        "supporting_evidence": [
+          "NDVI Δ -0.021",
+          "EVI Δ -0.006 | NDMI Δ -0.008 | NBR Δ -0.010"
+        ],
+        "conflicting_evidence": [
+          "SAR VV Δ -0.15 dB, VH Δ -0.17 dB"
+        ],
+        "possible_driver": "The decrease in green cover could be due to a variety of factors, including changes in climate (rainfall, soil moisture, temperature), but the specific cause cannot be determined from the provided data.",
+        "confidence": 0.0,
+        "format": "json"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 15.08
+    },
+    {
+      "id": "p00086",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"Green cover in RGB has increased from 0.98 to 0.98\",\n  \"change_class\": \"stable\",\n  \"justification\": \"The green cover in the RGB image has remained constant from 0.98 to 0.98, indicating no change in vegetation cover.\",\n  \"supporting_evidence\": [\"NDVI Δ +0.008\", \"EVI Δ +0.007 | NDMI Δ +0.011 | NBR Δ +0.013\"],\n  \"conflicting_evidence\": [\"Rainfall Jan–Feb 62.5 -> 22.4 mm\", \"Soil moisture anomaly +0.037 -> -0.051 | Temperature anomaly -1.5 -> +1.1 °C\"],\n  \"possible_driver\": \"The increase in green cover could be attributed to the increase in rainfall and temperature, as these factors can affect vegetation growth.\",\n  \"confidence\": 0.0\n}\n```",
+      "parsed": {
+        "visual_change": "Green cover in RGB has increased from 0.98 to 0.98",
+        "change_class": "stable",
+        "justification": "The green cover in the RGB image has remained constant from 0.98 to 0.98, indicating no change in vegetation cover.",
+        "supporting_evidence": [
+          "NDVI Δ +0.008",
+          "EVI Δ +0.007 | NDMI Δ +0.011 | NBR Δ +0.013"
+        ],
+        "conflicting_evidence": [
+          "Rainfall Jan–Feb 62.5 -> 22.4 mm",
+          "Soil moisture anomaly +0.037 -> -0.051 | Temperature anomaly -1.5 -> +1.1 °C"
+        ],
+        "possible_driver": "The increase in green cover could be attributed to the increase in rainfall and temperature, as these factors can affect vegetation growth.",
+        "confidence": 0.0,
+        "format": "json"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 12.93
+    },
+    {
+      "id": "p00575",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "```json\n{\n  \"visual_change\": \"Green cover in RGB has decreased from 0.74 to 0.42\",\n  \"change_class\": \"decline\",\n  \"justification\": \"The NDVI value dropped from 0.625 to 0.575, indicating a decrease in green cover. The EVI and NDMI values also decreased, with EVI dropping by 0.004 and NDMI by 0.007. The green cover in RGB decreased from 0.74 to 0.42, which is a significant reduction.\",\n  \"supporting_evidence\": [\"NDVI 0.625 -> 0.575 (Δ -0.050); 48.9% of pixels dropped by more than 0.05\"],\n  \"conflicting_evidence\": [\"Elevation 834 m, slope 5°\"],\n  \"possible_driver\": \"The decrease in green cover could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors.\",\n  \"confidence\": 0.0\n}\n```",
+      "parsed": {
+        "visual_change": "Green cover in RGB has decreased from 0.74 to 0.42",
+        "change_class": "decline",
+        "justification": "The NDVI value dropped from 0.625 to 0.575, indicating a decrease in green cover. The EVI and NDMI values also decreased, with EVI dropping by 0.004 and NDMI by 0.007. The green cover in RGB decreased from 0.74 to 0.42, which is a significant reduction.",
+        "supporting_evidence": [
+          "NDVI 0.625 -> 0.575 (Δ -0.050); 48.9% of pixels dropped by more than 0.05"
+        ],
+        "conflicting_evidence": [
+          "Elevation 834 m, slope 5°"
+        ],
+        "possible_driver": "The decrease in green cover could be due to a variety of factors, including changes in climate, soil moisture, or other environmental factors.",
+        "confidence": 0.0,
+        "format": "json"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 14.19
+    }
+  ]
+}

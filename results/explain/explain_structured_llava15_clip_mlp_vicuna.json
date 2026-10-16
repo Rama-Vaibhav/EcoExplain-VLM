@@ -1,0 +1,1293 @@
+{
+  "combo_id": "llava15_clip_mlp_vicuna",
+  "hf_model_id": "llava-hf/llava-interleave-qwen-0.5b-hf",
+  "laptop": true,
+  "mode": "explain",
+  "prompt_mode": "explain",
+  "prompt_style": "structured",
+  "answer_format": "json",
+  "generation": {
+    "max_new_tokens": 256,
+    "do_sample": false
+  },
+  "n_eval": 55,
+  "n_parsed_class": 51,
+  "accuracy": 0.45098039215686275,
+  "seconds": 414.3,
+  "predictions": [
+    {
+      "id": "p00052",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.315 in 2022 and 0.293 in 2023 (Δ -0.021).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"EVI Δ -0.006 | NDMI Δ -0.008 | NBR Δ -0.010\"], \"conflicting_evidence\": [\"Jan–Feb rainfall was 69.3 mm in 2022 and 25.4 mm in 2023.\", \"Temperature anomaly was -1.6 °C in 2022 and +0.9 °C in 2023.\", \"SAR VV Δ -0.15 dB, VH Δ -0.17 dB\"], \"possible_driver\": \"\", \"confidence\": 0.5}",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.315 in 2022 and 0.293 in 2023 (Δ -0.021).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ ≤ −0.02 → decline.",
+          "EVI Δ -0.006 | NDMI Δ -0.008 | NBR Δ -0.010"
+        ],
+        "conflicting_evidence": [
+          "Jan–Feb rainfall was 69.3 mm in 2022 and 25.4 mm in 2023.",
+          "Temperature anomaly was -1.6 °C in 2022 and +0.9 °C in 2023.",
+          "SAR VV Δ -0.15 dB, VH Δ -0.17 dB"
+        ],
+        "possible_driver": "",
+        "confidence": 0.5,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 44.55
+    },
+    {
+      "id": "p00086",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.346 in 2022 and 0.338 in 2023 (Δ -0.008).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ between −0.02 and +0.02 → stable.\", \"supporting_evidence\": [\"NDVI Δ between −0.02 and +0.02\", \"NDVI Δ between −0.02 and +0.02\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.346 in 2022 and 0.338 in 2023 (Δ -0.008).",
+        "change_class": "stable",
+        "justification": "NDVI Δ between −0.02 and +0.02 → stable.",
+        "supporting_evidence": [
+          "NDVI Δ between −0.02 and +0.02",
+          "NDVI Δ between −0.02 and +0.02"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 11.88
+    },
+    {
+      "id": "p00575",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.625 in 2022 and 0.575 in 2023 (Δ -0.050).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"EVI Δ -0.004 | NDMI Δ -0.007 | NBR Δ +0.003\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.625 in 2022 and 0.575 in 2023 (Δ -0.050).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ ≤ −0.02 → decline.",
+          "EVI Δ -0.004 | NDMI Δ -0.007 | NBR Δ +0.003"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.17
+    },
+    {
+      "id": "p00701",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.581 in 2022 and 0.585 in 2023 (Δ +0.004).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ between −0.02 and +0.02 → stable.\", \"supporting_evidence\": [\"NDVI Δ between −0.02 and +0.02\", \"NDVI Δ between −0.02 and +0.02\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.581 in 2022 and 0.585 in 2023 (Δ +0.004).",
+        "change_class": "stable",
+        "justification": "NDVI Δ between −0.02 and +0.02 → stable.",
+        "supporting_evidence": [
+          "NDVI Δ between −0.02 and +0.02",
+          "NDVI Δ between −0.02 and +0.02"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.25
+    },
+    {
+      "id": "p00850",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.695 in 2022 and 0.681 in 2023 (Δ -0.014).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ between −0.02 and +0.02 → stable.\", \"NDVI Δ between −0.02 and +0.02 → decline\", \"NDVI Δ between −0.02 and +0.02 → increase\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.695 in 2022 and 0.681 in 2023 (Δ -0.014).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ between −0.02 and +0.02 → stable.",
+          "NDVI Δ between −0.02 and +0.02 → decline",
+          "NDVI Δ between −0.02 and +0.02 → increase"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 5.75
+    },
+    {
+      "id": "p00863",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.682 in 2022 and 0.666 in 2023 (Δ -0.017).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ between −0.02 and +0.02 → stable.\", \"supporting_evidence\": [\"NDVI Δ between −0.02 and +0.02\", \"NDVI Δ between −0.02 and +0.02\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.682 in 2022 and 0.666 in 2023 (Δ -0.017).",
+        "change_class": "stable",
+        "justification": "NDVI Δ between −0.02 and +0.02 → stable.",
+        "supporting_evidence": [
+          "NDVI Δ between −0.02 and +0.02",
+          "NDVI Δ between −0.02 and +0.02"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.38
+    },
+    {
+      "id": "p00883",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.723 in 2022 and 0.688 in 2023 (Δ -0.035).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"EVI Δ +0.002 | NDMI Δ -0.007 | NBR Δ -0.003\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.723 in 2022 and 0.688 in 2023 (Δ -0.035).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ ≤ −0.02 → decline.",
+          "EVI Δ +0.002 | NDMI Δ -0.007 | NBR Δ -0.003"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.21
+    },
+    {
+      "id": "p00937",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.683 in 2022 and 0.652 in 2023 (Δ -0.032).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"EVI Δ +0.001 | NDMI Δ +0.029 | NBR Δ +0.038\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.683 in 2022 and 0.652 in 2023 (Δ -0.032).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ ≤ −0.02 → decline.",
+          "EVI Δ +0.001 | NDMI Δ +0.029 | NBR Δ +0.038"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.35
+    },
+    {
+      "id": "p01162",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.657 in 2022 and 0.681 in 2023 (Δ +0.024).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ < +0.02\", \"NDVI Δ > -0.045\", \"NDVI Δ < +0.105\", \"NDVI Δ > -0.13 dB\", \"NDVI Δ < +0.051\", \"NDVI Δ > -0.051\", \"NDVI Δ < +0.105\", \"NDVI Δ > -0.13 dB\", \"NDVI Δ < +0.105\", \"NDVI Δ > -0.13 dB\", \"NDVI Δ < +0.105\", \"NDVI Δ > -0.13 dB\", \"NDVI Δ < +0.105\", \"NDVI Δ > -0.13 dB\", \"NDVI Δ < +0.105\", \"NDVI Δ > -0",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "{\"visual_change\": \"The patch mean NDVI was 0.657 in 2022 and 0.681 in 2023 (Δ +0.024).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ < +0.02\", \"NDVI Δ > -0.045\", \"NDVI Δ < +0.105\", \"NDVI Δ > -0.13 dB\", \"NDVI Δ < +0.051\", \"NDVI Δ > -0.051\", \"NDVI Δ < +0.105\", \"NDVI Δ > -0.13 dB\", \"NDVI Δ < +0.105\", \"NDVI Δ > -0.13 dB\", \"NDVI Δ < +0.105\", \"NDVI Δ > -0.13 dB\", \"NDVI Δ < +0.105\", \"NDVI Δ > -0.13 dB\", \"NDVI Δ < +0.105\", \"NDVI Δ > -0",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 7.88
+    },
+    {
+      "id": "p01206",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.522 in 2022 and 0.490 in 2023 (Δ -0.031).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline\", \"EVI Δ -0.004 | NDMI Δ -0.030 | NBR Δ -0.035\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.522 in 2022 and 0.490 in 2023 (Δ -0.031).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ ≤ −0.02 → decline",
+          "EVI Δ -0.004 | NDMI Δ -0.030 | NBR Δ -0.035"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.1
+    },
+    {
+      "id": "p01415",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.573 in 2022 and 0.556 in 2023 (Δ -0.016).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ between −0.02 and +0.02 → stable.\", \"supporting_evidence\": [\"NDVI Δ between −0.02 and +0.02\", \"NDVI Δ between −0.02 and +0.02\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.573 in 2022 and 0.556 in 2023 (Δ -0.016).",
+        "change_class": "stable",
+        "justification": "NDVI Δ between −0.02 and +0.02 → stable.",
+        "supporting_evidence": [
+          "NDVI Δ between −0.02 and +0.02",
+          "NDVI Δ between −0.02 and +0.02"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.33
+    },
+    {
+      "id": "p01621",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.529 in 2022 and 0.502 in 2023 (Δ -0.028).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline\", \"EVI Δ +0.001 | NDMI Δ +0.040 | NBR Δ +0.048\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.529 in 2022 and 0.502 in 2023 (Δ -0.028).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ ≤ −0.02 → decline",
+          "EVI Δ +0.001 | NDMI Δ +0.040 | NBR Δ +0.048"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.22
+    },
+    {
+      "id": "p01648",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.722 in 2022 and 0.693 in 2023 (Δ -0.029).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"EVI Δ -0.000 | NDMI Δ -0.000 | NBR Δ +0.001\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.722 in 2022 and 0.693 in 2023 (Δ -0.029).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ ≤ −0.02 → decline.",
+          "EVI Δ -0.000 | NDMI Δ -0.000 | NBR Δ +0.001"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.13
+    },
+    {
+      "id": "p01988",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.544 in 2022 and 0.548 in 2023 (Δ +0.004).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ between −0.02 and +0.02 → stable.\", \"supporting_evidence\": [\"NDVI Δ between −0.02 and +0.02\", \"NDVI Δ between −0.02 and +0.02\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.544 in 2022 and 0.548 in 2023 (Δ +0.004).",
+        "change_class": "stable",
+        "justification": "NDVI Δ between −0.02 and +0.02 → stable.",
+        "supporting_evidence": [
+          "NDVI Δ between −0.02 and +0.02",
+          "NDVI Δ between −0.02 and +0.02"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.11
+    },
+    {
+      "id": "p02128",
+      "gold": "decline",
+      "pred": null,
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The green cover in RGB 0.99 is present in the image. The SAR VV backscatter change is -0.42 dB. The NBR change is -0.23 dB. The NDMI change is -0.02 dB. The NBR change is -0.028 dB. The NMI change is -0.031 dB. The NBR change is -0.028 dB. The NMI change is -0.031 dB. The NBR change is -0.028 dB. The NMI change is -0.031 dB. The NBR change is -0.028 dB. The NMI change is -0.031 dB. The NBR change is -0.028 dB. The NMI change is -0.031 dB. The NBR change is -0.028 dB. The NMI change is -0.031 dB. The NBR change is -0.028 dB. The NMI change is -0.031 dB. The NBR change is -0.028 dB. The",
+      "parsed": {
+        "visual_change": "",
+        "change_class": null,
+        "justification": "{\"visual_change\": \"The green cover in RGB 0.99 is present in the image. The SAR VV backscatter change is -0.42 dB. The NBR change is -0.23 dB. The NDMI change is -0.02 dB. The NBR change is -0.028 dB. The NMI change is -0.031 dB. The NBR change is -0.028 dB. The NMI change is -0.031 dB. The NBR change is -0.028 dB. The NMI change is -0.031 dB. The NBR change is -0.028 dB. The NMI change is -0.031 dB. The NBR change is -0.028 dB. The NMI change is -0.031 dB. The NBR change is -0.028 dB. The NMI change is -0.031 dB. The NBR change is -0.028 dB. The NMI change is -0.031 dB. The NBR change is -0.028 dB. The",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 7.12
+    },
+    {
+      "id": "p02139",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.697 in 2022 and 0.673 in 2023 (Δ -0.024).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "{\"visual_change\": \"The patch mean NDVI was 0.697 in 2022 and 0.673 in 2023 (Δ -0.024).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 7.28
+    },
+    {
+      "id": "p02334",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.703 in 2022 and 0.685 in 2023 (Δ -0.018).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ between −0.02 and +0.02 → stable.\", \"NDVI Δ between −0.02 and +0.02 → decline\", \"NDVI Δ between −0.02 and +0.02 → increase\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.703 in 2022 and 0.685 in 2023 (Δ -0.018).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ between −0.02 and +0.02 → stable.",
+          "NDVI Δ between −0.02 and +0.02 → decline",
+          "NDVI Δ between −0.02 and +0.02 → increase"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.47
+    },
+    {
+      "id": "p02668",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.572 in 2022 and 0.579 in 2023 (Δ +0.007).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ between −0.02 and +0.02 → stable.\", \"supporting_evidence\": [\"NDVI Δ between −0.02 and +0.02\", \"NDVI Δ between −0.02 and +0.02\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.572 in 2022 and 0.579 in 2023 (Δ +0.007).",
+        "change_class": "stable",
+        "justification": "NDVI Δ between −0.02 and +0.02 → stable.",
+        "supporting_evidence": [
+          "NDVI Δ between −0.02 and +0.02",
+          "NDVI Δ between −0.02 and +0.02"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.16
+    },
+    {
+      "id": "p02674",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.528 in 2022 and 0.489 in 2023 (Δ -0.040).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline\", \"EVI Δ -0.002 | NDMI Δ +0.002 | NBR Δ +0.013\"], \"conflicting_evidence\": [\"Jan–Feb rainfall was 71.5 mm in 2022 and 25.0 mm in 2023\"], \"possible_driver\": \"\", \"confidence\": 0.5}",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.528 in 2022 and 0.489 in 2023 (Δ -0.040).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ ≤ −0.02 → decline",
+          "EVI Δ -0.002 | NDMI Δ +0.002 | NBR Δ +0.013"
+        ],
+        "conflicting_evidence": [
+          "Jan–Feb rainfall was 71.5 mm in 2022 and 25.0 mm in 2023"
+        ],
+        "possible_driver": "",
+        "confidence": 0.5,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 5.12
+    },
+    {
+      "id": "p02803",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.455 in 2022 and 0.437 in 2023 (Δ -0.018).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ between −0.02 and +0.02 → stable.\", \"supporting_evidence\": [\"NDVI Δ between −0.02 and +0.02\", \"NDVI Δ between −0.02 and +0.02\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.455 in 2022 and 0.437 in 2023 (Δ -0.018).",
+        "change_class": "stable",
+        "justification": "NDVI Δ between −0.02 and +0.02 → stable.",
+        "supporting_evidence": [
+          "NDVI Δ between −0.02 and +0.02",
+          "NDVI Δ between −0.02 and +0.02"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.13
+    },
+    {
+      "id": "p02890",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.662 in 2022 and 0.638 in 2023 (Δ -0.025).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"EVI Δ +0.006 | NDMI Δ +0.007 | NBR Δ +0.021\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.662 in 2022 and 0.638 in 2023 (Δ -0.025).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ ≤ −0.02 → decline.",
+          "EVI Δ +0.006 | NDMI Δ +0.007 | NBR Δ +0.021"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.15
+    },
+    {
+      "id": "p03067",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.625 in 2022 and 0.628 in 2023 (Δ +0.003).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was +0.005.\", \"supporting_evidence\": [\"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "{\"visual_change\": \"The patch mean NDVI was 0.625 in 2022 and 0.628 in 2023 (Δ +0.003).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was +0.005.\", \"supporting_evidence\": [\"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"NDVI Δ was +0.005.\", \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.52
+    },
+    {
+      "id": "p03122",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.646 in 2022 and 0.602 in 2023 (Δ -0.044).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"EVI Δ -0.015 | NDMI Δ -0.029 | NBR Δ -0.026\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.646 in 2022 and 0.602 in 2023 (Δ -0.044).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ ≤ −0.02 → decline.",
+          "EVI Δ -0.015 | NDMI Δ -0.029 | NBR Δ -0.026"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 5.04
+    },
+    {
+      "id": "p03228",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.697 in 2022 and 0.654 in 2023 (Δ -0.043).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"EVI Δ -0.016 | NDMI Δ -0.044 | NBR Δ -0.041\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.697 in 2022 and 0.654 in 2023 (Δ -0.043).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ ≤ −0.02 → decline.",
+          "EVI Δ -0.016 | NDMI Δ -0.044 | NBR Δ -0.041"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 5.98
+    },
+    {
+      "id": "p03243",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.703 in 2022 and 0.705 in 2023 (Δ +0.002).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ between −0.02 and +0.02 → stable.\", \"NDVI Δ between −0.02 and +0.02 → decline.\", \"NDVI Δ between −0.02 and +0.02 → increase.\", \"NDVI Δ between −0.02 and +0.02 → conflict\", \"NDVI Δ between −0.02 and +0.02 → possible_driver\", \"NDVI Δ between −0.02 and +0.02 → confidence\"], \"conflicting_evidence\": [], \"possible_driver\": \"\", \"confidence\": 0.5}",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.703 in 2022 and 0.705 in 2023 (Δ +0.002).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ between −0.02 and +0.02 → stable.",
+          "NDVI Δ between −0.02 and +0.02 → decline.",
+          "NDVI Δ between −0.02 and +0.02 → increase.",
+          "NDVI Δ between −0.02 and +0.02 → conflict",
+          "NDVI Δ between −0.02 and +0.02 → possible_driver",
+          "NDVI Δ between −0.02 and +0.02 → confidence"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": 0.5,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 7.1
+    },
+    {
+      "id": "p03515",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.583 in 2022 and 0.610 in 2023 (Δ +0.027).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ < +0.02\", \"NDVI Δ > -0.03\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > -0.03\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "{\"visual_change\": \"The patch mean NDVI was 0.583 in 2022 and 0.610 in 2023 (Δ +0.027).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ < +0.02\", \"NDVI Δ > -0.03\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > -0.03\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 9.76
+    },
+    {
+      "id": "p03538",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.670 in 2022 and 0.669 in 2023 (Δ -0.001).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was +0.002\", \"supporting_evidence\": [\"NDVI Δ was +0.002\", \"NDVI Δ was +0.003\", \"NDVI Δ was +0.002\", \"NDVI Δ was +0.003\", \"NDVI Δ was +0.002\", \"NDVI Δ was +0.003\", \"NDVI Δ was +0.002\", \"NDVI Δ was +0.003\", \"NDVI Δ was +0.002\", \"NDVI Δ was +0.003\", \"NDVI Δ was +0.002\", \"NDVI Δ was +0.003\", \"NDVI Δ was +0.002\", \"NDVI Δ was +0.003\", \"NDVI Δ was +0.002\", \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "{\"visual_change\": \"The patch mean NDVI was 0.670 in 2022 and 0.669 in 2023 (Δ -0.001).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was +0.002\", \"supporting_evidence\": [\"NDVI Δ was +0.002\", \"NDVI Δ was +0.003\", \"NDVI Δ was +0.002\", \"NDVI Δ was +0.003\", \"NDVI Δ was +0.002\", \"NDVI Δ was +0.003\", \"NDVI Δ was +0.002\", \"NDVI Δ was +0.003\", \"NDVI Δ was +0.002\", \"NDVI Δ was +0.003\", \"NDVI Δ was +0.002\", \"NDVI Δ was +0.003\", \"NDVI Δ was +0.002\", \"NDVI Δ was +0.003\", \"NDVI Δ was +0.002\", \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.6
+    },
+    {
+      "id": "p03592",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.646 in 2022 and 0.611 in 2023 (Δ -0.036).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"EVI Δ -0.002 | NDMI Δ -0.009 | NBR Δ -0.004\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.646 in 2022 and 0.611 in 2023 (Δ -0.036).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ ≤ −0.02 → decline.",
+          "EVI Δ -0.002 | NDMI Δ -0.009 | NBR Δ -0.004"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.74
+    },
+    {
+      "id": "p03635",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.660 in 2022 and 0.678 in 2023 (Δ +0.017).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was +0.017.\", \"supporting_evidence\": [\"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "{\"visual_change\": \"The patch mean NDVI was 0.660 in 2022 and 0.678 in 2023 (Δ +0.017).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was +0.017.\", \"supporting_evidence\": [\"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"NDVI Δ was +0.017.\", \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 10.86
+    },
+    {
+      "id": "p03689",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.620 in 2022 and 0.628 in 2023 (Δ +0.008).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was +0.020. EVI change (Δ) was +0.020. NDMI change (Δ) was +0.021. NBR change (Δ) was +0.035. Green cover in RGB 0.84 -> 0.98. SAR VV Δ -0.73 dB, VH Δ -0.64 dB. Rainfall Jan–Feb 75.4 -> 25.6 mm. Soil moisture anomaly +0.030 -> -0.048 | Temperature anomaly -1.5 -> +1.0 °C. Elevation 687 m, slope 5°. ALLOWED faktors (NDVI Δ only): 1. Patch mean NDVI was 0.620 in 2022 and 0.628 in 2023 (Δ +0",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "{\"visual_change\": \"The patch mean NDVI was 0.620 in 2022 and 0.628 in 2023 (Δ +0.008).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was +0.020. EVI change (Δ) was +0.020. NDMI change (Δ) was +0.021. NBR change (Δ) was +0.035. Green cover in RGB 0.84 -> 0.98. SAR VV Δ -0.73 dB, VH Δ -0.64 dB. Rainfall Jan–Feb 75.4 -> 25.6 mm. Soil moisture anomaly +0.030 -> -0.048 | Temperature anomaly -1.5 -> +1.0 °C. Elevation 687 m, slope 5°. ALLOWED faktors (NDVI Δ only): 1. Patch mean NDVI was 0.620 in 2022 and 0.628 in 2023 (Δ +0",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 9.66
+    },
+    {
+      "id": "p03801",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.456 in 2022 and 0.459 in 2023 (Δ +0.003).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ between −0.02 and +0.02 → stable.\", \"supporting_evidence\": [\"NDVI Δ between −0.02 and +0.02\", \"NDVI Δ between −0.02 and +0.02\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.456 in 2022 and 0.459 in 2023 (Δ +0.003).",
+        "change_class": "stable",
+        "justification": "NDVI Δ between −0.02 and +0.02 → stable.",
+        "supporting_evidence": [
+          "NDVI Δ between −0.02 and +0.02",
+          "NDVI Δ between −0.02 and +0.02"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 5.52
+    },
+    {
+      "id": "p03867",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.549 in 2022 and 0.539 in 2023 (Δ -0.011).\", \"change_class\": \"stable\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ between −0.02 and +0.02 → stable\", \"NDVI Δ between −0.02 and +0.02 → decline\", \"NDVI Δ between −0.02 and +0.02 → increase\", \"NDVI Δ between −0.02 and +0.02 → conflict\", \"NDVI Δ between −0.02 and +0.02 → possible_driver\", \"NDVI Δ between −0.02 and +0.02 → confidence\"], \"conflicting_evidence\": [], \"possible_driver\": \"\", \"confidence\": 0.5}",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.549 in 2022 and 0.539 in 2023 (Δ -0.011).",
+        "change_class": "stable",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ between −0.02 and +0.02 → stable",
+          "NDVI Δ between −0.02 and +0.02 → decline",
+          "NDVI Δ between −0.02 and +0.02 → increase",
+          "NDVI Δ between −0.02 and +0.02 → conflict",
+          "NDVI Δ between −0.02 and +0.02 → possible_driver",
+          "NDVI Δ between −0.02 and +0.02 → confidence"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": 0.5,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.36
+    },
+    {
+      "id": "p03991",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.657 in 2022 and 0.656 in 2023 (Δ -0.001).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ between −0.02 and +0.02 → stable.\", \"supporting_evidence\": [\"NDVI Δ between −0.02 and +0.02\", \"NDVI Δ between −0.02 and +0.02\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.657 in 2022 and 0.656 in 2023 (Δ -0.001).",
+        "change_class": "stable",
+        "justification": "NDVI Δ between −0.02 and +0.02 → stable.",
+        "supporting_evidence": [
+          "NDVI Δ between −0.02 and +0.02",
+          "NDVI Δ between −0.02 and +0.02"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 5.71
+    },
+    {
+      "id": "p04040",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.590 in 2022 and 0.625 in 2023 (Δ +0.035).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < -0.08 dB\", \"NDVI Δ > +0.8 °C\"], \"conflicting_evidence\": [\"NDVI Δ < -0.08 dB\", \"NDVI Δ > +0.8 °C\"], \"possible_driver\": \"\", \"confidence\": 0.5}",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.590 in 2022 and 0.625 in 2023 (Δ +0.035).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ < +0.02",
+          "NDVI Δ > +0.02",
+          "NDVI Δ < -0.08 dB",
+          "NDVI Δ > +0.8 °C"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ < -0.08 dB",
+          "NDVI Δ > +0.8 °C"
+        ],
+        "possible_driver": "",
+        "confidence": 0.5,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.91
+    },
+    {
+      "id": "p04059",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.555 in 2022 and 0.522 in 2023 (Δ -0.033).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"EVI Δ -0.028 | NDMI Δ -0.035 | NBR Δ -0.035\"], \"conflicting_evidence\": [\"Jan–Feb rainfall was 58.9 mm in 2022 and 21.5 mm in 2023.\", \"Temperature anomaly was -1.4 °C in 2022 and +0.9 °C in 2023.\", \"SAR VV Δ -0.67 dB, VH Δ -0.73 dB\", \"Rainfall Jan–Feb 58.9 -> 21.5 mm\", \"Soil moisture anomaly +0.019 -> -0.043 | Temperature anomaly -1.4 -> +0.9 °C\",",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "{\"visual_change\": \"The patch mean NDVI was 0.555 in 2022 and 0.522 in 2023 (Δ -0.033).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"EVI Δ -0.028 | NDMI Δ -0.035 | NBR Δ -0.035\"], \"conflicting_evidence\": [\"Jan–Feb rainfall was 58.9 mm in 2022 and 21.5 mm in 2023.\", \"Temperature anomaly was -1.4 °C in 2022 and +0.9 °C in 2023.\", \"SAR VV Δ -0.67 dB, VH Δ -0.73 dB\", \"Rainfall Jan–Feb 58.9 -> 21.5 mm\", \"Soil moisture anomaly +0.019 -> -0.043 | Temperature anomaly -1.4 -> +0.9 °C\",",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 10.72
+    },
+    {
+      "id": "p04145",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.544 in 2022 and 0.521 in 2023 (Δ -0.022).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "{\"visual_change\": \"The patch mean NDVI was 0.544 in 2022 and 0.521 in 2023 (Δ -0.022).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ ≤ −0.02 → decline.\", \"NDVI Δ",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 11.05
+    },
+    {
+      "id": "p04174",
+      "gold": "decline",
+      "pred": null,
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"The patch mean NDVI was 0.612 in 2022 and 0.575 in 2023 (Δ -0.036).\"\n}\n```",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.612 in 2022 and 0.575 in 2023 (Δ -0.036).",
+        "change_class": null,
+        "justification": "",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 3.85
+    },
+    {
+      "id": "p04203",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.550 in 2022 and 0.560 in 2023 (Δ +0.010).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ between −0.02 and +0.02 → stable.\", \"supporting_evidence\": [\"NDVI Δ between −0.02 and +0.02\", \"NDVI Δ between −0.02 and +0.02\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.550 in 2022 and 0.560 in 2023 (Δ +0.010).",
+        "change_class": "stable",
+        "justification": "NDVI Δ between −0.02 and +0.02 → stable.",
+        "supporting_evidence": [
+          "NDVI Δ between −0.02 and +0.02",
+          "NDVI Δ between −0.02 and +0.02"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 5.53
+    },
+    {
+      "id": "p04268",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.637 in 2022 and 0.639 in 2023 (Δ +0.002).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was +0.016.\", \"supporting_evidence\": [\"NDVI Δ was +0.016.\", \"NDVI Δ was +0.029.\", \"NDVI Δ was +0.045.\", \"NDVI Δ was +0.029.\", \"NDVI Δ was +0.016.\", \"NDVI Δ was +0.029.\", \"NDVI Δ was +0.045.\", \"NDVI Δ was +0.029.\", \"NDVI Δ was +0.016.\", \"NDVI Δ was +0.029.\", \"NDVI Δ was +0.029.\", \"NDVI Δ was +0.016.\", \"NDVI Δ was +0.029.\", \"NDVI Δ was +0.029.\", \"NDVI Δ was +0.029.\", \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "{\"visual_change\": \"The patch mean NDVI was 0.637 in 2022 and 0.639 in 2023 (Δ +0.002).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was +0.016.\", \"supporting_evidence\": [\"NDVI Δ was +0.016.\", \"NDVI Δ was +0.029.\", \"NDVI Δ was +0.045.\", \"NDVI Δ was +0.029.\", \"NDVI Δ was +0.016.\", \"NDVI Δ was +0.029.\", \"NDVI Δ was +0.045.\", \"NDVI Δ was +0.029.\", \"NDVI Δ was +0.016.\", \"NDVI Δ was +0.029.\", \"NDVI Δ was +0.029.\", \"NDVI Δ was +0.016.\", \"NDVI Δ was +0.029.\", \"NDVI Δ was +0.029.\", \"NDVI Δ was +0.029.\", \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 10.4
+    },
+    {
+      "id": "p04399",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.656 in 2022 and 0.621 in 2023 (Δ -0.035).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"EVI Δ -0.005 | NDMI Δ -0.018 | NBR Δ -0.012\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.656 in 2022 and 0.621 in 2023 (Δ -0.035).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ ≤ −0.02 → decline.",
+          "EVI Δ -0.005 | NDMI Δ -0.018 | NBR Δ -0.012"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 5.81
+    },
+    {
+      "id": "p04508",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.599 in 2022 and 0.594 in 2023 (Δ -0.005).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was +0.002\", \"supporting_evidence\": [\"NDVI Δ was +0.002\", \"NDVI Δ was +0.000\", \"NBR Δ was +0.016\"], \"conflicting_evidence\": [\"NDVI Δ was +0.002\", \"NDVI Δ was +0.000\", \"NBR Δ was +0.016\"], \"possible_driver\": \"\", \"confidence\": 0.5}",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.599 in 2022 and 0.594 in 2023 (Δ -0.005).",
+        "change_class": "stable",
+        "justification": "NDVI Δ was +0.002",
+        "supporting_evidence": [
+          "NDVI Δ was +0.002",
+          "NDVI Δ was +0.000",
+          "NBR Δ was +0.016"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ was +0.002",
+          "NDVI Δ was +0.000",
+          "NBR Δ was +0.016"
+        ],
+        "possible_driver": "",
+        "confidence": 0.5,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.91
+    },
+    {
+      "id": "p04577",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.649 in 2022 and 0.660 in 2023 (Δ +0.011).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was +0.011.\", \"supporting_evidence\": [\"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "{\"visual_change\": \"The patch mean NDVI was 0.649 in 2022 and 0.660 in 2023 (Δ +0.011).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was +0.011.\", \"supporting_evidence\": [\"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"NDVI Δ was +0.011.\", \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 9.72
+    },
+    {
+      "id": "p04671",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.645 in 2022 and 0.651 in 2023 (Δ +0.005).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was +0.015.\", \"supporting_evidence\": [\"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "{\"visual_change\": \"The patch mean NDVI was 0.645 in 2022 and 0.651 in 2023 (Δ +0.005).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was +0.015.\", \"supporting_evidence\": [\"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"NDVI Δ was +0.015.\", \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 9.81
+    },
+    {
+      "id": "p04777",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.630 in 2022 and 0.641 in 2023 (Δ +0.011).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was +0.008.\", \"supporting_evidence\": [\"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "{\"visual_change\": \"The patch mean NDVI was 0.630 in 2022 and 0.641 in 2023 (Δ +0.011).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was +0.008.\", \"supporting_evidence\": [\"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"NDVI Δ was +0.008.\", \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 10.88
+    },
+    {
+      "id": "p04806",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.594 in 2022 and 0.547 in 2023 (Δ -0.047).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"EVI Δ -0.022 | NDMI Δ -0.031 | NBR Δ -0.022\"], \"conflicting_evidence\": [\"Jan–Feb rainfall was 67.5 mm in 2022 and 23.4 mm in 2023.\", \"Temperature anomaly was -1.5 °C in 2022 and +0.7 °C in 2023.\", \"SAR VV Δ -0.23 dB, VH Δ -0.00 dB\"], \"possible_driver\": \"\", \"confidence\": 0.5}",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.594 in 2022 and 0.547 in 2023 (Δ -0.047).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ ≤ −0.02 → decline.",
+          "EVI Δ -0.022 | NDMI Δ -0.031 | NBR Δ -0.022"
+        ],
+        "conflicting_evidence": [
+          "Jan–Feb rainfall was 67.5 mm in 2022 and 23.4 mm in 2023.",
+          "Temperature anomaly was -1.5 °C in 2022 and +0.7 °C in 2023.",
+          "SAR VV Δ -0.23 dB, VH Δ -0.00 dB"
+        ],
+        "possible_driver": "",
+        "confidence": 0.5,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 8.61
+    },
+    {
+      "id": "p04892",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.718 in 2022 and 0.663 in 2023 (Δ -0.054).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"EVI Δ -0.010 | NDMI Δ -0.023 | NBR Δ -0.016\"], \"conflicting_evidence\": [\"Jan–Feb rainfall was 72.1 mm in 2022 and 26.2 mm in 2023.\", \"Temperature anomaly was -1.6 °C in 2022 and +1.0 °C in 2023.\", \"SAR VV Δ -0.05 dB, VH Δ +0.20 dB\", \"Rainfall Jan–Feb 72.1 -> 26.2 mm\", \"Soil moisture anomaly +0.029 -> -0.049 | Temperature anomaly -1.6 -> +1.0 °C\",",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "{\"visual_change\": \"The patch mean NDVI was 0.718 in 2022 and 0.663 in 2023 (Δ -0.054).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"EVI Δ -0.010 | NDMI Δ -0.023 | NBR Δ -0.016\"], \"conflicting_evidence\": [\"Jan–Feb rainfall was 72.1 mm in 2022 and 26.2 mm in 2023.\", \"Temperature anomaly was -1.6 °C in 2022 and +1.0 °C in 2023.\", \"SAR VV Δ -0.05 dB, VH Δ +0.20 dB\", \"Rainfall Jan–Feb 72.1 -> 26.2 mm\", \"Soil moisture anomaly +0.029 -> -0.049 | Temperature anomaly -1.6 -> +1.0 °C\",",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 9.52
+    },
+    {
+      "id": "p04898",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.707 in 2022 and 0.670 in 2023 (Δ -0.037).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ ≤ −0.02 → decline.\", \"EVI Δ -0.019 | NDMI Δ -0.054 | NBR Δ -0.052\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.707 in 2022 and 0.670 in 2023 (Δ -0.037).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ ≤ −0.02 → decline.",
+          "EVI Δ -0.019 | NDMI Δ -0.054 | NBR Δ -0.052"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 5.06
+    },
+    {
+      "id": "p04996",
+      "gold": "decline",
+      "pred": "increase",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The image shows a patch with a green color, indicating vegetation. The color gradient from green to yellow suggests a change in the vegetation's health or growth. The image also shows a red object, which could be a fire or another type of hazard. The red color is not uniform, indicating some areas may be more affected than others. The image does not show any other objects or features that can be determined. The color gradient suggests that the image was taken during a time of day when the sun is low on the horizon, possibly in the late afternoon or early evening. The red object could be a fire or another type of hazard, but it is not possible to determine from the image alone. The image does not show any other objects or features that can be determined. The image does not show any other objects or features that can be determined. The image does not show any other objects or features that can be determined. The image does not show any other objects or features that can be determined. The image does not show any other objects or features that can be determined. The image does not show any other objects or features that can be determined. The image does not show any other objects or features that can be determined. The image does not show any other",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "increase",
+        "justification": "{\"visual_change\": \"The image shows a patch with a green color, indicating vegetation. The color gradient from green to yellow suggests a change in the vegetation's health or growth. The image also shows a red object, which could be a fire or another type of hazard. The red color is not uniform, indicating some areas may be more affected than others. The image does not show any other objects or features that can be determined. The color gradient suggests that the image was taken during a time of day when the sun is low on the horizon, possibly in the late afternoon or early evening. The red object could be a fire or another type of hazard, but it is not possible to determine from the image alone. The image does not show any other objects or features that can be determined. The image does not show any other objects or features that can be determined. The image does not show any other objects or features that can be determined. The image does not show any other objects or features that can be determined. The image does not show any other objects or features that can be determined. The image does not show any other objects or features that can be determined. The image does not show any other objects or features that can be determined. The image does not show any other",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 9.59
+    },
+    {
+      "id": "p05015",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.613 in 2022 and 0.653 in 2023 (Δ +0.040).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "decline",
+        "justification": "{\"visual_change\": \"The patch mean NDVI was 0.613 in 2022 and 0.653 in 2023 (Δ +0.040).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < +0.02",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 9.52
+    },
+    {
+      "id": "p05082",
+      "gold": "decline",
+      "pred": null,
+      "correct": false,
+      "raw_text": "```json\n{\n  \"visual_change\": \"The patch mean NDVI was 0.450 in 2022 and 0.417 in 2023 (Δ -0.033).\"\n}\n```",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.450 in 2022 and 0.417 in 2023 (Δ -0.033).",
+        "change_class": null,
+        "justification": "",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 3.55
+    },
+    {
+      "id": "p05117",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.589 in 2022 and 0.659 in 2023 (Δ +0.070).\", \"change_class\": \"stable|decline|increase\", \"justification\": \"...\", \"supporting_evidence\": [\"NDVI Δ < +0.02\", \"NDVI Δ > +0.02\", \"NDVI Δ < -0.039\", \"NDVI Δ > +0.7 °C\"], \"conflicting_evidence\": [\"NDVI Δ < -0.039\", \"NDVI Δ > +0.7 °C\"], \"possible_driver\": \"\", \"confidence\": 0.5}",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.589 in 2022 and 0.659 in 2023 (Δ +0.070).",
+        "change_class": "decline",
+        "justification": "...",
+        "supporting_evidence": [
+          "NDVI Δ < +0.02",
+          "NDVI Δ > +0.02",
+          "NDVI Δ < -0.039",
+          "NDVI Δ > +0.7 °C"
+        ],
+        "conflicting_evidence": [
+          "NDVI Δ < -0.039",
+          "NDVI Δ > +0.7 °C"
+        ],
+        "possible_driver": "",
+        "confidence": 0.5,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 6.62
+    },
+    {
+      "id": "p05122",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.662 in 2022 and 0.670 in 2023 (Δ +0.008).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ only\", \"supporting_evidence\": [\"NDVI Δ only\", \"NDVI Δ only\", \"NDVI Δ only\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.662 in 2022 and 0.670 in 2023 (Δ +0.008).",
+        "change_class": "stable",
+        "justification": "NDVI Δ only",
+        "supporting_evidence": [
+          "NDVI Δ only",
+          "NDVI Δ only",
+          "NDVI Δ only"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 4.97
+    },
+    {
+      "id": "p05384",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.458 in 2022 and 0.450 in 2023 (Δ -0.007).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ between −0.02 and +0.02 → stable.\", \"supporting_evidence\": [\"NDVI Δ between −0.02 and +0.02\", \"NDVI Δ between −0.02 and +0.02\"], \"conflicting_evidence\": []},",
+      "parsed": {
+        "visual_change": "The patch mean NDVI was 0.458 in 2022 and 0.450 in 2023 (Δ -0.007).",
+        "change_class": "stable",
+        "justification": "NDVI Δ between −0.02 and +0.02 → stable.",
+        "supporting_evidence": [
+          "NDVI Δ between −0.02 and +0.02",
+          "NDVI Δ between −0.02 and +0.02"
+        ],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "json",
+        "evidence_bullets": []
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 5.4
+    },
+    {
+      "id": "p05511",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "raw_text": "{\"visual_change\": \"The patch mean NDVI was 0.556 in 2022 and 0.550 in 2023 (Δ -0.005).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was -0.002\", \"supporting_evidence\": [\"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"",
+      "parsed": {
+        "visual_change": "",
+        "change_class": "stable",
+        "justification": "{\"visual_change\": \"The patch mean NDVI was 0.556 in 2022 and 0.550 in 2023 (Δ -0.005).\", \"change_class\": \"stable\", \"justification\": \"NDVI Δ was -0.002\", \"supporting_evidence\": [\"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"NDVI Δ\", \"",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 9.41
+    },
+    {
+      "id": "p05771",
+      "gold": "decline",
+      "pred": null,
+      "correct": false,
+      "raw_text": "{\"visual_change\": \"The image shows a green cover in RGB 0.77 with a saturation of 0.69. The SAR VV backscatter change is -0.95 dB. The temperature anomaly is +0.9 °C in 2022 and -1.4 °C in 2023. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR V",
+      "parsed": {
+        "visual_change": "",
+        "change_class": null,
+        "justification": "{\"visual_change\": \"The image shows a green cover in RGB 0.77 with a saturation of 0.69. The SAR VV backscatter change is -0.95 dB. The temperature anomaly is +0.9 °C in 2022 and -1.4 °C in 2023. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR VV backscatter change is -0.95 dB. The SAR V",
+        "supporting_evidence": [],
+        "conflicting_evidence": [],
+        "possible_driver": "",
+        "confidence": null,
+        "format": "fallback"
+      },
+      "prompt_mode": "explain",
+      "answer_format": "json",
+      "seconds": 10.78
+    }
+  ]
+}
