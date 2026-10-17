@@ -1,194 +1,232 @@
 # EcoExplain-VLM
 
-Benchmark and fine-tuning pipeline for **Condition C** forest-disturbance classification at **Kanha Tiger Reserve** (dry season **Jan–Feb 2022 vs 2023**).
+Independent Study benchmark: **forest vegetation change** at **Kanha Tiger Reserve**, matched dry season **January–February 2022 (T0) vs 2023 (T1)**.
 
-Each patch provides **T0 + T1 RGB** and **spectral evidence text**; the model predicts **`stable` | `decline` | `increase`** (label: `candidate_class` in `dataset.jsonl`).
+Each patch is two RGB chips plus multimodal evidence. The label is **`stable` | `decline` | `increase`** (`candidate_class` in `dataset.jsonl`).
 
----
+**GitHub:** [Rama-Vaibhav/EcoExplain-VLM](https://github.com/Rama-Vaibhav/EcoExplain-VLM) (`main`)  
+**Local:** `ecoexplain_vlm_dataset/`  
+**Ada:** `~/EcoExplain-VLM` (`ssh cprv67ab97@ada-gw1`)
 
-## What is in this repo
-
-| Component | Description |
-|-----------|-------------|
-| **Data pipeline** | GEE export → DIP/RGB → `dataset.jsonl` → frozen splits |
-| **Zero-shot VLMs** | Four open-weight models on the **same 55 test patches** (`src/vlm_eval.py`) |
-| **Fine-tune (09)** | LoRA on **Qwen2-VL-2B** using the **train** split only |
-| **Results** | Per-model JSON + merged comparison tables under `results/` |
-
-**On GitHub:** code, `dataset.jsonl`, `data/splits/`, result JSONs, summary figures.  
-**Not on GitHub (local / Ada):** `data/processed_images/*.jpg` (~770 files, ~24 MB), heavy GeoTIFFs and `.npy` tensors.
+This README is the source of truth for numbers a report should cite. Do **not** mix rows from different tables.
 
 ---
 
-## Dataset & splits
+## 1. What this repo contains
 
-- **366 patches**, Condition C prompts in `dataset.jsonl` (v2).
-- **Stratified split** on `candidate_class`, **seed 42**, 70% / 15% / 15%:
+| Piece | What it is |
+|-------|------------|
+| Data pipeline | Google Earth Engine → DIP/RGB → `dataset.jsonl` → frozen splits |
+| Zero-shot VLMs | Four open models, **same 55 test patches** (`src/vlm_eval.py`) |
+| Class LoRA | Qwen2-VL-2B, train split, Ada (`src/vlm_finetune.py`) |
+| Explanations | Compact evidence table, JSON/short answers, faithfulness scoring |
+| Explain LoRA | 2B teacher filters train justifications; 2B LoRA on those targets |
+| Results | JSON under `results/` and `results/explain/` |
 
-| Split | Patches | Use |
-|-------|---------|-----|
-| Train | 256 | LoRA fine-tune (notebook **09**) |
-| Dev | 55 | Tuning / development (optional) |
-| Test | 55 | All reported benchmark accuracies |
-
-Manifest: `data/splits/split_manifest.json`, IDs in `data/splits/*_patches.csv`.
+**On GitHub:** code, `dataset.jsonl`, `data/splits/`, `data/explain_targets/train_targets.jsonl`, result JSONs.  
+**Not on GitHub:** `data/processed_images/*.jpg`, GeoTIFFs, `.npy`, LoRA checkpoints.
 
 ---
 
-## Notebook workflow
+## 2. Dataset and splits
+
+- **366 patches** (~640 m), Condition C cards in `dataset.jsonl` (v2).
+- Sources: **Sentinel-2** (optical + NDVI/EVI/NDMI/NBR), **Sentinel-1** SAR, **CHIRPS** rainfall, **ERA5-Land** temperature and soil moisture, **NASADEM** terrain.
+- Stratified on `candidate_class`, **seed 42**, 70 / 15 / 15:
+
+| Split | n | Use |
+|-------|---|-----|
+| Train | 256 | LoRA |
+| Dev | 55 | Early stopping / selection |
+| Test | 55 | **All reported accuracies** |
+
+Manifest: `data/splits/split_manifest.json`. IDs: `data/splits/*_patches.csv`.
+
+**Condition C card:** images + measured evidence text. The full prompt **ends with a pipeline summary that includes `candidate_class=`** (same field as the gold label). Zero-shot 56.4% and class LoRA 67.3% use that full card. `evidence_only` / `minimal` / compact-evidence prompts **strip that line**. State this in Methods.
+
+---
+
+## 3. Notebooks
 
 | # | Notebook | Role |
 |---|----------|------|
 | 01 | `01_gee_extraction.ipynb` | GEE export (S2, SAR, CHIRPS, ERA5, NASADEM) |
-| 02 | `02_dip_auto_classify.ipynb` | DIP, Otsu masks, RGB / tensors |
+| 02 | `02_dip_auto_classify.ipynb` | DIP, Otsu, RGB / tensors |
 | 03 | `03_vlm_jsonl_builder.ipynb` | Build `dataset.jsonl` |
-| 04 | `04_freeze_jsonl_splits.ipynb` | Freeze JSONL + write splits (`scripts/05_freeze_jsonl_and_splits.py`) |
-| 05–08 | `05_vlm_llava15` … `08_vlm_blip2` | Zero-shot eval per VLM |
-| 09 | `09_vlm_finetune_qwen.ipynb` | LoRA fine-tune Qwen2-VL (GPU) |
+| 04 | `04_freeze_jsonl_splits.ipynb` | Freeze JSONL + splits |
+| 05–08 | `05_vlm_llava15` … `08_vlm_blip2` | Zero-shot eval (`LAPTOP=True`) |
+| 09 | `09_vlm_finetune_qwen.ipynb` | Class LoRA (run via Ada scripts) |
 
 ---
 
-## Zero-shot benchmark (test split, n=55)
+## 4. Numbers to report (test n = 55 unless noted)
 
-Merged table: **`results/vlm_combo_comparison.json`**.  
-Summary figure: **`results/result2.png`** (regenerate with `python scripts/generate_result_figures.py`).
+Majority class on test is `increase` at **34.5%** (19/55).
 
-| Rank | Model | Test accuracy |
-|------|--------|----------------|
-| 1 | Qwen2-VL 2B (laptop HF) | **56.4%** |
-| 2 | PaliGemma 3B | 36.4% |
-| 3 | LLaVA 1.5 (0.5B interleave) | 32.7% |
-| 4 | BLIP-2 OPT 2.7B | 32.7% |
+### 4.1 Primary classification — Condition C, one-word, full card
 
-Metric: parsed class from model text vs `candidate_class`.  
-Notebooks **05–08** use `LAPTOP=True` (smaller checkpoints) and shared `eval_combo()` in `src/vlm_eval.py`.
+File: `results/vlm_combo_comparison.json`
 
-Pipeline overview: **`results/result1.png`**.
+| Model | Accuracy | Notes |
+|-------|----------|--------|
+| **Qwen2-VL-2B** | **56.4%** (31/55) | Main zero-shot result |
+| PaliGemma 3B | 36.4% | Often `decline` |
+| LLaVA-Interleave 0.5B | 32.7% | Always `decrease` |
+| BLIP-2 OPT 2.7B | 32.7% | Prompt echo → parser `decline` |
 
----
+**This is the fair four-model table.** Notebooks 05–08.
 
-## Fine-tuning (notebook 09 / Ada)
+### 4.2 Class-only LoRA (Qwen2-VL-2B)
 
-**Base model:** `Qwen/Qwen2-VL-2B-Instruct`  
-**Combo id:** `qwen_vl_finetuned_ecoexplain`  
-**Code:** `src/vlm_finetune.py`, `scripts/run_finetune_qwen.py`
+File: `results/vlm_combo_qwen_vl_finetuned_ecoexplain.json` (smoke)
 
-```bash
-# Local / GPU machine (after JPGs + dataset.jsonl + splits exist)
-pip install torch torchvision transformers accelerate peft bitsandbytes
-python scripts/run_finetune_qwen.py --train --eval --merge
-```
+| Run | Accuracy | How to describe it |
+|-----|----------|-------------------|
+| Ada **2722446**, 16 train, 1 epoch, full card | **67.3%** | Reported class LoRA; never predicted `stable` |
+| Ada 2690 / 2792, ~256 train, 2–3 epochs, full card | **100%** | Label leak / copying `candidate_class`. **Do not cite as vision accuracy.** |
+| Ada 2984 / 3054, 128 train, images-only test | **32.7%** | Train/test protocol mismatch |
 
-**IIIT Ada (Slurm):**
+### 4.3 Structured cite-only explanations (Mac, 6 Oct 2026)
 
-```bash
-cd ~/EcoExplain-VLM
-sbatch scripts/ada_slurm_qwen09_smoke.sh   # quick check
-sbatch scripts/ada_slurm_qwen09.sh         # full train + test eval
-```
+Files: `results/explain/explain_structured_*.json`, `results/explain/explanation_scores.json`
 
-Use `source ~/venvs/ecoexplain/bin/activate` in the Slurm scripts (standalone Python 3.10 + venv on Ada).  
-Outputs:
+| Model | Explain-mode class acc. | Correct numeric claims |
+|-------|-------------------------|------------------------|
+| Qwen2-VL-2B | 63.6% (35/55) | **75.8%** |
+| LLaVA 0.5B | 45.1% (23/51 answered) | **71.1%** |
 
-- `results/checkpoints/qwen2vl_lora_ecoexplain/` (gitignored)
-- `results/vlm_combo_qwen_vl_finetuned_ecoexplain.json`
-- `results/vlm_combo_comparison_with_finetune.json` (after `--merge`)
+Class often follows the stated NDVI ±0.02 rule (rule alone = 63.6%). This does **not** replace §4.1.
 
----
+### 4.4 Legacy free-form explanations
 
-## Repository layout
+| Model | n | Class acc. | Claim correctness |
+|-------|---|------------|-------------------|
+| Qwen2-VL-2B | **3** only | 3/3 | 43.8% of 16 claims |
+| LLaVA 0.5B | 55 | 29.1% | 56.7% |
+| PaliGemma 3B | 55 | 33.3% of 36 parsed | almost no claims |
+| BLIP-2 | 55 | 32.7% | repeated the prompt |
 
-```
-├── configs/                 # pilot ROI / dates
-├── data/
-│   ├── splits/              # train / dev / test patch IDs
-│   ├── processed_images/    # T0/T1 JPGs (local only)
-│   └── raw_tiffs/           # GeoTIFFs (local only)
-├── dataset.jsonl            # one row per patch (Condition C + labels)
-├── notebooks/               # 01–09
-├── scripts/
-│   ├── 01_export_gee.py … 05_freeze_jsonl_and_splits.py
-│   ├── run_finetune_qwen.py
-│   ├── ada_slurm_qwen09*.sh
-│   └── generate_result_figures.py
-├── src/
-│   ├── vlm_eval.py          # eval, parse_class, compare_reports
-│   ├── vlm_combos.py        # model registry
-│   └── vlm_finetune.py      # LoRA train/eval
-└── results/
-    ├── vlm_combo_*.json
-    ├── vlm_combo_comparison.json
-    ├── result1.png / result2.png
-```
+### 4.5 Explain LoRA on Ada (16–17 Oct 2026) — **pilot**
+
+Teacher could **not** be 7B (`Disk quota exceeded`). Teacher = **Qwen2-VL-2B**.
+
+| Step | Job | Result |
+|------|-----|--------|
+| Filter train justifications | **24298** | **28 / 256** kept (`data/explain_targets/train_targets.jsonl`) |
+| LoRA + explain eval | **24389** | Used **16 of 28** (because `--max-train 128` takes the first 128 train IDs) |
+| Test | same | **61.8%** explain-mode class acc. (34/55); **50.5%** of checkable claims correct; 74.5% of explanations have ≥1 wrong claim |
+
+Files: `results/explain/explain_qwen_vl_finetuned_ecoexplain.json`, `results/explain/target_filter_report.json`, `results/slurm-explain-targets-24298.log`, `results/slurm-qwen-explain-24389.log`.
+
+**Do not put 61.8% in the same table as 56.4% / 67.3%.** Different prompt, leak-free evidence table, 16 JSON targets, 2B teaching 2B.
+
+### 4.6 Other probes (appendix)
+
+- `evidence_only` one-word: PaliGemma 36.4%, LLaVA 36.4%, BLIP-2 32.7% (`results/explain/oneword_*.json`). Qwen only 3 patches in that file.
+- Closed-set log-prob + NDVI rule (Ada): LLaVA **60.0% calibrated** / 32.7% raw; PaliGemma and BLIP-2 stay ~32.7%. Raw 32.7% is always-`decline`.
+- ΔNDVI ±0.02 rule vs labels: **63.6%**.
 
 ---
 
-## Explanation mode
+## 5. How to run
 
-Models can be asked for a short justification as well as a class. Prompts in this mode do **not** include `candidate_class`. New files go to `results/explain/` and do not replace `results/vlm_combo_*.json`.
-
-```bash
-# 0 leaks required
-python scripts/check_no_leak.py
-
-# Prompt check on 3 test patches, no model download
-python scripts/run_explain.py --dry-run --limit 3
-
-# Recommended: structured cite-only prompts (writes explain_structured_<combo>.json)
-python scripts/run_explain.py --mode explain --prompt-style structured --combo qwen_vl_custom_mlp_qwen
-
-# One model at a time on a 16 GB Mac (laptop checkpoints, greedy decoding)
-python scripts/run_explain.py --limit 3 --combo qwen_vl_custom_mlp_qwen
-python scripts/run_explain.py --combo llava15_clip_mlp_vicuna
-python scripts/run_explain.py --combo paligemma_siglip_linear_gemma
-python scripts/run_explain.py --combo blip2_clip_qformer_opt
-
-# Scores, panels, PDF, and HTML
-python scripts/score_explanations.py
-python scripts/make_explanation_report.py
-python scripts/make_explanation_report.py --ids p00052,p00010
-```
-
-`--mode both` (the default) writes `explain_<combo_id>.json` and a leak-free one-word file `oneword_<combo_id>.json`. Qwen and LLaVA are asked for JSON (`max_new_tokens` 256). PaliGemma and BLIP-2 get `class:` / `reason:` (`max_new_tokens` 80).
-
-**Ada (GPU, Mac can be off)** — run all structured explain evals on the cluster:
-
-```bash
-cd ~/EcoExplain-VLM && mkdir -p results/explain
-# Sync latest code first (scp/rsync src/ scripts/ from your Mac)
-sbatch scripts/ada_slurm_explain_structured.sh
-# Smoke: EXPLAIN_LIMIT=5 sbatch --export=ALL,EXPLAIN_LIMIT=5 scripts/ada_slurm_explain_structured.sh
-# Subset: EXPLAIN_COMBOS="qwen_vl_custom_mlp_qwen llava15_clip_mlp_vicuna" sbatch --export=ALL,EXPLAIN_COMBOS scripts/ada_slurm_explain_structured.sh
-tail -f results/slurm-explain-structured-<jobid>.log
-```
-
-Pull artifacts: `results/explain/explain_structured_*.json`, `explanation_scores.csv`, and the Slurm log.
-
-Optional follow-on jobs (explanation-target LoRA, not required for structured zero-shot explain):
-
-```bash
-sbatch scripts/ada_slurm_explain_targets.sh
-sbatch scripts/ada_slurm_qwen_explain.sh
-```
-
-The target job keeps a train patch only when Qwen2-VL-7B matches the gold class and every checkable claim matches the measured deltas. The LoRA job reads `data/explain_targets/train_targets.jsonl` and writes `results/explain/explain_qwen_vl_finetuned_ecoexplain.json`.
-
----
-
-## Environment (laptop eval)
+### Laptop (16 GB, one model at a time)
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-# VLM notebooks also need (uncomment in requirements.txt):
-# torch torchvision transformers accelerate peft bitsandbytes
+# also: torch torchvision transformers accelerate peft bitsandbytes
 ```
 
-Use the project **`.venv`** kernel in Jupyter. Run **one** VLM notebook at a time on ~16 GB RAM; set `LAPTOP=True` and `PURGE_AFTER=True` in **05–08** to limit disk use.
+Jupyter kernel = this `.venv`. Notebooks 05–08: `LAPTOP=True`, `PURGE_AFTER=True`.
+
+Leak check (must print 0):
+
+```bash
+python scripts/check_no_leak.py
+```
+
+Explanations:
+
+```bash
+python scripts/run_explain.py --dry-run --limit 3
+python scripts/run_explain.py --mode explain --prompt-style structured --combo qwen_vl_custom_mlp_qwen
+python scripts/score_explanations.py
+python scripts/make_explanation_report.py
+```
+
+### Ada class LoRA
+
+```bash
+cd ~/EcoExplain-VLM
+source ~/venvs/ecoexplain/bin/activate
+sbatch --mem=16G scripts/ada_slurm_qwen09_smoke.sh
+sbatch --mem=16G scripts/ada_slurm_qwen09.sh
+```
+
+Do **not** use `--mem=32G` (`QOSMaxMemoryPerUser`). PyTorch writes to stderr; logs are `results/slurm-qwen09-<JOBID>.log`.
+
+### Ada explain LoRA (after JPGs + splits exist)
+
+```bash
+# 1) teacher filter (2B; 7B will fill the home quota)
+sbatch --mem=16G scripts/ada_slurm_explain_targets.sh
+# wait for: survived N / 256  and  data/explain_targets/train_targets.jsonl
+
+# 2) student LoRA
+sbatch --mem=16G scripts/ada_slurm_qwen_explain.sh
+```
+
+HF download on Ada: `export HF_HUB_DISABLE_XET=1`. If disk fills, delete  
+`~/.cache/huggingface/hub/models--Qwen--Qwen2-VL-7B-Instruct`  
+and **keep** the 2B cache.
 
 ---
 
-## Data pipeline quick start (from scratch)
+## 6. Core code
+
+| Path | Role |
+|------|------|
+| `src/vlm_combos.py` | Model registry, `encoder_text`, `evidence_only`, leak tokens |
+| `src/vlm_eval.py` | `eval_combo`, `parse_class`, `parse_explanation`, `collate` |
+| `src/vlm_evidence.py` | Compact numeric table (no class names) |
+| `src/explain_metrics.py` | Claim directions vs measured deltas, ROUGE-L, distinct-2 |
+| `src/vlm_finetune.py` | Class LoRA + `--target explain` |
+| `src/vlm_closedset.py` | Log-prob closed-set scoring |
+| `scripts/run_finetune_qwen.py` | CLI (`--eval-prompt evidence_only`, `--target explain`) |
+| `scripts/build_explain_targets.py` | Teacher filter (`--teacher`, default 2B) |
+| `scripts/run_explain.py` | Zero-shot explain / oneword |
+| `scripts/score_explanations.py` | Tables in `results/explain/` |
+| `scripts/ada_slurm_*.sh` | Slurm |
+
+`--target explain` **must not** train on the template `explanation` field in JSONL.
+
+---
+
+## 7. Repository layout
+
+```
+├── dataset.jsonl
+├── data/splits/
+├── data/explain_targets/train_targets.jsonl   # 28 filtered 2B justifications
+├── data/processed_images/                     # local / Ada only
+├── notebooks/01–09
+├── scripts/   run_finetune_qwen.py, run_explain.py, ada_slurm_*.sh, …
+├── src/       vlm_eval.py, vlm_finetune.py, vlm_evidence.py, explain_metrics.py
+└── results/
+    ├── vlm_combo_comparison.json
+    ├── vlm_combo_qwen_vl_finetuned_ecoexplain.json
+    ├── explain/explain_*.json, explain_structured_*.json, oneword_*.json
+    ├── explain/explain_qwen_vl_finetuned_ecoexplain.json
+    ├── slurm-explain-targets-24298.log
+    └── slurm-qwen-explain-24389.log
+```
+
+Checkpoints: `results/checkpoints/` (gitignored).
+
+---
+
+## 8. Data pipeline from scratch
 
 ```bash
 python scripts/01_export_gee.py
@@ -197,11 +235,19 @@ python scripts/05_freeze_jsonl_and_splits.py
 python scripts/04_validate.py
 ```
 
-See notebooks **01–04** for the interactive path. Google Drive OAuth: `credentials.json` / `token.json` (never commit).
+Interactive path: notebooks 01–04. Drive OAuth: `credentials.json` / `token.json` — never commit.
 
 ---
 
-## Citation & contact
+## 9. What a report should and should not say
 
-Independent Study — EcoExplain-VLM, Kanha pilot.  
+**Say:** Qwen2-VL-2B is the strongest **zero-shot Condition C** model at **56.4%**. Class LoRA on 16 patches reached **67.3%** with the full card and collapsed `stable` into `decline`. Structured prompts raise **claim correctness** to ~71–76%. Explain LoRA is a **16-example 2B-on-2B pilot** at **61.8%** explain-mode accuracy and **50.5%** claim correctness.
+
+**Do not say:** 100% LoRA is a vision result; 61.8% beats 56.4% on the same task; 60% closed-set LLaVA is zero-shot; Qwen explain was run on 55 patches in legacy mode (it was 3).
+
+---
+
+## Citation
+
+Independent Study — EcoExplain-VLM, Kanha Tiger Reserve (T0 2022 / T1 2023).  
 GitHub: [Rama-Vaibhav/EcoExplain-VLM](https://github.com/Rama-Vaibhav/EcoExplain-VLM).
