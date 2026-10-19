@@ -34,6 +34,13 @@ def main() -> None:
         help="Delete each model's local HF cache after scoring so disk stays free.",
     )
     p.add_argument(
+        "--text-mode",
+        choices=("full", "evidence_only", "compact", "minimal"),
+        default="full",
+    )
+    p.add_argument("--splits-dir", default="data/splits")
+    p.add_argument("--results-subdir", default="results")
+    p.add_argument(
         "--combos",
         nargs="*",
         default=[
@@ -52,6 +59,9 @@ def main() -> None:
         combo_ids=args.combos,
         laptop=args.laptop,
         purge_after=args.purge_after,
+        splits_dir=ROOT / args.splits_dir,
+        text_mode=args.text_mode,
+        results_subdir=args.results_subdir,
     )
     print("best", comparison.get("best_combo_id"), comparison.get("best_accuracy"))
     print("wrote results/vlm_combo_comparison.json")

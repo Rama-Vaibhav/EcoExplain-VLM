@@ -74,7 +74,7 @@ File: `results/vlm_combo_comparison.json`
 | LLaVA-Interleave 0.5B | 32.7% | Always `decrease` |
 | BLIP-2 OPT 2.7B | 32.7% | Prompt echo → parser `decline` |
 
-**This is the fair four-model table.** Notebooks 05–08.
+**Inputs were not equal:** Qwen and LLaVA received both images and the full card; PaliGemma both images and one NDVI line; BLIP-2 one stitched image and no card. Notebooks 05–08. Equal-input and leak-free reruns: §4.7.
 
 ### 4.2 Class-only LoRA (Qwen2-VL-2B)
 
@@ -82,7 +82,7 @@ File: `results/vlm_combo_qwen_vl_finetuned_ecoexplain.json` (smoke)
 
 | Run | Accuracy | How to describe it |
 |-----|----------|-------------------|
-| Ada **2722446**, 16 train, 1 epoch, full card | **67.3%** | Reported class LoRA; never predicted `stable` |
+| Ada **2722446**, 16 train, 1 epoch, full card | **67.3%** | Old run: first 16 train IDs (9 decline / 6 stable / 1 increase), full card at train and test; never predicted `stable`. Superseded by the leak-free run in §4.7 |
 | Ada 2690 / 2792, ~256 train, 2–3 epochs, full card | **100%** | Label leak / copying `candidate_class`. **Do not cite as vision accuracy.** |
 | Ada 2984 / 3054, 128 train, images-only test | **32.7%** | Train/test protocol mismatch |
 
@@ -125,6 +125,22 @@ Files: `results/explain/explain_qwen_vl_finetuned_ecoexplain.json`, `results/exp
 - `evidence_only` one-word: PaliGemma 36.4%, LLaVA 36.4%, BLIP-2 32.7% (`results/explain/oneword_*.json`). Qwen only 3 patches in that file.
 - Closed-set log-prob + NDVI rule (Ada): LLaVA **60.0% calibrated** / 32.7% raw; PaliGemma and BLIP-2 stay ~32.7%. Raw 32.7% is always-`decline`.
 - ΔNDVI ±0.02 rule vs labels: **63.6%**.
+
+### 4.7 Protocol reruns (19–20 Oct 2026): label line removed, equal inputs
+
+Commands: `docs/PROTOCOL_RERUN.md`. Files: `results/protocol/`.
+
+| Run | Input | Accuracy | Notes |
+|-----|-------|----------|-------|
+| Qwen2-VL-2B zero-shot (laptop) | `evidence_only` | 32.7% (18/55) | `vlm_combo_comparison_evidence_only.json` |
+| Qwen2-VL-2B zero-shot (laptop) | `compact` (same numeric table for every model) | 32.7% (18/55) | answered `stable` for all 55; per-model file `vlm_combo_qwen_vl_custom_mlp_qwen.json` holds this run |
+| LLaVA-Interleave 0.5B (laptop) | `compact` | **43.6%** (24/55) | 43 `decline`, 12 `increase`, never `stable` |
+| PaliGemma 3B | `compact` | — | gated model, not loaded on the laptop |
+| BLIP-2 OPT 2.7B | `compact` | — | 0/55 answers parsed after the anti-echo parser fix |
+| Qwen2-VL-2B class LoRA, Ada **29575** | balanced 16 train (6 decline / 5 stable / 5 increase), `evidence_only` at train and test, 1 epoch | **36.4%** (20/55) | 53 `stable` answers: stable 18/18, decline 2/18, increase 0/19 |
+
+Parser: `parse_class` now strips echoed instructions, so BLIP-2's echo no longer counts as `decline`.
+Spatial split: `data/splits_spatial/` (whole lon/lat blocks held out; 266 / 46 / 54), written by `scripts/write_spatial_splits.py`; not yet evaluated.
 
 ---
 

@@ -1,0 +1,409 @@
+{
+  "combo_id": "blip2_clip_qformer_opt",
+  "family": "BLIP-2",
+  "vision_encoder": "CLIP / ViT",
+  "projector": "Q-Former (cross-attention queries)",
+  "text_decoder": "OPT / Flan-T5",
+  "hf_model_id": "Salesforce/blip2-opt-2.7b",
+  "laptop": true,
+  "generation": {
+    "max_new_tokens": 48,
+    "do_sample": false,
+    "temperature": 1.0
+  },
+  "status": "ok",
+  "error": null,
+  "n_eval": 55,
+  "n_parsed_class": 0,
+  "accuracy": null,
+  "majority_class": "increase",
+  "majority_accuracy": 0.34545454545454546,
+  "seconds": 2224.18,
+  "predictions": [
+    {
+      "id": "p00052",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.315 -> 0.293 (Δ -0.021); 20.2% of pixels dropped by more than 0.05\nEVI Δ -0.006 | NDMI Δ -0.008 | NBR Δ -0.010\nGreen cover in RGB 1.00 -> 0.99\nSAR VV Δ -0.15 dB, VH Δ -0.17 dB\nRainfall Jan–Feb 69.3 -> 25.4 mm\nSoil moisture anomaly +0.022 -> -0.043 | Temperature anomaly -1.6 -> +0.9 °C\nElevation 600 m, slope 3°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p00086",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.346 -> 0.338 (Δ -0.008); 3.6% of pixels dropped by more than 0.05\nEVI Δ +0.007 | NDMI Δ +0.011 | NBR Δ +0.013\nGreen cover in RGB 0.98 -> 0.98\nSAR VV Δ -0.17 dB, VH Δ -0.10 dB\nRainfall Jan–Feb 62.5 -> 22.4 mm\nSoil moisture anomaly +0.037 -> -0.051 | Temperature anomaly -1.5 -> +1.1 °C\nElevation 773 m, slope 8°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p00575",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.625 -> 0.575 (Δ -0.050); 48.9% of pixels dropped by more than 0.05\nEVI Δ -0.004 | NDMI Δ -0.007 | NBR Δ +0.003\nGreen cover in RGB 0.74 -> 0.42\nSAR VV Δ -0.22 dB, VH Δ -0.41 dB\nRainfall Jan–Feb 72.5 -> 25.4 mm\nSoil moisture anomaly +0.027 -> -0.048 | Temperature anomaly -1.5 -> +1.1 °C\nElevation 834 m, slope 5°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p00701",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.581 -> 0.585 (Δ +0.004); 4.3% of pixels dropped by more than 0.05\nEVI Δ +0.010 | NDMI Δ +0.011 | NBR Δ +0.022\nGreen cover in RGB 0.92 -> 0.87\nSAR VV Δ -0.23 dB, VH Δ -0.44 dB\nRainfall Jan–Feb 54.6 -> 23.0 mm\nSoil moisture anomaly +0.022 -> -0.038 | Temperature anomaly -1.5 -> +0.7 °C\nElevation 558 m, slope 5°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p00850",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.695 -> 0.681 (Δ -0.014); 2.7% of pixels dropped by more than 0.05\nEVI Δ +0.003 | NDMI Δ +0.016 | NBR Δ +0.022\nGreen cover in RGB 1.00 -> 0.99\nSAR VV Δ +0.06 dB, VH Δ +0.16 dB\nRainfall Jan–Feb 80.6 -> 28.5 mm\nSoil moisture anomaly +0.022 -> -0.043 | Temperature anomaly -1.5 -> +0.9 °C\nElevation 731 m, slope 14°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p00863",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.682 -> 0.666 (Δ -0.017); 9.8% of pixels dropped by more than 0.05\nEVI Δ +0.015 | NDMI Δ +0.025 | NBR Δ +0.032\nGreen cover in RGB 0.88 -> 0.86\nSAR VV Δ -0.53 dB, VH Δ -0.41 dB\nRainfall Jan–Feb 77.6 -> 27.5 mm\nSoil moisture anomaly +0.023 -> -0.045 | Temperature anomaly -1.5 -> +1.0 °C\nElevation 801 m, slope 5°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p00883",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.723 -> 0.688 (Δ -0.035); 23.0% of pixels dropped by more than 0.05\nEVI Δ +0.002 | NDMI Δ -0.007 | NBR Δ -0.003\nGreen cover in RGB 1.00 -> 1.00\nSAR VV Δ -0.33 dB, VH Δ -0.26 dB\nRainfall Jan–Feb 65.4 -> 23.7 mm\nSoil moisture anomaly +0.032 -> -0.049 | Temperature anomaly -1.5 -> +1.1 °C\nElevation 754 m, slope 10°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p00937",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.683 -> 0.652 (Δ -0.032); 20.9% of pixels dropped by more than 0.05\nEVI Δ +0.001 | NDMI Δ +0.029 | NBR Δ +0.038\nGreen cover in RGB 1.00 -> 1.00\nSAR VV Δ -0.22 dB, VH Δ -0.34 dB\nRainfall Jan–Feb 65.2 -> 25.2 mm\nSoil moisture anomaly +0.022 -> -0.041 | Temperature anomaly -1.6 -> +0.9 °C\nElevation 572 m, slope 3°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p01162",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.657 -> 0.681 (Δ +0.024); 0.3% of pixels dropped by more than 0.05\nEVI Δ +0.051 | NDMI Δ +0.105 | NBR Δ +0.117\nGreen cover in RGB 0.87 -> 0.98\nSAR VV Δ -0.13 dB, VH Δ -0.35 dB\nRainfall Jan–Feb 75.2 -> 26.7 mm\nSoil moisture anomaly +0.022 -> -0.045 | Temperature anomaly -1.5 -> +1.0 °C\nElevation 770 m, slope 8°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p01206",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.522 -> 0.490 (Δ -0.031); 31.8% of pixels dropped by more than 0.05\nEVI Δ -0.004 | NDMI Δ -0.030 | NBR Δ -0.035\nGreen cover in RGB 0.64 -> 0.44\nSAR VV Δ -0.58 dB, VH Δ -0.84 dB\nRainfall Jan–Feb 54.3 -> 21.9 mm\nSoil moisture anomaly +0.023 -> -0.038 | Temperature anomaly -1.6 -> +0.7 °C\nElevation 520 m, slope 3°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p01415",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.573 -> 0.556 (Δ -0.016); 11.2% of pixels dropped by more than 0.05\nEVI Δ +0.002 | NDMI Δ +0.019 | NBR Δ +0.030\nGreen cover in RGB 0.77 -> 0.73\nSAR VV Δ -0.41 dB, VH Δ -0.46 dB\nRainfall Jan–Feb 53.8 -> 21.4 mm\nSoil moisture anomaly +0.023 -> -0.039 | Temperature anomaly -1.6 -> +0.8 °C\nElevation 529 m, slope 3°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p01621",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.529 -> 0.502 (Δ -0.028); 25.5% of pixels dropped by more than 0.05\nEVI Δ +0.001 | NDMI Δ +0.040 | NBR Δ +0.048\nGreen cover in RGB 0.52 -> 0.34\nSAR VV Δ -0.76 dB, VH Δ -0.78 dB\nRainfall Jan–Feb 58.4 -> 23.0 mm\nSoil moisture anomaly +0.023 -> -0.039 | Temperature anomaly -1.6 -> +0.8 °C\nElevation 550 m, slope 3°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p01648",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.722 -> 0.693 (Δ -0.029); 13.8% of pixels dropped by more than 0.05\nEVI Δ -0.000 | NDMI Δ -0.000 | NBR Δ +0.001\nGreen cover in RGB 1.00 -> 1.00\nSAR VV Δ -0.26 dB, VH Δ -0.10 dB\nRainfall Jan–Feb 83.6 -> 29.1 mm\nSoil moisture anomaly +0.021 -> -0.043 | Temperature anomaly -1.5 -> +0.9 °C\nElevation 741 m, slope 9°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p01988",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.544 -> 0.548 (Δ +0.004); 3.2% of pixels dropped by more than 0.05\nEVI Δ +0.003 | NDMI Δ +0.004 | NBR Δ +0.007\nGreen cover in RGB 0.54 -> 0.56\nSAR VV Δ -0.69 dB, VH Δ -0.68 dB\nRainfall Jan–Feb 71.8 -> 25.4 mm\nSoil moisture anomaly +0.033 -> -0.049 | Temperature anomaly -1.5 -> +1.1 °C\nElevation 770 m, slope 10°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p02128",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.681 -> 0.640 (Δ -0.041); 38.0% of pixels dropped by more than 0.05\nEVI Δ -0.007 | NDMI Δ -0.031 | NBR Δ -0.028\nGreen cover in RGB 0.99 -> 0.98\nSAR VV Δ -0.42 dB, VH Δ -0.23 dB\nRainfall Jan–Feb 71.8 -> 27.0 mm\nSoil moisture anomaly +0.023 -> -0.040 | Temperature anomaly -1.6 -> +0.8 °C\nElevation 596 m, slope 4°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p02139",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.697 -> 0.673 (Δ -0.024); 11.4% of pixels dropped by more than 0.05\nEVI Δ +0.005 | NDMI Δ +0.001 | NBR Δ +0.006\nGreen cover in RGB 0.93 -> 0.91\nSAR VV Δ -0.23 dB, VH Δ -0.00 dB\nRainfall Jan–Feb 85.1 -> 30.7 mm\nSoil moisture anomaly +0.021 -> -0.041 | Temperature anomaly -1.5 -> +0.9 °C\nElevation 708 m, slope 9°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p02334",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.703 -> 0.685 (Δ -0.018); 6.0% of pixels dropped by more than 0.05\nEVI Δ -0.007 | NDMI Δ -0.015 | NBR Δ -0.009\nGreen cover in RGB 1.00 -> 0.99\nSAR VV Δ -0.38 dB, VH Δ -0.17 dB\nRainfall Jan–Feb 82.7 -> 30.3 mm\nSoil moisture anomaly +0.022 -> -0.041 | Temperature anomaly -1.6 -> +0.8 °C\nElevation 659 m, slope 6°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p02668",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.572 -> 0.579 (Δ +0.007); 6.1% of pixels dropped by more than 0.05\nEVI Δ +0.013 | NDMI Δ +0.043 | NBR Δ +0.061\nGreen cover in RGB 0.69 -> 0.75\nSAR VV Δ -0.46 dB, VH Δ -0.55 dB\nRainfall Jan–Feb 66.6 -> 23.7 mm\nSoil moisture anomaly +0.023 -> -0.046 | Temperature anomaly -1.5 -> +1.0 °C\nElevation 662 m, slope 4°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p02674",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.528 -> 0.489 (Δ -0.040); 37.6% of pixels dropped by more than 0.05\nEVI Δ -0.002 | NDMI Δ +0.002 | NBR Δ +0.013\nGreen cover in RGB 0.38 -> 0.36\nSAR VV Δ -0.61 dB, VH Δ -0.68 dB\nRainfall Jan–Feb 71.5 -> 25.0 mm\nSoil moisture anomaly +0.024 -> -0.047 | Temperature anomaly -1.5 -> +1.0 °C\nElevation 716 m, slope 8°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p02803",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.455 -> 0.437 (Δ -0.018); 14.8% of pixels dropped by more than 0.05\nEVI Δ -0.004 | NDMI Δ -0.008 | NBR Δ +0.005\nGreen cover in RGB 0.33 -> 0.22\nSAR VV Δ -0.82 dB, VH Δ -1.11 dB\nRainfall Jan–Feb 59.9 -> 22.7 mm\nSoil moisture anomaly +0.022 -> -0.039 | Temperature anomaly -1.6 -> +0.7 °C\nElevation 508 m, slope 5°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p02890",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.662 -> 0.638 (Δ -0.025); 27.4% of pixels dropped by more than 0.05\nEVI Δ +0.006 | NDMI Δ +0.007 | NBR Δ +0.021\nGreen cover in RGB 0.79 -> 0.79\nSAR VV Δ -0.20 dB, VH Δ -0.07 dB\nRainfall Jan–Feb 75.2 -> 25.4 mm\nSoil moisture anomaly +0.033 -> -0.049 | Temperature anomaly -1.5 -> +1.0 °C\nElevation 778 m, slope 12°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p03067",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.625 -> 0.628 (Δ +0.003); 5.9% of pixels dropped by more than 0.05\nEVI Δ +0.005 | NDMI Δ +0.035 | NBR Δ +0.046\nGreen cover in RGB 0.85 -> 0.85\nSAR VV Δ -0.29 dB, VH Δ -0.65 dB\nRainfall Jan–Feb 64.3 -> 22.9 mm\nSoil moisture anomaly +0.022 -> -0.046 | Temperature anomaly -1.5 -> +1.0 °C\nElevation 650 m, slope 5°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p03122",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.646 -> 0.602 (Δ -0.044); 45.9% of pixels dropped by more than 0.05\nEVI Δ -0.015 | NDMI Δ -0.029 | NBR Δ -0.026\nGreen cover in RGB 0.89 -> 0.87\nSAR VV Δ -0.47 dB, VH Δ -0.43 dB\nRainfall Jan–Feb 66.3 -> 24.3 mm\nSoil moisture anomaly +0.022 -> -0.039 | Temperature anomaly -1.6 -> +0.8 °C\nElevation 530 m, slope 5°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p03228",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.697 -> 0.654 (Δ -0.043); 40.0% of pixels dropped by more than 0.05\nEVI Δ -0.016 | NDMI Δ -0.044 | NBR Δ -0.041\nGreen cover in RGB 0.98 -> 0.98\nSAR VV Δ -0.52 dB, VH Δ -0.51 dB\nRainfall Jan–Feb 70.3 -> 25.3 mm\nSoil moisture anomaly +0.022 -> -0.040 | Temperature anomaly -1.6 -> +0.8 °C\nElevation 617 m, slope 4°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p03243",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.703 -> 0.705 (Δ +0.002); 3.0% of pixels dropped by more than 0.05\nEVI Δ +0.006 | NDMI Δ +0.012 | NBR Δ +0.023\nGreen cover in RGB 0.98 -> 0.95\nSAR VV Δ -0.16 dB, VH Δ -0.34 dB\nRainfall Jan–Feb 86.8 -> 30.6 mm\nSoil moisture anomaly +0.020 -> -0.041 | Temperature anomaly -1.5 -> +0.8 °C\nElevation 866 m, slope 7°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p03515",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.583 -> 0.610 (Δ +0.027); 0.2% of pixels dropped by more than 0.05\nEVI Δ +0.025 | NDMI Δ +0.043 | NBR Δ +0.051\nGreen cover in RGB 0.76 -> 0.87\nSAR VV Δ -0.47 dB, VH Δ -0.62 dB\nRainfall Jan–Feb 65.2 -> 23.9 mm\nSoil moisture anomaly +0.022 -> -0.039 | Temperature anomaly -1.6 -> +0.8 °C\nElevation 503 m, slope 3°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p03538",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.670 -> 0.669 (Δ -0.001); 4.7% of pixels dropped by more than 0.05\nEVI Δ +0.002 | NDMI Δ +0.003 | NBR Δ +0.012\nGreen cover in RGB 0.97 -> 0.95\nSAR VV Δ -0.56 dB, VH Δ -0.41 dB\nRainfall Jan–Feb 79.4 -> 28.1 mm\nSoil moisture anomaly +0.020 -> -0.040 | Temperature anomaly -1.5 -> +0.8 °C\nElevation 630 m, slope 6°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p03592",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.646 -> 0.611 (Δ -0.036); 34.0% of pixels dropped by more than 0.05\nEVI Δ -0.002 | NDMI Δ -0.009 | NBR Δ -0.004\nGreen cover in RGB 0.74 -> 0.76\nSAR VV Δ -0.91 dB, VH Δ -0.58 dB\nRainfall Jan–Feb 77.7 -> 26.2 mm\nSoil moisture anomaly +0.033 -> -0.049 | Temperature anomaly -1.6 -> +1.0 °C\nElevation 702 m, slope 4°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p03635",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.660 -> 0.678 (Δ +0.017); 0.6% of pixels dropped by more than 0.05\nEVI Δ +0.010 | NDMI Δ +0.012 | NBR Δ +0.025\nGreen cover in RGB 1.00 -> 1.00\nSAR VV Δ -0.52 dB, VH Δ -0.42 dB\nRainfall Jan–Feb 76.1 -> 27.0 mm\nSoil moisture anomaly +0.021 -> -0.040 | Temperature anomaly -1.5 -> +0.8 °C\nElevation 614 m, slope 6°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p03689",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.620 -> 0.628 (Δ +0.008); 3.4% of pixels dropped by more than 0.05\nEVI Δ +0.020 | NDMI Δ +0.021 | NBR Δ +0.035\nGreen cover in RGB 0.84 -> 0.98\nSAR VV Δ -0.73 dB, VH Δ -0.64 dB\nRainfall Jan–Feb 75.4 -> 25.6 mm\nSoil moisture anomaly +0.030 -> -0.048 | Temperature anomaly -1.5 -> +1.0 °C\nElevation 687 m, slope 5°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p03801",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.456 -> 0.459 (Δ +0.003); 4.5% of pixels dropped by more than 0.05\nEVI Δ +0.007 | NDMI Δ +0.018 | NBR Δ +0.042\nGreen cover in RGB 0.26 -> 0.17\nSAR VV Δ -0.55 dB, VH Δ -0.74 dB\nRainfall Jan–Feb 61.4 -> 22.5 mm\nSoil moisture anomaly +0.021 -> -0.039 | Temperature anomaly -1.5 -> +0.7 °C\nElevation 489 m, slope 4°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p03867",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.549 -> 0.539 (Δ -0.011); 16.8% of pixels dropped by more than 0.05\nEVI Δ +0.010 | NDMI Δ +0.011 | NBR Δ +0.026\nGreen cover in RGB 0.62 -> 0.54\nSAR VV Δ -0.78 dB, VH Δ -0.75 dB\nRainfall Jan–Feb 63.4 -> 22.7 mm\nSoil moisture anomaly +0.021 -> -0.045 | Temperature anomaly -1.4 -> +0.9 °C\nElevation 694 m, slope 8°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p03991",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.657 -> 0.656 (Δ -0.001); 3.6% of pixels dropped by more than 0.05\nEVI Δ +0.006 | NDMI Δ +0.021 | NBR Δ +0.033\nGreen cover in RGB 0.93 -> 0.96\nSAR VV Δ -0.55 dB, VH Δ -0.35 dB\nRainfall Jan–Feb 78.3 -> 27.0 mm\nSoil moisture anomaly +0.031 -> -0.049 | Temperature anomaly -1.6 -> +1.0 °C\nElevation 722 m, slope 4°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p04040",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.590 -> 0.625 (Δ +0.035); 3.7% of pixels dropped by more than 0.05\nEVI Δ +0.029 | NDMI Δ +0.025 | NBR Δ +0.049\nGreen cover in RGB 0.74 -> 0.73\nSAR VV Δ -0.08 dB, VH Δ +0.05 dB\nRainfall Jan–Feb 76.4 -> 27.2 mm\nSoil moisture anomaly +0.019 -> -0.040 | Temperature anomaly -1.4 -> +0.8 °C\nElevation 749 m, slope 9°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p04059",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.555 -> 0.522 (Δ -0.033); 33.7% of pixels dropped by more than 0.05\nEVI Δ -0.028 | NDMI Δ -0.035 | NBR Δ -0.035\nGreen cover in RGB 0.52 -> 0.39\nSAR VV Δ -0.67 dB, VH Δ -0.73 dB\nRainfall Jan–Feb 58.9 -> 21.5 mm\nSoil moisture anomaly +0.019 -> -0.043 | Temperature anomaly -1.4 -> +0.9 °C\nElevation 653 m, slope 10°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p04145",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.544 -> 0.521 (Δ -0.022); 22.4% of pixels dropped by more than 0.05\nEVI Δ +0.003 | NDMI Δ +0.009 | NBR Δ +0.021\nGreen cover in RGB 0.58 -> 0.48\nSAR VV Δ -0.84 dB, VH Δ -1.04 dB\nRainfall Jan–Feb 74.8 -> 26.8 mm\nSoil moisture anomaly +0.019 -> -0.041 | Temperature anomaly -1.4 -> +0.8 °C\nElevation 743 m, slope 7°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p04174",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.612 -> 0.575 (Δ -0.036); 33.7% of pixels dropped by more than 0.05\nEVI Δ -0.006 | NDMI Δ -0.012 | NBR Δ -0.007\nGreen cover in RGB 0.75 -> 0.68\nSAR VV Δ -0.82 dB, VH Δ -0.59 dB\nRainfall Jan–Feb 65.7 -> 23.4 mm\nSoil moisture anomaly +0.022 -> -0.046 | Temperature anomaly -1.5 -> +0.9 °C\nElevation 683 m, slope 6°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p04203",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.550 -> 0.560 (Δ +0.010); 0.4% of pixels dropped by more than 0.05\nEVI Δ +0.004 | NDMI Δ +0.013 | NBR Δ +0.027\nGreen cover in RGB 0.81 -> 0.77\nSAR VV Δ -0.35 dB, VH Δ -0.53 dB\nRainfall Jan–Feb 63.4 -> 22.9 mm\nSoil moisture anomaly +0.021 -> -0.039 | Temperature anomaly -1.5 -> +0.7 °C\nElevation 478 m, slope 3°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p04268",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.637 -> 0.639 (Δ +0.002); 2.9% of pixels dropped by more than 0.05\nEVI Δ +0.016 | NDMI Δ +0.029 | NBR Δ +0.045\nGreen cover in RGB 0.97 -> 0.96\nSAR VV Δ -0.90 dB, VH Δ -0.46 dB\nRainfall Jan–Feb 63.3 -> 22.9 mm\nSoil moisture anomaly +0.020 -> -0.045 | Temperature anomaly -1.4 -> +0.9 °C\nElevation 670 m, slope 4°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p04399",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.656 -> 0.621 (Δ -0.035); 31.5% of pixels dropped by more than 0.05\nEVI Δ -0.005 | NDMI Δ -0.018 | NBR Δ -0.012\nGreen cover in RGB 0.94 -> 0.94\nSAR VV Δ -0.41 dB, VH Δ -0.11 dB\nRainfall Jan–Feb 82.1 -> 29.2 mm\nSoil moisture anomaly +0.035 -> -0.049 | Temperature anomaly -1.6 -> +1.0 °C\nElevation 752 m, slope 10°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p04508",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.599 -> 0.594 (Δ -0.005); 4.8% of pixels dropped by more than 0.05\nEVI Δ +0.002 | NDMI Δ +0.000 | NBR Δ +0.016\nGreen cover in RGB 0.95 -> 0.88\nSAR VV Δ -0.28 dB, VH Δ -0.23 dB\nRainfall Jan–Feb 67.7 -> 23.9 mm\nSoil moisture anomaly +0.021 -> -0.039 | Temperature anomaly -1.5 -> +0.7 °C\nElevation 572 m, slope 4°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p04577",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.649 -> 0.660 (Δ +0.011); 0.7% of pixels dropped by more than 0.05\nEVI Δ +0.011 | NDMI Δ +0.032 | NBR Δ +0.044\nGreen cover in RGB 0.99 -> 1.00\nSAR VV Δ -0.45 dB, VH Δ -0.53 dB\nRainfall Jan–Feb 64.8 -> 23.5 mm\nSoil moisture anomaly +0.023 -> -0.046 | Temperature anomaly -1.5 -> +0.9 °C\nElevation 665 m, slope 5°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p04671",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.645 -> 0.651 (Δ +0.005); 1.8% of pixels dropped by more than 0.05\nEVI Δ +0.015 | NDMI Δ +0.015 | NBR Δ +0.026\nGreen cover in RGB 0.96 -> 0.95\nSAR VV Δ -0.63 dB, VH Δ -0.62 dB\nRainfall Jan–Feb 62.6 -> 23.0 mm\nSoil moisture anomaly +0.020 -> -0.045 | Temperature anomaly -1.4 -> +0.9 °C\nElevation 669 m, slope 4°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p04777",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.630 -> 0.641 (Δ +0.011); 1.7% of pixels dropped by more than 0.05\nEVI Δ +0.008 | NDMI Δ +0.035 | NBR Δ +0.050\nGreen cover in RGB 0.94 -> 0.96\nSAR VV Δ -0.66 dB, VH Δ -0.73 dB\nRainfall Jan–Feb 63.9 -> 23.5 mm\nSoil moisture anomaly +0.022 -> -0.046 | Temperature anomaly -1.5 -> +0.9 °C\nElevation 670 m, slope 4°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p04806",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.594 -> 0.547 (Δ -0.047); 40.9% of pixels dropped by more than 0.05\nEVI Δ -0.022 | NDMI Δ -0.031 | NBR Δ -0.022\nGreen cover in RGB 0.92 -> 0.61\nSAR VV Δ -0.23 dB, VH Δ -0.00 dB\nRainfall Jan–Feb 67.5 -> 23.4 mm\nSoil moisture anomaly +0.020 -> -0.039 | Temperature anomaly -1.5 -> +0.7 °C\nElevation 581 m, slope 6°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p04892",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.718 -> 0.663 (Δ -0.054); 56.9% of pixels dropped by more than 0.05\nEVI Δ -0.010 | NDMI Δ -0.023 | NBR Δ -0.016\nGreen cover in RGB 1.00 -> 0.97\nSAR VV Δ -0.05 dB, VH Δ +0.20 dB\nRainfall Jan–Feb 72.1 -> 26.2 mm\nSoil moisture anomaly +0.029 -> -0.049 | Temperature anomaly -1.6 -> +1.0 °C\nElevation 792 m, slope 17°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p04898",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.707 -> 0.670 (Δ -0.037); 29.8% of pixels dropped by more than 0.05\nEVI Δ -0.019 | NDMI Δ -0.054 | NBR Δ -0.052\nGreen cover in RGB 1.00 -> 1.00\nSAR VV Δ -0.76 dB, VH Δ -0.53 dB\nRainfall Jan–Feb 73.4 -> 26.9 mm\nSoil moisture anomaly +0.033 -> -0.049 | Temperature anomaly -1.6 -> +1.0 °C\nElevation 695 m, slope 4°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p04996",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.679 -> 0.643 (Δ -0.036); 44.8% of pixels dropped by more than 0.05\nEVI Δ -0.009 | NDMI Δ -0.028 | NBR Δ -0.018\nGreen cover in RGB 0.91 -> 0.94\nSAR VV Δ -0.44 dB, VH Δ -0.53 dB\nRainfall Jan–Feb 71.5 -> 26.3 mm\nSoil moisture anomaly +0.031 -> -0.049 | Temperature anomaly -1.6 -> +1.0 °C\nElevation 674 m, slope 5°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p05015",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.613 -> 0.653 (Δ +0.040); 0.1% of pixels dropped by more than 0.05\nEVI Δ +0.029 | NDMI Δ +0.068 | NBR Δ +0.089\nGreen cover in RGB 0.89 -> 0.98\nSAR VV Δ +0.09 dB, VH Δ -0.40 dB\nRainfall Jan–Feb 68.4 -> 24.0 mm\nSoil moisture anomaly +0.020 -> -0.039 | Temperature anomaly -1.5 -> +0.7 °C\nElevation 513 m, slope 4°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p05082",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.450 -> 0.417 (Δ -0.033); 31.4% of pixels dropped by more than 0.05\nEVI Δ -0.002 | NDMI Δ +0.010 | NBR Δ +0.016\nGreen cover in RGB 0.24 -> 0.21\nSAR VV Δ -0.91 dB, VH Δ -1.38 dB\nRainfall Jan–Feb 62.0 -> 23.4 mm\nSoil moisture anomaly +0.024 -> -0.047 | Temperature anomaly -1.5 -> +0.9 °C\nElevation 638 m, slope 6°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p05117",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.589 -> 0.659 (Δ +0.070); 0.3% of pixels dropped by more than 0.05\nEVI Δ +0.043 | NDMI Δ +0.106 | NBR Δ +0.133\nGreen cover in RGB 0.76 -> 0.99\nSAR VV Δ +0.03 dB, VH Δ -0.51 dB\nRainfall Jan–Feb 67.3 -> 23.8 mm\nSoil moisture anomaly +0.020 -> -0.039 | Temperature anomaly -1.5 -> +0.7 °C\nElevation 498 m, slope 5°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p05122",
+      "gold": "increase",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.662 -> 0.670 (Δ +0.008); 2.1% of pixels dropped by more than 0.05\nEVI Δ +0.006 | NDMI Δ +0.005 | NBR Δ +0.014\nGreen cover in RGB 0.95 -> 0.94\nSAR VV Δ -0.04 dB, VH Δ -0.31 dB\nRainfall Jan–Feb 66.1 -> 23.6 mm\nSoil moisture anomaly +0.020 -> -0.040 | Temperature anomaly -1.5 -> +0.7 °C\nElevation 522 m, slope 9°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p05384",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.458 -> 0.450 (Δ -0.007); 9.8% of pixels dropped by more than 0.05\nEVI Δ +0.006 | NDMI Δ +0.017 | NBR Δ +0.025\nGreen cover in RGB 0.39 -> 0.46\nSAR VV Δ -0.61 dB, VH Δ -1.06 dB\nRainfall Jan–Feb 60.9 -> 23.2 mm\nSoil moisture anomaly +0.023 -> -0.046 | Temperature anomaly -1.5 -> +0.9 °C\nElevation 629 m, slope 5°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p05511",
+      "gold": "stable",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.556 -> 0.550 (Δ -0.005); 10.1% of pixels dropped by more than 0.05\nEVI Δ -0.002 | NDMI Δ +0.004 | NBR Δ +0.020\nGreen cover in RGB 0.76 -> 0.81\nSAR VV Δ -0.24 dB, VH Δ -0.32 dB\nRainfall Jan–Feb 66.3 -> 22.9 mm\nSoil moisture anomaly +0.019 -> -0.039 | Temperature anomaly -1.5 -> +0.7 °C\nElevation 531 m, slope 5°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    },
+    {
+      "id": "p05771",
+      "gold": "decline",
+      "pred_text": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.580 -> 0.544 (Δ -0.035); 32.1% of pixels dropped by more than 0.05\nEVI Δ +0.003 | NDMI Δ +0.000 | NBR Δ +0.011\nGreen cover in RGB 0.77 -> 0.69\nSAR VV Δ -0.95 dB, VH Δ -0.67 dB\nRainfall Jan–Feb 61.9 -> 24.1 mm\nSoil moisture anomaly +0.018 -> -0.042 | Temperature anomaly -1.4 -> +0.9 °C\nElevation 646 m, slope 4°\nSide by side: left T0, right T1. One word only — decline, increase, or stable:",
+      "pred": null,
+      "correct": false
+    }
+  ]
+}

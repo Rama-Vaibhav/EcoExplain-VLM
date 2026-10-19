@@ -26,6 +26,9 @@ class FinetuneConfig:
     lora_r: int = 8
     lora_alpha: int = 16
     max_train_samples: Optional[int] = None  # None = all train patches
+    balanced_train: bool = False
+    train_sample_seed: int = 42
+    splits_dir: str = "data/splits"
     max_text_chars: int = 2200
     grad_accum_steps: int = 4
     max_side: int = 384
@@ -175,7 +178,7 @@ def _split_accuracy(
 ) -> tuple[float | None, int, int]:
     """Generation accuracy on a split (dev/test); does not write JSON."""
     jsonl = root / "dataset.jsonl"
-    splits = root / "data" / "splits"
+    splits = root / cfg.splits_dir
     records = records_for_split(jsonl, splits, split)
     batch = collate(records, root, n=max_eval, text_mode=text_mode)
     gen_kw = {"max_new_tokens": 48, "do_sample": False}
@@ -245,11 +248,18 @@ def train_lora(
     best_path = adapter_path / "best"
     adapter_path.mkdir(parents=True, exist_ok=True)
 
+    from src.split_utils import select_train_records, training_class_counts
+
     jsonl = root / "dataset.jsonl"
-    splits = root / "data" / "splits"
+    splits = root / cfg.splits_dir
     train_records = records_for_split(jsonl, splits, "train")
-    if cfg.max_train_samples:
-        train_records = train_records[: cfg.max_train_samples]
+    train_records = select_train_records(
+        train_records,
+        cfg.max_train_samples,
+        balanced=cfg.balanced_train,
+        seed=cfg.train_sample_seed,
+    )
+    print("train class mix:", training_class_counts(train_records))
     if cfg.train_text_mode == "full" or cfg.target_mode not in {"class", "explain"}:
         raise ValueError("Training text_mode must be evidence_only or minimal, never full")
     train_batch = collate(train_records, root, n=None, text_mode=cfg.train_text_mode)
@@ -346,6 +356,9 @@ def train_lora(
                 "best_dev_epoch": best_epoch,
                 "best_dev_accuracy": best_dev,
                 "n_train": len(train_batch),
+                "balanced_train": cfg.balanced_train,
+                "train_class_mix": training_class_counts(train_records),
+                "splits_dir": cfg.splits_dir,
                 "learning_rate": cfg.learning_rate,
                 "weight_decay": cfg.weight_decay,
                 "early_stopping": cfg.early_stopping,
@@ -379,7 +392,7 @@ def eval_finetuned(
         raise FileNotFoundError(f"Train first or copy adapter to {adapter_path}")
 
     jsonl = root / "dataset.jsonl"
-    splits = root / "data" / "splits"
+    splits = root / cfg.splits_dir
     records = records_for_split(jsonl, splits, split)
     batch = collate(records, root, n=max_eval, text_mode=text_mode)
 

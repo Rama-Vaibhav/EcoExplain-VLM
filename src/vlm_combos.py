@@ -208,6 +208,10 @@ def encoder_text(record: dict[str, Any], *, text_mode: str = "full") -> str:
         return MINIMAL_VISION_PROMPT
     if text_mode == "evidence_only":
         return clean_evidence_text(record)
+    if text_mode == "compact":
+        from src.vlm_evidence import compact_evidence
+
+        return compact_evidence(record)
     if text_mode != "full":
         raise ValueError(f"Unknown text_mode {text_mode!r}")
     text = (record.get("text") or {}).get("condition_c_user_prompt")

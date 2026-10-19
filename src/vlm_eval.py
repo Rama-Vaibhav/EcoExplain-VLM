@@ -134,10 +134,45 @@ def normalize_class_token(word: str) -> Optional[str]:
     return None
 
 
+def _strip_prompt_echo(text: str) -> str:
+    """Drop echoed instructions (BLIP/Pali one-word prompts)."""
+    raw = (text or "").strip()
+    if not raw:
+        return raw
+    low = raw.lower()
+    if low.startswith("side by side:") or low.startswith("side by side,"):
+        # BLIP often repeats the caption prefix; keep only the tail after the last colon.
+        tail = raw.split(":")[-1].strip()
+        if tail and len(tail) < 40:
+            return tail
+    for marker in (
+        "one word only",
+        "answer with exactly one word",
+        "vegetation change class",
+    ):
+        if marker in low:
+            m = re.search(
+                r"(?:one word only[^\n]*:|class:\s*|stable, decline, or increase:\s*)\s*(\S+)",
+                raw,
+                flags=re.IGNORECASE,
+            )
+            if m:
+                return m.group(1).strip()
+    # If the model pasted the whole instruction, there is no real answer.
+    if "decline, increase, or stable" in low and len(raw) > 60:
+        after = re.split(r"stable:\s*", raw, maxsplit=1, flags=re.IGNORECASE)
+        if len(after) == 2 and after[1].strip():
+            return after[1].strip()
+        return ""
+    return raw
+
+
 def parse_class(text: str) -> Optional[str]:
     """Extract a class from *model* text only. Ignore the instruction template."""
-    raw = (text or "").strip()
+    raw = _strip_prompt_echo(text)
     t = raw.lower()
+    if not t:
+        return None
     # Instruction in the prompt looks like: "change_class": "stable"|"decline"|...
     # That must not count as a prediction.
     hits = list(
@@ -369,7 +404,7 @@ def collate(
         except FileNotFoundError as exc:
             print("SKIP", rec.get("id"), exc)
             continue
-        if text_mode != "full":
+        if text_mode not in ("full", "compact"):
             leak = text_has_label_leak(sample["input_text"], sample.get("label"))
             if leak:
                 raise AssertionError(
@@ -453,7 +488,14 @@ def generate_one(
                 ndvi_line = next((ln for ln in body.splitlines() if "NDVI" in ln), "")
                 blip_text = (ndvi_line + "\n" + EXPLAIN_SHORT_ASK.lstrip()).strip()
         else:
-            blip_text = BLIP2_PROMPT
+            body = (sample["input_text"] or "").strip()
+            if body.startswith("Evidence (T0"):
+                blip_text = (
+                    body[:900]
+                    + "\nSide by side: left T0, right T1. One word only — decline, increase, or stable:"
+                )
+            else:
+                blip_text = BLIP2_PROMPT
         inputs = processor(images=stitched, text=blip_text, return_tensors="pt")
     elif "PaliGemma" in proc_name:
         # Processor requires one <image> token per image, at the start of text.
@@ -466,16 +508,18 @@ def generate_one(
                 ndvi_line = next((ln for ln in brief if ln.startswith("NDVI")), "")
                 body = (ndvi_line + "\n" + EXPLAIN_SHORT_ASK.lstrip()).strip()
         else:
-            # One-word mode only. Skip any line that still names the gold field.
-            hint = next(
-                (
-                    ln
-                    for ln in brief
-                    if "NDVI" in ln and "candidate_class" not in ln.lower()
-                ),
-                "",
-            )
-            hint = hint[:400].strip()
+            hint = (sample["input_text"] or "").strip()
+            if hint.startswith("Evidence (T0"):
+                hint = hint[:1200]
+            else:
+                hint = next(
+                    (
+                        ln
+                        for ln in brief
+                        if "NDVI" in ln and "candidate_class" not in ln.lower()
+                    ),
+                    "",
+                )[:400].strip()
             body = PALIGEMMA_PROMPT_SUFFIX
             if hint:
                 body = hint + "\n" + body
@@ -691,12 +735,15 @@ def run_all(
     combo_ids: Optional[list[str]] = None,
     laptop: bool = False,
     purge_after: bool = False,
+    splits_dir: Optional[Path] = None,
+    text_mode: str = "full",
+    results_subdir: str = "results",
 ) -> dict[str, Any]:
     jsonl = root / "dataset.jsonl"
-    splits = root / "data" / "splits"
-    results = root / "results"
+    splits = splits_dir or (root / "data" / "splits")
+    results = root / results_subdir
     records = records_for_split(jsonl, splits, split)
-    batch = collate(records, root, n=max_eval)
+    batch = collate(records, root, n=max_eval, text_mode=text_mode)
     ids = combo_ids or [c.combo_id for c in COMBOS if c.hf_model_id]
     reports = []
     for cid in ids:
@@ -715,6 +762,11 @@ def run_all(
     comparison["split"] = split
     comparison["max_eval"] = max_eval
     comparison["laptop"] = laptop
+    comparison["text_mode"] = text_mode
+    comparison["splits_dir"] = str(splits)
     comparison["same_patch_ids"] = [s["id"] for s in batch]
-    (results / "vlm_combo_comparison.json").write_text(json.dumps(comparison, indent=2))
+    out_name = "vlm_combo_comparison.json"
+    if text_mode != "full":
+        out_name = f"vlm_combo_comparison_{text_mode}.json"
+    (results / out_name).write_text(json.dumps(comparison, indent=2))
     return comparison

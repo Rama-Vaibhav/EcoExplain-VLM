@@ -31,6 +31,17 @@ def main() -> None:
     p.add_argument("--lora-r", type=int, default=8)
     p.add_argument("--max-train", type=int, default=128, help="cap train patches (anti-overfit)")
     p.add_argument(
+        "--balanced-train",
+        action="store_true",
+        help="sample max-train evenly across decline/stable/increase (seed 42)",
+    )
+    p.add_argument("--train-seed", type=int, default=42)
+    p.add_argument(
+        "--splits-dir",
+        default="data/splits",
+        help="e.g. data/splits_spatial for block-held-out eval",
+    )
+    p.add_argument(
         "--eval-prompt",
         choices=("minimal", "evidence_only"),
         default="evidence_only",
@@ -60,6 +71,9 @@ def main() -> None:
         lora_r=args.lora_r,
         lora_alpha=args.lora_r * 2,
         max_train_samples=args.max_train,
+        balanced_train=args.balanced_train,
+        train_sample_seed=args.train_seed,
+        splits_dir=args.splits_dir,
         use_4bit=not args.no_4bit,
         early_stopping=not args.no_early_stop,
         early_stopping_patience=args.patience,

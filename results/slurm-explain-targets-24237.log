@@ -1,0 +1,51 @@
+=== explain targets | job 24237 | Fri Oct 16 08:06:16 PM IST 2026 ===
+cuda False
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files:  20%|██        | 1/5 [06:21<25:26, 381.58s/it]Fetching 5 files:  20%|██        | 1/5 [16:02<1:04:10, 962.59s/it]
+Traceback (most recent call last):
+  File "/home2/cprv67ab97/EcoExplain-VLM/scripts/build_explain_targets.py", line 127, in <module>
+    main()
+  File "/home2/cprv67ab97/EcoExplain-VLM/scripts/build_explain_targets.py", line 60, in main
+    processor, model = load_teacher()
+  File "/home2/cprv67ab97/EcoExplain-VLM/scripts/build_explain_targets.py", line 42, in load_teacher
+    model = Qwen2VLForConditionalGeneration.from_pretrained(
+  File "/home2/cprv67ab97/venvs/ecoexplain/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4218, in from_pretrained
+    checkpoint_files, sharded_metadata = _get_resolved_checkpoint_files(
+  File "/home2/cprv67ab97/venvs/ecoexplain/lib/python3.10/site-packages/transformers/modeling_utils.py", line 796, in _get_resolved_checkpoint_files
+    checkpoint_files, sharded_metadata = get_checkpoint_shard_files(
+  File "/home2/cprv67ab97/venvs/ecoexplain/lib/python3.10/site-packages/transformers/utils/hub.py", line 902, in get_checkpoint_shard_files
+    cached_filenames = cached_files(
+  File "/home2/cprv67ab97/venvs/ecoexplain/lib/python3.10/site-packages/transformers/utils/hub.py", line 535, in cached_files
+    raise e
+  File "/home2/cprv67ab97/venvs/ecoexplain/lib/python3.10/site-packages/transformers/utils/hub.py", line 453, in cached_files
+    snapshot_download(
+  File "/home2/cprv67ab97/venvs/ecoexplain/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home2/cprv67ab97/venvs/ecoexplain/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 266, in _inner
+    return fn(*args, **kwargs)
+  File "/home2/cprv67ab97/venvs/ecoexplain/lib/python3.10/site-packages/huggingface_hub/_snapshot_download.py", line 532, in snapshot_download
+    hf_thread_map(
+  File "/home2/cprv67ab97/venvs/ecoexplain/lib/python3.10/site-packages/huggingface_hub/utils/tqdm.py", line 441, in hf_thread_map
+    results[future_to_index[future]] = future.result()
+  File "/home2/cprv67ab97/python310/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/home2/cprv67ab97/python310/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/home2/cprv67ab97/python310/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home2/cprv67ab97/venvs/ecoexplain/lib/python3.10/site-packages/huggingface_hub/_snapshot_download.py", line 512, in _inner_hf_hub_download
+    hf_hub_download(  # type: ignore
+  File "/home2/cprv67ab97/venvs/ecoexplain/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home2/cprv67ab97/venvs/ecoexplain/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 266, in _inner
+    return fn(*args, **kwargs)
+  File "/home2/cprv67ab97/venvs/ecoexplain/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1047, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/home2/cprv67ab97/venvs/ecoexplain/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1285, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+  File "/home2/cprv67ab97/venvs/ecoexplain/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 2032, in _download_to_tmp_and_move
+    http_get(
+  File "/home2/cprv67ab97/venvs/ecoexplain/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home2/cprv67ab97/venvs/ecoexplain/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 464, in http_get
+    temp_file.write(chunk)
+OSError: [Errno 122] Disk quota exceeded
