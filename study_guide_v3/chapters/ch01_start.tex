@@ -89,7 +89,7 @@ Version~2 (19 October) added the explanation LoRA, the exact input of each model
   \item \textbf{A correction of version~2.} Version~2 said Qwen ``did not copy the label'' because it followed the card's trend words. Those trend words appear \emph{only} in the summary line, next to \texttt{candidate\_class}. Qwen did not copy the label token, but it did depend on that line; without it, it falls to chance (Chapter~\ref{ch:trackA}).
   \item \textbf{The balanced, leak-free class LoRA} (Ada job 29575; Chapter~\ref{ch:trackB}): 16 patches (6 decline, 5 stable, 5 increase), label-free card at training and test, 36.4\,\%. It answers ``stable'' for 53 of 55 patches. The old 67.3\,\% run is superseded.
   \item \textbf{Code changes} you made (Chapters~\ref{ch:stage04} and~\ref{ch:models}): the \texttt{compact} text mode that gives every model the same table, the parser that ignores echoed prompts, \texttt{--balanced-train}, and a spatial block split (266/46/54).
-  \item \textbf{GitHub.} The code, the new results and a README section (4.7) were pushed on 20 October to the branch \texttt{protocol-fixes-2026-10-20} of \texttt{Rama-Vaibhav/EcoExplain-VLM} (Appendix~\ref{app:files}).
+  \item \textbf{GitHub.} The code, the new results and a README section (4.7) are on the \texttt{main} branch of \texttt{Rama-Vaibhav/EcoExplain-VLM} (Appendix~\ref{app:files}).
   \item \textbf{The draft review} (Chapter~\ref{ch:draft}) now says which issues you report as fixed and adds the checks the new results require.
 \end{enumerate}
 \end{newinfo}
