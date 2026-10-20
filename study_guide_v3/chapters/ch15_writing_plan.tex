@@ -1,0 +1,201 @@
+\chapter{A writing plan for your report}
+\label{ch:writing}
+
+This chapter contains no report text. It tells you what each section needs, how long it should be, which part of this guide holds the material, and which references support it. Write the sentences yourself.
+
+\section{Your professor's instructions, applied to this project}
+
+\begin{longtable}{L{4.6cm}L{9.6cm}}
+\caption{The brief and what it means here.}\label{tab:brief}\\
+\toprule
+\textbf{Instruction} & \textbf{What it means for this report} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Instruction} & \textbf{What it means for this report} \\
+\midrule
+\endhead
+8,500--10,000 words, no textbook content & Do not explain remote sensing or transformers at length: one or two sentences with a citation, then move on. Parts~II--III of this guide are for \emph{you}. \\
+Avoid redundancy and LLM vocabulary & State each number once, where it belongs. Use plain verbs (Section~\ref{sec:ownwords}). \\
+Real references, all cited & Use \file{references.bib} with BibTeX; open each DOI or URL once yourself. Only cited works appear in the list. \\
+Introduction 1,000--1,200 words & Focus, motivation, gap, objectives (Section~\ref{sec:plan}). \\
+Study area & Include it, with the full India map (Chapter~\ref{ch:figures}). \\
+Cite in every section & Table~\ref{tab:citemap}. \\
+Figures and tables near first mention & \texttt{[t]} or \texttt{[htbp]} placement; in two-column format, \texttt{figure*} for wide figures. \\
+Combine figures as (a), (b), (c) & For example, the confusion matrices of both LoRA runs in one figure. \\
+Extra material to an appendix & Fine-tuning jobs, prompts, the full explanation tables, example panels. \\
+Legible figures & At least about 8\,pt text after scaling. \\
+Equations as equations & NDVI, EVI, NDMI, NBR, \dndvi, the label rule, the anomaly, LoRA, accuracy, macro-F1, Wilson. \\
+Tables as real tables & \texttt{booktabs}; never images of tables (so not \file{result2.png}). \\
+At most three heading levels & Section, subsection, subsubsection; no \texttt{\textbackslash paragraph} headings. \\
+Less than 15\,\% AI-written content & Write from your own understanding (Section~\ref{sec:ownwords}). \\
+\bottomrule
+\end{longtable}
+
+\section{Section plan with word budgets}
+\label{sec:plan}
+
+The structure below follows your own outline. The budgets add up to about 9,000 words.
+
+\subsection*{Abstract (200--250 words) and keywords}
+Problem; what was built (366 patches, five sources, Kanha, 2022/2023); what was tested (four VLMs, LoRA, explanations); the key numbers (56.4\,\% with the full card and 32.7\,\% without its summary line; 43.6\,\% for LLaVA with equal inputs; 36.4\,\% balanced leak-free LoRA; 94.5\,\% baseline; 75.8/71.1\,\% correct claims; 61.8/50.5\,\% for the explanation LoRA); the one-line conclusion. Keywords: about six.
+
+\subsection*{1. Introduction (1,000--1,200 words)}
+\begin{itemize}
+  \item \textbf{Focus}: forest-change monitoring in Indian protected areas, and why a label alone is not enough \citep{hansen2013,fsi2021}.
+  \item \textbf{What exists}: operational change products \citep{hansen2013,kennedy2010,zhu2014,reiche2021}; remote-sensing language tasks \citep{lobry2020,liu2022levircc,kuckreja2024}.
+  \item \textbf{Motivation}: VLMs read images and text and write explanations \citep{liu2023llava,wang2024qwen2vl}.
+  \item \textbf{Gap}: plausible text is not faithful text \citep{jacovi2020,turpin2023}; hallucination \citep{li2023pope}; prompt sensitivity \citep{zhao2021calibrate}; no benchmark checks VLM explanations against multi-sensor forest evidence.
+  \item \textbf{Objectives}: three or four, written as what you did (build the benchmark; compare VLMs; test a small LoRA; evaluate free-form and structured explanations and an explanation LoRA). End with the research questions.
+\end{itemize}
+
+\subsection*{2. Data and Methods (about 3,200 words)}
+\begin{itemize}
+  \item 2.1 Study area (400): Chapter~\ref{ch:stage01}, Section~\ref{sec:studyarea}; India map.
+  \item 2.2 Data sources (600): Table~\ref{tab:sources}; index equations; anomaly equation.
+  \item 2.3 Preprocessing and patch generation (450): Chapter~\ref{ch:stage02}.
+  \item 2.4 Change evidence and labelling (600): Chapter~\ref{ch:stage03}; label equation; human check; the card and its summary line.
+  \item 2.5 Dataset and splits (300): Chapter~\ref{ch:stage04}.
+  \item 2.6 Vision--language model evaluation (650): models (Table~\ref{tab:models}), inputs (Table~\ref{tab:inputs}), parsing, zero-shot, supporting analyses, LoRA settings (both runs), metrics and the claim scorer.
+  \item 2.7 Experimental workflow (200): the corrected workflow figure and a short walk through it.
+\end{itemize}
+
+\subsection*{3. Results and Discussion (about 3,000 words)}
+\begin{itemize}
+  \item 3.1 Dataset characteristics (450): summary statistics, class separation, climate by class, example patches, label versus trend words.
+  \item 3.2 Zero-shot performance (700): Table~\ref{tab:leakfree} and Table~\ref{tab:trackA} as one two-block table, Figure~\ref{fig:leakfreecm}, the summary line and what removing it does, the baselines.
+  \item 3.3 Effect of fine-tuning (400): the balanced, leak-free 36.4\,\% (Chapter~\ref{ch:trackB}), Figure~\ref{fig:loraclasses}; the superseded runs briefly.
+  \item 3.4 Error analysis (350): per-class errors, label noise, card contradictions, prompt echo.
+  \item 3.5 Explanation quality (900): Chapter~\ref{ch:trackC}, Figure~\ref{fig:explphases}.
+  \item 3.6 Comparison with existing approaches (300): Chapter~\ref{ch:trackA}.
+\end{itemize}
+
+\subsection*{4. Limitations and Future Directions (about 800 words)}
+Limitations (350): Section~\ref{sec:limits}, grouped into data, models and evaluation. Future directions (450): Section~\ref{sec:future}, written as a research programme.
+
+\subsection*{5. Conclusions (about 400 words)}
+What you built, what you found for each track, and what it means; no new numbers.
+
+\subsection*{Acknowledgements, References, Appendix}
+Acknowledgements (Section~\ref{sec:ack}). Appendix: LoRA configuration, all fine-tuning jobs, prompts and parsing, full explanation tables, an example panel.
+
+\section{Which reference supports what}
+
+\begin{longtable}{L{7.6cm}L{6.6cm}}
+\caption{A citation map. Every key is in \file{references.bib}; the full list is at the end of this guide.}\label{tab:citemap}\\
+\toprule
+\textbf{Statement} & \textbf{Cite} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Statement} & \textbf{Cite} \\
+\midrule
+\endhead
+Remote sensing in general; passive and active sensors & \texttt{lillesand2015} \\
+Global forest-change maps; time-series change detection & \texttt{hansen2013}; \texttt{kennedy2010}, \texttt{zhu2014} \\
+Indian forest reporting & \texttt{fsi2021} \\
+Kanha areas and forest types & \texttt{kanha2026} \\
+Sentinel-2; Sentinel-1; Earth Engine & \texttt{drusch2012}; \texttt{torres2012}; \texttt{gorelick2017} \\
+CHIRPS; ERA5-Land; NASADEM & \texttt{funk2015}; \texttt{munozsabater2021}; \texttt{nasadem2020} \\
+NDVI; EVI; NDMI; NBR & \texttt{rouse1974}, \texttt{tucker1979}; \texttt{huete2002}; \texttt{gao1996}; \texttt{keybenson2006} \\
+NDMI for forest harvest & \texttt{wilsonsader2002} \\
+SAR principles; speckle filtering & \texttt{woodhouse2006}, \texttt{floresanderson2019}; \texttt{lee1980} \\
+Radar forest alerts & \texttt{reiche2021} \\
+Otsu thresholding & \texttt{otsu1979} \\
+Leakage; spatial validation & \texttt{kaufman2012}; \texttt{roberts2017}, \texttt{ploton2020} \\
+Transformers; ViT; CLIP; SigLIP & \texttt{vaswani2017}; \texttt{dosovitskiy2021}; \texttt{radford2021}; \texttt{zhai2023} \\
+LLaVA and instruction tuning & \texttt{liu2023llava}, \texttt{liu2024llava15} \\
+The four models & \texttt{wang2024qwen2vl}, \texttt{beyer2024}, \texttt{li2024interleave}, \texttt{li2023blip2} (+ \texttt{zhang2022opt}) \\
+Prompt bias and calibration of answers & \texttt{zhao2021calibrate} \\
+LoRA; QLoRA; AdamW & \texttt{hu2022lora}; \texttt{dettmers2023qlora}; \texttt{loshchilov2019} \\
+Faithfulness; unfaithful explanations; hallucination & \texttt{jacovi2020}; \texttt{turpin2023}; \texttt{li2023pope} \\
+ROUGE-L & \texttt{lin2004rouge} \\
+Wilson interval; McNemar's test; Cohen's kappa & \texttt{wilson1927}; \texttt{mcnemar1947}; \texttt{cohen1960} \\
+Brier score; calibration of neural networks & \texttt{brier1950}; \texttt{guo2017} \\
+Change-detection networks; remote-sensing VQA; change captioning; GeoChat & \texttt{daudt2018}; \texttt{lobry2020}; \texttt{liu2022levircc}; \texttt{kuckreja2024} \\
+\bottomrule
+\end{longtable}
+
+\section{Words to use and words to avoid}
+
+\begin{longtable}{L{5.0cm}L{9.2cm}}
+\caption{Precise wording.}\label{tab:words}\\
+\toprule
+\textbf{Avoid} & \textbf{Use instead, and why} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Avoid} & \textbf{Use instead, and why} \\
+\midrule
+\endhead
+deforestation, degradation & vegetation decline signal (changes are small and may be seasonal) \\
+recovery & vegetation increase (relative rank, no long time series) \\
+ground truth & automatic labels, or operational reference labels \\
+faithfulness (for the project's score) & claim correctness, or evidence consistency \\
+LLaVA-1.5 & LLaVA-NeXT-Interleave 0.5B (\texttt{llava-interleave-qwen-0.5b-hf}) \\
+Qwen2-VL (alone) & Qwen2-VL-2B \\
+``the models received the images and the card'' & say which model received what \\
+``fine-tuning improved accuracy to 67.3\,\%'' & a balanced 16-patch LoRA without the label line reached 36.4\,\% (``stable'' for 53 of 55); an earlier full-card run reached 67.3\,\% by using the label line \\
+``Qwen did not copy the label, so 56.4\,\% reflects skill'' & Qwen followed the trend word in the summary line; without that line it scores 32.7\,\% \\
+``explanation LoRA reached 61.8\,\%'' & 61.8\,\% class accuracy in explanation mode, 50.5\,\% correct claims; not comparable with 56.4\,\% \\
+``without the summary line, the models fell to 32.7--36.4\,\%'' & without the line Qwen fell from 56.4\,\% to 32.7\,\% ($p = 0.011$); LLaVA with the equal-input table reached 43.6\,\% (not significant); PaliGemma and BLIP-2 have no leak-free score \\
+``rainfall decrease caused the decline'' & 2023 was drier across the region; rainfall did not differ between classes \\
+``downsampled to 512 pixels'' & padded and enlarged to 512\,$\times$\,512 \\
+``64\,$\times$\,64 pixels'' (alone) & about 640\,m (64 pixels of 10\,m), exported in geographic coordinates \\
+``invalid'' (for the 100\,\% runs) & excluded, because the model learned to read the label from the card \\
+\bottomrule
+\end{longtable}
+
+\section{Writing in your own words}
+\label{sec:ownwords}
+
+You want to write this report yourself, and your professor expects it. A method that works:
+\begin{enumerate}
+  \item Read one chapter of this guide. Close it.
+  \item On paper, write the five points you remember, with one number each.
+  \item Open the project file named in the guide and check those numbers yourself.
+  \item Write the section from your paper notes, not from the guide or from any draft.
+  \item Re-open the guide only to check facts, and fix those facts.
+\end{enumerate}
+
+Some habits that make writing clearer and more personal:
+\begin{itemize}
+  \item One idea per sentence; one number in one place. If a number appears in a table, the text only interprets it.
+  \item Say what \emph{you} did, in the order you did it, with the reason. ``We kept the same two months in both years because \dots'' is better than a general statement about phenology.
+  \item Avoid filler words that add nothing: ``crucial'', ``robust'', ``leverage'', ``comprehensive'', ``delve'', ``landscape'', ``notably'', ``furthermore'', ``in the realm of''.
+  \item Prefer exact words over impressive ones: ``the model answered decline for every stable patch'' rather than ``the model exhibited a systematic bias''.
+  \item When unsure of a fact, check the file; when a fact is not recorded, say so.
+\end{itemize}
+
+\section{Acknowledgements: who to thank}
+\label{sec:ack}
+
+\begin{itemize}
+  \item Your supervisor, and anyone who helped label patches.
+  \item The Lab for Spatial Informatics, IIIT Hyderabad, and IIIT's Ada high-performance computing facility.
+  \item ESA and the Copernicus programme (Sentinel-1, Sentinel-2); the Climate Hazards Center, UC Santa Barbara (CHIRPS); ECMWF and the Copernicus Climate Change Service (ERA5-Land); NASA/JPL and the LP DAAC (NASADEM); Google Earth Engine.
+  \item The developers of Qwen2-VL, PaliGemma, LLaVA-NeXT-Interleave and BLIP-2, and Hugging Face for model hosting.
+\end{itemize}
+
+\section{The final checklist}
+\label{sec:finalcheck}
+
+\begin{enumerate}
+  \item Every number matches Appendix~\ref{app:facts}, and you know which file it came from.
+  \item The five statements of Chapter~\ref{ch:bigpicture} are in the report: the summary line, what happens without it, the model inputs, the size of the fine-tunes, what the labels are.
+  \item Every section cites its sources; every reference in the list is cited; you have opened each reference once.
+  \item At most three heading levels; Limitations and Future Directions is a numbered section; Acknowledgements present.
+  \item The workflow figure is corrected; the India map is in; every figure is legible and near its first mention; panels are labelled (a), (b), (c).
+  \item Tables are \texttt{booktabs} tables; equations are numbered and referred to in the text.
+  \item Model names are the real checkpoint names; tracks and phases are not mixed up.
+  \item The word count is between 8,500 and 10,000.
+  \item The document compiles without errors or undefined references; you have read the PDF once on paper.
+\end{enumerate}
+
+\begin{selfcheck}
+\begin{enumerate}
+  \item What four elements should the Introduction cover, and which references support the gap?
+  \item Which references would you cite for the four vegetation indices?
+  \item Why should a number that appears in a table not be repeated in the text?
+\end{enumerate}
+\end{selfcheck}

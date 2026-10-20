@@ -1,0 +1,123 @@
+\chapter{What the project shows}
+\label{ch:meaning}
+
+\section{The answer to the research question}
+
+\emph{Can vision--language models correctly classify forest vegetation change and generate explanations that are supported by multimodal remote-sensing and climate evidence?}
+
+\paragraph{Classification: no, not from the evidence.} With the full evidence card, Qwen2-VL-2B reached 56.4\,\% zero-shot and the other three models stayed at the level of guessing one class. But the card's last line states the trend and the label, and without it Qwen falls to 32.7\,\% (it answers ``stable'' for every patch; $p = 0.011$). With the same label-free table for every model, LLaVA reaches 43.6\,\%, not significantly above the 34.5\,\% baseline, and a balanced, label-free LoRA of Qwen on 16 patches reaches 36.4\,\%. A one-number threshold on the card's \dndvi{} reaches 94.5\,\%: the information is there, and small general-purpose VLMs do not extract it. The one hopeful sign is in explanation mode, where the explanation LoRA separates decline from increase (61.8\,\%, significant against the baseline) without the label line, though it never answers ``stable'' and its zero-shot counterpart is untested.
+
+\paragraph{Explanations: only when tightly constrained.} Free-form explanations were missing, repetitive, or in conflict with the numbers. A structured cite-only prompt made 71--76\,\% of checkable claims agree with the measurements, with very few sign errors, but the explanations then mostly restate the supplied facts and the class follows the stated rule. A pilot explanation LoRA trained on 16 self-generated justifications did not improve on that (50.5\,\% correct claims).
+
+\begin{plainwords}
+In one line: \emph{small open VLMs can be made to repeat the evidence correctly, but they do not yet interpret it.} That is a useful, honest finding, and the benchmark makes it measurable.
+\end{plainwords}
+
+\section{The five pre-registered hypotheses}
+
+``Pre-registered'' means written down before seeing results (roadmap Section~9), so they cannot be adjusted afterwards.
+
+\begin{longtable}{L{0.8cm}L{4.4cm}L{2.3cm}L{6.6cm}}
+\caption{Status of the roadmap's hypotheses.}\label{tab:hyp}\\
+\toprule
+ & \textbf{Hypothesis} & \textbf{Status} & \textbf{Evidence} \\
+\midrule
+\endfirsthead
+\toprule
+ & \textbf{Hypothesis} & \textbf{Status} & \textbf{Evidence} \\
+\midrule
+\endhead
+H1 & Combined images and numbers beat images alone & Not tested & No model was run zero-shot with images only on the same patches. \\
+H2 & Combined input covers more evidence but adds unsupported causal claims & Not tested & Needs an images-only versus combined comparison of explanations. \\
+H3 & Models differ in classification, groundedness and calibration & Partly supported & Classification: with the full card Qwen 56.4\,\% versus 32.7--36.4\,\% (unequal inputs); with equal label-free inputs LLaVA 43.6\,\% versus Qwen 32.7\,\%, not significant ($p = 0.44$). Groundedness: 75.8\,\% versus 71.1\,\% correct claims (structured). Calibration not measured. \\
+H4 & Confidence tracks correctness, but models are overconfident & Not tested & No usable confidence values. \\
+H5 & Structured explanations contain fewer contradictions than free ones & Partly supported & Claim correctness and self-consistency rose for both models; true sign contradictions became rare (1 and 2); the share of explanations with a flagged claim stayed about the same, mostly because of the dead-band. \\
+\bottomrule
+\end{longtable}
+
+\begin{foryourreport}
+Hypotheses that were not tested are not failures; they are future work. Say so plainly: ``H1, H2 and H4 were not tested because the images-only condition and confidence elicitation were not run.''
+\end{foryourreport}
+
+\section{Were the objectives achieved?}
+
+The objectives come from the roadmap and the handbook (the first guide reconstructed twelve of them). For an Independent Study, three labels are fair: \textbf{achieved}, \textbf{achieved within pilot scope} (the core aim met, the full roadmap depth left for later) and \textbf{extension} (deliberately left for future research).
+
+\begin{longtable}{L{4.2cm}L{2.0cm}L{8.0cm}}
+\caption{Objectives and their status.}\label{tab:objectives}\\
+\toprule
+\textbf{Objective} & \textbf{Status} & \textbf{Evidence} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Objective} & \textbf{Status} & \textbf{Evidence} \\
+\midrule
+\endhead
+O1 Matched-season multi-source benchmark & Achieved & 366 patches, five sources, 15 GeoTIFFs each, matched windows, median composites, checks passed. \\
+O2 Defensible reference labels & Pilot scope & Percentile rule for all 366; 19 human checks (8 agree); no second annotator or audit. \\
+O3 Prevent leakage & Pilot scope & Coordinates removed; summary line stated and measured (label-free reruns); \texttt{evidence\_only} and \texttt{compact} modes, \file{check_no_leak.py}; training refuses the full card; spatial block split written but not yet evaluated. \\
+O4 Standard evidence cards & Pilot scope & Rule-based cards from the rasters; compact and structured variants; no false-colour images; boxes on 3 patches. \\
+O5 Controlled model comparison & Pilot scope & Four open models on identical test patches; an equal-input \texttt{compact} run for Qwen and LLaVA (PaliGemma gated, BLIP-2 unparsable); no images-only condition; no proprietary model. \\
+O6 Proper classification metrics & Pilot scope & Accuracy in the repository; macro-F1, Wilson intervals, McNemar tests and confusion matrices in this guide. \\
+O7 Explanation evaluation & Pilot scope & Automatic claim checking, self-consistency, copying and diversity scores; no human rating. \\
+O8 Confidence and consistency & Extension & No calibration or repeated runs. \\
+O9 Statistical analysis & Extension & Wilson and McNemar only; no bootstrap or mixed models. \\
+O10 Reproducible release & Achieved & Repository with dataset, splits, code, notebooks, results and Slurm logs. \\
+O11 Fine-tune an open model (added in September) & Achieved & Balanced, label-free class LoRA 36.4\,\% (16 patches; the earlier full-card 67.3\,\% superseded); explanation LoRA pilot 61.8\,\% (16 targets). \\
+O12 Justifications from models (added in October) & Achieved & Explanation mode, parser, scorer, visual report; structured protocol on all 55 test patches. \\
+\bottomrule
+\end{longtable}
+
+\section{Limitations}
+\label{sec:limits}
+
+These limitations define where your claims stop. They do not mean the study is incomplete.
+
+\begin{enumerate}
+  \item \textbf{Labels.} Automatic, relative (percentile) labels with slightly overlapping class ranges; 19 human checks with 42\,\% agreement; no second annotator. Accuracy means agreement with a rule.
+  \item \textbf{One place, one pair of years, one season.} No claim generalises to other forests or years.
+  \item \textbf{Subtle change and the weather.} Most changes are below 0.05 NDVI, and 2023 was unusually dry and warm everywhere; some ``decline'' may be early seasonal drying.
+  \item \textbf{Random split.} Training and test patches can touch; spatial autocorrelation can inflate fine-tuned results \citep{roberts2017,ploton2020}. A spatial block split now exists (\file{data/splits_spatial/}) but has not been evaluated.
+  \item \textbf{Small test set.} 55 patches give 95\,\% intervals about $\pm13$ points wide.
+  \item \textbf{Small models in reduced settings.} 0.5--3B checkpoints, images shrunk to 336 pixels on the laptop, 48-token answers.
+  \item \textbf{Unequal inputs.} In the full-card run PaliGemma received one NDVI line and BLIP-2 no card at all. The \texttt{compact} rerun equalised the input, but PaliGemma could not be loaded and BLIP-2 gave no parsable answer, so only Qwen and LLaVA have equal-input scores.
+  \item \textbf{The summary line.} The full card states the trend word and \texttt{candidate\_class}; the full-card accuracies reflect use of that line. Without it no one-word classifier beats the baseline. Qwen's \texttt{evidence\_only} answers were overwritten, so only its score (32.7\,\%) survives for that mode.
+  \item \textbf{Tiny fine-tunes.} Every reported LoRA used 16 examples for one epoch. The class LoRA is now balanced (6/5/5); the explanation LoRA's 16 targets are all decline (9 of them malformed).
+  \item \textbf{Structured explanations.} Run for Qwen and LLaVA only; the class follows the stated rule; many outputs exceed the token limit; justifications restate supplied facts.
+  \item \textbf{Padding bias} in every number on the card (about 8\,\% low; edge patches much more).
+  \item \textbf{Parsing.} The original results counted echoed prompts as answers (BLIP-2). The parser was fixed on 20 October; the old result files were not re-parsed.
+  \item \textbf{Explanation metric.} Pattern-based, blind to negation; its dead-band flags true small changes and misses invented numbers inside the dead-band. It measures evidence consistency, not faithfulness \citep{jacovi2020}.
+  \item \textbf{No calibration, repeated runs or human rating} of explanations.
+  \item \textbf{Coarse climate data}, the same for all classes, so it cannot explain patch-level change.
+  \item \textbf{Image input.} Dark true-colour chips only; the much more informative \dndvi{} maps and false-colour images were never shown to the models.
+  \item \textbf{Test-set adaptivity.} Prompts were changed and the closed-set probe designed after seeing test results.
+\end{enumerate}
+
+\section{Future research}
+\label{sec:future}
+
+Write this as a research programme, not as a list of apologies.
+
+\begin{description}[style=nextline]
+  \item[Label validation] Several expert annotators, inter-rater agreement (Cohen's $\kappa$; \citealp{cohen1960}), and explicit handling of borderline patches.
+  \item[Label-free evaluation as the default] Done for Qwen and LLaVA (Phase~E). Still to do: PaliGemma (needs a Hugging Face token on the laptop) and a BLIP-2 setting that yields answers; keep each run's per-model file separately.
+  \item[Explanation mode without fine-tuning] Run zero-shot Qwen with the free-form explanation prompt on all 55 patches, to see whether the explanation LoRA's decline/increase separation comes from the prompt or the training.
+  \item[Spatial validation] A spatial block split as a second test set \citep{roberts2017,ploton2020}.
+  \item[Which input helps?] The roadmap's images-only and numbers-only conditions alongside the combined one (H1, H2), with every model given the same text.
+  \item[Proper fine-tuning] 48 (16 per class) or all 256 training patches, balanced, without the summary line, with early stopping on the development set; the 16-patch balanced run is only the first step.
+  \item[The spatial test] Evaluate the leak-free protocol on \file{data/splits_spatial/} with its own baseline (38.9\,\%).
+  \item[Better explanation targets] A stronger teacher (a 7B model on scratch disk, not the home quota), class-balanced targets, clean JSON, and blind human rating of the outputs.
+  \item[Domain-adapted models and inputs] Remote-sensing VLMs such as GeoChat \citep{kuckreja2024}; \dndvi{} maps and false-colour images as inputs.
+  \item[Uncertainty] Elicited confidences, Brier score and calibration error \citep{brier1950,guo2017}, repeated decoding.
+  \item[Cleaner evidence] Statistics on unpadded chips; a parser that ignores echoed prompts.
+  \item[More places and years] Other central-Indian reserves and multi-year stacks to separate drought, phenology and real disturbance; fire and uncertain classes re-enabled.
+\end{description}
+
+\begin{selfcheck}
+\begin{enumerate}
+  \item Answer the research question in two sentences, one per half.
+  \item Which hypotheses could not be tested, and why?
+  \item Name five limitations that come from the data and five that come from the models or the evaluation.
+  \item Which single future step would most change the interpretation of the explanation LoRA's 61.8\,\%, and why?
+\end{enumerate}
+\end{selfcheck}

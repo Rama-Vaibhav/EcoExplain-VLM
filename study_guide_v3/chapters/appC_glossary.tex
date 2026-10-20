@@ -1,0 +1,91 @@
+\chapter{Glossary}
+\label{app:glossary}
+
+\small
+\begin{description}[style=nextline,itemsep=1pt]
+\item[Accuracy] Share of test patches whose predicted class equals the gold class.
+\item[Ada] IIIT's high-performance computing cluster, used for all fine-tuning and the closed-set probe.
+\item[AdamW] Gradient optimiser with decoupled weight decay \citep{loshchilov2019}.
+\item[Anomaly] Observed value minus the long-term mean for the same month (Equation~\ref{eq:anomaly}).
+\item[Aspect] Compass direction a slope faces, 0--360\dg{} clockwise from north.
+\item[Backscatter ($\sigma^0$)] Strength of the radar echo, in dB.
+\item[Balanced training sample] A training subset drawn evenly from the three classes (\texttt{--balanced-train}); the class LoRA of job 29575 used 6 / 5 / 5.
+\item[Band] One layer of an image covering one wavelength range.
+\item[Baseline] A simple reference against which models are judged: the majority class (34.5\,\%) or the \dndvi{} threshold rule (94.5\,\%).
+\item[BLIP-2] VLM with a frozen image encoder, a Q-Former and a frozen language model \citep{li2023blip2}.
+\item[Bounding box] Rectangle $[x_{\min}, y_{\min}, x_{\max}, y_{\max}]$ around a detected region.
+\item[candidate\_class] The automatic label; gold for all scoring.
+\item[CHIRPS] Daily 0.05\dg{} rainfall from satellites and gauges \citep{funk2015}.
+\item[\texttt{CLASS\_RULE}] The line in the structured prompt that states a class from the patch's NDVI change with $\pm0.02$ cut-offs.
+\item[Claim correctness] Share of an explanation's directional claims that agree with the measured changes; called ``faithfulness'' in the code; really evidence consistency.
+\item[Climatology] Long-term mean for a calendar period (here 2015--2021).
+\item[CLIP, SigLIP] Image--text encoders trained on web image--caption pairs \citep{radford2021,zhai2023}.
+\item[Closed-set scoring] Choosing the class word the model finds most likely, instead of reading free text (Equation~\ref{eq:closedset}).
+\item[\texttt{compact} mode] Text mode that gives every model the same label-free numeric table; the equal-input rerun of 20 October.
+\item[Composite] One image made from many dates; here the per-pixel median.
+\item[Condition C] The roadmap's name for images plus evidence; Track~A's setting.
+\item[Confusion matrix] Table of gold classes against predicted classes.
+\item[Dead-band] The smallest change the scorer counts as a real increase or decrease (Table~\ref{tab:deadband}).
+\item[Development set] The 55 patches used for choices such as the epoch or the probe's bias.
+\item[DIP] Digital image processing (notebook 02).
+\item[Distillation] Training a ``student'' model on outputs of a ``teacher''; Phase~D used the same 2B model for both.
+\item[\dndvi, \dnbr] Change in NDVI or NBR, 2023 minus 2022 (Equation~\ref{eq:delta}).
+\item[Epoch] One pass over the training data.
+\item[ERA5-Land] ECMWF's land reanalysis, about 9\,km \citep{munozsabater2021}.
+\item[Evidence card] The per-patch text of measured values given to the models; its full version ends with the summary line.
+\item[\texttt{evidence\_only}] Text mode with the summary line and label words removed.
+\item[EVI, NDMI, NBR, NDVI] Vegetation indices (Equations~\ref{eq:ndvi}--\ref{eq:nbr}).
+\item[Explanation LoRA] Phase~D: Qwen2-VL-2B fine-tuned on 16 of its own filtered justifications.
+\item[Faithfulness] Whether an explanation reflects the model's actual reasoning \citep{jacovi2020}.
+\item[Fine-tuning] Further training a pre-trained model on task data.
+\item[GeoTIFF] Image file with geographic positioning.
+\item[Google Earth Engine] Cloud platform with satellite archives and processing \citep{gorelick2017}.
+\item[Greedy decoding] Always picking the most likely next token.
+\item[Groundedness] Whether claims are supported by the supplied input.
+\item[Hallucination] A claim not supported by the input.
+\item[Harmonized collection] Sentinel-2 archive corrected for the January 2022 processing offset.
+\item[IoU] Intersection over union of two boxes (Equation~\ref{eq:iou}).
+\item[JSON Lines] Text format with one JSON record per line (\file{dataset.jsonl}).
+\item[Leakage] Information in the model input that would not be available in real use.
+\item[Leak-free] Evaluated without the card's summary line (\texttt{evidence\_only} or \texttt{compact}), so the label is not in the input.
+\item[LLaVA-NeXT-Interleave] Multi-image LLaVA family; the 0.5B checkpoint used here has a SigLIP encoder and a Qwen1.5-0.5B language model \citep{li2024interleave}.
+\item[LoRA] Low-rank adaptation: small trainable matrices added to frozen weights (Equation~\ref{eq:lora}).
+\item[Macro-F1] Mean of per-class F1 (Equation~\ref{eq:macrof1}).
+\item[Majority baseline] Accuracy of always predicting the most common test class (34.5\,\%).
+\item[McNemar's test] Paired test of two classifiers on the same examples (Equation~\ref{eq:mcnemar}).
+\item[NASADEM] Reprocessed SRTM elevation at 30\,m \citep{nasadem2020}.
+\item[Otsu's method] Automatic threshold that maximises the between-group variance (Equation~\ref{eq:otsu}).
+\item[Overfitting] Learning the training data too closely to generalise.
+\item[Padding bias] Card averages pulled towards zero by the zero padding of the canvas.
+\item[PaliGemma] SigLIP and Gemma VLM \citep{beyer2024}.
+\item[Parsing] Turning model text into a class.
+\item[Phase] When the work happened: A (classification), B (free-form explanations), C (structured explanations), D (explanation LoRA), E (leak-free reruns and balanced LoRA, 19--20 October).
+\item[Phenology] The yearly cycle of leaf growth and leaf fall.
+\item[Prompt echo] Output that repeats the instruction (BLIP-2). Since 20 October the parser ignores echoed text.
+\item[QLoRA] LoRA on a 4-bit base model \citep{dettmers2023qlora}.
+\item[Qwen2-VL-2B] VLM with a dynamic-resolution vision encoder and a Qwen2 language model \citep{wang2024qwen2vl}.
+\item[Reanalysis] Model output continuously corrected with observations.
+\item[reference\_class] The human label (19 patches).
+\item[Reflectance] Fraction of incoming light reflected, 0 to 1.
+\item[ROUGE-L] Text overlap from the longest common word subsequence \citep{lin2004rouge}.
+\item[SAR] Synthetic aperture radar.
+\item[SCL] Sentinel-2 Scene Classification Layer, used for cloud masking.
+\item[Self-consistency] Whether an explanation's claims point the same way as the model's own class.
+\item[Slurm] The job scheduler on Ada.
+\item[Smoke test] A small run to check that a pipeline works.
+\item[Spatial autocorrelation] Nearby places being similar.
+\item[Spatial block split] A split that holds out whole map blocks for development and test (\file{data/splits_spatial/}, 266 / 46 / 54).
+\item[Speckle] Grainy noise in radar images.
+\item[Stratified split] A split that keeps class proportions in each part.
+\item[Structured prompt] Phase~C's cite-only instruction with \texttt{ALLOWED\_FACTS} and \texttt{CLASS\_RULE}.
+\item[Summary line] The card's last line, ``Inference for \dots{} candidate\_class=\dots''.
+\item[Test set] The 55 patches used for every reported result.
+\item[Token] Unit of text processed by a language model.
+\item[Track] An evaluation track in stage~05 of your workflow figure: A (zero-shot), B (class LoRA), C (explanations).
+\item[Transformer] Neural network based on attention \citep{vaswani2017}.
+\item[Triplet] \texttt{[box, type, severity]} record of a detected region.
+\item[VLM] Vision--language model.
+\item[Wilson interval] Confidence interval for a proportion (Equation~\ref{eq:wilson}).
+\item[Zero-shot] Using a model with instructions only, without training or examples.
+\end{description}
+\normalsize

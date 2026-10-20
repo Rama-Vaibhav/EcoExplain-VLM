@@ -1,0 +1,345 @@
+{
+  "generated": "2026-10-20",
+  "test_n": 55,
+  "rows": [
+    {
+      "section": "A legacy",
+      "label": "Qwen2-VL-2B",
+      "protocol": "images + full card (summary line with label)",
+      "source": "results/vlm_combo_qwen_vl_custom_mlp_qwen.json",
+      "status": "ok",
+      "k": 31,
+      "n": 55,
+      "parsed": 55,
+      "accuracy": 0.5636363636363636,
+      "ci95": [
+        0.433,
+        0.686
+      ],
+      "macro_f1": 0.466,
+      "per_class_correct": {
+        "decline": "18/18",
+        "stable": "13/18",
+        "increase": "0/19"
+      },
+      "answers": {
+        "decline": 23,
+        "stable": 32
+      },
+      "prompt_mode": null
+    },
+    {
+      "section": "A legacy",
+      "label": "PaliGemma-3B",
+      "protocol": "images + one NDVI line",
+      "source": "results/vlm_combo_paligemma_siglip_linear_gemma.json",
+      "status": "ok",
+      "k": 20,
+      "n": 55,
+      "parsed": 55,
+      "accuracy": 0.36363636363636365,
+      "ci95": [
+        0.249,
+        0.496
+      ],
+      "macro_f1": 0.271,
+      "per_class_correct": {
+        "decline": "15/18",
+        "stable": "0/18",
+        "increase": "5/19"
+      },
+      "answers": {
+        "decline": 42,
+        "increase": 13
+      },
+      "prompt_mode": null
+    },
+    {
+      "section": "A legacy",
+      "label": "LLaVA-Interleave-0.5B",
+      "protocol": "images + full card",
+      "source": "results/vlm_combo_llava15_clip_mlp_vicuna.json",
+      "status": "ok",
+      "k": 18,
+      "n": 55,
+      "parsed": 55,
+      "accuracy": 0.32727272727272727,
+      "ci95": [
+        0.218,
+        0.459
+      ],
+      "macro_f1": 0.164,
+      "per_class_correct": {
+        "decline": "18/18",
+        "stable": "0/18",
+        "increase": "0/19"
+      },
+      "answers": {
+        "decline": 55
+      },
+      "prompt_mode": null
+    },
+    {
+      "section": "A legacy",
+      "label": "BLIP-2 OPT-2.7B",
+      "protocol": "stitched image, no card (old parser read the echo)",
+      "source": "results/vlm_combo_blip2_clip_qformer_opt.json",
+      "status": "ok",
+      "k": 18,
+      "n": 55,
+      "parsed": 55,
+      "accuracy": 0.32727272727272727,
+      "ci95": [
+        0.218,
+        0.459
+      ],
+      "macro_f1": 0.164,
+      "per_class_correct": {
+        "decline": "18/18",
+        "stable": "0/18",
+        "increase": "0/19"
+      },
+      "answers": {
+        "decline": 55
+      },
+      "prompt_mode": null
+    },
+    {
+      "section": "A leak-free",
+      "label": "Qwen2-VL-2B",
+      "protocol": "evidence_only card (label line removed)",
+      "source": "results/protocol/vlm_combo_comparison_evidence_only.json",
+      "status": "ok",
+      "k": 18,
+      "n": 55,
+      "accuracy": 0.32727272727272727,
+      "ci95": [
+        0.218,
+        0.459
+      ],
+      "note": "summary only; per-model predictions were overwritten by the compact run"
+    },
+    {
+      "section": "A leak-free",
+      "label": "LLaVA-Interleave-0.5B",
+      "protocol": "compact table (same for all models)",
+      "source": "results/protocol/vlm_combo_llava15_clip_mlp_vicuna.json",
+      "status": "ok",
+      "k": 24,
+      "n": 55,
+      "parsed": 55,
+      "accuracy": 0.43636363636363634,
+      "ci95": [
+        0.314,
+        0.567
+      ],
+      "macro_f1": 0.347,
+      "per_class_correct": {
+        "decline": "16/18",
+        "stable": "0/18",
+        "increase": "8/19"
+      },
+      "answers": {
+        "decline": 43,
+        "increase": 12
+      },
+      "prompt_mode": null
+    },
+    {
+      "section": "A leak-free",
+      "label": "Qwen2-VL-2B",
+      "protocol": "compact table",
+      "source": "results/protocol/vlm_combo_qwen_vl_custom_mlp_qwen.json",
+      "status": "ok",
+      "k": 18,
+      "n": 55,
+      "parsed": 55,
+      "accuracy": 0.32727272727272727,
+      "ci95": [
+        0.218,
+        0.459
+      ],
+      "macro_f1": 0.164,
+      "per_class_correct": {
+        "decline": "0/18",
+        "stable": "18/18",
+        "increase": "0/19"
+      },
+      "answers": {
+        "stable": 55
+      },
+      "prompt_mode": null
+    },
+    {
+      "section": "A leak-free",
+      "label": "PaliGemma-3B",
+      "protocol": "compact table",
+      "source": "results/protocol/vlm_combo_paligemma_siglip_linear_gemma.json",
+      "status": "load_failed",
+      "note": "model not loaded (gated on Hugging Face)"
+    },
+    {
+      "section": "A leak-free",
+      "label": "BLIP-2 OPT-2.7B",
+      "protocol": "compact table (new anti-echo parser)",
+      "source": "results/protocol/vlm_combo_blip2_clip_qformer_opt.json",
+      "status": "no_parsed_answers",
+      "n": 55,
+      "parsed": 0
+    },
+    {
+      "section": "B class LoRA",
+      "label": "Qwen2-VL-2B, balanced 16 (Ada 29575)",
+      "protocol": "evidence_only at train and test",
+      "source": "results/protocol/qwen_balanced_leakfree_lora.json",
+      "status": "ok",
+      "k": 20,
+      "n": 55,
+      "parsed": 55,
+      "accuracy": 0.36363636363636365,
+      "ci95": [
+        0.249,
+        0.496
+      ],
+      "macro_f1": 0.236,
+      "per_class_correct": {
+        "decline": "2/18",
+        "stable": "18/18",
+        "increase": "0/19"
+      },
+      "answers": {
+        "stable": 53,
+        "decline": 2
+      },
+      "prompt_mode": "evidence_only"
+    },
+    {
+      "section": "B class LoRA (superseded)",
+      "label": "Qwen2-VL-2B, first 16 by ID (Ada 2722446)",
+      "protocol": "full card at train and test",
+      "source": "results/vlm_combo_qwen_vl_finetuned_ecoexplain.json",
+      "status": "ok",
+      "k": 37,
+      "n": 55,
+      "parsed": 55,
+      "accuracy": 0.6727272727272727,
+      "ci95": [
+        0.541,
+        0.782
+      ],
+      "macro_f1": 0.556,
+      "per_class_correct": {
+        "decline": "18/18",
+        "stable": "0/18",
+        "increase": "19/19"
+      },
+      "answers": {
+        "decline": 36,
+        "increase": 19
+      },
+      "prompt_mode": null
+    },
+    {
+      "section": "C explanation",
+      "label": "Qwen2-VL-2B structured",
+      "protocol": "label-free table + ALLOWED_FACTS + CLASS_RULE",
+      "source": "results/explain/explain_structured_qwen_vl_custom_mlp_qwen.json",
+      "status": "ok",
+      "k": 35,
+      "n": 55,
+      "parsed": 55,
+      "accuracy": 0.6363636363636364,
+      "ci95": [
+        0.504,
+        0.751
+      ],
+      "macro_f1": 0.611,
+      "per_class_correct": {
+        "decline": "17/18",
+        "stable": "13/18",
+        "increase": "5/19"
+      },
+      "answers": {
+        "decline": 22,
+        "stable": 28,
+        "increase": 5
+      },
+      "prompt_mode": "explain",
+      "correct_claims": 0.7579617834394905
+    },
+    {
+      "section": "C explanation",
+      "label": "LLaVA-0.5B structured",
+      "protocol": "same",
+      "source": "results/explain/explain_structured_llava15_clip_mlp_vicuna.json",
+      "status": "ok",
+      "k": 23,
+      "n": 55,
+      "parsed": 51,
+      "accuracy": 0.41818181818181815,
+      "ci95": [
+        0.297,
+        0.55
+      ],
+      "macro_f1": 0.355,
+      "per_class_correct": {
+        "decline": "13/18",
+        "stable": "10/18",
+        "increase": "0/19"
+      },
+      "answers": {
+        "decline": 27,
+        "stable": 23,
+        "null": 4,
+        "increase": 1
+      },
+      "prompt_mode": "explain",
+      "correct_claims": 0.7109375
+    },
+    {
+      "section": "C explanation",
+      "label": "Qwen2-VL-2B explanation LoRA (Ada 24389)",
+      "protocol": "label-free table, free-form JSON",
+      "source": "results/explain/explain_qwen_vl_finetuned_ecoexplain.json",
+      "status": "ok",
+      "k": 34,
+      "n": 55,
+      "parsed": 55,
+      "accuracy": 0.6181818181818182,
+      "ci95": [
+        0.486,
+        0.735
+      ],
+      "macro_f1": 0.525,
+      "per_class_correct": {
+        "decline": "17/18",
+        "stable": "0/18",
+        "increase": "17/19"
+      },
+      "answers": {
+        "stable": 2,
+        "decline": 36,
+        "increase": 17
+      },
+      "prompt_mode": "explain",
+      "correct_claims": 0.5053191489361702
+    }
+  ],
+  "baselines": {
+    "majority": 19,
+    "rule_fixed": 35,
+    "rule_fitted": 52,
+    "rule_fitted_cutoffs": [
+      -0.032,
+      -0.0011
+    ],
+    "n": 55
+  },
+  "teacher_filter": {
+    "split": "train",
+    "teacher": "Qwen/Qwen2-VL-2B-Instruct",
+    "seen": 256,
+    "kept": 28,
+    "path": "/home2/cprv67ab97/EcoExplain-VLM/data/explain_targets/train_targets.jsonl"
+  }
+}

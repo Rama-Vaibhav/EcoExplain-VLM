@@ -1,0 +1,6 @@
+epoch 1/3 mean_loss=0.1321
+epoch 2/3 mean_loss=0.0001
+epoch 3/3 mean_loss=0.0000
+saved adapter /home2/cprv67ab97/EcoExplain-VLM/results/checkpoints/qwen2vl_lora_ecoexplain
+qwen_vl_finetuned_ecoexplain: acc=100.0% n=55 parsed=55
+best qwen_vl_finetuned_ecoexplain 100.0%

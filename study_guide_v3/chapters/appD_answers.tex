@@ -1,0 +1,130 @@
+\chapter{Answers to the self-check questions}
+\label{app:answers}
+
+Try each question first. These answers are short on purpose; the chapter gives the detail.
+
+\section*{Chapter \ref{ch:bigpicture}: the big picture}
+\begin{enumerate}
+  \item 01: five sources describe each place. 02: Earth Engine makes cloud-free composites and exports 15 files per patch; image processing makes the 512-pixel chips and arrays. 03: each patch gets an image pair, an automatic label and an evidence card. 04: the 366 records are frozen and split 256/55/55. 05: three evaluation tracks on the same 55 test patches.
+  \item Phase~B is a time (free-form explanations, 2--3 October); Track~B is an experiment (the class LoRA, run in Phase~A).
+  \item The test set has 19 increase patches out of 55, so always answering ``increase'' scores 34.5\,\%; that is the score a useless model gets.
+  \item Qwen2-VL-2B and LLaVA-Interleave-0.5B.
+  \item What the full card's summary line contains; what happens without it (Qwen 56.4\,\% $\rightarrow$ 32.7\,\%); what each model received; the size of the fine-tunes; what the labels are.
+\end{enumerate}
+
+\section*{Chapter \ref{ch:stage01}: study design and sources}
+\begin{enumerate}
+  \item To remove seasonal change: comparing the same months one year apart leaves mostly year-to-year change.
+  \item $(B8 - B4)/(B8 + B4)$. Healthy leaves absorb red light and reflect near-infrared strongly, so the numerator is large.
+  \item The T0 window straddles ESA's processing change of 25 January 2022, which added an offset; the harmonized collection removes it so the two years are comparable.
+  \item VV (vertical in, vertical out) mostly reflects surface scattering and soil moisture; VH (cross-polarised) comes mostly from volume scattering in the canopy, so VH is more sensitive to vegetation.
+  \item The drop is the same almost everywhere and 2023 was much drier; drying soil and leaves lower backscatter. Forest-loss alerts need much larger drops in dense time series.
+  \item Rainfall comes from 5.5\,km pixels and fell equally for every class; it describes the year, not the patch.
+\end{enumerate}
+
+\section*{Chapter \ref{ch:stage02}: Earth Engine and image processing}
+\begin{enumerate}
+  \item The export used degrees (EPSG:4326); a 640\,m square is about 70 pixels north--south and 65 east--west at this latitude.
+  \item It is identical in both years for every patch, which real cloud masks would not be; it probably measures edge pixels.
+  \item It multiplies every average by the share of real pixels: about 0.93 for a typical chip and far less for edge patches, so the card's values are biased towards zero.
+  \item The threshold that best splits a set of values into two groups (maximum between-group variance).
+  \item A policy removed boxes from every patch without a human \texttt{decline} label, and 347 patches had no human label.
+\end{enumerate}
+
+\section*{Chapter \ref{ch:stage03}: labels and cards}
+\begin{enumerate}
+  \item The 15\,\% of the pool with the largest NDVI drop is decline, the 15\,\% with the largest gain is increase, and the rest is stable.
+  \item The whole region lost greenness, so the top 15\,\% starts at $\Delta = +0.003$; with the second batch's recomputed cut-offs, an increase patch can have $\Delta$ down to $-0.001$.
+  \item Version~1: template text (Ollama failed), only in \file{dataset_old.jsonl}. Version~2: rule-based text computed from the rasters, in the final \file{dataset.jsonl}.
+  \item The card's last line, which states \texttt{candidate\_class}; it means a model given the full card has the answer in its input, so Track~A measures use of the complete card.
+  \item They use different thresholds on different numbers: percentiles of the unbiased Earth Engine mean for the label; fixed cut-offs on the padded canvas mean for the trend.
+  \item Zero padding is included in the canvas average.
+\end{enumerate}
+
+\section*{Chapter \ref{ch:stage04}: dataset and split}
+\begin{enumerate}
+  \item The development set is for making choices and may be used repeatedly; the test set is for the final report only.
+  \item 19 of 55 test patches are \texttt{increase}.
+  \item Label information in the input (applies: the summary line); spatial leakage between neighbouring patches (applies: random split); geographic memorisation (prevented: coordinates removed).
+  \item Zero-shot models learn nothing from the training patches; a fine-tuned model could memorise a neighbourhood.
+  \item Content: none of them searched the prompts for the label (\file{check_no_leak.py} was added later).
+\end{enumerate}
+
+\section*{Chapter \ref{ch:models}: models}
+\begin{enumerate}
+  \item A vision encoder, a projector, and a language model.
+  \item A SigLIP image encoder and a Qwen1.5-0.5B-Chat language model.
+  \item Qwen and LLaVA saw both images and the full card; PaliGemma saw both images and one NDVI line; BLIP-2 saw one stitched image and a short prompt.
+  \item It repeated its prompt, and the parser read ``decline'' in the echo for every patch.
+  \item $W_0$ is the frozen weight matrix, $B$ and $A$ the trainable thin matrices, $r$ the rank (8) and $\alpha$ the scale (16). A rank-8 adapter adds $2 \times 1536 \times 8 = 24{,}576$ weights.
+  \item So that the loss is computed only on the answer; otherwise the model would spend capacity learning to reproduce the prompt.
+\end{enumerate}
+
+\section*{Chapter \ref{ch:measuring}: measurement}
+\begin{enumerate}
+  \item Accuracy can stay acceptable while one class is never predicted; macro-F1 averages per-class F1, so a missing class pulls it down.
+  \item With 95\,\% confidence the true accuracy lies between 43.3\,\% and 68.6\,\%; the estimate is uncertain by about $\pm13$ points.
+  \item Only the patches where the two disagree. Qwen got 31 patches right that the baseline got wrong, and missed all 19 increase patches the baseline got right; 31 against 19 is not unusual enough at this size ($p = 0.12$).
+  \item Groundedness: the explanation agrees with the input. Faithfulness: it reflects the model's actual reasoning. The project measures groundedness (evidence consistency).
+  \item A true small change below the dead-band (for example EVI $-0.006$ called a decrease) is marked wrong; a negated sentence (``did not decrease'') is read as a decrease claim.
+\end{enumerate}
+
+\section*{Chapter \ref{ch:trackA}: Track A}
+\begin{enumerate}
+  \item The card's trend word (for example \texttt{strong\_decline}) and the gold label \texttt{candidate\_class}.
+  \item Qwen did not copy the label token, but the trend words it followed appear only in the same summary line; without the line it falls to chance.
+  \item ``Stable'' for every patch in the compact run, which scores 18/55 = 32.7\,\% (the share of stable patches); the \texttt{evidence\_only} run also scored 32.7\,\%.
+  \item No: it is not significantly above the 34.5\,\% baseline ($p = 0.44$), and it never answers ``stable''; its interval (31.4--56.7\,\%) includes chance.
+  \item PaliGemma is gated and could not be downloaded without a token; BLIP-2 only echoed its prompt, so after the parser fix none of its answers contained a class.
+  \item The information to classify is on the card as one number; the models do not use it.
+\end{enumerate}
+
+\section*{Chapter \ref{ch:trackB}: Track B}
+\begin{enumerate}
+  \item Job 29575 used 16 class-balanced patches (6/5/5) and the label-free card at training and test; job 2722446 used the first 16 patches by ID (9/6/1) and the full card.
+  \item ``Stable'' for 53 of 55 patches; 36.4\,\% is the share it gets by mostly answering one class, no better than always answering ``increase'' ($p = 1.0$).
+  \item It was obtained with the full card, which states the label, from an unbalanced sample; the leak-free rerun gives 36.4\,\%.
+  \item With 256 patches and the full card the model learned to read the label from the card's last line (100\,\%); that measures copying.
+  \item A balanced, label-free LoRA on 48 or all 256 training patches, with early stopping on the development set.
+\end{enumerate}
+
+\section*{Chapter \ref{ch:trackC}: Track C}
+\begin{enumerate}
+  \item A compact table of numbers with no class or interpretive words, so that the label is not in the input and the model must work from the numbers.
+  \item PaliGemma gave classes without reasons; BLIP-2 repeated its prompt; LLaVA looped and contradicted itself; Qwen (3 patches) blamed a rainfall increase when rain fell.
+  \item \texttt{ALLOWED\_FACTS}: numbered true sentences the model must copy verbatim. \texttt{CLASS\_RULE}: one line stating the class from the NDVI change with $\pm0.02$ cut-offs.
+  \item 35 of Qwen's 38 and 35 of LLaVA's 37 flagged claims describe a true, tiny change that the scorer counts as stable because it is below the dead-band.
+  \item Its class matched the stated rule on 53 of 55 patches, and the rule alone scores 63.6\,\%: it followed instructions.
+  \item A 2B teacher passed only 28 of 256 justifications; the 16 used were all \texttt{decline}, and 9 of them were cut-off raw outputs; one epoch on 16 examples. (Any three.)
+  \item The input (label-free table versus full card), the prompt (JSON explanation versus one word) and the training target all differ.
+\end{enumerate}
+
+\section*{Chapter \ref{ch:meaning}: what it shows}
+\begin{enumerate}
+  \item Classification: with the label line removed, no small VLM classifies better than guessing, although one number on the card gives 94.5\,\%. Explanations: consistent with the evidence only under a structured cite-only prompt, and then mostly restatements.
+  \item H1, H2 (no images-only condition) and H4 (no usable confidence values).
+  \item Data: relative labels, 19 human checks, one place and year pair, small changes and a dry year, padding bias. Models and evaluation: the summary line, unequal inputs in the first run, tiny fine-tunes, small test set, scorer limits (and others in Section~\ref{sec:limits}).
+  \item Running zero-shot Qwen with the same free-form explanation prompt on all 55 test patches: it would show whether the decline/increase separation comes from the prompt or from the LoRA.
+\end{enumerate}
+
+\section*{Chapter \ref{ch:figures}: figures}
+\begin{enumerate}
+  \item \file{result2.png} (wrong encoder; a table as an image), \file{summary_scores.png} (outdated, 3-patch Qwen bars), \file{result1.png} and \file{ecoexplain_vlm_pipeline.png} (``LLaVA-1.5'', outdated statements).
+  \item It says all four models received ``T0/T1 RGB + card'' and implies all four were run with and without the line; only Qwen and LLaVA saw the full card, and the \texttt{evidence\_only} re-run changed only LLaVA's input.
+  \item The whole of India, not trimmed at the top, using the official boundary.
+\end{enumerate}
+
+\section*{Chapter \ref{ch:draft}: your draft}
+\begin{enumerate}
+  \item $56.4 - 34.5 = 21.9$ is a difference of 21.9 \emph{percentage points}; ``21.9\,\% higher'' would mean $1.219 \times 34.5 = 42.1\,\%$.
+  \item PaliGemma received the card's NDVI line, not the ``summary line'' (which is the line containing the label); the sentence says the opposite of what happened.
+  \item The final dataset's text is a rule-based narrative computed from the rasters (\texttt{raster\_analysis\_v2}); only the old version~1 was template text.
+  \item Any two of: citations removed; a fourth heading level; missing acknowledgements, map and equations; Limitations placed after the Conclusions.
+\end{enumerate}
+
+\section*{Chapter \ref{ch:writing}: writing plan}
+\begin{enumerate}
+  \item Focus, motivation, gap and objectives; the gap is supported by \citet{jacovi2020}, \citet{turpin2023}, \citet{li2023pope} and \citet{zhao2021calibrate}.
+  \item NDVI \citet{rouse1974,tucker1979}; EVI \citet{huete2002}; NDMI \citet{gao1996}; NBR \citet{keybenson2006}.
+  \item Repetition adds words but no information, and two copies of a number can drift apart when one is corrected.
+\end{enumerate}

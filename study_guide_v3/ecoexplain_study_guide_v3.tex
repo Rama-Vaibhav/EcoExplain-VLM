@@ -1,0 +1,137 @@
+% EcoExplain-VLM: study guide version 3 (20 October 2026).
+% Personal learning material. Not for submission and not to be copied into the report.
+% Compile:  latexmk -pdf ecoexplain_study_guide_v3.tex   (pdflatex + bibtex)
+% Numbers:  python build_results_master.py   (writes chapters/generated_master_table.tex)
+% Figures:  python make_figures_v3.py  and  python make_workflow_figure_corrected.py
+\documentclass[11pt,a4paper,oneside]{report}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,tabularx,longtable,multirow,makecell,array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\setlist{itemsep=2pt,topsep=4pt}
+\usepackage[breakable,skins]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage[hyphens]{url}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=green!35!black,urlcolor=blue!60!black]{hyperref}
+\usepackage[authoryear,round]{natbib}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{3em}
+\def\UrlBreaks{\do\/\do-\do\_\do.}
+\setlength{\parskip}{5pt}
+\renewcommand{\arraystretch}{1.18}
+
+\titleformat{\chapter}[display]{\normalfont\bfseries\Large}{\chaptertitlename\ \thechapter}{8pt}{\huge}
+\titlespacing*{\chapter}{0pt}{-10pt}{18pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\footnotesize\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+
+% ---------- boxes ----------
+\definecolor{plainc}{RGB}{33,97,140}
+\definecolor{whyc}{RGB}{30,120,70}
+\definecolor{watchc}{RGB}{176,58,46}
+\definecolor{reportc}{RGB}{110,60,140}
+\definecolor{codec}{RGB}{90,90,90}
+\definecolor{newc}{RGB}{196,120,20}
+\definecolor{checkc}{RGB}{20,120,130}
+\newtcolorbox{plainwords}{breakable,colback=plainc!5,colframe=plainc,fonttitle=\bfseries\small,title=In plain words}
+\newtcolorbox{whybox}{breakable,colback=whyc!5,colframe=whyc,fonttitle=\bfseries\small,title=Why it was done this way}
+\newtcolorbox{watchout}{breakable,colback=watchc!5,colframe=watchc,fonttitle=\bfseries\small,title=Watch out}
+\newtcolorbox{foryourreport}{breakable,colback=reportc!5,colframe=reportc,fonttitle=\bfseries\small,title=For your own report}
+\newtcolorbox{wherecode}{breakable,colback=codec!4,colframe=codec,fonttitle=\bfseries\small,title=Where it lives in the project}
+\newtcolorbox{newinfo}{breakable,colback=newc!6,colframe=newc,fonttitle=\bfseries\small,title=New or corrected in this version}
+\newtcolorbox{selfcheck}{breakable,colback=checkc!5,colframe=checkc,fonttitle=\bfseries\small,title=Check yourself (answers in Appendix~\ref{app:answers})}
+
+% ---------- shortcuts ----------
+\newcommand{\file}[1]{\nolinkurl{#1}}
+\newcommand{\dndvi}{\ensuremath{\Delta}NDVI}
+\newcommand{\dnbr}{\ensuremath{\Delta}NBR}
+\newcommand{\degC}{\ensuremath{^{\circ}}C}
+\newcommand{\dg}{\ensuremath{^{\circ}}}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+\vspace*{2.2cm}
+{\Huge\bfseries EcoExplain-VLM\par}
+\vspace{0.5cm}
+{\LARGE Study guide, version 3\par}
+\vspace{0.3cm}
+{\large Learn the whole project from the beginning,\\ then correct and rewrite your report yourself\par}
+\vspace{1.4cm}
+{\large Forest change in Kanha Tiger Reserve $\cdot$ five satellite and climate sources\\
+four open vision--language models $\cdot$ classification, fine-tuning and explanations\par}
+\vspace{1.4cm}
+\begin{tcolorbox}[colback=watchc!5,colframe=watchc,width=0.86\textwidth]
+\small This guide is study material. It explains every part of the project so that you can write your own report in your own words. It is not a manuscript: do not submit it or copy sentences from it. Every number in it was read from a file in the project, and the file is named next to the number so that you can check it yourself.
+\end{tcolorbox}
+\vspace{0.8cm}
+\begin{tcolorbox}[colback=newc!6,colframe=newc,width=0.86\textwidth]
+\small \textbf{Version 3.} Everything in version~2, updated with the leak-free reruns of 19--20 October: Qwen and LLaVA without the summary line, the balanced class LoRA (Ada job 29575), the parser fix and the spatial split. One chapter now holds every result, recomputed from the files.
+\end{tcolorbox}
+\vfill
+{\large 20 October 2026\par}
+\end{titlepage}
+
+\tableofcontents
+
+\part{Start here}
+\include{chapters/ch01_start}
+\include{chapters/ch02_big_picture}
+\include{chapters/ch00_master_results}
+
+\part{The workflow, stage by stage}
+\include{chapters/ch03_stage01_sources}
+\include{chapters/ch04_stage02_preprocessing}
+\include{chapters/ch05_stage03_labels_cards}
+\include{chapters/ch06_stage04_dataset}
+
+\part{Models and measurement: what you need for stage 05}
+\include{chapters/ch07_models}
+\include{chapters/ch08_measuring}
+
+\part{Stage 05: the three evaluation tracks and their results}
+\include{chapters/ch09_trackA}
+\include{chapters/ch10_trackB}
+\include{chapters/ch11_trackC}
+
+\part{Putting it together}
+\include{chapters/ch12_meaning}
+
+\part{From understanding to your report}
+\include{chapters/ch13_figures}
+\include{chapters/ch14_draft_review}
+\include{chapters/ch15_writing_plan}
+\include{chapters/ch16_questions}
+
+\appendix
+\include{chapters/appA_facts}
+\include{chapters/appB_files}
+\include{chapters/appC_glossary}
+\include{chapters/appD_answers}
+
+\nocite{*}
+\bibliographystyle{apalike}
+\renewcommand{\bibname}{Reference list: every verified source you may cite}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,10 @@
+==========================================
+SLURM_JOB_ID = 2722446
+SLURM_NODELIST = gnode007
+SLURM_JOB_GPUS = 2
+==========================================
+Python 3.10.15
+epoch 1/1 mean_loss=1.8431
+saved adapter /home2/cprv67ab97/EcoExplain-VLM/results/checkpoints/qwen2vl_lora_ecoexplain
+qwen_vl_finetuned_ecoexplain: acc=67.3% n=55 parsed=55
+Smoke done Tue Sep 29 10:24:47 IST 2026

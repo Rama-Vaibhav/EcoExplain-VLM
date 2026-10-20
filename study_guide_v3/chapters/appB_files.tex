@@ -1,0 +1,93 @@
+\chapter{Map of the project folders and files}
+\label{app:files}
+
+\small
+
+\section*{Top folder: \file{DataSet Extractor/}}
+\begin{longtable}{L{5.6cm}L{8.6cm}}
+\toprule
+\file{EcoExplain-VLM_Complete_Research_Roadmap.pdf} & Research plan: question, conditions, hypotheses, metrics, schedule. \\
+\file{Next Phase of Work Flow 08-08-2026.pdf} & Agreed order of work after the pipeline was fixed. \\
+\file{ecoexplain_vlm_dataset/} & The project repository (git; GitHub \texttt{Rama-Vaibhav/EcoExplain-VLM}). The 19--20 October work was pushed on 20 October to branch \texttt{protocol-fixes-2026-10-20} (commit \texttt{3e6e515}); merge it into \texttt{main} when you are happy with it. \\
+\file{ada_review/} & Files copied back from the Ada cluster: Slurm logs, result JSONs, adapter configs. \\
+\file{report/} & \file{EcoExplain_VLM_paper.tex} (the rewrite I gave you on 17 October) and \file{quillbot_parts/} (your latest draft \file{full_paper_v2.tex} and its five parts). \\
+\file{study_guide/} & The first study guide (6 October), its figures and \file{make_figures.py}. \\
+\file{study_guide_v2/} & Version 2 of the guide (19 October), \file{make_figures_v2.py}. \\
+\file{study_guide_v3/} & This guide, \file{build_results_master.py} (writes \file{RESULTS_MASTER.md}, \file{.json} and the generated table), \file{make_figures_v3.py}, \file{make_workflow_figure_corrected.py}. \\
+\bottomrule
+\end{longtable}
+
+\section*{Repository root: \file{ecoexplain_vlm_dataset/}}
+\begin{longtable}{L{5.6cm}L{8.6cm}}
+\toprule
+\file{README.md} & Workflow and results summary (updated 17 October with Phase~D). \\
+\file{dataset.jsonl} & The final dataset: 366 records, version-2 text. \\
+\file{dataset_extensive.jsonl} & The same content; copied into \file{dataset.jsonl} at the freeze. \\
+\file{dataset_old.jsonl} & Version~1, with template explanations. \\
+\file{summary.txt} & The 36-patch pilot summary. \\
+\file{docs/PROTOCOL_RERUN.md} & Commands for the leak-free reruns, the balanced LoRA and the Ada sync. \\
+\file{configs/pilot_kanha.yaml} & Region, dates, patch size, classes, export mode. \\
+\file{papers/acl/} & Your ACL draft (\file{ecoexplain_acl.tex}, an older version), \file{references.bib}, \file{make_workflow_figure.py} and \file{fig_workflow.png}/\file{.pdf}. \\
+\file{slides/prof_progress.pdf} & Progress slides (September). \\
+\file{prompts/} & Output schema example and the task note for the explanation mode. \\
+\bottomrule
+\end{longtable}
+
+\section*{\file{src/}: reusable code}
+\begin{longtable}{L{5.6cm}L{8.6cm}}
+\toprule
+\file{gee_utils.py}, \file{export_utils.py} & Earth Engine: cloud mask, indices, composites, anomalies, rainfall, terrain, radar; the 15 export specifications. \\
+\file{dip_utils.py} & Otsu masks, boxes, IoU, severity, padding and resizing, colour stretch, reference-class policy. \\
+\file{text_utils.py}, \file{extensive_descriptions.py} & Version-1 (template) and version-2 (raster-based) card text; the inference rules and the summary line. \\
+\file{validate_dataset.py}, \file{preflight.py} & Automatic checks. \\
+\file{vlm_combos.py} & Model registry (including the laptop checkpoints), dataset loading, text modes, label-line removal. \\
+\file{vlm_eval.py} & Model loading, prompts per model, generation, parsing, accuracy. \\
+\file{vlm_evidence.py} & Compact evidence table, \texttt{ALLOWED\_FACTS}, \texttt{CLASS\_RULE}. \\
+\file{explain_metrics.py} & Claim extraction, dead-bands, self-consistency, ROUGE-L, distinct-2. \\
+\file{vlm_closedset.py} & Four-panel images, class-word scoring, development-set bias. \\
+\file{vlm_finetune.py} & LoRA training, development selection, evaluation, explanation targets. \\
+\file{split_utils.py} & Balanced training samples (\texttt{--balanced-train}) and the spatial block split. \\
+\bottomrule
+\end{longtable}
+
+\section*{\file{scripts/}: command-line entry points}
+\begin{longtable}{L{5.6cm}L{8.6cm}}
+\toprule
+\file{01_export_gee.py} \dots{} \file{05_freeze_jsonl_and_splits.py} & Export, download fallback, dataset build, checks, freeze and split. \\
+\file{build_extensive_jsonl.py} & Builds the version-2 card text. \\
+\file{run_vlm_combos.py}, \file{run_vlm_closedset.py} & Zero-shot and closed-set evaluation. \\
+\file{run_finetune_qwen.py} & LoRA training and evaluation (\texttt{--max-train}, \texttt{--target explain}). \\
+\file{run_protocol_fair_eval.py}, \file{write_spatial_splits.py} & Leak-free and equal-input reruns (\file{results/protocol/}); the spatial split. \\
+\file{ada_slurm_qwen_balanced_smoke.sh} & Balanced, label-free class LoRA on Ada (job 29575). \\
+\file{run_explain.py}, \file{score_explanations.py}, \file{make_explanation_report.py} & Explanation mode, scoring, panels. \\
+\file{check_no_leak.py} & Confirms no label-free prompt contains the label. \\
+\file{build_explain_targets.py} & Teacher justifications and the filter (Ada job 24298). \\
+\file{ada_slurm_*.sh}, \file{sync_ada_jpg_only.sh} & Slurm job scripts; copying code and JPEG chips to Ada. \\
+\bottomrule
+\end{longtable}
+
+\section*{\file{data/} and \file{results/}}
+\begin{longtable}{L{5.6cm}L{8.6cm}}
+\toprule
+\file{data/raw_tiffs/} & 5,490 GeoTIFFs. \\
+\file{data/processed_images/} & 512\,$\times$\,512 JPEGs and \texttt{.npy} arrays. \\
+\file{data/raw_metadata/} & Candidate pool, selected patches, scalars, triplets, export log, region. \\
+\file{data/splits/} & Training, development and test lists, and the manifest. \\
+\file{data/splits_spatial/} & Spatial block split, 266 / 46 / 54. \\
+\file{data/explain_targets/train_targets.jsonl} & The 28 filtered teacher justifications. \\
+\file{data/outcasts/}, \file{data/pilot_reference/} & 6 incomplete patches; pilot-only patches. \\
+\file{results/vlm_combo_*.json} & Track~A and the class LoRA. \\
+\file{results/protocol/} & Leak-free reruns: \texttt{evidence\_only} and \texttt{compact} comparisons, per-model files, \file{qwen_balanced_leakfree_lora.json}. \\
+\file{results/slurm-qwen-balanced-smoke-29575.log} & Log of the balanced, label-free class LoRA. \\
+\file{results/explain/oneword_*.json} & The \texttt{evidence\_only} re-run. \\
+\file{results/explain/explain_*.json} & Phase~B (free-form). \\
+\file{results/explain/explain_structured_*.json} & Phase~C (structured). \\
+\file{results/explain/explain_qwen_vl_finetuned_ecoexplain.json} & Phase~D (explanation LoRA). \\
+\file{results/explain/explanation_scores.csv} & Phase~B/C scores (6 October). \\
+\file{results/explain/explanation_scores.json} & Phase~D scores (overwritten 17 October). \\
+\file{results/explain/target_filter_report.json} & 28 of 256 kept. \\
+\file{results/slurm-*.log} & The Phase~D Ada logs (24225, 24237, 24298, 24389). \\
+\file{results/validation_report.json}, \file{preflight_report.json} & The automatic checks. \\
+\bottomrule
+\end{longtable}
+\normalsize

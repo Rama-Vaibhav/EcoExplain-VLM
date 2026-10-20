@@ -1,0 +1,636 @@
+{
+  "combo_id": "blip2_clip_qformer_opt",
+  "hf_model_id": "Salesforce/blip2-opt-2.7b",
+  "laptop": true,
+  "decode": "closed_set_logprob",
+  "prompt": "four_panel_collage_plus_ndvi_rule",
+  "ndvi_rule": {
+    "decline_at_or_below": -0.02,
+    "increase_at_or_above": 0.02
+  },
+  "label_in_prompt": false,
+  "dev_bias": {
+    "stable": 0.0,
+    "decline": 0.0,
+    "increase": 0.0
+  },
+  "dev_accuracy_raw": 0.34545454545454546,
+  "dev_accuracy_calibrated": 0.34545454545454546,
+  "test_accuracy_raw": 0.32727272727272727,
+  "accuracy": 0.32727272727272727,
+  "test_accuracy_calibrated": 0.32727272727272727,
+  "free_generation_accuracy": 0.32727272727272727,
+  "qwen_zero_shot_accuracy": 0.5636363636363636,
+  "n_dev": 55,
+  "n_eval": 55,
+  "seconds": 756.7,
+  "status": "ok",
+  "note": "Test accuracy is closed-set logprob after a dev-only class bias. candidate_class is not in the prompt. This does not replace the original free-generation JSON.",
+  "predictions": [
+    {
+      "id": "p00052",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.466,
+        "decline": -8.7746,
+        "increase": -8.9543
+      }
+    },
+    {
+      "id": "p00086",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -4.0781,
+        "decline": -8.1523,
+        "increase": -8.6171
+      }
+    },
+    {
+      "id": "p00575",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.7956,
+        "decline": -8.862,
+        "increase": -9.0339
+      }
+    },
+    {
+      "id": "p00701",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.4563,
+        "decline": -8.3782,
+        "increase": -8.7376
+      }
+    },
+    {
+      "id": "p00850",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -4.2874,
+        "decline": -8.0256,
+        "increase": -8.3889
+      }
+    },
+    {
+      "id": "p00863",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -4.1374,
+        "decline": -8.0515,
+        "increase": -8.5319
+      }
+    },
+    {
+      "id": "p00883",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -5.2429,
+        "decline": -9.3679,
+        "increase": -9.0398
+      }
+    },
+    {
+      "id": "p00937",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.6971,
+        "decline": -8.9745,
+        "increase": -8.7596
+      }
+    },
+    {
+      "id": "p01162",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.2677,
+        "decline": -8.1193,
+        "increase": -8.4552
+      }
+    },
+    {
+      "id": "p01206",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -4.1351,
+        "decline": -8.0453,
+        "increase": -8.6585
+      }
+    },
+    {
+      "id": "p01415",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -4.383,
+        "decline": -8.2229,
+        "increase": -8.7189
+      }
+    },
+    {
+      "id": "p01621",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -4.353,
+        "decline": -8.435,
+        "increase": -8.8139
+      }
+    },
+    {
+      "id": "p01648",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -4.8075,
+        "decline": -9.077,
+        "increase": -8.952
+      }
+    },
+    {
+      "id": "p01988",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.3243,
+        "decline": -8.1954,
+        "increase": -8.7032
+      }
+    },
+    {
+      "id": "p02128",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -3.8986,
+        "decline": -7.9299,
+        "increase": -8.4103
+      }
+    },
+    {
+      "id": "p02139",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -4.5064,
+        "decline": -8.5533,
+        "increase": -8.6354
+      }
+    },
+    {
+      "id": "p02334",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -4.7441,
+        "decline": -8.662,
+        "increase": -8.7128
+      }
+    },
+    {
+      "id": "p02668",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.5947,
+        "decline": -8.5986,
+        "increase": -8.8916
+      }
+    },
+    {
+      "id": "p02674",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.5237,
+        "decline": -8.6253,
+        "increase": -8.7698
+      }
+    },
+    {
+      "id": "p02803",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -4.5072,
+        "decline": -8.3393,
+        "increase": -8.7455
+      }
+    },
+    {
+      "id": "p02890",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -4.253,
+        "decline": -8.0577,
+        "increase": -8.4405
+      }
+    },
+    {
+      "id": "p03067",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.2428,
+        "decline": -8.0318,
+        "increase": -8.3092
+      }
+    },
+    {
+      "id": "p03122",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.1127,
+        "decline": -7.8471,
+        "increase": -8.4916
+      }
+    },
+    {
+      "id": "p03228",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -3.9673,
+        "decline": -7.9477,
+        "increase": -8.5141
+      }
+    },
+    {
+      "id": "p03243",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.2647,
+        "decline": -8.1124,
+        "increase": -8.4718
+      }
+    },
+    {
+      "id": "p03515",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.5484,
+        "decline": -8.2163,
+        "increase": -8.6265
+      }
+    },
+    {
+      "id": "p03538",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -4.5112,
+        "decline": -8.3315,
+        "increase": -8.6908
+      }
+    },
+    {
+      "id": "p03592",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.7669,
+        "decline": -9.1068,
+        "increase": -8.845
+      }
+    },
+    {
+      "id": "p03635",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.7913,
+        "decline": -8.7913,
+        "increase": -8.6467
+      }
+    },
+    {
+      "id": "p03689",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.8197,
+        "decline": -9.0267,
+        "increase": -8.9915
+      }
+    },
+    {
+      "id": "p03801",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.6727,
+        "decline": -8.5556,
+        "increase": -8.7626
+      }
+    },
+    {
+      "id": "p03867",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -4.5311,
+        "decline": -8.2811,
+        "increase": -8.7694
+      }
+    },
+    {
+      "id": "p03991",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -4.0964,
+        "decline": -8.1432,
+        "increase": -8.5495
+      }
+    },
+    {
+      "id": "p04040",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.5028,
+        "decline": -8.3271,
+        "increase": -8.6982
+      }
+    },
+    {
+      "id": "p04059",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.4306,
+        "decline": -8.3486,
+        "increase": -8.7704
+      }
+    },
+    {
+      "id": "p04145",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -4.5183,
+        "decline": -8.2956,
+        "increase": -8.8034
+      }
+    },
+    {
+      "id": "p04174",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -3.8512,
+        "decline": -7.3043,
+        "increase": -8.2536
+      }
+    },
+    {
+      "id": "p04203",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.2627,
+        "decline": -8.208,
+        "increase": -8.6181
+      }
+    },
+    {
+      "id": "p04268",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.1201,
+        "decline": -8.1865,
+        "increase": -8.4326
+      }
+    },
+    {
+      "id": "p04399",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.1421,
+        "decline": -8.2476,
+        "increase": -8.5718
+      }
+    },
+    {
+      "id": "p04508",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -4.6404,
+        "decline": -8.6092,
+        "increase": -8.7849
+      }
+    },
+    {
+      "id": "p04577",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.1777,
+        "decline": -8.248,
+        "increase": -8.5488
+      }
+    },
+    {
+      "id": "p04671",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.2277,
+        "decline": -8.1379,
+        "increase": -8.5441
+      }
+    },
+    {
+      "id": "p04777",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.3232,
+        "decline": -8.2295,
+        "increase": -8.4599
+      }
+    },
+    {
+      "id": "p04806",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.6329,
+        "decline": -8.9454,
+        "increase": -8.7735
+      }
+    },
+    {
+      "id": "p04892",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.0263,
+        "decline": -7.9208,
+        "increase": -8.3232
+      }
+    },
+    {
+      "id": "p04898",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -5.1311,
+        "decline": -9.0608,
+        "increase": -8.8694
+      }
+    },
+    {
+      "id": "p04996",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.1606,
+        "decline": -8.0942,
+        "increase": -8.6332
+      }
+    },
+    {
+      "id": "p05015",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.1187,
+        "decline": -8.0132,
+        "increase": -8.5718
+      }
+    },
+    {
+      "id": "p05082",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.7557,
+        "decline": -9.0799,
+        "increase": -9.2557
+      }
+    },
+    {
+      "id": "p05117",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -3.8303,
+        "decline": -7.7327,
+        "increase": -8.4631
+      }
+    },
+    {
+      "id": "p05122",
+      "gold": "increase",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.4365,
+        "decline": -8.1943,
+        "increase": -8.5341
+      }
+    },
+    {
+      "id": "p05384",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -3.988,
+        "decline": -7.6911,
+        "increase": -8.363
+      }
+    },
+    {
+      "id": "p05511",
+      "gold": "stable",
+      "pred": "stable",
+      "correct": true,
+      "logp": {
+        "stable": -4.5544,
+        "decline": -8.1872,
+        "increase": -8.6443
+      }
+    },
+    {
+      "id": "p05771",
+      "gold": "decline",
+      "pred": "stable",
+      "correct": false,
+      "logp": {
+        "stable": -4.0371,
+        "decline": -7.6738,
+        "increase": -8.4433
+      }
+    }
+  ]
+}

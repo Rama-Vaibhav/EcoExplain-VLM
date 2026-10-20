@@ -1,0 +1,857 @@
+\documentclass[11pt]{article}
+
+% "final" prints the author block; "review" would anonymise it and add line numbers.
+\usepackage[final]{acl}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{url}
+
+% ============================================================
+% TITLE AND AUTHORS
+% ============================================================
+
+\title{EcoExplain-VLM: Evaluating Vision--Language Models for Classifying
+and Explaining Forest Vegetation Change in Kanha Tiger Reserve}
+
+\author{
+Rama Chandra Prasad Pillutla\thanks{Associate Professor. Email:
+\texttt{rcprasad@iiit.ac.in}} \\
+Lab for Spatial Informatics \\
+International Institute of Information Technology Hyderabad, India
+\And
+Chinta Phani Rama Vaibhav\thanks{Email:
+\texttt{chinta.vaibhav@students.iiit.ac.in}} \\
+Lab for Spatial Informatics \\
+International Institute of Information Technology Hyderabad, India
+\And
+Shaik Afzal Basha\thanks{Email:
+\texttt{afzalbasha.shaik@students.iiit.ac.in}} \\
+Lab for Spatial Informatics \\
+International Institute of Information Technology Hyderabad, India
+}
+
+\begin{document}
+
+\maketitle
+
+% ============================================================
+% ABSTRACT
+% ============================================================
+
+\begin{abstract}
+Monitoring vegetation change in protected forests requires combining
+evidence from several sensors, yet it is unclear whether general-purpose
+vision--language models (VLMs) can classify such change and justify
+their decisions. This study presents EcoExplain-VLM, a benchmark of 366
+forest patches in Kanha Tiger Reserve, Madhya Pradesh, India. For each
+patch, matched dry-season data (January--February 2022 and 2023) from
+Sentinel-2, Sentinel-1 SAR, CHIRPS, ERA5-Land and NASADEM were encoded
+as a pair of before/after RGB images and a structured evidence card.
+Labels (stable, decline or increase) are percentile ranks of the
+patch-mean NDVI change, and the patches were split into training,
+development and test sets (256/55/55). Four open VLMs with 0.5--3
+billion parameters were evaluated zero-shot on the same 55 test
+patches. Qwen2-VL-2B reached 56.4\% accuracy, while LLaVA-Interleave-0.5B,
+PaliGemma-3B and BLIP-2 OPT-2.7B scored 32.7--36.4\%, no better than
+always predicting the majority class (34.5\%). A single NDVI-change
+threshold fitted on the training set reaches 94.5\%. Low-rank adaptation
+(LoRA) of Qwen2-VL-2B on 16 training patches for one epoch raised
+accuracy to 67.3\%. Both Qwen2-VL-2B figures were obtained with the full
+evidence card, whose final summary line contains the candidate label.
+Explanations were then generated from cards with the label removed and
+scored automatically by checking each claimed direction of change against
+the measured value. Free-form prompts produced few checkable claims or
+claims that conflicted with the evidence. A structured prompt that
+restricts the model to citing supplied facts raised claim correctness to
+75.8\% for Qwen2-VL-2B and 71.1\% for LLaVA-Interleave-0.5B, although
+the justifications mostly restate those facts. A pilot LoRA on 16
+filtered self-generated justifications reached 61.8\% class accuracy in
+explanation mode but only 50.5\% correct claims. Small open VLMs
+therefore do not yet extract the change signal that a one-number rule
+captures, and they need constrained prompting to stay consistent with
+the evidence.
+\end{abstract}
+
+\noindent
+\textbf{Keywords:} vision--language models; forest change detection;
+multi-source remote sensing; Sentinel-2; Sentinel-1 SAR; zero-shot
+evaluation; LoRA; explanation faithfulness; Kanha Tiger Reserve
+
+% ============================================================
+% 1. INTRODUCTION
+% ============================================================
+
+\section{Introduction}
+
+Forest managers in protected landscapes need to know not only
+\emph{whether} a patch of canopy has become greener or browner between
+two dates, but also \emph{why} that reading is credible. Optical indices
+such as NDVI \citep{rouse1974,tucker1979}, radar backscatter, rainfall,
+soil-moisture anomalies and terrain together constrain that
+interpretation \citep{lillesand2015}. Operational change products
+already exist at continental and global scale
+\citep{hansen2013,kennedy2010,zhu2014}, but they do not produce a short
+natural-language justification that a non-specialist can check against
+the underlying numbers.
+
+Vision--language models (VLMs) map images and text into a shared
+representation and generate free text
+\citep{liu2023llava,wang2024qwen2vl,beyer2024,li2023blip2}. In
+principle, such a model could read a pair of dry-season image chips and
+a compact evidence card, and answer with one of three labels
+(\texttt{stable}, \texttt{decline}, \texttt{increase}) together with a
+justification. In practice, small open models hallucinate content
+\citep{li2023pope}, produce explanations that do not reflect how they
+reached their answer \citep{turpin2023,jacovi2020}, and are sensitive to
+prompt wording \citep{zhao2021calibrate}. Remote-sensing VLMs such as
+GeoChat \citep{kuckreja2024} show that domain-specific training helps,
+but they have not been evaluated on multi-sensor forest-change evidence
+of the kind used here.
+
+This study asks three questions for a single, compact reserve:
+\begin{enumerate}
+\item Can open VLMs with 0.5--3 billion parameters classify relative
+vegetation change from before/after RGB chips and an evidence card
+without task-specific training?
+\item How does a small LoRA update \citep{hu2022lora} change that
+behaviour?
+\item With the label removed from the card, do the models' written
+justifications agree with the measured changes, and does prompt
+structure or fine-tuning on justifications improve that agreement?
+\end{enumerate}
+
+The contribution is a fully specified benchmark, EcoExplain-VLM, for
+Kanha Tiger Reserve, together with an evaluation that reports its own
+weaknesses. On the 55-patch test set, only Qwen2-VL-2B exceeds the
+majority-class baseline (56.4\% against 34.5\%), and a 16-patch LoRA
+raises it to 67.3\%. Both figures use an evidence card that ends with a
+pipeline summary line containing the candidate label. The other three
+models answer almost every patch with the same class, while a
+one-number NDVI-change rule reaches 94.5\%. For explanations, a
+structured ``cite-only'' prompt raises claim correctness to the 70\%
+range, but the resulting texts restate the supplied facts rather than
+interpret the images. Fine-tuning Qwen2-VL-2B on 16 of its own filtered
+justifications gives 61.8\% class accuracy and 50.5\% correct claims.
+
+The study does not produce an operational disturbance map, and it does
+not claim that current small VLMs are ready for reserve management. The
+labels rank NDVI change within one region and one pair of years, and a
+human check of 19 patches agreed with them on only 8. These limits are
+part of the result.
+
+% ============================================================
+% 2. DATA AND METHODS
+% ============================================================
+
+\section{Data and Methods}
+
+\subsection{Study Area}
+
+Kanha Tiger Reserve lies in the Maikal hills of central India, in the
+Mandla and Balaghat districts of Madhya Pradesh. Its core zone covers
+917.44\,km$^2$ and its buffer zone 1,134.36\,km$^2$, 2,051.79\,km$^2$ in
+total \citep{kanha2026}. The forests are dominated by sal
+(\emph{Shorea robusta}) and mixed deciduous stands, interspersed with
+grassland meadows \citep{kanha2026}. Most rain falls in the
+June--September monsoon, while January--February is cool, dry and
+relatively cloud-free; both observation windows therefore use those
+months.
+
+Processing used the rectangle
+$80.433^\circ$--$81.050^\circ$\,E,
+$22.117^\circ$--$22.450^\circ$\,N (2,350.7\,km$^2$ in Earth Engine). The
+rectangle is larger than the gazetted reserve, so some patches may lie
+in the buffer zone or just outside the official boundary. All 1,200
+candidate patch centres lie inside it. The candidate pool has an empty
+strip near $80.75^\circ$--$80.85^\circ$\,E, inherited from the earlier
+repository that created the pool; the reason was not recorded and is
+most likely a forest-cover filter.
+
+\subsection{Data Sources}
+
+\subsubsection{Optical and Synthetic Aperture Radar Data}
+
+Sentinel-2 Level-2A surface reflectance \citep{drusch2012} provides the
+optical bands at 10--20\,m. Clouds and shadows were masked with the
+Scene Classification Layer, and median composites were formed for
+1~January--28~February 2022 (T0; 20 scenes) and the same window in 2023
+(T1; 23 scenes). From each composite we computed NDVI, EVI
+\citep{huete2002}, NDMI \citep{gao1996} and NBR \citep{keybenson2006},
+and rendered a true-colour RGB chip for the VLMs.
+
+Sentinel-1 GRD C-band backscatter \citep{torres2012} was composited for
+the same windows from the dominant orbit direction (descending; 15
+scenes at T0 and 20 at T1). The VV and VH channels (in dB) respond to
+canopy structure and moisture and are unaffected by cloud. All exports
+and composites were produced in Google Earth Engine \citep{gorelick2017}.
+
+\subsubsection{Ancillary Environmental Data}
+
+CHIRPS daily rainfall \citep{funk2015} was summed over each 58-day
+window. ERA5-Land \citep{munozsabater2021} supplies 2\,m air temperature
+and top-layer (0--7\,cm) volumetric soil moisture, expressed as
+anomalies from a 2015--2021 climatology for the same months. NASADEM
+\citep{nasadem2020} provides elevation, slope and aspect at 30\,m. None
+of these layers enters the automatic label. They appear on the evidence
+card so that a justification can mention drought or terrain when the
+numbers support it.
+
+\subsection{Preprocessing and Patch Generation}
+
+Each patch is built by drawing a circle of 320\,m radius around a
+candidate centre (half of $64 \times 10$\,m), taking its bounding
+square, and clipping that square to the study rectangle, so patches on
+the edge are slightly smaller. Exported GeoTIFFs are typically
+$70 \times 65$ pixels in EPSG:4326 (pixel size $0.0000898^\circ$). Fifteen
+rasters are stored per patch, 5,490 files in total. After cloud masking,
+the masked fraction is 0.8--2.3\% per patch; candidates with a masked
+fraction above 0.15 in either year were labelled uncertain and never
+sampled. For the VLMs, the T0 and T1 RGB chips were resampled to
+$512 \times 512$ pixels.
+
+The nearest-neighbour distance between the 366 selected centres is at
+least 639\,m (adjacent, non-overlapping squares), with a median of
+1,430\,m. The data split is a random stratified draw rather than a
+spatial block split \citep{ploton2020}, so spatial autocorrelation
+between training and test patches remains a limitation.
+
+\subsection{Change Evidence and Labelling}
+
+Let $\Delta$ be the patch-mean NDVI change,
+$\mathrm{NDVI}_{T1} - \mathrm{NDVI}_{T0}$. Over the 1,200-candidate
+pool, the 15th and 85th percentiles of $\Delta$ are $q_{15} = -0.0377$
+and $q_{85} = +0.0031$. The automatic label is
+\begin{equation}
+\mathrm{class} =
+\begin{cases}
+\text{uncertain} & \text{mask} > 0.15 \text{ in T0 or T1},\\
+\text{decline} & \Delta \le q_{15},\\
+\text{increase} & \Delta \ge q_{85},\\
+\text{stable} & |\Delta| < 0.05,\\
+\text{uncertain} & \text{otherwise}.
+\end{cases}
+\end{equation}
+Because both percentiles lie within $\pm 0.05$, every unmasked patch
+between $q_{15}$ and $q_{85}$ is labelled stable, and the final
+``uncertain'' case does not occur for this pool. The region as a whole
+lost a little greenness (mean $\Delta = -0.016$, s.d.\ $0.027$), so
+``increase'' means the greenest 15\% of the pool rather than recovery in
+an absolute sense: increase patches have $\Delta$ between $-0.001$ and
+$+0.075$, and half of them changed by less than 0.011. ``Decline''
+means the 15\% with the largest drop ($\Delta$ of about $-0.034$ to
+$-0.071$). Only 34 of the 366 patches have $|\Delta| \ge 0.05$. The
+classes are therefore relative ranks for this reserve and pair of
+years.
+
+The first 300 patches (100 per class) were drawn from the candidate
+pool. A second batch added up to 25 patches per class, keeping new
+centres at least 960\,m (1.5 patch widths) from existing ones; only 22
+decline candidates passed this filter, giving 372 patches. Six patches
+with incomplete exports were removed, leaving 366: 120 decline, 124
+stable and 122 increase. The percentiles for the second batch were
+recomputed on the remaining pool, so the class ranges overlap slightly
+(decline patches reach $\Delta = -0.034$ and stable patches go down to
+$-0.036$).
+
+Each patch also has a structured evidence card listing index values and
+changes, radar means, climate anomalies, terrain and a one-line pipeline
+summary. That summary line includes the string
+\texttt{candidate\_class=}\ldots, which is the field used as the gold
+label. The card's qualitative trend words (for example
+\texttt{moderate\_decline}) were computed from the $512 \times 512$
+tensors with fixed thresholds, not from the percentile rule, and they
+disagree with the label on 108 of 366 patches. The card's NDVI values
+are on average 0.92 times the Earth Engine means. Bounding boxes from
+Otsu thresholding exist on only three patches, and all stored narrative
+explanations are template text, because no language-model explanation
+was generated when the dataset was built.
+
+A human reference class was assigned to 19 patches (13 training, 3
+development, 3 test). It agrees with the automatic label on 8 of 19
+(42\%; Wilson 95\% interval 23--64\%; \citealp{wilson1927}). An earlier
+36-patch pilot agreed on 17 of 36 (47\%). There was no second
+annotator. The automatic labels are therefore a reproducible ranking,
+not a validated disturbance map.
+
+\subsection{Dataset Construction and Data Splits}
+
+Each patch is stored as one JSONL record containing image paths,
+per-source statistics, the evidence card and the labels. The patches
+were split 256/55/55 into training, development and test sets by
+stratified sampling on the label (seed 42). The test set contains 18
+decline, 18 stable and 19 increase patches, so always predicting
+``increase'' gives a majority-class baseline of $19/55 = 34.5\%$. Every
+result in this paper uses this test set.
+
+\subsection{Vision--Language Model Evaluation}
+
+Four instruction-tuned open models were compared:
+Qwen2-VL-2B-Instruct \citep{wang2024qwen2vl},
+LLaVA-Interleave-0.5B \citep{li2024interleave},
+PaliGemma-3B-mix-224 \citep{beyer2024} and
+BLIP-2 OPT-2.7B \citep{li2023blip2,zhang2022opt}, all loaded from
+Hugging Face. Parameter counts are those of the released checkpoints.
+Decoding is greedy. A deterministic parser maps the output to a class:
+it reads a single-word answer directly and otherwise searches the text
+for the first class word or synonym (for example, ``decrease'' is read
+as decline). All 55 outputs were parsed for every model.
+
+\subsubsection{Zero-Shot Evaluation}
+
+The main classification setting, Condition~C, gives a model both RGB
+chips and the evidence card and asks for one word: \texttt{decline},
+\texttt{increase} or \texttt{stable}. The four models did not receive
+identical input (Table~\ref{tab:inputs}). Qwen2-VL-2B and
+LLaVA-Interleave-0.5B received both images and the full card, including
+the summary line with \texttt{candidate\_class}. PaliGemma refused to
+answer long analytical prompts, so it received both images, the card's
+NDVI line and a short instruction. BLIP-2 accepts a single image, so the
+two chips were placed side by side in one image with a short prompt and
+no evidence text. The zero-shot runs were carried out on a laptop.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+Model & Images & Text \\
+\midrule
+Qwen2-VL-2B & T0, T1 & full card \\
+LLaVA-Interleave-0.5B & T0, T1 & full card \\
+PaliGemma-3B & T0, T1 & NDVI line only \\
+BLIP-2 OPT-2.7B & stitched & none \\
+\bottomrule
+\end{tabular}
+\caption{Input per model in Condition~C. ``Full card'' includes the
+pipeline summary line containing \texttt{candidate\_class}.}
+\label{tab:inputs}
+\end{table}
+
+Three supporting analyses help interpret the results. First, an
+\texttt{evidence\_only} variant removes the summary line and any other
+line that names the label. This changes the input only for LLaVA,
+because the PaliGemma and BLIP-2 prompts never contained the line, and
+Qwen2-VL-2B was run in this mode on only three patches. Second, a
+closed-set probe scores LLaVA by the likelihood it assigns to each class
+word, with a stated decision rule and a class bias fitted on the
+development set. Third, two baselines that use no model apply a
+threshold to the $\Delta$NDVI value on the card: one with fixed cut-offs
+of $\pm 0.02$, and one with cut-offs fitted on the training set.
+
+\subsubsection{Parameter-Efficient Fine-Tuning}
+
+LoRA \citep{hu2022lora} was applied to Qwen2-VL-2B with rank 8,
+$\alpha = 16$ and dropout 0.1 on the attention and MLP projection
+layers, using AdamW \citep{loshchilov2019} with a learning rate of
+$5 \times 10^{-5}$, weight decay 0.05 and gradient accumulation over
+four steps. Training ran on a GTX 1080 Ti node of the institute's Ada
+cluster. Two separate runs are reported.
+
+\paragraph{Class LoRA.} The adapter was trained on 16 training patches
+for one epoch with the classification target and the full Condition~C
+card (final training loss 1.84), and tested on the full test set. This
+is a small-scale configuration, not a complete fine-tune of the 256
+training patches. Exploratory runs on all 256 training patches for two
+to three epochs reached 100\% development and test accuracy, because
+the model learned to copy \texttt{candidate\_class} from the summary
+line. These runs are excluded from the results.
+
+\paragraph{Explanation LoRA.} Qwen2-VL-2B itself acted as teacher: it
+generated a justification for each training patch, and a generation was
+kept only if its class matched the label, it contained at least two
+checkable claims, and all of those claims agreed with the measured
+changes. Of 256 training patches, 28 passed. A larger 7B teacher could
+not be used because its download exceeded the cluster's disk quota. The
+training run was capped at the first 128 training patches, so 16 of the
+28 filtered justifications were used. Both training and evaluation used
+the card without the label, the checkpoint was selected on the
+development set, and the test set was evaluated in explanation mode.
+
+\subsubsection{Evaluation Metrics}
+
+Classification is scored by accuracy with Wilson 95\% intervals
+\citep{wilson1927}, macro-F1, and comparison with the 34.5\%
+majority-class baseline; McNemar's test \citep{mcnemar1947} compares
+paired predictions.
+
+Explanations are scored automatically. The scorer searches the text for
+an indicator (NDVI, EVI, NBR, NDMI, rainfall, temperature, soil
+moisture, VV, VH) and pairs it with the nearest direction word
+(increase-type, decrease-type or stable-type). Each measured change is
+converted to a direction using an indicator-specific dead-band, below
+which a change counts as stable. A claim is \emph{correct} when its
+direction matches the measured direction. We report the mean number of
+checkable claims per explanation, the share of correct claims (pooled
+over patches), the share of explanations with at least one incorrect
+claim, and self-consistency (whether the dominant claimed direction
+agrees with the model's own class). ROUGE-L \citep{lin2004rouge} is
+computed but not used as a measure of faithfulness, because overlap with
+the supplied text rewards copying rather than reasoning
+\citep{jacovi2020}. The scorer measures consistency with the evidence,
+not faithfulness to the model's internal reasoning.
+
+\subsection{Experimental Workflow}
+
+\begin{enumerate}
+\item Export the multi-sensor stacks and RGB chips from Earth Engine.
+\item Assign automatic labels, build evidence cards and freeze the
+256/55/55 split.
+\item Run zero-shot Condition~C classification for the four models.
+\item Run the \texttt{evidence\_only}, closed-set and $\Delta$NDVI
+baseline analyses.
+\item Train and test the class LoRA (16 patches) on Qwen2-VL-2B.
+\item Generate explanations from label-free cards with a free-form
+prompt, then with a structured cite-only prompt, and score them.
+\item Filter teacher justifications and train and test the explanation
+LoRA.
+\end{enumerate}
+
+The development set was used only for prompt wording, the closed-set
+bias and the explanation LoRA checkpoint; no headline result was chosen
+by looking at the test set.
+
+% ============================================================
+% 3. RESULTS AND DISCUSSION
+% ============================================================
+
+\section{Results and Discussion}
+
+\subsection{Dataset Characteristics}
+
+Table~\ref{tab:data} summarises the benchmark. The optical index changes
+move together: $\Delta$NDVI correlates with $\Delta$NBR, $\Delta$NDMI
+and $\Delta$EVI at 0.80, 0.77 and 0.78. Mean window rainfall fell from
+69.1\,mm in 2022 to 25.1\,mm in 2023, the temperature anomaly rose from
+$-1.52^\circ$C to $+0.88^\circ$C, and the soil-moisture anomaly fell
+from $+0.024$ to $-0.043$. Mean VV and VH backscatter changed by $-0.47$
+and $-0.48$\,dB. On average, therefore, the second dry season was drier
+and slightly less green, which is why ``increase'' is a relative rank
+and why many increase patches have $\Delta$ close to zero.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lr}
+\toprule
+Quantity & Value \\
+\midrule
+Study rectangle & 2,350.7\,km$^2$ \\
+Candidate pool / final patches & 1,200 / 366 \\
+Decline / stable / increase & 120 / 124 / 122 \\
+Train / development / test & 256 / 55 / 55 \\
+Test decline / stable / increase & 18 / 18 / 19 \\
+Majority baseline (test) & 34.5\% \\
+Human agreement & 8/19 (42\%) \\
+Mean $\Delta$NDVI (s.d.) & $-0.016$ (0.027) \\
+Patches with $|\Delta\mathrm{NDVI}| \ge 0.05$ & 34 \\
+Card trend words disagree with label & 108 \\
+\bottomrule
+\end{tabular}
+\caption{EcoExplain-VLM dataset summary. Labels are NDVI-change ranks
+within this region and pair of years.}
+\label{tab:data}
+\end{table}
+
+\subsection{Zero-Shot Model Performance}
+
+Table~\ref{tab:zeroshot} reports zero-shot accuracy on the test set.
+Qwen2-VL-2B is the only model above the majority baseline, at 56.4\%
+(31/55; 95\% interval 43.3--68.6\%). Even this margin is not
+statistically secure at $n = 55$: McNemar's test against always
+predicting ``increase'' gives $p = 0.12$. The other three models do not
+separate the classes. LLaVA-Interleave-0.5B answered ``decrease'' for
+all 55 patches, PaliGemma answered ``decline'' for 42 of 55, and BLIP-2
+repeated its own prompt, from which the parser read the first class word
+(``decline''). BLIP-2's 32.7\% is therefore a parsing artefact rather
+than a prediction.
+
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{llrcr}
+\toprule
+Model or baseline & Input & Acc. & 95\% CI & Macro-F1 \\
+\midrule
+Qwen2-VL-2B & images + full card & \textbf{56.4\%} & 43.3--68.6 & 0.466 \\
+PaliGemma-3B & images + NDVI line & 36.4\% & 24.9--49.6 & 0.271 \\
+LLaVA-Interleave-0.5B & images + full card & 32.7\% & 21.8--45.9 & 0.164 \\
+BLIP-2 OPT-2.7B & stitched image only & 32.7\% & 21.8--45.9 & 0.164 \\
+\midrule
+LLaVA-Interleave-0.5B, \texttt{evidence\_only} & images + card without label line & 36.4\% & 24.9--49.6 & 0.251 \\
+LLaVA-Interleave-0.5B, closed-set probe & class-word likelihood, dev-fitted bias & 60.0\% & 46.8--71.9 & 0.479 \\
+\midrule
+Majority class (always ``increase'') & --- & 34.5\% & 23.4--47.7 & 0.171 \\
+$\Delta$NDVI rule, $\pm 0.02$ cut-offs & card $\Delta$NDVI & 63.6\% & 50.4--75.1 & 0.606 \\
+$\Delta$NDVI rule, cut-offs fitted on train & card $\Delta$NDVI & 94.5\% & 85.1--98.1 & 0.945 \\
+\bottomrule
+\end{tabular}
+\caption{Classification on the test set ($n = 55$). The top block is
+generative zero-shot Condition~C. The middle block contains supporting
+runs that are not zero-shot generative results. The bottom block uses no
+model.}
+\label{tab:zeroshot}
+\end{table*}
+
+Two observations follow. First, the result is not explained by model
+size alone: Qwen2-VL-2B and LLaVA-Interleave-0.5B received the same
+input, and only the larger of the two used it. Model size cannot be
+compared with PaliGemma or BLIP-2 because their inputs were shorter.
+Second, the full-card condition is not a pure test of visual or spectral
+understanding. Qwen2-VL-2B may be reading the summary line, the index
+values, the images or a mixture of these, and it has not yet been tested
+on the full test set without the summary line. For LLaVA, removing the
+line made almost no difference (32.7\% to 36.4\%), because it did not
+use the card in either condition.
+
+The baselines show that the card contains enough information to solve
+the task: a single threshold on its $\Delta$NDVI value reaches 94.5\%
+with cut-offs fitted on the training set. This is expected, since the
+labels are defined from NDVI change, and it sets a clear target that
+none of the VLMs approaches. The closed-set probe lifts LLaVA to 60.0\%,
+which suggests that constraining the output helps a small model even
+when free generation fails, although the probe never predicts
+``stable''.
+
+\subsection{Effect of Fine-Tuning}
+
+The class LoRA raises Qwen2-VL-2B from 56.4\% to \textbf{67.3\%} (37/55;
+95\% interval 54.1--78.2\%; Table~\ref{tab:lora}). The intervals of the
+two runs overlap, so with 16 training patches and $n = 55$ test patches
+this is an indicative gain rather than a powered comparison. The
+fine-tuned model was correct on all 18 decline and all 19 increase test
+patches, but it labelled every stable patch as decline. The adapter
+therefore learned two of the three classes and lost the third.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lcc}
+\toprule
+Qwen2-VL-2B run & Train & Test acc. \\
+\midrule
+Zero-shot (full card) & 0 & 56.4\% \\
+Class LoRA, 1 epoch (full card) & 16 & 67.3\% \\
+\midrule
+\multicolumn{3}{l}{\emph{Excluded or exploratory}} \\
+Full card, 2--3 epochs & 256 & 100\% \\
+Trained with card, tested on images only & 128 & 32.7\% \\
+\bottomrule
+\end{tabular}
+\caption{Class LoRA results for Qwen2-VL-2B. The 100\% runs copied the
+label from the summary line and are not counted as results.}
+\label{tab:lora}
+\end{table}
+
+Two exploratory runs support this reading of the summary line. Adapters
+trained on all 256 patches with the full card reached 100\% because
+they could read the answer from the card. An adapter trained with the
+card on 128 patches and then tested on images alone scored 32.7\%,
+below the majority baseline. Neither run is a valid estimate of
+performance, and the second mixes training and test conditions, but
+together they suggest that the fine-tuned model relies on the card text
+rather than on the images. The explanation LoRA is a
+different task and is discussed in Section~\ref{sec:expl}.
+
+\subsection{Error Analysis}
+
+Zero-shot Qwen2-VL-2B was correct on all 18 decline patches and on 13 of
+18 stable patches, but it answered ``stable'' for all 19 increase
+patches. For about half of the increase class the card's trend words
+say ``stable'', and the model followed those words rather than the
+summary line. Errors therefore concentrate where the label is a weak
+rank: increase patches with $\Delta$ near zero are reasonably called
+stable, and decline and stable patches overlap slightly after the
+second-batch percentile shift.
+
+The 108 cards whose trend words disagree with the label build a
+contradiction into the input: a model that reads the descriptive text
+faithfully can still miss the gold label. Together with the low human
+agreement (8 of 19), this means that some ``errors'' are likely to be
+label noise rather than model failure. The test set was not relabelled
+after seeing model outputs.
+
+The failures of the other models are mostly failures to follow the task.
+LLaVA always produced the same answer, PaliGemma refused long prompts
+and largely answered with one class, and BLIP-2 echoed its instruction.
+The parser accepted the echo because it searched the whole output for a
+class word; a stricter parser should read only newly generated text and
+reject copied instructions.
+
+\subsection{Explanation Quality}
+\label{sec:expl}
+
+All explanation runs used the card without the label line.
+Table~\ref{tab:explain} summarises them. With the first, free-form
+prompt, which asked the model to describe and justify the change in its
+own words, PaliGemma answered with a class or ``unanswerable'' and no
+reason, and BLIP-2 repeated the prompt, so neither produced a checkable
+claim. LLaVA wrote fluent but repetitive text in which 56.7\% of the
+checkable claims were correct. Qwen2-VL-2B was run on only three
+patches in this mode, and one of its claims misstated the rainfall
+change. Free-form output from these models is not usable as an audit
+trail.
+
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Setting and model & Class acc. & Claims / expl. & Correct claims & $\ge 1$ wrong & Self-consistent \\
+\midrule
+Free-form, LLaVA-Interleave-0.5B & 29.1\% & 1.09 & 56.7\% & --- & --- \\
+Free-form, PaliGemma-3B & 33.3\%$^{a}$ & 0 & --- & --- & --- \\
+Free-form, BLIP-2 OPT-2.7B & 32.7\%$^{b}$ & 0 & --- & --- & --- \\
+\midrule
+Structured, Qwen2-VL-2B & 63.6\% & 2.85 & \textbf{75.8\%} & 36.4\% & 100\% \\
+Structured, LLaVA-Interleave-0.5B & 45.1\%$^{c}$ & 2.33 & \textbf{71.1\%} & 34.5\% & 90.7\% \\
+\midrule
+Explanation LoRA, Qwen2-VL-2B & 61.8\% & 6.84 & 50.5\% & 74.5\% & 96.4\% \\
+\bottomrule
+\end{tabular}
+\caption{Explanation results on the test set, label removed from the
+card. $^{a}$12 of 36 answered patches. $^{b}$Prompt echo; every answer
+parsed as ``stable''. $^{c}$23 of 51 answered patches. The free-form
+Qwen2-VL-2B run (3 patches, 43.8\% correct claims) is omitted.}
+\label{tab:explain}
+\end{table*}
+
+The structured prompt gives the model a numbered list of allowed facts
+that must be copied verbatim as supporting evidence, a line stating an
+NDVI decision rule for the patch ($\pm 0.02$), and a request for a
+one-sentence justification about NDVI only. Under this prompt, claim
+correctness rises to 75.8\% for Qwen2-VL-2B and 71.1\% for
+LLaVA-Interleave-0.5B. Most of the remaining incorrect claims are not
+invented facts: 35 of Qwen's 38 and 35 of LLaVA's 37 flagged claims
+describe a copied change smaller than the scorer's dead-band (for
+example, an EVI change of $-0.006$ described as a decrease). High claim
+correctness here means that the model did not invent numbers; it does
+not mean that the model reasoned about the change
+\citep{jacovi2020,turpin2023}. Qwen2-VL-2B's class matched the stated
+rule on 53 of 55 patches, and the rule alone scores 63.6\%, exactly
+Qwen's accuracy in this mode. This is instruction-following, not a new
+classification ability.
+
+The explanation LoRA reached 61.8\% class accuracy (34/55; 95\% interval
+48.6--73.5\%) and produced more claims per explanation (6.84), but only
+50.5\% of them were correct and 74.5\% of explanations contained at
+least one incorrect claim. This is worse than structured zero-shot
+prompting. The bottleneck is the teacher: only 28 of 256 of its own
+generations passed the filter, and only 16 were used. With this
+evidence, self-distillation of a 2B model does not teach faithful
+explanation; the adapter mainly learned the output format.
+
+\subsection{Comparison with Existing Approaches}
+
+Pixel- and segment-based change detectors
+\citep{hansen2013,kennedy2010,zhu2014,daudt2018} optimise map accuracy
+rather than a three-class patch rank with a sentence, and they remain
+the right tool for a wall-to-wall disturbance map. Remote-sensing
+question answering \citep{lobry2020} and change captioning
+\citep{liu2022levircc} pair imagery with language, but they work on
+single-sensor optical imagery and do not check generated text against
+measured values. EcoExplain-VLM asks a different question: whether a
+general VLM can use the same multi-sensor evidence that a human analyst
+would see, and whether its explanation agrees with that evidence.
+
+Remote-sensing VLMs such as GeoChat \citep{kuckreja2024} are trained on
+overhead imagery and spatial referring expressions and are a natural
+next baseline. They were not evaluated here because the available
+compute limited the study to general checkpoints of 0.5--3 billion
+parameters. CLIP-style encoders \citep{radford2021} could score the
+image pair without generating text, but they would not produce the
+justification that the benchmark is designed to test.
+
+The most informative comparison this dataset supports is with simple
+baselines. Against the majority class, only Qwen2-VL-2B with the full
+card shows a clear margin. Against a single $\Delta$NDVI threshold, none
+of the models comes close.
+
+% ============================================================
+% 4. LIMITATIONS AND FUTURE DIRECTIONS
+% ============================================================
+
+\section{Limitations and Future Directions}
+
+\textbf{Labels.} The classes are percentile ranks of one-year
+dry-season NDVI change, not validated disturbance, degradation or
+recovery, and the absolute changes are small. Human agreement on 19
+patches is 42\%, with a single annotator. An expert audit with a second
+annotator is needed before any management use.
+
+\textbf{Label in the input.} The Condition~C card contains
+\texttt{candidate\_class}, and both headline Qwen2-VL-2B results (56.4\%
+and 67.3\%) use it. Future evaluations should use the
+\texttt{evidence\_only} card by default, which the code now supports.
+
+\textbf{Unequal inputs.} PaliGemma and BLIP-2 received shorter input
+than Qwen2-VL-2B and LLaVA, so the four models are not compared under
+identical conditions.
+
+\textbf{Sample size and split.} With $n = 55$, 95\% intervals are about
+$\pm 13$ percentage points wide. The random stratified split does not
+prevent spatial leakage \citep{ploton2020}; a spatial block split should
+be added as a second test set.
+
+\textbf{Models.} The results cover four small open VLMs and say nothing
+about larger proprietary or remote-sensing-pretrained models.
+
+\textbf{Explanation scoring.} Automatic claim matching can miss
+paraphrases, can pair a direction word with the wrong indicator, and can
+mark a true but small change as incorrect because of the dead-band. The
+reported claim correctness is not a human judgement of faithfulness.
+
+\textbf{Geography.} One reserve, one pair of years and one season were
+studied. Transfer to other parks, wet-season composites or fire years is
+unknown.
+
+Five extensions would change the scientific picture rather than add
+rows to a leaderboard: (i)~make label-free evaluation the only primary
+table, including Qwen2-VL-2B on all 55 test patches; (ii)~add a spatial
+block test; (iii)~collect expert labels for all 366 patches or a
+sufficiently large subsample; (iv)~fine-tune on all 256 training
+patches without the label line, with early stopping on the development
+set; and (v)~evaluate a larger or remote-sensing-pretrained VLM, and a
+stronger teacher for explanation distillation, on the same cards.
+
+% ============================================================
+% 5. CONCLUSIONS
+% ============================================================
+
+\section{Conclusions}
+
+EcoExplain-VLM packages 366 Kanha patches, matched 2022/2023 dry-season
+Sentinel-2 and Sentinel-1 data, climate and terrain context, and a
+three-class NDVI-change label into a reproducible VLM benchmark. On the
+55-patch test set, Qwen2-VL-2B reaches 56.4\% zero-shot accuracy with
+the full evidence card, and a 16-patch class LoRA raises this to
+67.3\%; both figures depend on a card that contains the candidate label.
+LLaVA-Interleave-0.5B, PaliGemma-3B and BLIP-2 OPT-2.7B stay at
+32.7--36.4\%, the level of always guessing one class, while a single
+$\Delta$NDVI threshold reaches 94.5\%. For explanations, free-form
+prompts give unusable output, and a structured cite-only prompt makes
+explanations consistent with the evidence (75.8\% and 71.1\% correct
+claims) at the cost of restating the supplied facts. An explanation LoRA
+trained on 16 self-generated justifications gives 61.8\% class accuracy
+and 50.5\% correct claims and is a pilot rather than an improvement.
+
+Small open VLMs, as evaluated here, are not a substitute for spectral
+change detection in Kanha. Under a constrained prompt they can repeat
+the facts they are given. The value of the benchmark is that it makes
+this limitation measurable and gives larger or domain-adapted models a
+fixed, label-free test against which to show real progress.
+
+% ============================================================
+% ACKNOWLEDGEMENTS
+% ============================================================
+
+\section*{Acknowledgements}
+
+The authors thank the Lab for Spatial Informatics, International
+Institute of Information Technology Hyderabad, and the institute's Ada
+computing cluster, which was used for LoRA training. Sentinel-1 and
+Sentinel-2 data are provided by the European Space Agency through the
+Copernicus programme; CHIRPS, ERA5-Land and NASADEM are used under their
+respective open licences. Kanha Tiger Reserve is administered by the
+Madhya Pradesh Forest Department and the National Tiger Conservation
+Authority. This study uses satellite and reanalysis data only and is not
+an official assessment of the reserve.
+
+% ============================================================
+% REFERENCES
+% ============================================================
+
+\bibliography{references}
+
+% ============================================================
+% APPENDIX
+% ============================================================
+
+\clearpage
+\appendix
+
+\section{Additional Experimental Details}
+
+\subsection{Fine-Tuning Configuration}
+
+Table~\ref{tab:ftconfig} lists the settings shared by the class and
+explanation LoRA runs. Both used Qwen/Qwen2-VL-2B-Instruct with the
+Hugging Face \texttt{transformers} and \texttt{peft} libraries, and both
+trained for one epoch on 16 examples. For the class LoRA, the 16
+patches were the configured training size. For the explanation LoRA,
+the 16 were the filtered justifications that fell within the first 128
+training patches.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{ll}
+\toprule
+Setting & Value \\
+\midrule
+Base model & Qwen2-VL-2B-Instruct \\
+LoRA rank / $\alpha$ / dropout & 8 / 16 / 0.1 \\
+Target modules & q, k, v, o, gate, up, down \\
+Optimiser & AdamW \\
+Learning rate / weight decay & $5\times10^{-5}$ / 0.05 \\
+Gradient accumulation & 4 steps \\
+Epochs / training examples & 1 / 16 \\
+Hardware & GTX 1080 Ti (Ada cluster) \\
+\bottomrule
+\end{tabular}
+\caption{LoRA configuration.}
+\label{tab:ftconfig}
+\end{table}
+
+\subsection{Prompt and Output Parsing}
+
+\paragraph{Classification.} Qwen2-VL-2B and LLaVA-Interleave-0.5B
+received the two images, the full evidence card and the instruction
+``Reply with exactly one word after the images: decline or increase or
+stable. Do not copy the evidence text.'' PaliGemma received the two
+images, the card's NDVI line and ``Two forest RGB chips: first image T0,
+second T1. Vegetation change class --- answer with exactly one word:
+stable, decline, or increase.'' BLIP-2 received the stitched image and
+``Side by side: left forest patch T0, right forest patch T1. One word
+only --- decline, increase, or stable:''. The \texttt{evidence\_only}
+variant removes every card line that names \texttt{candidate\_class}.
+
+\paragraph{Explanations.} The free-form prompt tells the model that
+image 1 shows the patch in January--February 2022 and image 2 in
+January--February 2023, asks it to describe the visible change in one
+sentence, decide whether vegetation is stable, declined or increased,
+and justify the decision. Qwen2-VL-2B and LLaVA answer in JSON;
+PaliGemma and BLIP-2 receive a one-sentence version of the request. The structured prompt adds a
+numbered list of allowed facts to be copied verbatim, a line stating
+the $\pm 0.02$ NDVI rule for the patch, and a one-sentence justification
+limited to NDVI. An automatic check confirms that no explanation prompt
+contains \texttt{candidate\_class}.
+
+\paragraph{Parsing.} The parser lowercases the output, accepts a
+single-word answer directly, and otherwise searches for the first class
+word or synonym. It does not exclude text copied from the prompt, which
+explains BLIP-2's echo artefact.
+
+\paragraph{Teacher filtering.} For the explanation LoRA, a generation
+was kept only if its parsed class equalled the label, it contained at
+least two checkable claims, and every claim agreed with the measured
+change. This filter kept 28 of 256 training patches.
+
+\subsection{Additional Results}
+
+With $n = 55$, intervals are wide: 31/55 (56.4\%) corresponds to
+43.3--68.6\% and 37/55 (67.3\%) to 54.1--78.2\%. Per-class counts
+(about 18 patches per class) are too small to support a detailed error
+taxonomy. The closed-set LLaVA probe (60.0\%) relies on a
+development-fitted bias and is reported as a probe, not as a zero-shot
+result; the same probe left PaliGemma and BLIP-2 at 32.7\%, predicting
+``stable'' for every patch. In the \texttt{evidence\_only} runs, LLaVA
+answered ``decline'' for 51 patches and ``increase'' for 4.
+
+\end{document}

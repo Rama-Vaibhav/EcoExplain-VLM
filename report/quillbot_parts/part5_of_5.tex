@@ -1,0 +1,180 @@
+Pixel and segment-based change detectors optimize map accuracy
+rather than a three-class patch rank with a sentence, and they remain
+the right tool for a wall-to-wall disturbance map. Remote-sensing
+question answering  and change captioning
+ pair imagery with language, but they work on
+single-sensor optical imagery and do not check generated text against
+measured values. EcoExplain-VLM asks a different question: whether a
+general VLM can use the same multi-sensor evidence that a human analyst
+would see, and whether its explanation agrees with that evidence.
+
+Remote-sensing VLMs such as GeoChat are trained on
+overhead imagery and spatial referring expressions and are a natural
+next baseline. They were not evaluated here because the available
+compute limited the study to general checkpoints of 0.5--3 billion
+parameters. CLIP-style encoders could score the
+image pair without generating text, but they would not produce the
+justification that the benchmark is designed to test.
+
+The most informative comparison this dataset supports is with simple
+baselines. Against the majority class, only Qwen2-VL-2B with the full
+card shows a clear margin. Against a single $\Delta$NDVI threshold, none
+of the models comes close.
+
+% ============================================================
+% 4. CONCLUSIONS
+% ============================================================
+
+\section{Conclusions}
+
+EcoExplain-VLM packages 366 Kanha patches, matched 2022/2023 dry-season
+Sentinel-2 and Sentinel-1 data, climate and terrain context, and a
+three-class NDVI-change label into a reproducible VLM benchmark. On the
+55-patch test set, Qwen2-VL-2B reaches 56.4\% zero-shot accuracy with
+the full evidence card, and a 16-patch class LoRA raises this to
+67.3\%; both figures depend on a card that contains the candidate label.
+LLaVA-Interleave-0.5B, PaliGemma-3B and BLIP-2 OPT-2.7B stay at
+32.7--36.4\%, the level of always guessing one class, while a single
+$\Delta$NDVI threshold reaches 94.5\%. For explanations, free-form
+prompts give unusable output, and a structured cite-only prompt makes
+explanations consistent with the evidence (75.8\% and 71.1\% correct
+claims) at the cost of restating the supplied facts. An explanation LoRA
+trained on 16 self-generated justifications gives 61.8\% class accuracy
+and 50.5\% correct claims and is a pilot rather than an improvement.
+
+Small open VLMs, as evaluated here, are not a substitute for spectral
+change detection in Kanha. Under a constrained prompt they can repeat
+the facts they are given. The value of the benchmark is that it makes
+this limitation measurable and gives larger or domain-adapted models a
+fixed, label-free test against which to show real progress.
+
+% ============================================================
+% LIMITATIONS (required by ACL; unnumbered, after the conclusion)
+% ============================================================
+
+\section*{Limitations}
+
+\paragraph{Labels.} The classes are percentile ranks of one-year
+dry-season NDVI change, not validated disturbance, degradation or
+recovery, and the absolute changes are small. Human agreement on 19
+patches is 42\%, with a single annotator. An expert audit with a second
+annotator is needed before any management use.
+
+\paragraph{Label in the input.} The Condition~C card contains
+\texttt{candidate\_class}, and both headline Qwen2-VL-2B results (56.4\%
+and 67.3\%) use it. Future evaluations should use the
+\texttt{evidence\_only} card by default, which the code now supports.
+
+
+\paragraph{Sample size and split.} With $n = 55$, 95\% intervals are about
+$\pm 13$ percentage points wide. The random stratified split does not
+prevent spatial leakage ; a spatial block split should
+be added as a second test set.
+
+\paragraph{Models.} The results cover four small open VLMs and say nothing
+about larger proprietary or remote-sensing-pretrained models.
+
+\paragraph{Explanation scoring.} Automatic claim matching can miss
+paraphrases, can pair a direction word with the wrong indicator, and can
+mark a true but small change as incorrect because of the dead-band. The
+reported claim correctness is not a human judgement of faithfulness.
+
+
+
+\paragraph{Future directions.} Five extensions would change the scientific picture rather than add
+rows to a leaderboard: (i)~make label-free evaluation the only primary
+table, including Qwen2-VL-2B on all 55 test patches; (ii)~add a spatial
+block test; (iii)~collect expert labels for all 366 patches or a
+sufficiently large subsample; (iv)~fine-tune on all 256 training
+patches without the label line, with early stopping on the development
+set; and (v)~evaluate a larger or remote-sensing-pretrained VLM, and a
+stronger teacher for explanation distillation, on the same cards.
+
+
+
+% ============================================================
+
+% ============================================================
+% APPENDIX
+% ============================================================
+
+\clearpage
+\appendix
+
+\section{Additional Experimental Details}
+
+\subsection{Fine-Tuning Configuration}
+
+Table~\ref{tab:ftconfig} lists the settings shared by the class and
+explanation LoRA runs. Both used Qwen/Qwen2-VL-2B-Instruct with the
+Hugging Face \texttt{transformers} and \texttt{peft} libraries, and both
+trained for one epoch on 16 examples. For the class LoRA, the 16
+patches were the configured training size. For the explanation LoRA,
+the 16 were the filtered justifications that fell within the first 128
+training patches.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+Setting & Value \\
+\midrule
+Base model & Qwen2-VL-2B-Instruct \\
+Rank / $\alpha$ / dropout & 8 / 16 / 0.1 \\
+Target modules & q, k, v, o, gate, up, down \\
+Optimiser & AdamW \\
+LR / weight decay & $5\times10^{-5}$ / 0.05 \\
+Gradient accumulation & 4 steps \\
+Epochs / examples & 1 / 16 \\
+Hardware & GTX 1080 Ti (Ada cluster) \\
+\bottomrule
+\end{tabular}
+\caption{LoRA configuration.}
+\label{tab:ftconfig}
+\end{table}
+
+\subsection{Prompt and Output Parsing}
+
+\paragraph{Classification.} Qwen2-VL-2B and LLaVA-Interleave-0.5B
+received the two images, the full evidence card and the instruction
+``Reply with exactly one word after the images: decline or increase or
+stable. Do not copy the evidence text.'' PaliGemma received the two
+images, the card's NDVI line and ``Two forest RGB chips: first image T0,
+second T1. Vegetation change class --- answer with exactly one word:
+stable, decline, or increase.'' BLIP-2 received the stitched image and
+``Side by side: left forest patch T0, right forest patch T1. One word
+only --- decline, increase, or stable:''. The \texttt{evidence\_only}
+variant removes every card line that names \texttt{candidate\_class}.
+
+\paragraph{Explanations.} The free-form prompt tells the model that
+image 1 shows the patch in January--February 2022 and image 2 in
+January--February 2023, asks it to describe the visible change in one
+sentence, decide whether vegetation is stable, declined or increased,
+and justify the decision. Qwen2-VL-2B and LLaVA answer in JSON;
+PaliGemma and BLIP-2 receive a one-sentence version of the request.
+The structured prompt adds a numbered list of allowed facts to be copied verbatim, a line stating
+the $\pm 0.02$ NDVI rule for the patch, and a one-sentence justification
+limited to NDVI. An automatic check confirms that no explanation prompt
+contains \texttt{candidate\_class}.
+
+\paragraph{Parsing.} The parser lowercases the output, accepts a
+single-word answer directly, and otherwise searches for the first class
+word or synonym. It does not exclude text copied from the prompt, which
+explains BLIP-2's echo artefact.
+
+\paragraph{Teacher filtering.} For the explanation LoRA, a generation
+was kept only if its parsed class equalled the label, it contained at
+least two checkable claims, and every claim agreed with the measured
+change. This filter kept 28 of 256 training patches.
+
+\subsection{Additional Results}
+
+With $n = 55$, intervals are wide: 31/55 (56.4\%) corresponds to
+43.3--68.6\% and 37/55 (67.3\%) to 54.1--78.2\%. Per-class counts
+(about 18 patches per class) are too small to support a detailed error
+taxonomy. The closed-set LLaVA probe (60.0\%) relies on a
+development-fitted bias and is reported as a probe, not as a zero-shot
+result; the same probe left PaliGemma and BLIP-2 at 32.7\%, predicting
+``stable'' for every patch. In the \texttt{evidence\_only} runs, LLaVA
+answered ``decline'' for 51 patches and ``increase'' for 4.

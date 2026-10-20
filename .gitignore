@@ -31,3 +31,20 @@ slides/*.nav
 slides/*.out
 slides/*.snm
 slides/*.toc
+
+# LaTeX build junk (report/, study_guide_v3/, old report at the root)
+*.aux
+*.lof
+*.lot
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+ecoexplain_vlm_report.log
+ecoexplain_vlm_report.out
+report/**/*.log
+report/**/*.out
+study_guide_v3/**/*.log
+
+# Archive that duplicates scripts/
+scripts.zip

@@ -1,0 +1,149 @@
+Two observations follow. First, the result is not explained by model
+size alone: Qwen2-VL-2B and LLaVA-Interleave-0.5B received the same
+input, and only the larger of the two used it. Model size cannot be
+compared with PaliGemma or BLIP-2 because their inputs were shorter.
+Second, the full-card condition is not a pure test of visual or spectral
+understanding. Qwen2-VL-2B may be reading the summary line, the index
+values, the images or a mixture of these, and it has not yet been tested
+on the full test set without the summary line. For LLaVA, removing the
+line made almost no difference (32.7\% to 36.4\%), because it did not
+use the card in either condition.
+
+The baselines show that the card contains enough information to solve
+the task: a single threshold on its $\Delta$NDVI value reaches 94.5\%
+with cut-offs fitted on the training set. This is expected, since the
+labels are defined from NDVI change, and it sets a clear target that
+none of the VLMs approaches. The closed-set probe lifts LLaVA to 60.0\%,
+which suggests that constraining the output helps a small model even
+when free generation fails, although the probe never predicts
+``stable''.
+
+\subsection{Effect of Fine-Tuning}
+
+The class LoRA raises Qwen2-VL-2B from 56.4\% to \textbf{67.3\%} (37/55;
+95\% interval 54.1--78.2\%; Table~\ref{tab:lora}). The intervals of the
+two runs overlap, so with 16 training patches and $n = 55$ test patches
+this is an indicative gain rather than a powered comparison. The
+fine-tuned model was correct on all 18 decline and all 19 increase test
+patches, but it labelled every stable patch as decline. The adapter
+therefore learned two of the three classes and lost the third.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Qwen2-VL-2B run & Train & Test acc. \\
+\midrule
+Zero-shot (full card) & 0 & 56.4\% \\
+Class LoRA, 1 epoch (full card) & 16 & 67.3\% \\
+\midrule
+\multicolumn{3}{l}{\emph{Excluded or exploratory}} \\
+Full card, 2--3 epochs & 256 & 100\% \\
+Card in training, images-only test & 128 & 32.7\% \\
+\bottomrule
+\end{tabular}
+\caption{Class LoRA results for Qwen2-VL-2B. The 100\% runs copied the
+label from the summary line and are not counted as results.}
+\label{tab:lora}
+\end{table}
+
+Two exploratory runs support this reading of the summary line. Adapters
+trained on all 256 patches with the full card reached 100\% because
+they could read the answer from the card. An adapter trained with the
+card on 128 patches and then tested on images alone scored 32.7\%,
+below the majority baseline. Neither run is a valid estimate of
+performance, and the second mixes training and test conditions, but
+together they suggest that the fine-tuned model relies on the card text
+rather than on the images. The explanation LoRA is a
+different task and is discussed in Section~\ref{sec:expl}.
+
+\subsection{Error Analysis}
+
+Zero-shot Qwen2-VL-2B was correct on all 18 decline patches and on 13 of
+18 stable patches, but it answered ``stable'' for all 19 increase
+patches. For about half of the increase class the card's trend words
+say ``stable'', and the model followed those words rather than the
+summary line. Errors therefore concentrate where the label is a weak
+rank: increase patches with $\Delta$ near zero are reasonably called
+stable, and decline and stable patches overlap slightly after the
+second-batch percentile shift.
+
+The 108 cards whose trend words disagree with the label build a
+contradiction into the input: a model that reads the descriptive text
+faithfully can still miss the gold label. Together with the low human
+agreement (8 of 19), this means that some ``errors'' are likely to be
+label noise rather than model failure. The test set was not relabelled
+after seeing model outputs.
+
+The failures of the other models are mostly failures to follow the task.
+LLaVA always produced the same answer, PaliGemma refused long prompts
+and largely answered with one class, and BLIP-2 echoed its instruction.
+The parser accepted the echo because it searched the whole output for a
+class word; a stricter parser should read only newly generated text and
+reject copied instructions.
+
+\subsection{Explanation Quality}
+\label{sec:expl}
+
+All explanation runs used the card without the label line.
+Table~\ref{tab:explain} summarises them. With the first, free-form
+prompt, which asked the model to describe and justify the change in its
+own words, PaliGemma answered with a class or ``unanswerable'' and no
+reason, and BLIP-2 repeated the prompt, so neither produced a checkable
+claim. LLaVA wrote fluent but repetitive text in which 56.7\% of the
+checkable claims were correct. Qwen2-VL-2B was run on only three
+patches in this mode, and one of its claims misstated the rainfall
+change. Free-form output from these models is not usable as an audit
+trail.
+
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Setting and model & Class acc. & Claims / expl. & Correct claims & $\ge 1$ wrong & Self-consistent \\
+\midrule
+Free-form, LLaVA-Interleave-0.5B & 29.1\% & 1.09 & 56.7\% & --- & --- \\
+Free-form, PaliGemma-3B & 33.3\%$^{a}$ & 0 & --- & --- & --- \\
+Free-form, BLIP-2 OPT-2.7B & 32.7\%$^{b}$ & 0 & --- & --- & --- \\
+\midrule
+Structured, Qwen2-VL-2B & 63.6\% & 2.85 & \textbf{75.8\%} & 36.4\% & 100\% \\
+Structured, LLaVA-Interleave-0.5B & 45.1\%$^{c}$ & 2.33 & \textbf{71.1\%} & 34.5\% & 90.7\% \\
+\midrule
+Explanation LoRA, Qwen2-VL-2B & 61.8\% & 6.84 & 50.5\% & 74.5\% & 96.4\% \\
+\bottomrule
+\end{tabular}
+\caption{Explanation results on the test set, label removed from the
+card. $^{a}$12 of 36 answered patches. $^{b}$Prompt echo; every answer
+parsed as ``stable''. $^{c}$23 of 51 answered patches. The free-form
+Qwen2-VL-2B run (3 patches, 43.8\% correct claims) is omitted.}
+\label{tab:explain}
+\end{table*}
+
+The structured prompt gives the model a numbered list of allowed facts
+that must be copied verbatim as supporting evidence, a line stating an
+NDVI decision rule for the patch ($\pm 0.02$), and a request for a
+one-sentence justification about NDVI only. Under this prompt, claim
+correctness rises to 75.8\% for Qwen2-VL-2B and 71.1\% for
+LLaVA-Interleave-0.5B. Most of the remaining incorrect claims are not
+invented facts: 35 of Qwen's 38 and 35 of LLaVA's 37 flagged claims
+describe a copied change smaller than the scorer's dead-band (for
+example, an EVI change of $-0.006$ described as a decrease). High claim
+correctness here means that the model did not invent numbers; it does
+not mean that the model reasoned about the change
+. Qwen2-VL-2B's class matched the stated
+rule on 53 of 55 patches, and the rule alone scores 63.6\%, exactly
+Qwen's accuracy in this mode. This is instruction-following, not a new
+classification ability.
+
+The explanation LoRA reached 61.8\% class accuracy (34/55; 95\% interval
+48.6--73.5\%) and produced more claims per explanation (6.84), but only
+50.5\% of them were correct and 74.5\% of explanations contained at
+least one incorrect claim. This is worse than structured zero-shot
+prompting. The bottleneck is the teacher: only 28 of 256 of its own
+generations passed the filter, and only 16 were used. With this
+evidence, self-distillation of a 2B model does not teach faithful
+explanation; the adapter mainly learned the output format.
+
+\subsection{Comparison with Existing Approaches}

@@ -1,0 +1,13 @@
+==========================================
+SLURM_JOB_ID = 2722478
+SLURM_NODELIST = gnode035
+SLURM_JOB_GPUS = 2
+==========================================
+Python 3.10.15
+=== EcoExplain 09 | job 2722478 | Tue Sep 29 05:11:28 UTC 2026 ===
+host=gnode035 pwd=/home2/cprv67ab97/EcoExplain-VLM
+python=/home2/cprv67ab97/venvs/ecoexplain/bin/python Python 3.10.15
+cuda True
+NVIDIA GeForce GTX 1080 Ti
+jpg_count=762 (expect hundreds of T0/T1 files)
+epoch 1/3 mean_loss=0.1296

@@ -1,0 +1,158 @@
+Daily CHIRPS rainfall is added up for each of the 58-day periods.
+ERA5-Land has 2\,m air temperature and volumetric soil moisture in the
+top layer (0-7\,cm), provided as anomalies relative to a 2015-2021
+climatology for the same months. Elevation, slope, and aspect are derived from NASADEM at 30\,m. None
+of these are in the automatic label. But the numbers are needed in
+the evidence card in case there is justification based on drought or
+terrain.
+
+\subsection{Preprocessing and Patch Generation}
+
+Patch generation involves drawing a circle of 320 m radius
+around each candidate center (which is half of $64 \times 10$\,m),
+creating a bounding square and clipping the square against the
+study rectangle, so that patches at the edges are a little bit smaller.
+GeoTIFF exports are usually $70 \times 65$ pixels in EPSG:4326 (pixel size $0.0000898^\circ$).
+Fifteen rasters are saved per patch for a total of 5,490 files. After cloud masking, the fraction of cloud pixels is 0.8--2.3\%
+per patch; candidates with a masked fraction higher than 0.15
+pixels in either year were marked as uncertain and not sampled. As
+for the VLMs, the T0 and T1 RGB chips were downsampled to
+$512 \times 512$ pixels.
+
+The minimum distance between the 366 chosen centers is 639 m
+(adjacent non-overlapping squares), while the median is 1,430 m.
+The data split is a random stratified sampling procedure instead of a
+spatial block split, so spatial autocorrelation between training
+and test patches is still an issue.
+
+\subsection{Change Evidence and Labelling}
+
+Let $\Delta$ be the patch-mean NDVI change,
+$\mathrm{NDVI}_{T1} - \mathrm{NDVI}_{T0}$. Over the 1,200-candidate
+pool, the 15th and 85th percentiles of $\Delta$ are $q_{15} = -0.0377$
+and $q_{85} = +0.0031$. The automatic label is
+\begin{equation}
+\mathrm{class} =
+\begin{cases}
+\text{uncertain} & \text{mask} > 0.15 \text{ in T0 or T1},\\
+\text{decline} & \Delta \le q_{15},\\
+\text{increase} & \Delta \ge q_{85},\\
+\text{stable} & |\Delta| < 0.05,\\
+\text{uncertain} & \text{otherwise}.
+\end{cases}
+\end{equation}
+Since both percentiles fall within $\pm 0.05$, all unmasked patches from
+$q_{15}$ to $q_{85}$ are classified as stable and the ``uncertain''
+category will not apply to this reserve. The entire area has lost some
+greenness (mean $\Delta = -0.016$, s.d.\ $0.027$) and hence ``increase''
+refers to those patches that have become greener (relative) rather than
+a real improvement in greenness; increase patches have $\Delta$ values of
+$-0.001$ to $+0.075$ and half of them have changed by less than 0.011.
+``Decline'' refers to those patches that have shown the greatest loss in
+greenness ($\Delta$ from $-0.034$ to $-0.071$). Only 34 out of 366 patches
+have $|\Delta| \ge 0.05$. The categories are relative rankings in this case.
+
+The first 300 patches (100 per class) were drawn from the candidate
+pool. A second batch added up to 25 patches per class, keeping new
+centres at least 960\,m (1.5 patch widths) from existing ones; only 22
+decline candidates passed this filter, giving 372 patches. Six patches
+with incomplete exports were removed, leaving 366: 120 decline, 124
+stable and 122 increase. The percentiles for the second batch were
+recomputed on the remaining pool, so the class ranges overlap slightly
+(decline patches reach $\Delta = -0.034$ and stable patches go down to
+$-0.036$).
+
+Every single patch comes with an evidence card with information like
+indices, changes, radar measures, climate abnormalities, topography and
+pipeline description. This pipeline description contains a string of
+text \texttt{candidate\_class=}\ldots which is the field used for
+labelling. These trend words (e.g.
+\texttt{moderate\_decline}) on the evidence card have been obtained
+from $512 \times 512$ tensors using thresholds and not from percentile
+rule; these trend words contradict the label in 108 out of 366 cases.
+The values for NDVI on the evidence card average to 0.92 of Earth
+Engine mean values. Otsu thresholding bounding boxes are present in
+only three patches and all narrative explanations are just templates,
+because no language model based explanation was obtained during the
+dataset construction.
+
+A human reference class was assigned to 19 patches (13 training, 3
+development, 3 test). It agrees with the automatic label on 8 of 19
+(42\%; Wilson 95\% interval 23--64\%). An earlier
+36-patch pilot agreed on 17 of 36 (47\%). There was no second
+annotator. The automatic labels are therefore a reproducible ranking,
+not a validated disturbance map.
+
+\subsection{Dataset Construction and Data Splits}
+
+Each patch is stored as one JSONL record containing image paths,
+per-source statistics, the evidence card and the labels. The patches
+were split 256/55/55 into training, development and test sets by
+stratified sampling on the label (seed 42). The test set contains 18
+decline, 18 stable and 19 increase patches, so always predicting
+``increase'' gives a majority-class baseline of $19/55 = 34.5\%$. Every
+result in this paper uses this test set.
+
+\subsection{Vision--Language Model Evaluation}
+
+Four instruction-tuned open models were compared:
+Qwen2-VL-2B-Instruct ,
+LLaVA-Interleave-0.5B ,
+PaliGemma-3B-mix-224  and
+BLIP-2 OPT-2.7B , all loaded from
+Hugging Face. Parameter counts are those of the released checkpoints.
+Decoding is greedy. A deterministic parser maps the output to a class:
+it reads a single-word answer directly and otherwise searches the text
+for the first class word or synonym (for example, ``decrease'' is read
+as decline). All 55 outputs were parsed for every model.
+
+\subsubsection{Zero-Shot Evaluation}
+
+The main classification setting, Condition~C, gives a model both RGB
+chips and the evidence card and asks for one word: \texttt{decline},
+\texttt{increase} or \texttt{stable}. The four models did not receive
+exactly the same input (Table~\ref{tab:inputs}). Qwen2-VL-2B and
+LLaVA-Interleave-0.5B got images together with a full card, which includes
+the \texttt{candidate\_class} summary line. PaliGemma would not respond
+to the long prompt for analysis, hence it got images, NDVI summary line,
+and a short prompt. The BLIP-2 model takes one image at a time, and hence
+the two chips were put together in an image with a short prompt. Zero-shot
+tests were run on a laptop.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+Model & Images & Text \\
+\midrule
+Qwen2-VL-2B & T0, T1 & full card \\
+LLaVA-Interleave-0.5B & T0, T1 & full card \\
+PaliGemma-3B & T0, T1 & NDVI line only \\
+BLIP-2 OPT-2.7B & stitched & none \\
+\bottomrule
+\end{tabular}
+\caption{Input per model in Condition~C. ``Full card'' includes the
+pipeline summary line containing \texttt{candidate\_class}.}
+\label{tab:inputs}
+\end{table}
+
+Three supporting analyses help interpret the results. First, an
+\texttt{evidence\_only} variant removes the summary line and any other
+line that names the label. This changes the input only for LLaVA,
+because the PaliGemma and BLIP-2 prompts never contained the line, and
+Qwen2-VL-2B was run in this mode on only three patches. Second, a
+closed-set probe scores LLaVA by the likelihood it assigns to each class
+word, with a stated decision rule and a class bias fitted on the
+development set. Third, two baselines that use no model apply a
+threshold to the $\Delta$NDVI value on the card: one with fixed cut-offs
+of $\pm 0.02$, and one with cut-offs fitted on the training set.
+
+\subsubsection{Parameter-Efficient Fine-Tuning}
+
+LoRA  was applied to Qwen2-VL-2B with rank 8,
+$\alpha = 16$ and dropout 0.1 on the attention and MLP projection
+layers, using AdamW  with a learning rate of
+$5 \times 10^{-5}$, weight decay 0.05 and gradient accumulation over
+four steps. Training ran on a GTX 1080 Ti node of the institute's Ada
+cluster. Two separate runs are reported.

@@ -1,0 +1,112 @@
+\chapter{Fact sheet: every key number and where it comes from}
+\label{app:facts}
+
+``Recomputed'' means recomputed for this guide from the named files by \file{study_guide_v2/make_figures_v2.py} or by a short check of the same files.
+
+\small
+\begin{longtable}{L{6.2cm}L{3.1cm}L{4.9cm}}
+\toprule
+\textbf{Quantity} & \textbf{Value} & \textbf{Source} \\
+\midrule
+\endhead
+\multicolumn{3}{l}{\emph{Study design}} \\
+Study rectangle & 80.433--81.050\dg E, 22.117--22.450\dg N & \file{configs/pilot_kanha.yaml} \\
+Rectangle area & 2,350.7\,km$^2$ & notebook 01, cell 4 \\
+Kanha core / buffer / total & 917.44 / 1,134.36 / 2,051.79\,km$^2$ & \citet{kanha2026} \\
+T0, T1 windows & 2022-01-01 to 02-28; 2023-01-01 to 02-28 & config \\
+Climatology & 2015--2021 & config \\
+Planned patch & 64\,px $\times$ 10\,m = 640\,m & config \\
+Typical exported chip & 70\,$\times$\,65\,px (302 patches) & GeoTIFF headers \\
+Pixel size & 0.0000898\dg{} (EPSG:4326) & GeoTIFF headers \\
+\midrule
+\multicolumn{3}{l}{\emph{Data}} \\
+Sentinel-2 scenes T0 / T1 & 20 / 23 & notebook 01, cell 6 \\
+Sentinel-1 scenes T0 / T1 (descending) & 15 / 20 & notebook 01, cell 6 \\
+CHIRPS days per window & 58 & notebook 01, cell 6 \\
+GeoTIFFs & 5,490 (15 per patch) & \file{data/raw_tiffs/} \\
+Masked fraction per patch & 0.8--2.3\,\% (same both years) & \file{data/raw_metadata/selected_patches.csv} \\
+Mean \dndvi{} (s.d.) & $-0.016$ (0.027) & same \\
+Patches with $|\dndvi| \ge 0.05$ & 34 & same \\
+Rainfall T0 $\rightarrow$ T1 & 69.1 $\rightarrow$ 25.1\,mm & same \\
+Temperature anomaly T0 $\rightarrow$ T1 & $-1.52 \rightarrow +0.88$\,\degC & same \\
+Soil-moisture anomaly T0 $\rightarrow$ T1 & $+0.024 \rightarrow -0.043$ & same \\
+VV / VH change & $-0.47$ / $-0.48$\,dB & same \\
+Correlation of \dndvi{} with \dnbr, $\Delta$NDMI, $\Delta$EVI & 0.80, 0.77, 0.78 & same \\
+Elevation; mean slope; patches $\ge 12^\circ$ & 471--923\,m; 6.4\dg; 19 & same \\
+\midrule
+\multicolumn{3}{l}{\emph{Labels, cards and splits}} \\
+Candidate pool & 1,200 & \file{data/raw_metadata/composite_stats.csv} \\
+Pool percentiles $q_{15}$, $q_{85}$ & $-0.0377$, $+0.0031$ & computed from the pool \\
+Selected / exported complete / final & 372 / 366 / 366 & notebook 01; \file{data/outcasts/} \\
+Decline / stable / increase & 120 / 124 / 122 & \file{dataset.jsonl} \\
+Split train / dev / test & 256 / 55 / 55 (seed 42) & \file{data/splits/split_manifest.json} \\
+Test decline / stable / increase & 18 / 18 / 19 & same \\
+Majority baseline & 34.5\,\% (19/55); macro-F1 0.171 & same \\
+Pilot human agreement & 17/36 (47\,\%) & \file{summary.txt} \\
+Final human agreement & 8/19 (42\,\%; interval 23--64\,\%) & \file{results/preflight_report.json} \\
+Nearest-neighbour distance & min 639\,m, median 1,430\,m & \file{selected_patches.csv} \\
+Spatial block split train / dev / test & 266 / 46 / 54 (test 13 / 21 / 20; baseline 38.9\,\%) & \file{data/splits_spatial/split_manifest.json} \\
+Card text source & \file{raster_analysis_v2} for all 366 & \file{dataset.jsonl} (recomputed) \\
+Label against card trend: agree / mismatch & 258 / 108 & \file{dataset.jsonl} \\
+Card NDVI / Earth Engine NDVI & 0.92 on average & computed in the first guide (padding bias) \\
+Patches with boxes & 3 (6 boxes) & \file{dataset.jsonl} \\
+Version-1 explanations (Ollama) & 0 of 366 (all template) & \file{results/preflight_report.json} \\
+\midrule
+\multicolumn{3}{l}{\emph{Models}} \\
+LLaVA checkpoint parts & SigLIP encoder (384\,px, patch 14); Qwen1.5-0.5B-Chat & local Hugging Face \file{config.json} \\
+Qwen2-VL-2B language model & hidden 1,536; 28 layers; ViT depth 32 & local Hugging Face \file{config.json} \\
+\midrule
+\multicolumn{3}{l}{\emph{Track A: zero-shot (test, $n=55$)}} \\
+Qwen2-VL-2B & 56.4\,\% (31/55; 43.3--68.6); macro-F1 0.466 & \file{results/vlm_combo_qwen_vl_custom_mlp_qwen.json} \\
+Qwen answers & 23 decline, 32 stable, 0 increase & recomputed \\
+Qwen agrees with card trend words & 45/55 & recomputed \\
+PaliGemma-3B & 36.4\,\% (42 decline, 13 increase) & \file{vlm_combo_paligemma_siglip_linear_gemma.json} \\
+LLaVA-Interleave-0.5B & 32.7\,\% (all ``decrease'') & \file{vlm_combo_llava15_clip_mlp_vicuna.json} \\
+BLIP-2 OPT-2.7B & 32.7\,\% (prompt echo) & \file{vlm_combo_blip2_clip_qformer_opt.json} \\
+McNemar, Qwen vs.\ always ``increase'' & $b=31$, $c=19$, $p=0.12$ & recomputed \\
+\texttt{evidence\_only} (2 Oct): LLaVA / PaliGemma / BLIP-2 & 36.4 / 36.4 / 32.7\,\% (only LLaVA's input changed) & \file{results/explain/oneword_*.json} \\
+\multicolumn{3}{l}{\emph{Track A: leak-free reruns (19--20 Oct, laptop)}} \\
+Qwen2-VL-2B \texttt{evidence\_only} & 32.7\,\% (18/55) & \file{results/protocol/vlm_combo_comparison_evidence_only.json} \\
+Qwen2-VL-2B \texttt{compact} & 32.7\,\% (``stable'' for all 55) & \file{results/protocol/vlm_combo_qwen_vl_custom_mlp_qwen.json} \\
+LLaVA-Interleave-0.5B \texttt{compact} & 43.6\,\% (24/55; 31.4--56.7); decline 16/18, stable 0/18, increase 8/19 & \file{results/protocol/vlm_combo_llava15_clip_mlp_vicuna.json} \\
+PaliGemma / BLIP-2 \texttt{compact} & not loaded (gated) / 0 of 55 parsed & \file{results/protocol/} \\
+McNemar: Qwen full card vs.\ compact; LLaVA compact vs.\ always ``increase'' & $p = 0.011$; $p = 0.44$ & recomputed \\
+Summary-line trend words elsewhere on the 55 test cards & none & recomputed (\texttt{encoder\_text}) \\
+Closed-set LLaVA & 60.0\,\% (33/55; never stable) & \file{ada_review/.../vlm_closedset_llava15_clip_mlp_vicuna.json} \\
+\dndvi{} rule fitted on train & 94.5\,\% (52/55); cut-offs $-0.032$, $-0.0011$ & recomputed \\
+\dndvi{} rule $\pm0.02$ & 63.6\,\% (35/55) & recomputed \\
+\midrule
+\multicolumn{3}{l}{\emph{Track B: class LoRA}} \\
+Reported run & Ada job 29575, 20 Oct, balanced 16 (6 / 5 / 5), 1 epoch, label-free at train and test, loss 2.73 & \file{results/slurm-qwen-balanced-smoke-29575.log} \\
+Test accuracy & 36.4\,\% (20/55; 24.9--49.6); macro-F1 0.236; ``stable'' for 53 & \file{results/protocol/qwen_balanced_leakfree_lora.json} \\
+Per class; McNemar vs.\ always ``increase'' & decline 2/18, stable 18/18, increase 0/19; $p = 1.0$ & recomputed \\
+Superseded run & Ada job 2722446, 29 Sep, first 16 by ID (9 / 6 / 1), full card, loss 1.84 & \file{ada_review/.../slurm-qwen09-smoke-2722446.log} \\
+Superseded run: test & 67.3\,\% (37/55); decline 18/18, stable 0/18, increase 19/19 & \file{results/vlm_combo_qwen_vl_finetuned_ecoexplain.json} \\
+Jobs 2690, 2792 (256 patches, full card) & 100\,\% & Slurm logs \\
+Jobs 2984, 3054 (128 patches, images-only test) & 32.7\,\% & Slurm logs; \file{ada_review/} \\
+LoRA settings & $r=8$, $\alpha=16$, dropout 0.1; lr $5\times10^{-5}$; wd 0.05; accumulation 4 & \file{src/vlm_finetune.py}; \file{adapter_config.json} \\
+GPU & GTX 1080 Ti & Slurm log 2722478 \\
+\midrule
+\multicolumn{3}{l}{\emph{Track C: explanations}} \\
+Phase B LLaVA: accuracy; correct claims & 29.1\,\%; 56.7\,\% (34/60) & \texttt{score\_explanations.py --include-legacy} \\
+Phase B Qwen (3 patches): correct claims & 43.8\,\% (7/16) & same \\
+Phase B PaliGemma; BLIP-2 & 33.3\,\% of 36 answered; 32.7\,\% (echo) & \file{results/explain/explain_*.json} \\
+Phase C Qwen: accuracy; correct claims & 63.6\,\% (35/55); 75.8\,\% (119/157) & \file{results/explain/explanation_scores.csv} \\
+Phase C LLaVA: accuracy; correct claims & 45.1\,\% (23/51); 71.1\,\% (91/128) & same \\
+Phase C self-consistency Qwen / LLaVA & 100 / 90.7\,\% & same \\
+Phase C class = \texttt{CLASS\_RULE}, Qwen / LLaVA & 53/55 / 42/55 & recomputed \\
+Phase C flagged claims below dead-band & Qwen 35/38; LLaVA 35/37 & first guide, from \file{explain_structured_*.json} \\
+Phase D teacher & Qwen2-VL-2B (7B: jobs 24225, 24237 failed) & Slurm logs \\
+Phase D targets kept & 28/256: 26 decline, 2 increase; 12 malformed & \file{data/explain_targets/train_targets.jsonl} \\
+Phase D targets used & 16 (first 128 IDs): all decline; 9 malformed & recomputed; \file{slurm-qwen-explain-24389.log} \\
+Phase D accuracy & 61.8\,\% (34/55; 48.6--73.5); macro-F1 0.525 & \file{results/explain/explain_qwen_vl_finetuned_ecoexplain.json} \\
+Phase D per class & decline 17/18, stable 0/18, increase 17/19 & recomputed \\
+Phase D claims & 6.84 per explanation; 50.5\,\% correct; 74.5\,\% with $\ge1$ wrong & \file{results/explain/explanation_scores.json} \\
+Phase D self-consistency; rule agreement & 96.4\,\%; 28/55 & same; recomputed \\
+Phase D vs.\ always ``increase'' (McNemar) & 17 gained, 2 lost, $p < 0.001$ & recomputed \\
+\midrule
+\multicolumn{3}{l}{\emph{Your draft}} \\
+Prose words in \file{full_paper_v2.tex} & 4,924 (target 8,500--10,000) & recomputed \\
+\bottomrule
+\end{longtable}
+\normalsize

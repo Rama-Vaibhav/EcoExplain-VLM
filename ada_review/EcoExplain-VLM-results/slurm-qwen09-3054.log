@@ -1,0 +1,6 @@
+epoch 1/1 mean_loss=0.9108 dev_acc(minimal_prompt)=34.5% parsed=55/55
+  -> new best dev checkpoint (epoch 1)
+restored best dev adapter to /home2/cprv67ab97/EcoExplain-VLM/results/checkpoints/qwen2vl_lora_ecoexplain
+saved adapter /home2/cprv67ab97/EcoExplain-VLM/results/checkpoints/qwen2vl_lora_ecoexplain
+qwen_vl_finetuned_ecoexplain: acc=32.7% prompt=minimal n=55 parsed=55
+best qwen_vl_custom_mlp_qwen 56.4%

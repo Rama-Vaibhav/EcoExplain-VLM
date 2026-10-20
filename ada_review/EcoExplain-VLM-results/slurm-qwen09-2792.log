@@ -1,0 +1,8 @@
+epoch 1/2 mean_loss=0.1754 dev_acc=100.0% parsed=55/55
+  -> new best dev checkpoint (epoch 1)
+epoch 2/2 mean_loss=0.0001 dev_acc=100.0% parsed=55/55
+early stop: no dev improvement for 1 epoch(s) (best dev 100.0% @ epoch 1)
+restored best dev adapter to /home2/cprv67ab97/EcoExplain-VLM/results/checkpoints/qwen2vl_lora_ecoexplain
+saved adapter /home2/cprv67ab97/EcoExplain-VLM/results/checkpoints/qwen2vl_lora_ecoexplain
+qwen_vl_finetuned_ecoexplain: acc=100.0% n=55 parsed=55
+best qwen_vl_finetuned_ecoexplain 100.0%

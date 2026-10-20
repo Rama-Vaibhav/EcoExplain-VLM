@@ -1,0 +1,2237 @@
+{
+  "raw_tiffs": {
+    "patch_count": 366,
+    "complete_patches": 366,
+    "incomplete_patches": 0,
+    "tif_per_patch_expected": 15,
+    "details": {
+      "p04370": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00867": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00863": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03622": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03865": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02334": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00850": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00745": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01832": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04977": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02091": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00929": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03323": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00974": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02547": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04831": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05286": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02139": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00946": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05129": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00298": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04316": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00267": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01621": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01929": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03991": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00641": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03908": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03428": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05075": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02836": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04374": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00385": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03591": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03538": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01735": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05615": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05273": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04238": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01963": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02186": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01116": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04574": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02666": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04345": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03867": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03570": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00865": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03829": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01729": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02890": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01415": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05486": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00296": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00183": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00044": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00402": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03038": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01462": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03508": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04348": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01571": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02267": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02580": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02523": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02149": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00985": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05393": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04038": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00355": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00264": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05371": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03734": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03586": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02803": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02203": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03627": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05511": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04387": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04630": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05332": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05209": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00995": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04145": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02466": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02284": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00000": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02419": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01325": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03998": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03009": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03944": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02805": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00154": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01890": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03668": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01727": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00587": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02829": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05623": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05107": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00883": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02780": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01444": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01194": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01338": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00981": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03620": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01992": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03232": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00109": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00133": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02934": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05089": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05604": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01145": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04189": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03340": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02640": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04794": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03539": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02918": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04887": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03371": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05472": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04592": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03122": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00719": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01350": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05725": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01252": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00100": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02706": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03592": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00575": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02927": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03698": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04898": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02128": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00325": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03046": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03032": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02094": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04399": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04890": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04996": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00328": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01170": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03976": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00297": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03228": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01242": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01278": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02090": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03029": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00972": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00888": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04804": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04686": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03230": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02674": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00491": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00662": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01289": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04339": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00631": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05036": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02621": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04395": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01788": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01375": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00166": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04689": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05771": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00564": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00525": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03191": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02442": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04994": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01899": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00878": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00028": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03198": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02642": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01371": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05632": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05530": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04892": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03489": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04174": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00031": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05194": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00052": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04806": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01264": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02533": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03585": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01041": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03587": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04105": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05719": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05279": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05299": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04016": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04146": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05418": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01266": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03035": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04529": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04431": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01210": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04040": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01466": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04534": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04414": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05685": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01498": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00701": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02668": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00657": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05614": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04524": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05125": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05422": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05320": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05796": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04926": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04203": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05761": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04096": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04911": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04310": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05117": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04120": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03635": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03931": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02366": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03547": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00339": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02463": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04956": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02076": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01988": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03825": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05112": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03849": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00293": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04328": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03805": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03922": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03642": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01299": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04538": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04057": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04125": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03338": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05758": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03943": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04822": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04872": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01162": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02382": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04123": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03689": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01875": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04128": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04416": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00453": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00466": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04671": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04018": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05073": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04292": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04777": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01793": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03067": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05227": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03847": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05499": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00799": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01866": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03545": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03504": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03691": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03893": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03683": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05551": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00860": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05015": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04774": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04835": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03745": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04035": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04729": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05274": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04436": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04508": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01113": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01066": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00469": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01206": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03400": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02243": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04618": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00374": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05602": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03525": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01648": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04502": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02531": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00279": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02032": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00919": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05384": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03217": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02084": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01129": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00086": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01247": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01822": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02436": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04059": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00593": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05191": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02637": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01368": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04938": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05098": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01448": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02824": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02026": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02113": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00910": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05082": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02393": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02839": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00126": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04187": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01947": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04489": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00937": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01429": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01125": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00312": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04305": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04093": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04010": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03515": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01485": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02783": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03903": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05214": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02698": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04779": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05122": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03243": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05360": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03714": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p01873": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p05043": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p02843": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p00916": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04268": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p03801": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04627": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      },
+      "p04577": {
+        "complete": true,
+        "present": 15,
+        "expected": 15,
+        "missing": []
+      }
+    }
+  },
+  "patch_scalars": {
+    "patches_checked": 366,
+    "patches_with_null_scalars": 0,
+    "issues": []
+  },
+  "dataset_jsonl": {
+    "records": 366,
+    "schema_errors": [],
+    "ollama_vs_fallback": {
+      "fallback": 366
+    }
+  },
+  "manual_validation": {
+    "pending": false,
+    "validated": 19,
+    "total": 19,
+    "path": "/Users/vaibhav/Desktop/Independent Study/is work/DataSet Extractor/data/labels/final_labels.csv"
+  },
+  "roadmap_alignment": {
+    "five_sources_in_exports": true,
+    "matched_seasonal_windows": true,
+    "vlm_records_strip_coordinates": true,
+    "manual_validation_pending": false,
+    "notes": [
+      "Evidence cards are assembled in dataset.jsonl (notebook 03 / scripts/03_build_dataset.py).",
+      "Human labels: 19/19 validated in /Users/vaibhav/Desktop/Independent Study/is work/DataSet Extractor/data/labels/final_labels.csv.",
+      "Inter-rater audit (roadmap Stage 4) not yet implemented.",
+      "Run scripts/preflight.py before scaling to 400 patches."
+    ]
+  },
+  "summary_ok": true
+}

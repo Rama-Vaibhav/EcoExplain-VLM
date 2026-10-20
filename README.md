@@ -229,6 +229,10 @@ and **keep** the 2B cache.
 ├── notebooks/01–09
 ├── scripts/   run_finetune_qwen.py, run_explain.py, ada_slurm_*.sh, …
 ├── src/       vlm_eval.py, vlm_finetune.py, vlm_evidence.py, explain_metrics.py
+├── report/paper_v3/   ACL paper (tex, PDF, figures, acl.sty); report/ also holds earlier drafts
+├── study_guide_v3/    study guide PDF, RESULTS_MASTER.md and the scripts that build its tables and figures
+├── ada_review/        Ada logs and closed-set results copied back on 4 Oct (superseded LoRA runs, probes)
+├── papers/acl/        first ACL draft and the workflow-figure script
 └── results/
     ├── vlm_combo_comparison.json
     ├── vlm_combo_qwen_vl_finetuned_ecoexplain.json

@@ -1,0 +1,89 @@
+\chapter{All results in one place}
+\label{ch:results}
+
+This chapter holds every score of the project in one table, recomputed from the saved prediction files. Use it as your reference while writing; the chapters after it explain where each number comes from and what it means.
+
+\begin{wherecode}
+\file{study_guide_v3/build_results_master.py} reads the result files under \file{ecoexplain_vlm_dataset/results/} and writes three things: \file{RESULTS_MASTER.md} (open it in any editor), \file{RESULTS_MASTER.json}, and \file{chapters/generated_master_table.tex}, the table below. After any new run, execute it again and rebuild this PDF; the table then cannot disagree with the files.
+\end{wherecode}
+
+\begin{watchout}
+Rows in different sections of Table~\ref{tab:master} used different inputs. Never rank or average them without naming the input. The most common mistake is to put 56.4\,\% (full card, label line present) next to 32.7\,\% (label line removed) as if they were two models.
+\end{watchout}
+
+\input{chapters/generated_master_table}
+
+\begin{table}[H]
+\centering
+\caption{Explanation quality (Track~C): share of checkable claims whose direction matches the measured change. Phase~C from \file{results/explain/explanation_scores.csv}, Phase~D from \file{explanation_scores.json}.}
+\label{tab:masterclaims}
+\small
+\begin{tabularx}{\textwidth}{Yrr}
+\toprule
+Run & Correct claims & With $\ge1$ wrong claim \\
+\midrule
+Qwen2-VL-2B, structured cite-only prompt & 75.8\,\% (119/157) & 36.4\,\% \\
+LLaVA-Interleave-0.5B, structured cite-only prompt & 71.1\,\% (91/128) & 34.5\,\% \\
+Qwen2-VL-2B, explanation LoRA (16 targets) & 50.5\,\% & 74.5\,\% \\
+LLaVA-Interleave-0.5B, free-form prompt & 56.7\,\% (34/60) & 34.5\,\% \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Paired tests that matter}
+
+All runs share the same 55 test patches, so McNemar's test (Chapter~\ref{ch:measuring}) compares them patch by patch. Recomputed for this guide:
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lrrr}
+\toprule
+Comparison & $b$ & $c$ & $p$ \\
+\midrule
+Qwen full card vs.\ Qwen compact (label line removed) & 18 & 5 & 0.011 \\
+Qwen full card vs.\ always ``increase'' & 31 & 19 & 0.12 \\
+LLaVA compact vs.\ always ``increase'' & 16 & 11 & 0.44 \\
+Balanced class LoRA vs.\ always ``increase'' & 20 & 19 & 1.0 \\
+Balanced class LoRA vs.\ Qwen compact & 2 & 0 & 0.50 \\
+Old class LoRA (full card) vs.\ Qwen full card & 19 & 13 & 0.38 \\
+Explanation LoRA (explanation mode) vs.\ always ``increase'' & 17 & 2 & $<0.001$ \\
+\bottomrule
+\end{tabular}
+\caption{$b$: patches only the first run got right; $c$: patches only the second got right.}
+\label{tab:mastermcnemar}
+\end{table}
+
+\section{What the results say, in three sentences}
+
+\begin{plainwords}
+\begin{enumerate}
+  \item \textbf{With the label line removed, no one-word classifier beats guessing.} Qwen falls from 56.4\,\% to 32.7\,\% (it answers ``stable'' for every patch), LLaVA reaches 43.6\,\% (not significant), and the balanced class LoRA reaches 36.4\,\% (``stable'' for 53 of 55). The one exception is in explanation mode: the explanation LoRA separates decline from increase (61.8\,\%, $p < 0.001$ against the baseline) but never answers ``stable'', and its zero-shot counterpart was never run on all 55 patches (Chapter~\ref{ch:trackC}).
+  \item \textbf{The information is on the card.} A threshold on the card's \dndvi{} value reaches 94.5\,\%; the small models do not use it.
+  \item \textbf{Explanations stick to the evidence only under a strict prompt.} Structured cite-only prompting gives 71--76\,\% correct claims; the explanation LoRA gives 50.5\,\%.
+\end{enumerate}
+\end{plainwords}
+
+\section{Which numbers go where in your report}
+
+You have to choose the primary classification table (your status note lists this as open). The reasoning:
+
+\begin{itemize}
+  \item The research question asks whether models can classify \emph{from the evidence}. The leak-free runs measure exactly that; the full-card runs measure use of a card that also states the answer's trend and label.
+  \item The leak-free runs are incomplete for two models: PaliGemma was not loaded (gated on Hugging Face) and BLIP-2 produced no parsable answer.
+\end{itemize}
+
+\begin{foryourreport}
+A defensible layout is \textbf{one table with two blocks}: first the leak-free runs (Qwen \texttt{evidence\_only} 32.7\,\%, Qwen and LLaVA \texttt{compact} 32.7\,\% and 43.6\,\%, PaliGemma and BLIP-2 marked ``not available'' with the reason), then the original full-card runs (56.4\,\%, 36.4\,\%, 32.7\,\%, 32.7\,\%) labelled ``full card, includes the pipeline's summary line''. Add the three baselines underneath. For Track~B cite the balanced, leak-free 36.4\,\% and move 67.3\,\% to an appendix as a superseded run. Keep Track~C in its own table.
+\end{foryourreport}
+
+\section{Files that can trip you up}
+
+\begin{itemize}
+  \item \file{results/protocol/vlm_combo_qwen_vl_custom_mlp_qwen.json} holds Qwen's \emph{compact} run. Its \texttt{evidence\_only} run wrote to the same file first and was overwritten; only its summary survives in \file{vlm_combo_comparison_evidence_only.json} (32.7\,\%, 18/55). If you need Qwen's \texttt{evidence\_only} answers, re-run it with a different \texttt{--results-subdir}.
+  \item \file{results/protocol/vlm_combo_qwen_vl_finetuned_ecoexplain.json} (not on GitHub) is a copy of the \emph{old} 67.3\,\% run, despite sitting in the \file{protocol} folder. The balanced run is \file{qwen_balanced_leakfree_lora.json}.
+  \item The per-model JSON files still describe LLaVA as ``LLaVA-1.5, CLIP-ViT-L/14, Vicuna''. That is the project's registry name; the checkpoint is LLaVA-Interleave-0.5B with SigLIP and Qwen1.5-0.5B (Chapter~\ref{ch:models}).
+  \item \file{explanation_scores.csv} holds Phases B and C; \file{explanation_scores.json} holds Phase~D.
+  \item LLaVA's structured run answered 51 of 55 patches: 45.1\,\% of the answered ones, 41.8\,\% of all 55. Say which you report.
+  \item Two pairs of cut-offs fit the training data equally well for the \dndvi{} rule; the earlier guides' search keeps the first ($-0.032$, $-0.0011$: 94.5\,\%), the other gives 96.4\,\%. Report 94.5\,\% and the cut-offs.
+\end{itemize}

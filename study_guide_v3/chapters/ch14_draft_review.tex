@@ -1,0 +1,199 @@
+\chapter{Correcting your current draft}
+\label{ch:draft}
+
+This chapter reviews your latest draft, section by section. It is the version you pasted on 17 October, saved as \file{report/quillbot_parts/full_paper_v2.tex}. Line numbers refer to that file; if your Overleaf copy has moved on, search for the quoted words instead.
+
+\begin{watchout}
+This chapter tells you \emph{what} is wrong and \emph{what is true}. It does not give replacement sentences, because the sentences must be yours. Fix the facts first, then the citations, then the structure, and only then the wording.
+\end{watchout}
+
+\section{Since 17 October: what you fixed and what to check now}
+
+Your status note of 20 October reports these as done. I have not seen the updated Overleaf draft, so treat the right-hand column as the check to make, not as confirmation.
+
+\begin{longtable}{L{5.6cm}L{8.6cm}}
+\caption{Issues you report as fixed, and how to confirm each one in the draft.}\label{tab:fixed}\\
+\toprule
+\textbf{Reported fixed} & \textbf{Check in the draft} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Reported fixed} & \textbf{Check in the draft} \\
+\midrule
+\endhead
+Structure aligned to workflow steps 1--6 and tracks A/B/C & The figure's Track~A box no longer says every model received the card (Chapter~\ref{ch:figures}); the text uses one naming scheme. \\
+Keywords match the abstract & Every keyword appears in the abstract or the introduction. \\
+Introduction reframed (GeoChat, limitations, LoRA wording) & It cites its sources again (\texttt{\textbackslash citep}), and it is 1,000--1,200 words. \\
+Numbers not mixed (56.4 / 67.3 / 61.8 / 75.8 / 71.1) & Each number appears with its input and protocol, and none of them sits in a column with another protocol's numbers. \\
+LoRA honesty (9/6/1, 0/18 stable) & Now go one step further: the result to cite is the balanced, leak-free 36.4\,\% (below). \\
+\bottomrule
+\end{longtable}
+
+\subsection*{New checks required by the 19--20 October reruns}
+
+\begin{enumerate}
+  \item \textbf{Primary classification table.} Put the leak-free runs first (Qwen \texttt{evidence\_only} 32.7\,\%, Qwen and LLaVA \texttt{compact} 32.7\,\% and 43.6\,\%), then the full-card runs labelled as such (Chapter~\ref{ch:results}).
+  \item \textbf{Track~B number.} Replace 67.3\,\% by 36.4\,\% (balanced 6/5/5, label-free, Ada job 29575, ``stable'' for 53 of 55). Mention 67.3\,\% only as a superseded run.
+  \item \textbf{No ``Qwen did not copy the label'' argument.} If the draft uses version~2's observation as evidence for Qwen's skill, remove it: the trend words it followed are in the summary line (Chapter~\ref{ch:trackA}).
+  \item \textbf{State the size of the drop}: 56.4\,\% $\rightarrow$ 32.7\,\% without the line ($p = 0.011$).
+  \item \textbf{LLaVA's 43.6\,\%} with ``not significantly above the baseline ($p = 0.44$)''.
+  \item \textbf{PaliGemma and BLIP-2}: no leak-free result (gated model; 0 of 55 parsable), and BLIP-2's 32.7\,\% is a parsing artefact.
+  \item \textbf{Methods} mentions the \texttt{compact} mode, the parser fix, \texttt{--balanced-train} and the spatial split (and that the spatial split is not evaluated yet, unless you run it).
+  \item \textbf{Explanation LoRA}: if you mention its decline/increase separation ($p < 0.001$), add both cautions (never ``stable''; zero-shot counterpart untested).
+  \item \textbf{Abstract and conclusions} carry the new central finding: without the label line no small VLM beats guessing, while one number on the card gives 94.5\,\%.
+\end{enumerate}
+
+The line-by-line review below refers to the 17 October draft (\file{report/quillbot_parts/full_paper_v2.tex}). Use it as a checklist against your current version: search for the quoted words, and tick off each item that is already fixed.
+
+\section{The draft at a glance}
+
+\begin{table}[H]
+\centering
+\caption{Words of prose per section (tables, figures, equations and the reference list excluded), against the targets of your professor's brief (Chapter~\ref{ch:writing}).}
+\label{tab:wordcounts}
+\small
+\begin{tabular}{lrr}
+\toprule
+Section & Now & Target \\
+\midrule
+Abstract and keywords & 380 & 200--250 \\
+Introduction & 402 & 1,000--1,200 \\
+Data and Methods (with Study Area) & 1,996 & about 3,200 \\
+Results and Discussion & 1,281 & about 3,000 \\
+Conclusions & 194 & about 400 \\
+Limitations and future work & 251 & about 800 \\
+Appendix & 420 & as needed \\
+\midrule
+Total & \textbf{4,924} & \textbf{8,500--10,000} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The draft is about half the required length. The gap should be filled with substance the project actually has (a study-area section with a map, the data-source details, the per-class results, the significance tests, the explanation examples, the hypotheses and a real future-work section), not with padding. Chapter~\ref{ch:writing} gives a budget for each part.
+
+\section{Problems that affect the whole draft}
+
+\begin{enumerate}
+  \item \textbf{The citations were removed.} There is not a single \texttt{\textbackslash cite} command left, and the \texttt{thebibliography} list at line 727 has 10 entries that are never cited. Your professor asks for citations in every section and for only cited references in the list. Removing the commands also left gaps: ``Qwen2-VL-2B-Instruct ,'' (line 236), ``LoRA\ \ was'' (290), ``AdamW\ \ with'' (292), ``ROUGE-L\ \ is'' (333), ``question answering\ \ and'' (633), ``spatial leakage ;'' (700) and a full stop alone on line 614. \emph{Fix:} go back to BibTeX with \file{references.bib} (every entry checked) and \texttt{\textbackslash citep}/\texttt{\textbackslash citet}; Chapter~\ref{ch:writing} lists which reference supports which statement. The data sources currently have no references at all.
+  \item \textbf{A fourth heading level.} \texttt{\textbackslash paragraph\{\}} headings appear under subsubsections and in Limitations and the Appendix (lines 297, 306, 686--713, 823--850). Your professor allows at most three levels (section, subsection, subsubsection). \emph{Fix:} turn them into ordinary bold words at the start of a paragraph, or restructure.
+  \item \textbf{Missing parts}: an Acknowledgements section (it was removed), the study-area map, the index equations, and most result figures (the draft has one figure, line 344).
+  \item \textbf{Section order.} The draft follows the ACL convention of an unnumbered Limitations section after the Conclusions (line 684). Your professor's outline has a numbered ``Limitations and Future Directions'' section before the Conclusions. Follow your professor.
+  \item \textbf{Typing errors}: missing spaces in ``card.Training'' and ``measurements.A'' (line 43) and ``Pradesh.The'' (line 111); ``dont'' (line 73).
+\end{enumerate}
+
+\section{Section by section}
+
+\begin{longtable}{L{1.5cm}L{4.0cm}L{8.7cm}}
+\caption{Problems in \file{full_paper_v2.tex} and what is true. ``F'' = factual error; ``C'' = citation; ``W'' = wording or clarity; ``S'' = structure.}\label{tab:review}\\
+\toprule
+\textbf{Line} & \textbf{The draft says} & \textbf{Problem (type) and what is true} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Line} & \textbf{The draft says} & \textbf{Problem (type) and what is true} \\
+\midrule
+\endhead
+\multicolumn{3}{l}{\emph{Abstract (line 43)}} \\
+43 & ``small and reproducible vision-language setup'' & W: missing article, and vague: say what was built (a benchmark of 366 patches). \\
+43 & ``Pairs of before/after images \dots{} from Sentinel-2, Sentinel-1 SAR, CHIRPS, ERA5-Land, and NASADEM are presented'' & F: the images come only from Sentinel-2; the other four sources are numbers on the evidence card. \\
+43 & ``21.9\% higher than the majority class baseline'' & F: 56.4\,\% $-$ 34.5\,\% is 21.9 \emph{percentage points}; ``21.9\,\% higher'' would mean 42.1\,\%. \\
+43 & ``indicating the high level of recoverability of the spectral rank'' & W: unclear. The point is that one number on the card reproduces the labels (94.5\,\%), while the VLMs fail to use it. \\
+43 & ``If that last line is excluded from the card, the models can be steered to produce evidence-based text'' & F: this joins two different experiments. Removing the line belongs to classification; the explanation runs used a different, label-free table and different prompts. Keep them in separate sentences. \\
+43 & ``while free form prompts lead to little verifiable claims'' & W: ``few'' verifiable claims. \\
+43 & ``A pre-trained LoRA for sixteen self-generated explanations filtered achieves 61.8\%'' & F: the LoRA was \emph{fine-tuned}, not pre-trained, on 16 filtered self-generated justifications. \\
+43 & ``which means that the explanation path can be trained on this split of data'' & F: not supported. Claim correctness fell to 50.5\,\% (structured prompting: 75.8\,\%), the 16 targets were all \texttt{decline}, and the adapter labels every stable patch decline. It is a pilot. \\
+43 & length (380 words) & S: aim for 200--250 words; drop the dataset detail that is repeated in Methods. \\
+\multicolumn{3}{l}{\emph{Introduction}} \\
+66--69 & ``State Forestry Departments, which operate \dots{} should be aware \dots{} what made it reliable'' & W, C: the subject and the claim are unclear, and nothing is cited. Make one clear point: monitoring needs the label \emph{and} a reason that can be checked; cite forest-monitoring work \citep{hansen2013,fsi2021}. \\
+69 & ``large-scale operation change products'' & W: ``operational''; cite \citet{hansen2013,kennedy2010,zhu2014}. \\
+71--76 & VLM paragraph & C: every claim needs its source: VLMs \citep{liu2023llava,wang2024qwen2vl}, hallucination \citep{li2023pope}, unfaithful explanations \citep{turpin2023,jacovi2020}, prompt sensitivity \citep{zhao2021calibrate}, GeoChat \citep{kuckreja2024}. \\
+whole & 402 words & S: needs 1,000--1,200 words: focus, motivation, what is known (remote-sensing VLMs, question answering, change captioning), the gap, and the objectives. \\
+\multicolumn{3}{l}{\emph{Study Area}} \\
+111--117 & reserve facts & C: cite \citet{kanha2026} for the areas and forest types. \\
+123 & ``All the 1,200 candidate patches are located within the rectangle'' & W: the candidate patch \emph{centres} lie inside; edge patches were clipped. \\
+126 & ``this happened due to the previous repository that generated the pool'' & F: the reason was not recorded. Say that; a forest-cover filter is only the likely reason. \\
+--- & no map & S: add the India study-area map (Chapter~\ref{ch:figures}). \\
+\multicolumn{3}{l}{\emph{Data Sources}} \\
+132 & Sentinel-2 paragraph & C: \citet{drusch2012}; add the harmonized collection (processing change of 25 January 2022), the 20\,\% scene filter, and the four index equations with \citet{rouse1974,tucker1979,huete2002,gao1996,keybenson2006}. \\
+134 & Sentinel-1 paragraph & C: \citet{torres2012}, Earth Engine \citet{gorelick2017}; add that only Sentinel-1A was working (1B failed in December 2021). \\
+139--140 & ``ERA5-Land has \dots{} provided as anomalies'' & F: ERA5-Land provides temperature and soil moisture; the \emph{project} turned them into month-matched anomalies (Equation~\ref{eq:anomaly}). C: \citet{funk2015,munozsabater2021,nasadem2020}. \\
+142 & ``But the numbers are needed in the evidence card in case there is justification based on drought or terrain'' & W: they are \emph{included} so that a justification can use them; add that they do not separate the classes (Figure~\ref{fig:climate}). \\
+\multicolumn{3}{l}{\emph{Preprocessing and Patch Generation}} \\
+153 & ``the fraction of cloud pixels is 0.8--2.3\%'' & F: it is the \emph{masked fraction}, identical in both years, so probably edge pixels rather than cloud. \\
+154--155 & ``a masked fraction higher than 0.15 pixels'' & F: 0.15 is a fraction (15\,\%), not a number of pixels. \\
+156 & ``the T0 and T1 RGB chips were downsampled to $512\times512$'' & F: the chips (about 70\,$\times$\,65 pixels) were padded to a square and \emph{enlarged} about seven times. \\
+--- & --- & add: zero padding biases the card's averages (about 8\,\% low), or move this to Limitations. \\
+\multicolumn{3}{l}{\emph{Change Evidence and Labelling}} \\
+182--183 & ``the `uncertain' category will not apply to this reserve'' & F: the first ``uncertain'' case (masked fraction above 0.15) does apply; only the \emph{last} case never occurs for this pool. \\
+203 & ``climate abnormalities'' & W: ``climate anomalies''. \\
+204--206 & ``pipeline description contains \dots{} candidate\_class= \dots{} which is the field used for labelling'' & F, W: call it the \emph{summary line}; \texttt{candidate\_class} is the gold label used for \emph{scoring}, not a field used to make labels. \\
+211--212 & ``all narrative explanations are just templates, because no language model based explanation was obtained'' & F: wrong for the final dataset (this sentence came from the rewrite I gave you earlier). The stored text is a rule-based narrative computed from each patch's rasters (\texttt{raster\_analysis\_v2}); what is true is that no language model wrote it. The template texts exist only in \file{dataset_old.jsonl}. \\
+218 & ``Wilson 95\% interval 23--64\%'' & C: \citet{wilson1927}. \\
+\multicolumn{3}{l}{\emph{Vision--Language Model Evaluation}} \\
+236--239 & model list with ``,'' gaps & C: \citet{wang2024qwen2vl,li2024interleave,beyer2024,li2023blip2,zhang2022opt}. Give LLaVA's real parts if you describe them (SigLIP encoder, Qwen1.5-0.5B). \\
+254 & ``hence it got images, NDVI summary line, and a short prompt'' & F: \textbf{important}. PaliGemma got the card's \emph{NDVI line}, not the ``summary line''. In your report ``summary line'' means the line that contains the label, so this sentence says the opposite of what happened. \\
+255--257 & BLIP-2 sentence & add: no evidence text at all. \\
+\multicolumn{3}{l}{\emph{Parameter-Efficient Fine-Tuning}} \\
+290--292 & ``LoRA\ \ was applied'', ``AdamW\ \ with'' & C: \citet{hu2022lora,loshchilov2019}; add the 4-bit base model \citep{dettmers2023qlora}. \\
+297 & Class LoRA paragraph & F (missing): the 16 patches were the first 16 training patches by ID: 9 decline, 6 stable, 1 increase. S: \texttt{\textbackslash paragraph} heading. \\
+306 & Explanation LoRA paragraph & F (missing): the teacher used the free-form prompt; the 28 kept targets are 26 decline and 2 increase; the 16 used are all decline, and 9 of them hold the teacher's raw, cut-off output. S: \texttt{\textbackslash paragraph} heading. \\
+\multicolumn{3}{l}{\emph{Evaluation Metrics}} \\
+319--333 & metric sentences & C: \citet{wilson1927,mcnemar1947,lin2004rouge,jacovi2020}. S: add the equations for accuracy, macro-F1 and the Wilson interval. \\
+\multicolumn{3}{l}{\emph{Experimental Workflow}} \\
+344 & the workflow figure & F: Track~A box text is wrong (Chapter~\ref{ch:figures}). \\
+366 & ``DIP produced the RGB chips'' & W: define DIP (digital image processing) at first use. \\
+379 & ``Four VLMs received the images and the full evidence card (Condition~C)'' & F: only Qwen and LLaVA received the full card; PaliGemma got one NDVI line and BLIP-2 one stitched image. This contradicts your own Table~1. \\
+380 & ``The run was repeated after removing the summary line'' & F: repeated for three models on all 55 patches (and Qwen on 3), and it changed the input of LLaVA only. \\
+\multicolumn{3}{l}{\emph{Results and Discussion}} \\
+Sec.\,3.2 & --- & add the leak-free reruns: Qwen 56.4\,\% $\rightarrow$ 32.7\,\% without the summary line ($p = 0.011$); LLaVA 43.6\,\% with the compact table (Chapter~\ref{ch:trackA}). \\
+Sec.\,3.3 & --- & replace 67.3\,\% by the balanced, leak-free 36.4\,\% (Ada 29575); keep 67.3\,\% only as a superseded run (Chapter~\ref{ch:trackB}). \\
+613--614 & ``reasoned about the change'' then ``.'' alone & C: the citation was removed; restore \citet{jacovi2020,turpin2023}. \\
+Sec.\,3.5 & --- & add the Phase~D details above and Figure~\ref{fig:explphases}. \\
+630--635 & comparison paragraph & C: \citet{hansen2013,kennedy2010,zhu2014,daudt2018,lobry2020,liu2022levircc,kuckreja2024,radford2021}. \\
+\multicolumn{3}{l}{\emph{Limitations}} \\
+684--720 & five limitations & F (missing): unequal model inputs; tiny unbalanced fine-tunes; padding bias; one place, one year pair, one season. C: line 700, \citet{ploton2020,roberts2017}. S: \texttt{\textbackslash paragraph} headings; and a numbered section before the Conclusions. \\
+\multicolumn{3}{l}{\emph{References and Appendix}} \\
+727--779 & \texttt{thebibliography}, 10 uncited entries & C: replace with BibTeX and cite every entry you keep. \\
+823--850 & Appendix & S: \texttt{\textbackslash paragraph} headings; add the class mix to ``Teacher filtering''. \\
+\bottomrule
+\end{longtable}
+
+\begin{watchout}
+The older draft in \file{papers/acl/ecoexplain_acl.tex} still has an abstract sentence of mine that says ``without that line, the three models tested scored 32.7--36.4\%''. Do not reuse it: two of those three models never had the line (Chapter~\ref{ch:trackA}).
+\end{watchout}
+
+\section{What is already right: keep it}
+
+Do not over-correct. These parts of the draft are accurate and well judged:
+\begin{itemize}
+  \item the three research questions and the honest framing of the contribution;
+  \item the same 55 test patches for every result, and the 34.5\,\% baseline;
+  \item the labelling equation, the percentile values and the explanation of what the classes mean;
+  \item the human-agreement figures (8 of 19; pilot 17 of 36);
+  \item the model-input table (Table~1 of the draft) and the supporting-analyses paragraph;
+  \item the classification, LoRA and explanation tables, and the exclusion of the 100\,\% runs;
+  \item the 94.5\,\% threshold baseline and its interpretation;
+  \item the dead-band analysis and the ``class follows the stated rule'' observation;
+  \item the comparison section's main point: the most informative comparison is with simple baselines.
+\end{itemize}
+
+\section{A fixing order that works}
+
+\begin{enumerate}
+  \item \textbf{Facts.} Go through Table~\ref{tab:review} and correct every ``F'' item. Check each number against Appendix~\ref{app:facts}.
+  \item \textbf{Citations.} Switch to BibTeX, then add citations section by section using Table~\ref{tab:citemap} in Chapter~\ref{ch:writing}.
+  \item \textbf{Structure.} Remove the fourth heading level; move Limitations before the Conclusions as a numbered section; add Acknowledgements.
+  \item \textbf{Figures and tables.} Fix the workflow figure, make the study-area map, add the results figures (Chapter~\ref{ch:figures}).
+  \item \textbf{Expand the thin sections} to the budgets of Table~\ref{tab:wordcounts}, with content from Chapters~3--12.
+  \item \textbf{Language.} Rewrite each section from your own notes (Section~\ref{sec:ownwords}); keep sentences short; one number in one place.
+  \item \textbf{Final checks} with the checklist in Section~\ref{sec:finalcheck}.
+\end{enumerate}
+
+\begin{selfcheck}
+\begin{enumerate}
+  \item Why is ``21.9\% higher than the baseline'' wrong, and how should it be written?
+  \item What is wrong with ``PaliGemma \dots{} got images, NDVI summary line, and a short prompt''?
+  \item What is wrong with ``all narrative explanations are just templates''?
+  \item Name two structural problems that affect the whole draft.
+\end{enumerate}
+\end{selfcheck}

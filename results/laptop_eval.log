@@ -1,0 +1,21 @@
+/Users/vaibhav/Desktop/Independent Study/is work/DataSet Extractor/ecoexplain_vlm_dataset/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+`torch_dtype` is deprecated! Use `dtype` instead!
+loaded llava-hf/llava-interleave-qwen-0.5b-hf as AutoModelForImageTextToText on mps
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+purged local cache /Users/vaibhav/.cache/huggingface/hub/models--llava-hf--llava-interleave-qwen-0.5b-hf
+purged local cache /Users/vaibhav/.cache/huggingface/hub/.locks/models--llava-hf--llava-interleave-qwen-0.5b-hf
+llava15_clip_mlp_vicuna: status=ok acc=0.375 n=8 s=330.62
+purged local cache /Users/vaibhav/.cache/huggingface/hub/models--Qwen--Qwen2-VL-2B-Instruct
+purged local cache /Users/vaibhav/.cache/huggingface/hub/.locks/models--Qwen--Qwen2-VL-2B-Instruct
+qwen_vl_custom_mlp_qwen: status=load_failed acc=None n=8 s=10.7
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]

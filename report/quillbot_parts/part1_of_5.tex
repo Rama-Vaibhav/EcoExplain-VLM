@@ -1,0 +1,98 @@
+% ABSTRACT
+% ============================================================
+
+\begin{abstract}
+Observation of changes in vegetation in protected forests requires an approach which combines information obtained from a variety of sources. This paper shows how small and reproducible vision-language setup can be used to introduce this evidence into open vision-language models (VLMs) and evaluate their performance with respect to both classification results and soundness of their reasoning. The dataset for this purpose is called EcoExplain-VLM and it consists of 366 forest patches in Kanha Tiger Reserve in Madhya Pradesh, India. Pairs of before/after images taken during dry season in January-February 2022 and 2023 from Sentinel-2, Sentinel-1 SAR, CHIRPS, ERA5-Land, and NASADEM are presented along with corresponding evidence card.Training, development, and test data are distinguished (256/55/55). On the same dataset of 55 test patches, the performance of Qwen2-VL-2B in zero-shot setting is 56.4\%, which is 21.9\% higher than the majority class baseline of 34.5\%. In contrast, the classification score of LLaVA-Interleave-0.5B, PaliGemma-3B, and BLIP-2 OPT-2.7B lies in the range of 32.7-36.4\%. A single threshold of change in NDVI, estimated on training data, leads to 94.5\% correct classifications, thus indicating the high level of recoverability of the spectral rank and the difficulty of the task for language models. The use of Low-Rank Adaptation (LoRA) with 16 training patches and one epoch of fine-tuning of Qwen2-VL-2B improves its accuracy up to 67.3\%. The accuracy scores of Qwen2-VL-2B are given for the entire evidence card, with the last summary line containing the candidate label. If that last line is excluded from the card, the models can be steered to produce evidence-based text: the cite-only prompt brings claim correctness to 75.8\% for Qwen2-VL-2B and 71.1\% for LLaVA-Interleave-0.5B, while free form prompts lead to little verifiable claims or those contrary to the measurements.A pre-trained LoRA for sixteen self-generated explanations filtered achieves 61.8\% class accuracy in the explanation mode (where 50.5\% are accurate claims), which means that the explanation path can be trained on this split of data. EcoExplain-VLM provides thus a productive way forward: a leakage-aware, multi-sensor testbed appropriate for model comparison at scale or for adaptation, and a prompting strategy that keeps alignment of open VLMs with the provided facts.
+\end{abstract}
+
+\noindent
+\textbf{Keywords:}
+vision-language models;
+forest vegetation change;
+multi-source remote sensing;
+Sentinel-2;
+Sentinel-1 SAR;
+evidence card;
+zero-shot classification;
+parameter-efficient fine-tuning;
+LoRA;
+evidence-grounded explanation;
+Kanha Tiger Reserve
+
+% ============================================================
+% 1. INTRODUCTION
+% ============================================================
+
+\section{Introduction}
+
+State Forestry Departments, which operate under the governance of their own states in collaboration with national level monitoring organizations,
+should be aware not only whether the greenness or browning of canopy occurred between
+two time periods, but also what made it reliable in these reserved areas. Optical indices like NDVI, backscatter from radar, rainfall, soil moisture anomalies, and topography are all contributing together in this regard.
+Forest monitoring is facilitated by large-scale operation change products, where it is possible to enhance their results through adding natural language explanations allowing verification of interpretation in relation to the original data.
+
+Vision-language models (VLMs) map both images and text to a common representation space, and produce unstructured text outputs. Such a model in principle can analyze two chips of dry season and an evidence card in a concise format, and give one of the following labels
+(\texttt{stable}, \texttt{decline}, \texttt{increase}) together with a
+justification. In reality, small open models hallucinate content, produce explanations that dont reflect how they
+reached their answer and are sensitive to
+prompt phrasing. Remote-sensing VLMs such as GeoChat are trained for overhead imagery and spatial referring expressions. The setting here is different: matched dry-season chips plus a multi-sensor forest-change card, with both a class decision and a checkable justification.
+
+This study asks three questions for a single, compact reserve:
+\begin{enumerate}
+\item Can open VLMs with 0.5--3 billion parameters classify relative
+vegetation change from before/after RGB chips and an evidence card
+without task-specific training?
+\item How does a small LoRA update change that
+behaviour?
+\item With the label removed from the card, do the models' written
+justifications agree with the measured changes, and does prompt
+structure or fine-tuning on justifications improve that agreement?
+\end{enumerate}
+
+The contribution is a fully specified benchmark, EcoExplain-VLM, for
+Kanha Tiger Reserve, together with an evaluation that reports its own
+weaknesses. On the 55-patch test set, only Qwen2-VL-2B exceeds the
+majority-class baseline (56.4\% against 34.5\%), and a 16-patch LoRA
+raises it to 67.3\%. Both figures use an evidence card that ends with a
+pipeline summary line containing the candidate label. The other three
+models answer almost every patch with the same class, while a
+one-number NDVI-change rule reaches 94.5\%. For explanations, a
+structured ``cite-only'' prompt raises claim correctness to the 70\%
+range, but the resulting texts restate the supplied facts rather than
+interpret the images. Fine-tuning Qwen2-VL-2B on 16 of its own filtered
+justifications gives 61.8\% class accuracy and 50.5\% correct claims.
+
+% ============================================================
+% 2. DATA AND METHODS
+% ============================================================
+
+\section{Data and Methods}
+
+\subsection{Study Area}
+
+Kanha Tiger Reserve lies in the Maikal hills of central India, in the
+Mandla and Balaghat districts of Madhya Pradesh.The core area spans an area of
+917.44\,km$^2$ whereas the buffer area is 1,134.36\,km$^2$, making a total
+of 2,051.79\,km$^2$. The forest is primarily made up of sal (\emph{Shorea
+robusta}) and mixed deciduous forests with grassland meadows. Rain mostly
+falls in the period of June-September whereas it is cool and dry in
+January-February.
+
+Processing made use of the rectangle
+$80.433^\circ$--$81.050^\circ$\,E,
+$22.117^\circ$--$22.450^\circ$\,N (2,350.7\,km$^2$ in Earth Engine).
+The rectangle is larger than the gazetted reserve, so it is possible
+that some patches are situated either in the buffer zone or slightly
+beyond the official boundaries. All the 1,200 candidate patches are
+located within the rectangle. The pool of candidates contains an empty
+stripe around $80.75^\circ$--$80.85^\circ$\,E; this happened due to
+the previous repository that generated the pool.
+
+\subsection{Data Sources}
+
+\subsubsection{Optical and Synthetic Aperture Radar Data}
+
+Sentinel-2 L2A surface reflectance products provide the optical bands at 10-20 m resolution. Clouds and shadows were masked using the Scene Classification Layer, and median composites were generated for the period of 1 January–28 February 2022 (T0, 20 scenes) and the same period of 2023 (T1, 23 scenes). We derived the NDVI, EVI, NDMI, and NBR from these composites and rendered true colour RGB chips for the VLMs.
+
+Sentinel-1 GRD C-Band Backscatter products were composited for the same periods using the direction of the majority of orbit passes (descending; 15 scenes for T0 and 20 scenes for T1). The VV and VH polarizations (in dB) are sensitive to canopy structure and moisture but not affected by clouds. All exports and composites were created in Google Earth Engine.
+
+\subsubsection{Ancillary Environmental Data}

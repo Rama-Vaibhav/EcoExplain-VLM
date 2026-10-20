@@ -1,0 +1,18 @@
+{
+  "n": 2,
+  "combos": [
+    "qwen_vl_custom_mlp_qwen"
+  ],
+  "patches": [
+    {
+      "id": "p00052",
+      "gold": "decline",
+      "evidence": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.315 -> 0.293 (\u0394 -0.021); 20.2% of pixels dropped by more than 0.05\nEVI \u0394 -0.006 | NDMI \u0394 -0.008 | NBR \u0394 -0.010\nGreen cover in RGB 1.00 -> 0.99\nSAR VV \u0394 -0.15 dB, VH \u0394 -0.17 dB\nRainfall Jan\u2013Feb 69.3 -> 25.4 mm\nSoil moisture anomaly +0.022 -> -0.043 | Temperature anomaly -1.6 -> +0.9 \u00b0C\nElevation 600 m, slope 3\u00b0\n\nALLOWED_FACTS (copy verbatim into supporting_evidence; do not invent other numbers):\n1. Patch mean NDVI was 0.315 in 2022 and 0.293 in 2023 (\u0394 -0.021).\n2. EVI change (\u0394) was -0.006.\n3. NDMI change (\u0394) was -0.008.\n4. Jan\u2013Feb rainfall was 69.3 mm in 2022 and 25.4 mm in 2023.\n5. Temperature anomaly was -1.6 \u00b0C in 2022 and +0.9 \u00b0C in 2023.\n6. SAR VV backscatter change was -0.15 dB.\nCLASS_RULE: NDVI \u0394 \u2264 \u22120.02 \u2192 decline."
+    },
+    {
+      "id": "p00086",
+      "gold": "stable",
+      "evidence": "Evidence (T0 2022 -> T1 2023, patch means):\nNDVI 0.346 -> 0.338 (\u0394 -0.008); 3.6% of pixels dropped by more than 0.05\nEVI \u0394 +0.007 | NDMI \u0394 +0.011 | NBR \u0394 +0.013\nGreen cover in RGB 0.98 -> 0.98\nSAR VV \u0394 -0.17 dB, VH \u0394 -0.10 dB\nRainfall Jan\u2013Feb 62.5 -> 22.4 mm\nSoil moisture anomaly +0.037 -> -0.051 | Temperature anomaly -1.5 -> +1.1 \u00b0C\nElevation 773 m, slope 8\u00b0\n\nALLOWED_FACTS (copy verbatim into supporting_evidence; do not invent other numbers):\n1. Patch mean NDVI was 0.346 in 2022 and 0.338 in 2023 (\u0394 -0.008).\n2. EVI change (\u0394) was +0.007.\n3. NDMI change (\u0394) was +0.011.\n4. Jan\u2013Feb rainfall was 62.5 mm in 2022 and 22.4 mm in 2023.\n5. Temperature anomaly was -1.5 \u00b0C in 2022 and +1.1 \u00b0C in 2023.\n6. SAR VV backscatter change was -0.17 dB.\nCLASS_RULE: NDVI \u0394 between \u22120.02 and +0.02 \u2192 stable."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "decode": "closed_set_logprob",
+  "qwen_zero_shot_accuracy": 0.5636363636363636,
+  "qwen_zero_shot_accuracy_pct": "56.4%",
+  "ranking": [
+    {
+      "combo_id": "paligemma_siglip_linear_gemma",
+      "hf_model_id": "google/paligemma-3b-mix-224",
+      "test_accuracy_raw": 0.32727272727272727,
+      "test_accuracy_calibrated": 0.32727272727272727,
+      "test_accuracy_calibrated_pct": "32.7%",
+      "free_generation_accuracy": 0.36363636363636365,
+      "beats_qwen_56_4": false
+    }
+  ],
+  "failures": []
+}

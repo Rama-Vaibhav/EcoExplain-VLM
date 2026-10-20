@@ -1,0 +1,200 @@
+\chapter{Vision--language models: what you need to know}
+\label{ch:models}
+
+Stage~05 puts four models through the benchmark. This chapter explains, from the beginning, what these models are, exactly what each one received, how their answers were read, and how one of them was fine-tuned.
+
+\section{Classification in one page}
+
+A \textbf{classifier} takes an input (here two images and some text) and outputs one of a fixed set of \textbf{classes} (here \texttt{stable}, \texttt{decline}, \texttt{increase}). The correct class for each example is its \textbf{label}, also called \emph{gold}. There are three ways to use a pre-trained model:
+
+\begin{description}
+  \item[Zero-shot] Use the model as it is, with an instruction only: no examples, no training. Track~A.
+  \item[Few-shot] Put a few solved examples in the prompt. Not used here.
+  \item[Fine-tuning] Continue training the model on your own labelled examples. Tracks~B and~C (explanation LoRA).
+\end{description}
+
+\textbf{Overfitting} means learning the training examples so closely that the model fails on new ones. A training loss that falls to 0.0000, as in two of the Ada jobs (Chapter~\ref{ch:trackB}), is a warning sign of overfitting or of a shortcut.
+
+\section{How a language model writes}
+
+Modern language models are \textbf{transformers} \citep{vaswani2017}. Text is cut into \textbf{tokens} (words or word pieces), and each token becomes a vector. Layers of \textbf{self-attention} let every token look at every other token:
+\begin{equation}
+\mathrm{Attention}(Q,K,V) = \mathrm{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right)V ,
+\end{equation}
+where $Q$, $K$ and $V$ (queries, keys, values) are linear projections of the token vectors and $d_k$ is their size. A language model is trained to predict the next token,
+\begin{equation}
+p(y_1,\dots,y_T \mid x) = \prod_{t=1}^{T} p(y_t \mid y_{<t}, x),
+\end{equation}
+and writes an answer by choosing a next token again and again.
+
+\begin{description}
+  \item[Greedy decoding] Always pick the most likely next token (\texttt{do\_sample=False}). The same input always gives the same output, so one run per model is enough, but you cannot measure how much answers vary. Every run in this project was greedy.
+  \item[max\_new\_tokens] The longest answer allowed: 48 tokens for one-word answers on the laptop; 256 for Qwen and LLaVA explanations; 80 for PaliGemma and BLIP-2 explanations.
+\end{description}
+
+\section{How a model sees an image}
+
+A \textbf{vision transformer} (ViT) cuts an image into small squares (for example 14\,$\times$\,14 pixels), turns each into a vector and treats them like word tokens \citep{dosovitskiy2021}. \textbf{CLIP} trains an image encoder and a text encoder together on hundreds of millions of image--caption pairs so that matching pairs get similar vectors \citep{radford2021}; \textbf{SigLIP} does the same with a different loss that scales better \citep{zhai2023}. These encoders learned from photographs on the internet, not from satellite images.
+
+A \textbf{vision--language model} (VLM) joins three parts:
+\begin{enumerate}
+  \item a \textbf{vision encoder} that turns the image into vectors;
+  \item a \textbf{projector} (a linear layer, a small multi-layer network, or BLIP-2's \emph{Q-Former}, a set of learned queries that summarise the image) that maps those vectors into the language model's space;
+  \item a \textbf{language model} that reads the image vectors together with the text prompt and writes the answer.
+\end{enumerate}
+\textbf{Instruction tuning} then trains the whole system on request--answer pairs so that it follows instructions \citep{liu2023llava,liu2024llava15}.
+
+\section{The four models}
+
+\begin{table}[H]
+\centering
+\caption{The checkpoints that produced the reported results. On the laptop (\texttt{LAPTOP=True}) the small checkpoints in \texttt{laptop\_hf\_model\_id} (\file{src/vlm_combos.py}) replaced the planned 7B models.}
+\label{tab:models}
+\small
+\begin{tabularx}{\textwidth}{L{2.7cm}L{4.1cm}YL{1.1cm}}
+\toprule
+Name in your report & Hugging Face checkpoint & Parts & Size \\
+\midrule
+Qwen2-VL-2B & \file{Qwen/Qwen2-VL-2B-Instruct} & 32-layer ViT with 14-pixel patches and dynamic resolution; MLP merger; Qwen2 language model (hidden size 1,536, 28 layers) \citep{wang2024qwen2vl} & 2B \\
+PaliGemma-3B & \file{google/paligemma-3b-mix-224} & SigLIP encoder; linear projection; Gemma language model. ``mix-224'': tuned on a mixture of short-answer tasks at 224\,pixels \citep{beyer2024} & 3B \\
+LLaVA-Interleave-0.5B & \file{llava-hf/llava-interleave-qwen-0.5b-hf} & SigLIP encoder (384\,pixels, 14-pixel patches); MLP projector; Qwen1.5-0.5B-Chat language model; trained on multi-image inputs \citep{li2024interleave} & 0.5B \\
+BLIP-2 OPT-2.7B & \file{Salesforce/blip2-opt-2.7b} & frozen image encoder; Q-Former with 32 learned queries; frozen OPT-2.7B language model \citep{li2023blip2,zhang2022opt} & 3.8B in total \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{newinfo}
+The project's internal name for the third model is \texttt{llava15\_clip\_mlp\_vicuna}, and older figures (\file{results/result1.png}, \file{result2.png}) call it ``LLaVA-1.5'' with a ``CLIP-ViT-L/14'' encoder. The checkpoint that actually ran is LLaVA-NeXT-Interleave 0.5B, and its configuration file (in the local Hugging Face cache) says \texttt{siglip\_vision\_model} for the image encoder and \texttt{Qwen/Qwen1.5-0.5B-Chat} for the language model. The planned 7B LLaVA-1.5 never ran. Use the real name everywhere. Likewise, ``Qwen2-VL'' in this project always means the 2B version.
+\end{newinfo}
+
+\begin{whybox}
+Small open checkpoints were used because they run on a 16\,GB laptop, one at a time, and cost nothing. The trade-off is ability: models under 3B parameters follow complex instructions and reason about numbers much less well than 7B or larger models.
+\end{whybox}
+
+\section{What each model received}
+\label{sec:inputs}
+
+This is the most important table in the chapter. In Track~A (``Condition~C''), the four models did \emph{not} receive the same input, because two of them could not handle it.
+
+\begin{table}[H]
+\centering
+\caption{Input per model in Track~A (\texttt{eval\_combo} and the model branches in \file{src/vlm_eval.py}).}
+\label{tab:inputs}
+\small
+\begin{tabularx}{\textwidth}{L{2.9cm}L{2.6cm}Y}
+\toprule
+Model & Images & Text \\
+\midrule
+Qwen2-VL-2B & T0 and T1 & the full card, including the summary line with \texttt{candidate\_class}, then: ``Reply with exactly one word after the images: decline or increase or stable. Do not copy the evidence text.'' \\
+LLaVA-Interleave-0.5B & T0 and T1 & the same as Qwen \\
+PaliGemma-3B & T0 and T1 & only the card's NDVI line (any line naming \texttt{candidate\_class} is skipped), then: ``Two forest RGB chips: first image T0, second T1. Vegetation change class --- answer with exactly one word: stable, decline, or increase.'' \\
+BLIP-2 OPT-2.7B & T0 and T1 pasted side by side into one image & no evidence text, only: ``Side by side: left forest patch T0, right forest patch T1. One word only --- decline, increase, or stable:'' \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{whybox}
+Qwen and LLaVA take several images in one chat message, so both chips and the card go in together (the card is cut at 1,800 characters, but every test card is 1,298--1,447 characters long, so nothing was cut). PaliGemma refused long analytical prompts (``not trained to answer''), so only one NDVI line was kept. BLIP-2 accepts a single image, so \texttt{stitch\_t0\_t1} pastes the two chips side by side, and long text made it return nothing.
+\end{whybox}
+
+\begin{plainwords}
+This means the four Track~A numbers are not a fair race: Qwen and LLaVA were tested on ``images plus the full card'', PaliGemma on ``images plus one number'', BLIP-2 on ``one picture''. The fair comparison is Qwen against LLaVA. The other two show what happens with much less input.
+\end{plainwords}
+
+\begin{newinfo}
+\textbf{The \texttt{compact} mode (20 October).} \texttt{text\_mode="compact"} (\file{src/vlm_combos.py}) gives every model the same label-free numeric table that the explanation runs use (\texttt{compact\_evidence}). Qwen and LLaVA receive it in full; PaliGemma receives up to 1,200 characters of it before its short instruction, and BLIP-2 up to 900 characters before ``Side by side: left T0, right T1. One word only --- decline, increase, or stable:''. \file{scripts/run_protocol_fair_eval.py} runs this for all four models and writes \file{results/protocol/vlm_combo_comparison_compact.json}. This is the first equal-input comparison in the project. On the laptop PaliGemma could not be loaded (gated model, HTTP 401), so only Qwen, LLaVA and BLIP-2 ran.
+\end{newinfo}
+
+\section{Reading the answers: parsing}
+
+A model writes free text, so a \textbf{parser} has to turn it into a class. \texttt{parse\_class} (\file{src/vlm_eval.py}) looks for a JSON field \texttt{"change\_class"}, then for a one-word answer, then for the first class word or synonym in the text (``decrease'' and ``declining'' count as \texttt{decline}, ``unchanged'' as \texttt{stable}, and so on). Every one of the 55 answers was parsed for every model in Track~A.
+
+\begin{watchout}
+\textbf{Prompt echo.} BLIP-2 repeated its prompt for all 55 patches: ``Side by side: left forest patch T0, right forest patch T1. One word only --- decline, increase, or stable:''. The parser searched the whole output, found ``decline'' first, and recorded every answer as \texttt{decline}. BLIP-2's 32.7\,\% is therefore just the share of test patches labelled \texttt{decline} (18 of 55), not a prediction. A safer parser would read only the newly generated text and reject answers that copy the instruction.
+\end{watchout}
+
+\begin{newinfo}
+\textbf{Fixed on 20 October.} \texttt{\_strip\_prompt\_echo} in \file{src/vlm_eval.py} now removes echoed instructions before \texttt{parse\_class} looks for a class; an answer that only repeats the prompt gives no class at all. The old results files were not re-parsed. In the new \texttt{compact} run, BLIP-2 produced \textbf{0 parsable answers out of 55}: without the echo, it had nothing to say. So BLIP-2 has no valid accuracy in any setting, and its earlier 32.7\,\% should be reported as an artefact.
+\end{newinfo}
+
+\section{Closed-set scoring}
+\label{sec:closedset}
+
+Instead of letting the model write, you can ask how likely it finds each class word as the answer. For class $c$ with tokens $c_1,\dots,c_K$:
+\begin{equation}
+s(c) = \frac{1}{K}\sum_{k=1}^{K}\log p\bigl(c_k \mid \text{image}, \text{prompt}, c_{<k}\bigr),
+\qquad
+\hat{y} = \arg\max_{c}\; \bigl[s(c) + b_c\bigr].
+\label{eq:closedset}
+\end{equation}
+The model can no longer refuse or ramble. Models also prefer some answers regardless of the input; \citet{zhao2021calibrate} showed that a per-class correction $b_c$ removes much of this. In \file{src/vlm_closedset.py} the three corrections are chosen by grid search on the development set and then frozen for the test set. Chapter~\ref{ch:trackA} gives the result.
+
+\section{Fine-tuning with LoRA}
+\label{sec:lora}
+
+\subsection{Why not train everything?}
+
+A 2B-parameter model has two billion weights. Updating all of them needs far more memory than an 11\,GB GTX 1080 Ti has, and with a few hundred examples it would overfit.
+
+\subsection{Low-rank adaptation}
+
+LoRA freezes each original weight matrix $W_0$ and learns a small correction made of two thin matrices \citep{hu2022lora}:
+\begin{equation}
+W = W_0 + \frac{\alpha}{r}\,BA, \qquad B\in\mathbb{R}^{d\times r},\; A\in\mathbb{R}^{r\times k},\; r \ll \min(d,k).
+\label{eq:lora}
+\end{equation}
+With rank $r = 8$, a $1536\times1536$ matrix of Qwen2-VL-2B (2.4 million weights) gets a correction of only $2 \times 1536 \times 8 = 24{,}576$ trainable weights. $\alpha$ scales the correction; the project uses $\alpha = 16$, so the scale is $\alpha/r = 2$.
+
+\begin{wherecode}
+\file{src/vlm_finetune.py}: \texttt{LoraConfig(r=8, lora\_alpha=16, lora\_dropout=0.1, target\_modules=[q\_proj, k\_proj, v\_proj, o\_proj, gate\_proj, up\_proj, down\_proj])}. All attention projections \emph{and} all feed-forward (MLP) projections of the language model get adapters. The settings were confirmed in \file{ada_review/EcoExplain-VLM-results/checkpoints/qwen2vl_lora_ecoexplain/adapter_config.json}.
+\end{wherecode}
+
+\subsection{Four-bit storage (QLoRA)}
+
+To save more memory, the frozen base model is stored in 4-bit precision (``NF4'') while the LoRA weights stay in 16-bit. This is QLoRA \citep{dettmers2023qlora}; the project switches it on whenever a CUDA GPU is present (\texttt{BitsAndBytesConfig(load\_in\_4bit=True, bnb\_4bit\_quant\_type="nf4", bnb\_4bit\_use\_double\_quant=True)}).
+
+\subsection{What is learned and how}
+
+Each training example is a conversation: the user turn (two images, text, instruction) and the assistant turn (the target answer, for example \texttt{\{"change\_class": "decline"\}}). The loss is the cross-entropy of the answer tokens only:
+\begin{equation}
+\mathcal{L} = -\frac{1}{T}\sum_{t=1}^{T}\log p_\theta\bigl(y_t \mid y_{<t},\,\text{images},\,\text{prompt}\bigr).
+\end{equation}
+Prompt tokens get the label $-100$, which tells PyTorch to ignore them, so the model does not spend its capacity learning to repeat the prompt.
+
+\begin{description}
+  \item[Optimiser] AdamW, an adaptive optimiser with decoupled weight decay \citep{loshchilov2019}: learning rate $5\times10^{-5}$, weight decay 0.05.
+  \item[Gradient accumulation] Gradients from 4 examples are added up before each update, imitating a batch of 4 when only one example fits in memory.
+  \item[Epoch] One pass over the training data. Both reported LoRA runs used one epoch.
+  \item[Model selection] After each epoch, development accuracy is measured and the best adapter is kept; training stops early when it stops improving (patience 1).
+  \item[\texttt{--max-train N}] Keeps the first $N$ training patches in ID order (Chapter~\ref{ch:stage04}); the first class LoRA used $N = 16$ and the explanation LoRA $N = 128$. With \texttt{--balanced-train} (added 20 October) the $N$ patches are drawn evenly across the three classes instead; the balanced class LoRA used it with $N = 16$.
+  \item[Training text] The current training code refuses the full card (\texttt{train\_text\_mode} must be \texttt{evidence\_only} or \texttt{minimal}), so no new adapter can learn the label line.
+\end{description}
+
+\section{Software and hardware}
+
+\begin{itemize}
+  \item Hugging Face \texttt{transformers} (models and processors), \texttt{peft} (LoRA), \texttt{bitsandbytes} (4-bit), \texttt{accelerate}. Weights come from the Hugging Face Hub. \emph{Gated} models such as PaliGemma need an access token; without one the Ada jobs failed with HTTP 401.
+  \item Track~A and Phase~B ran on your laptop (16\,GB Mac, Python 3.9 environment \file{.venv}). Phase~C ran on the MacBook Air's Apple GPU (\texttt{mps}).
+  \item The LoRA runs ran on IIIT's Ada cluster: jobs submitted with the \textbf{Slurm} scheduler (\file{scripts/ada_slurm_*.sh}), Python 3.10, NVIDIA GeForce GTX 1080 Ti GPUs (11\,GB).
+\end{itemize}
+
+\begin{foryourreport}
+In ``Vision--Language Model Evaluation'' and ``Parameter-Efficient Fine-Tuning'':
+\begin{itemize}
+  \item Table~\ref{tab:models} (shortened) with a citation for each model.
+  \item Table~\ref{tab:inputs}, or the same facts in two sentences. This is required: without it, a reader assumes all four models saw the same input.
+  \item Greedy decoding, the parser and its weakness (prompt echo).
+  \item The LoRA settings in one compact table (rank 8, $\alpha$ 16, dropout 0.1, attention and MLP projections, 4-bit base model, AdamW $5\times10^{-5}$, weight decay 0.05, accumulation 4, one epoch, GTX 1080 Ti), with \citet{hu2022lora}, \citet{dettmers2023qlora} and \citet{loshchilov2019}. Equation~\ref{eq:lora} is worth including.
+\end{itemize}
+\end{foryourreport}
+
+\begin{selfcheck}
+\begin{enumerate}
+  \item What are the three parts of a vision--language model?
+  \item Which image encoder and language model does the LLaVA checkpoint you ran actually use?
+  \item Which models saw the full card in Track~A, and what did the other two see?
+  \item Why is BLIP-2's 32.7\,\% not a real prediction?
+  \item In Equation~\ref{eq:lora}, what are $W_0$, $B$, $A$, $r$ and $\alpha$, and how many weights does a rank-8 adapter add to a $1536\times1536$ matrix?
+  \item Why are the prompt tokens given the label $-100$ during fine-tuning?
+\end{enumerate}
+\end{selfcheck}

@@ -1,0 +1,69 @@
+\chapter{Questions your professor may ask}
+\label{ch:questions}
+
+Practise answering these aloud, in your own words, in under a minute each. The short answers below are for checking yourself afterwards.
+
+\begin{description}[style=nextline]
+  \item[What is the main contribution of the project?]
+  A five-source benchmark of 366 Kanha patches with frozen splits, and an evaluation that found where the apparent skill came from: with the card's summary line Qwen scores 56.4\,\%, without it no small VLM beats guessing, while one number on the card gives 94.5\,\%. Explanations agree with the evidence only under a strict cite-only prompt.
+
+  \item[Why Kanha, and why January--February?]
+  A large reserve with varied sal and mixed deciduous forest and low dry-season cloud, chosen over Pench and Achanakmar in the handbook. The same two months in both years remove most seasonal change; January--February is dry and before the main leaf fall.
+
+  \item[Why five sources if only NDVI decides the label?]
+  The benchmark tests whether models can use multi-source evidence and resist evidence that does not separate the classes. Radar and climate barely differ between classes, so a claim that rain caused a patch's decline is unsupported.
+
+  \item[How were the labels made, and how good are they?]
+  Bottom 15\,\% of NDVI change in a 1,200-patch pool is decline, top 15\,\% is increase, the rest is stable. They are relative, automatic ranks, and one person agreed with them on 8 of 19 patches.
+
+  \item[What did each model see?]
+  In the first run, Qwen and LLaVA saw both images and the full card, PaliGemma both images and one NDVI line, BLIP-2 one stitched image. In the 20 October rerun every model was given the same label-free numeric table (\texttt{compact}).
+
+  \item[The card contained the label. What does that do to your results?]
+  It means the full-card scores measure use of a card that states the answer's trend and label. We measured its effect: without the line Qwen drops from 56.4\,\% to 32.7\,\% ($p = 0.011$), answering ``stable'' for everything. We now report the label-free runs first and the full-card runs as a labelled second block.
+
+  \item[Did Qwen copy the label?]
+  Not the label token: it answered ``stable'' on all 19 increase patches although the line said \texttt{increase}. But it followed the trend word written in the same line, so its score still depended on that line.
+
+  \item[Is any model better than chance without the line?]
+  Not in one-word classification: LLaVA's 43.6\,\% is not significant ($p = 0.44$), Qwen and the balanced LoRA are at chance. In explanation mode the explanation LoRA separates decline from increase ($p < 0.001$) but never answers ``stable'', and the zero-shot version of that mode was not run on all patches.
+
+  \item[Why do PaliGemma and BLIP-2 have no leak-free result?]
+  PaliGemma is a gated model and could not be downloaded on the laptop without a token. BLIP-2 only repeated its instruction; after the parser fix none of its 55 answers contained a class.
+
+  \item[Why did BLIP-2 originally score 32.7\,\%?]
+  The old parser read ``decline'' from BLIP-2's echoed prompt, so it scored the share of decline patches. It was never a prediction.
+
+  \item[Why is a one-line rule so much better than the models?]
+  The labels were made from NDVI change, so a rule on the card's \dndvi{} reproduces them (94.5\,\%). The models fail to read and compare one number; the information is not missing.
+
+  \item[What did fine-tuning achieve?]
+  A LoRA on 16 balanced patches with the label-free card, one epoch, reached 36.4\,\% and answered ``stable'' for 53 of 55 patches: no better than guessing. An earlier run on the first 16 patches by ID with the full card reached 67.3\,\%, and longer full-card runs 100\,\%, because they learned the label line; those are superseded.
+
+  \item[Is 16 patches enough to judge fine-tuning?]
+  No. It shows that a tiny, label-free fine-tune does not teach the task; it cannot show that fine-tuning would fail with 48 or 256 balanced patches. That is the next experiment.
+
+  \item[What did the structured prompt change?]
+  Claim correctness rose to 75.8\,\% (Qwen) and 71.1\,\% (LLaVA). Most claims still flagged are tiny true changes below the dead-band. The price: explanations restate the supplied facts, and Qwen's class follows the stated rule (53 of 55).
+
+  \item[What does your explanation score measure?]
+  Whether the direction of each claim matches the measured change: evidence consistency, not faithfulness to the model's reasoning.
+
+  \item[What is the explanation LoRA, and why did it not give better explanations?]
+  Qwen2-VL-2B wrote justifications for the training patches; 28 of 256 passed a strict filter; 16 were used (all decline, 9 of them cut-off raw outputs); one epoch. It reached 61.8\,\% class accuracy but only 50.5\,\% correct claims: the teacher was weak and the targets were one class and partly malformed.
+
+  \item[What is the spatial split?]
+  The study rectangle was cut into 5 by 4 blocks and whole blocks were held out for development and test (266/46/54), so test patches have no training neighbours in their block. It has been written but not yet evaluated, and its test majority baseline is 38.9\,\%.
+
+  \item[Which LLaVA did you use?]
+  LLaVA-NeXT-Interleave 0.5B (\texttt{llava-interleave-qwen-0.5b-hf}): a SigLIP image encoder and a Qwen1.5-0.5B language model. Not LLaVA-1.5, although the project's file names say so.
+
+  \item[Where did each experiment run?]
+  Zero-shot runs, the free-form explanations and the leak-free reruns on your Mac laptop; the structured explanations on the MacBook Air's GPU; all fine-tuning on IIIT's Ada cluster (GTX 1080 Ti, Slurm).
+
+  \item[Is the NDVI written on the card correct?]
+  About 8\,\% too low, because zero padding was included in the averages; the changes have the right sign but are understated.
+
+  \item[What would you do with one more month?]
+  Balanced, label-free fine-tuning on 48 or 256 patches with early stopping; zero-shot Qwen in explanation mode on all 55 patches; PaliGemma with a token; the spatial test; fix the padding bias; more human labels; human rating of explanations.
+\end{description}

@@ -1,0 +1,150 @@
+\chapter{Stage 04: the frozen dataset and the split}
+\label{ch:stage04}
+
+Stage~04 is short in your workflow figure, but it fixes the rules of every experiment that follows: which file is the dataset, which patches may be used for training, and which patches are kept for the final test.
+
+\section{The dataset file}
+
+\file{dataset.jsonl} has one JSON record per line, 366 lines (3.9\,MB). ``JSON Lines'' is used because each record can be read on its own, which suits sending examples to a model one at a time.
+
+\begin{longtable}{L{3.8cm}L{10.4cm}}
+\caption{Fields of each record in \file{dataset.jsonl}.}\label{tab:jsonl}\\
+\toprule
+\textbf{Field} & \textbf{Content} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Field} & \textbf{Content} \\
+\midrule
+\endhead
+\texttt{id} & patch identifier, e.g.\ \texttt{p00575} \\
+\texttt{task} & \texttt{ground\_forest\_disturbance\_in\_spectral\_evidence} \\
+\texttt{images} & paths to the T0 and T1 JPEGs (512\,$\times$\,512) \\
+\texttt{sentinel2}, \texttt{sentinel1} & band and index names, array and GeoTIFF paths, orbit pass, scene counts \\
+\texttt{chirps}, \texttt{era5\_land}, \texttt{dem} & rainfall totals, climate anomalies, terrain values and paths \\
+\texttt{evidence} & \dndvi{} and \dnbr{} arrays and Otsu masks \\
+\texttt{acquisition} & season, windows, masked fractions \\
+\texttt{triplets} & boxes with type and severity (empty for 363 patches) \\
+\texttt{file\_analysis} & every computed statistic and the rule-based words of Table~\ref{tab:inferrules} \\
+\texttt{text} & visual descriptions, spectral narrative, analyst description, the model prompt (\texttt{condition\_c\_user\_prompt}) and the summary line \\
+\texttt{explanation}, \texttt{explanation\_source} & the rule-based narrative; \texttt{raster\_analysis\_v2} for all 366 \\
+\texttt{candidate\_class} & the automatic label: the gold label for all scoring \\
+\texttt{reference\_class} & the human label, or null (19 patches have one) \\
+\texttt{sources\_present} & which of the five sources exist (all true) \\
+\bottomrule
+\end{longtable}
+
+Latitude and longitude are deliberately removed from every record (\texttt{\_clean} in \file{scripts/03_build_dataset.py}), so a model cannot use location knowledge.
+
+\section{Freezing and splitting}
+
+\file{scripts/05_freeze_jsonl_and_splits.py} (24 September):
+\begin{enumerate}
+  \item copies the old \file{dataset.jsonl} to \file{dataset_old.jsonl} and the version-2 file over \file{dataset.jsonl}. ``Freezing'' means no further edits;
+  \item splits the 366 patches \emph{separately within each class} (``stratified'') with a fixed random seed (42): 70\,\% training, 15\,\% development, 15\,\% test;
+  \item writes \file{data/splits/train_patches.csv}, \file{dev_patches.csv}, \file{test_patches.csv} and \file{split_manifest.json}.
+\end{enumerate}
+
+\begin{table}[H]
+\centering
+\caption{Split sizes and class balance (\file{data/splits/split_manifest.json}).}
+\label{tab:split}
+\begin{tabular}{lrrrr}
+\toprule
+Split & decline & stable & increase & total \\
+\midrule
+training & 84 & 87 & 85 & 256 \\
+development & 18 & 19 & 18 & 55 \\
+test & 18 & 18 & 19 & 55 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{What each part is for}
+
+\begin{description}
+  \item[Training set (256)] Used to change a model's weights. Only the two LoRA runs used it.
+  \item[Development set (55)] Used to make choices: prompt wording, which training epoch to keep, the bias of the closed-set probe. Looking at it many times is allowed.
+  \item[Test set (55)] Used at the end to report performance. Every result in this guide and in your report is on the same 55 test patches. If anything is tuned on the test set, the reported number becomes optimistic.
+\end{description}
+
+\subsection{The majority baseline}
+
+The test set has 19 increase patches out of 55, so a ``model'' that always answers \texttt{increase} scores $19/55 = $ \textbf{34.5\,\%}. This is the number to beat, rather than one in three (33.3\,\%), because the test classes are not exactly balanced. Its macro-F1 (Chapter~\ref{ch:measuring}) is 0.171.
+
+\begin{whybox}
+A fixed seed makes the split repeatable by anyone. Stratifying keeps the three classes nearly equal in every part, so accuracy is easy to interpret and the baseline stays close to one in three.
+\end{whybox}
+
+\section{Leakage: three questions to ask of any input}
+\label{sec:leakage}
+
+\begin{plainwords}
+\emph{Leakage} means that information which would not be available in real use reaches the model, so the score measures something other than what you intended \citep{kaufman2012}. It is not an accusation; it is a check you apply to every input.
+\end{plainwords}
+
+\begin{enumerate}
+  \item \textbf{Is the answer in the input?} In this project, yes, for the full card: its summary line states \texttt{candidate\_class} (Chapter~\ref{ch:stage03}). The \texttt{evidence\_only} text mode and \file{scripts/check_no_leak.py} were added on 2 October to remove it for later runs (Chapter~\ref{ch:trackA}).
+  \item \textbf{Are test patches next to training patches?} Nearby places are similar (\emph{spatial autocorrelation}). If a test patch touches a training patch, a fine-tuned model can do well by memorising the neighbourhood. \citet{roberts2017} and \citet{ploton2020} show that random splits of spatial data overstate accuracy and recommend splitting by spatial blocks. Here the split is random: the closest pair of patch centres is 639\,m apart (touching squares) and the median nearest-neighbour distance is 1,430\,m (Figure~\ref{fig:patchmap} shows test patches beside training patches). This matters little for zero-shot runs (nothing is trained) and more for the LoRA runs.
+  \item \textbf{Could the model know the place?} A large model might know facts about ``Kanha''. Coordinates and place names are removed from every model input, and the preflight check confirms it (\file{results/preflight_report.json}).
+\end{enumerate}
+
+\section{Automatic checks}
+
+\file{src/validate_dataset.py} and \file{src/preflight.py} (run by \file{scripts/04_validate.py} and \file{scripts/preflight.py}) wrote \file{results/validation_report.json} and \file{results/preflight_report.json}: 13 passes, 3 warnings, 0 failures.
+
+\begin{itemize}
+  \item \textbf{Passed}: all 366 patches have 15 GeoTIFFs; no empty values; no schema errors; no coordinates in model-facing records; all JPEGs and radar arrays present and finite; no stable patch has boxes.
+  \item \textbf{Warnings}: patch IDs differ slightly from the parent repository; 0 Ollama explanations and 366 template fallbacks (version~1); 4 decline patches have no boxes.
+\end{itemize}
+
+\begin{watchout}
+These checks verified files and formats, not content. None of them looked for the gold label inside the prompt text; \file{scripts/check_no_leak.py} (2 October) does that for the \texttt{evidence\_only} and explanation prompts, which are required to pass with zero leaks.
+\end{watchout}
+
+\begin{newinfo}
+One detail of the frozen files matters later. The records are stored in patch-ID order, and the training code's \texttt{--max-train N} option keeps the \emph{first N} training patches in that order, not a balanced sample. For 16 patches that gives 9 decline, 6 stable and 1 increase; the first 128 hold 56 decline, 51 stable and 21 increase. Chapters~\ref{ch:trackB} and~\ref{ch:trackC} show what this did to the two LoRA runs. Since 20 October, \texttt{--balanced-train} (\file{src/split_utils.py}) draws the training subset evenly across the three classes with seed 42; the balanced 16 used in Ada job 29575 were 6 decline, 5 stable and 5 increase.
+\end{newinfo}
+
+\section{A second, spatial split (added 20 October)}
+\label{sec:spatialsplit}
+
+\file{scripts/write_spatial_splits.py} (\texttt{write\_spatial\_block\_splits} in \file{src/split_utils.py}) cuts the study rectangle into a grid of 5 longitude by 4 latitude blocks, then holds out \emph{whole blocks} for development and test, so that no test patch has a training neighbour in the same block. The result is in \file{data/splits_spatial/} and does not replace the random split.
+
+\begin{table}[H]
+\centering
+\caption{The spatial block split (\file{data/splits_spatial/split_manifest.json}; test blocks 0, 15, 17; development blocks 1, 5, 8).}
+\label{tab:spatialsplit}
+\begin{tabular}{lrrrr}
+\toprule
+Split & decline & stable & increase & total \\
+\midrule
+training & 89 & 77 & 100 & 266 \\
+development & 18 & 26 & 2 & 46 \\
+test & 13 & 21 & 20 & 54 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{watchout}
+Whole blocks do not keep the classes balanced: the development set has only 2 increase patches, and the test set's majority class is now \texttt{stable} (21 of 54, a baseline of 38.9\,\%, not 34.5\,\%). No model has been evaluated on this split yet. When you run it, report it as a second, leakage-reduced test, with its own baseline.
+\end{watchout}
+
+\begin{foryourreport}
+In ``Dataset Construction and Data Splits'' (about 300 words):
+\begin{itemize}
+  \item One record per patch in JSON Lines; what a record holds (one sentence, or Table~\ref{tab:jsonl} in an appendix); coordinates removed.
+  \item The stratified 256/55/55 split with seed 42, the test class counts and the 34.5\,\% majority baseline.
+  \item That the split is random rather than spatial, with a citation \citep{roberts2017,ploton2020}; the full discussion can wait for Limitations.
+\end{itemize}
+\end{foryourreport}
+
+\begin{selfcheck}
+\begin{enumerate}
+  \item What is the difference between the development set and the test set?
+  \item Why is 34.5\,\% the majority baseline?
+  \item Name the three kinds of leakage and say which ones apply to this project.
+  \item Why does a random split matter more for the LoRA runs than for the zero-shot runs?
+  \item What did the automatic checks \emph{not} check?
+\end{enumerate}
+\end{selfcheck}

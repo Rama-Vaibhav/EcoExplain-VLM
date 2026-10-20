@@ -1,0 +1,636 @@
+{
+  "combo_id": "llava15_clip_mlp_vicuna",
+  "hf_model_id": "llava-hf/llava-interleave-qwen-0.5b-hf",
+  "laptop": true,
+  "decode": "closed_set_logprob",
+  "prompt": "four_panel_collage_plus_ndvi_rule",
+  "ndvi_rule": {
+    "decline_at_or_below": -0.02,
+    "increase_at_or_above": 0.02
+  },
+  "label_in_prompt": false,
+  "dev_bias": {
+    "stable": -1.0,
+    "decline": -1.0,
+    "increase": 0.0
+  },
+  "dev_accuracy_raw": 0.32727272727272727,
+  "dev_accuracy_calibrated": 0.5636363636363636,
+  "test_accuracy_raw": 0.32727272727272727,
+  "accuracy": 0.6,
+  "test_accuracy_calibrated": 0.6,
+  "free_generation_accuracy": 0.32727272727272727,
+  "qwen_zero_shot_accuracy": 0.5636363636363636,
+  "n_dev": 55,
+  "n_eval": 55,
+  "seconds": 391.74,
+  "status": "ok",
+  "note": "Test accuracy is closed-set logprob after a dev-only class bias. candidate_class is not in the prompt. This does not replace the original free-generation JSON.",
+  "predictions": [
+    {
+      "id": "p00052",
+      "gold": "decline",
+      "pred": "increase",
+      "correct": false,
+      "logp": {
+        "stable": -14.3898,
+        "decline": -12.9797,
+        "increase": -13.9601
+      }
+    },
+    {
+      "id": "p00086",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "logp": {
+        "stable": -14.5713,
+        "decline": -13.1084,
+        "increase": -14.1953
+      }
+    },
+    {
+      "id": "p00575",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "logp": {
+        "stable": -15.085,
+        "decline": -13.4107,
+        "increase": -14.6314
+      }
+    },
+    {
+      "id": "p00701",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "logp": {
+        "stable": -15.2904,
+        "decline": -14.0004,
+        "increase": -14.8343
+      }
+    },
+    {
+      "id": "p00850",
+      "gold": "stable",
+      "pred": "increase",
+      "correct": false,
+      "logp": {
+        "stable": -14.9104,
+        "decline": -13.3918,
+        "increase": -14.3909
+      }
+    },
+    {
+      "id": "p00863",
+      "gold": "stable",
+      "pred": "increase",
+      "correct": false,
+      "logp": {
+        "stable": -15.0696,
+        "decline": -13.4314,
+        "increase": -14.0681
+      }
+    },
+    {
+      "id": "p00883",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "logp": {
+        "stable": -14.8624,
+        "decline": -13.6075,
+        "increase": -14.6495
+      }
+    },
+    {
+      "id": "p00937",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "logp": {
+        "stable": -14.7877,
+        "decline": -13.2155,
+        "increase": -14.2594
+      }
+    },
+    {
+      "id": "p01162",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "logp": {
+        "stable": -15.3373,
+        "decline": -13.7553,
+        "increase": -14.599
+      }
+    },
+    {
+      "id": "p01206",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "logp": {
+        "stable": -15.1541,
+        "decline": -13.4969,
+        "increase": -14.9598
+      }
+    },
+    {
+      "id": "p01415",
+      "gold": "stable",
+      "pred": "increase",
+      "correct": false,
+      "logp": {
+        "stable": -15.3165,
+        "decline": -13.7911,
+        "increase": -14.7286
+      }
+    },
+    {
+      "id": "p01621",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "logp": {
+        "stable": -15.115,
+        "decline": -13.2497,
+        "increase": -14.281
+      }
+    },
+    {
+      "id": "p01648",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "logp": {
+        "stable": -15.2454,
+        "decline": -13.6604,
+        "increase": -14.9622
+      }
+    },
+    {
+      "id": "p01988",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "logp": {
+        "stable": -14.9986,
+        "decline": -13.396,
+        "increase": -13.9517
+      }
+    },
+    {
+      "id": "p02128",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "logp": {
+        "stable": -15.1326,
+        "decline": -13.2043,
+        "increase": -14.5422
+      }
+    },
+    {
+      "id": "p02139",
+      "gold": "stable",
+      "pred": "increase",
+      "correct": false,
+      "logp": {
+        "stable": -15.2499,
+        "decline": -13.4916,
+        "increase": -14.4379
+      }
+    },
+    {
+      "id": "p02334",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "logp": {
+        "stable": -15.006,
+        "decline": -13.4259,
+        "increase": -14.5382
+      }
+    },
+    {
+      "id": "p02668",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "logp": {
+        "stable": -15.1301,
+        "decline": -13.5617,
+        "increase": -14.4973
+      }
+    },
+    {
+      "id": "p02674",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "logp": {
+        "stable": -14.7721,
+        "decline": -13.0474,
+        "increase": -14.107
+      }
+    },
+    {
+      "id": "p02803",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "logp": {
+        "stable": -15.0242,
+        "decline": -13.6136,
+        "increase": -14.7864
+      }
+    },
+    {
+      "id": "p02890",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "logp": {
+        "stable": -15.3312,
+        "decline": -13.5944,
+        "increase": -14.6666
+      }
+    },
+    {
+      "id": "p03067",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "logp": {
+        "stable": -15.0965,
+        "decline": -13.6473,
+        "increase": -14.3651
+      }
+    },
+    {
+      "id": "p03122",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "logp": {
+        "stable": -15.2458,
+        "decline": -13.2653,
+        "increase": -14.5534
+      }
+    },
+    {
+      "id": "p03228",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "logp": {
+        "stable": -14.9602,
+        "decline": -13.1565,
+        "increase": -14.1682
+      }
+    },
+    {
+      "id": "p03243",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "logp": {
+        "stable": -15.0564,
+        "decline": -13.8216,
+        "increase": -14.7034
+      }
+    },
+    {
+      "id": "p03515",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "logp": {
+        "stable": -15.11,
+        "decline": -13.8498,
+        "increase": -14.5988
+      }
+    },
+    {
+      "id": "p03538",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "logp": {
+        "stable": -15.2393,
+        "decline": -13.8287,
+        "increase": -14.9771
+      }
+    },
+    {
+      "id": "p03592",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "logp": {
+        "stable": -14.9006,
+        "decline": -13.4416,
+        "increase": -14.6985
+      }
+    },
+    {
+      "id": "p03635",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "logp": {
+        "stable": -14.6799,
+        "decline": -13.5461,
+        "increase": -14.3576
+      }
+    },
+    {
+      "id": "p03689",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "logp": {
+        "stable": -15.0981,
+        "decline": -13.7074,
+        "increase": -14.4408
+      }
+    },
+    {
+      "id": "p03801",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "logp": {
+        "stable": -15.3898,
+        "decline": -13.7853,
+        "increase": -14.6193
+      }
+    },
+    {
+      "id": "p03867",
+      "gold": "stable",
+      "pred": "increase",
+      "correct": false,
+      "logp": {
+        "stable": -14.8414,
+        "decline": -13.2349,
+        "increase": -14.064
+      }
+    },
+    {
+      "id": "p03991",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "logp": {
+        "stable": -15.0259,
+        "decline": -13.8326,
+        "increase": -14.8619
+      }
+    },
+    {
+      "id": "p04040",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "logp": {
+        "stable": -15.1398,
+        "decline": -13.5124,
+        "increase": -14.1549
+      }
+    },
+    {
+      "id": "p04059",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "logp": {
+        "stable": -15.1165,
+        "decline": -13.4436,
+        "increase": -14.5647
+      }
+    },
+    {
+      "id": "p04145",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "logp": {
+        "stable": -15.3478,
+        "decline": -13.7379,
+        "increase": -14.778
+      }
+    },
+    {
+      "id": "p04174",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "logp": {
+        "stable": -14.6815,
+        "decline": -12.9471,
+        "increase": -14.0614
+      }
+    },
+    {
+      "id": "p04203",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "logp": {
+        "stable": -15.0797,
+        "decline": -13.6569,
+        "increase": -14.7076
+      }
+    },
+    {
+      "id": "p04268",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "logp": {
+        "stable": -14.99,
+        "decline": -13.4881,
+        "increase": -14.3406
+      }
+    },
+    {
+      "id": "p04399",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "logp": {
+        "stable": -15.0016,
+        "decline": -13.3151,
+        "increase": -14.485
+      }
+    },
+    {
+      "id": "p04508",
+      "gold": "stable",
+      "pred": "increase",
+      "correct": false,
+      "logp": {
+        "stable": -15.0335,
+        "decline": -13.7195,
+        "increase": -14.5613
+      }
+    },
+    {
+      "id": "p04577",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "logp": {
+        "stable": -14.8863,
+        "decline": -13.8326,
+        "increase": -14.4664
+      }
+    },
+    {
+      "id": "p04671",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "logp": {
+        "stable": -15.1311,
+        "decline": -13.7458,
+        "increase": -14.5202
+      }
+    },
+    {
+      "id": "p04777",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "logp": {
+        "stable": -14.9948,
+        "decline": -13.7702,
+        "increase": -14.6373
+      }
+    },
+    {
+      "id": "p04806",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "logp": {
+        "stable": -14.8527,
+        "decline": -13.2365,
+        "increase": -14.2717
+      }
+    },
+    {
+      "id": "p04892",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "logp": {
+        "stable": -15.0053,
+        "decline": -13.353,
+        "increase": -14.6069
+      }
+    },
+    {
+      "id": "p04898",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "logp": {
+        "stable": -14.8827,
+        "decline": -13.2801,
+        "increase": -14.3231
+      }
+    },
+    {
+      "id": "p04996",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "logp": {
+        "stable": -15.0481,
+        "decline": -13.1204,
+        "increase": -14.2522
+      }
+    },
+    {
+      "id": "p05015",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "logp": {
+        "stable": -14.7316,
+        "decline": -13.3839,
+        "increase": -14.2218
+      }
+    },
+    {
+      "id": "p05082",
+      "gold": "decline",
+      "pred": "increase",
+      "correct": false,
+      "logp": {
+        "stable": -15.0983,
+        "decline": -13.6793,
+        "increase": -14.568
+      }
+    },
+    {
+      "id": "p05117",
+      "gold": "increase",
+      "pred": "decline",
+      "correct": false,
+      "logp": {
+        "stable": -14.9889,
+        "decline": -13.3029,
+        "increase": -14.3107
+      }
+    },
+    {
+      "id": "p05122",
+      "gold": "increase",
+      "pred": "increase",
+      "correct": true,
+      "logp": {
+        "stable": -15.1357,
+        "decline": -13.7919,
+        "increase": -14.6415
+      }
+    },
+    {
+      "id": "p05384",
+      "gold": "stable",
+      "pred": "increase",
+      "correct": false,
+      "logp": {
+        "stable": -14.7813,
+        "decline": -13.1514,
+        "increase": -14.0284
+      }
+    },
+    {
+      "id": "p05511",
+      "gold": "stable",
+      "pred": "decline",
+      "correct": false,
+      "logp": {
+        "stable": -15.0049,
+        "decline": -13.4097,
+        "increase": -14.4624
+      }
+    },
+    {
+      "id": "p05771",
+      "gold": "decline",
+      "pred": "decline",
+      "correct": true,
+      "logp": {
+        "stable": -15.1136,
+        "decline": -13.4725,
+        "increase": -14.6278
+      }
+    }
+  ]
+}

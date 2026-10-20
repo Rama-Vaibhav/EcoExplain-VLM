@@ -1,0 +1,409 @@
+{
+  "combo_id": "llava15_clip_mlp_vicuna",
+  "family": "LLaVA-1.5",
+  "vision_encoder": "CLIP-ViT-L/14",
+  "projector": "2-layer MLP",
+  "text_decoder": "Vicuna / Llama-3",
+  "hf_model_id": "llava-hf/llava-interleave-qwen-0.5b-hf",
+  "laptop": true,
+  "generation": {
+    "max_new_tokens": 48,
+    "do_sample": false,
+    "temperature": 1.0
+  },
+  "status": "ok",
+  "error": null,
+  "n_eval": 55,
+  "n_parsed_class": 55,
+  "accuracy": 0.32727272727272727,
+  "majority_class": "increase",
+  "majority_accuracy": 0.34545454545454546,
+  "seconds": 403.18,
+  "predictions": [
+    {
+      "id": "p00052",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p00086",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p00575",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p00701",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p00850",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p00863",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p00883",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p00937",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p01162",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p01206",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p01415",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p01621",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p01648",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p01988",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p02128",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p02139",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p02334",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p02668",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p02674",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p02803",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p02890",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p03067",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p03122",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p03228",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p03243",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p03515",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p03538",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p03592",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p03635",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p03689",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p03801",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p03867",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p03991",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p04040",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p04059",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p04145",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p04174",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p04203",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p04268",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p04399",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p04508",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p04577",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p04671",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p04777",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p04806",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p04892",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p04898",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p04996",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p05015",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p05082",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p05117",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p05122",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p05384",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p05511",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p05771",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    }
+  ]
+}

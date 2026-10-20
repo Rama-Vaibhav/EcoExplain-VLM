@@ -1,0 +1,182 @@
+\paragraph{Class LoRA.} The adapter was trained on 16 training patches
+for one epoch with the classification target and the full Condition~C
+card (final training loss 1.84), and tested on the full test set. This
+is a small-scale configuration, not a complete fine-tune of the 256
+training patches. Exploratory runs on all 256 training patches for two
+to three epochs reached 100\% development and test accuracy, because
+the model learned to copy \texttt{candidate\_class} from the summary
+line. These runs are excluded from the results.
+
+\paragraph{Explanation LoRA.} Qwen2-VL-2B itself acted as teacher: it
+generated a justification for each training patch, and a generation was
+kept only if its class matched the label, it contained at least two
+checkable claims, and all of those claims agreed with the measured
+changes. Of 256 training patches, 28 passed. A larger 7B teacher could
+not be used because its download exceeded the cluster's disk quota. The
+training run was capped at the first 128 training patches, so 16 of the
+28 filtered justifications were used. Both training and evaluation used
+the card without the label, the checkpoint was selected on the
+development set, and the test set was evaluated in explanation mode.
+
+\subsubsection{Evaluation Metrics}
+
+Classification is scored by accuracy with Wilson 95\% intervals, macro-F1, and comparison with the 34.5\%
+majority-class baseline; McNemar's test  compares
+paired predictions.
+
+Explanations are scored automatically. The scorer searches the text for
+an indicator (NDVI, EVI, NBR, NDMI, rainfall, temperature, soil
+moisture, VV, VH) and pairs it with the nearest direction word
+(increase-type, decrease-type or stable-type). Each measured change is
+converted to a direction using an indicator-specific dead-band, below
+which a change counts as stable. A claim is \emph{correct} when its
+direction matches the measured direction. We report the mean number of
+checkable claims per explanation, the share of correct claims (pooled
+over patches), the share of explanations with at least one incorrect
+claim, and self-consistency (whether the dominant claimed direction
+agrees with the model's own class). ROUGE-L  is
+computed but not used as a measure of faithfulness, because overlap with
+the supplied text rewards copying rather than reasoning. The scorer measures consistency with the evidence,
+not faithfulness to the model's internal reasoning.
+
+\subsection{Experimental Workflow}
+
+Figure~\ref{fig:workflow} summarises the pipeline.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig_workflow.png}
+\caption{EcoExplain-VLM workflow. After the dataset is frozen, three
+experiments are run on the same 55 test patches and are scored
+separately.}
+\label{fig:workflow}
+\end{figure}
+
+The work proceeded in six stages.
+
+\begin{enumerate}
+\item \textbf{Study design.} The study area is Kanha Tiger Reserve.
+Matched dry-season windows are T0 (January--February 2022) and T1
+(January--February 2023).
+
+\item \textbf{Collect satellite and environmental data.} Sentinel-2
+(optical), Sentinel-1 (radar), CHIRPS (rainfall), ERA5-Land (climate)
+and NASADEM (terrain) were selected as the five sources.
+
+\item \textbf{Google Earth Engine.} Composites were built for each
+window and 15 GeoTIFF files were exported for every complete patch
+(366 patches; 5,490 files).
+
+\item \textbf{Process data and create labels.} DIP produced the RGB
+chips and tensors. Patch-mean NDVI change determined the automatic
+label (\texttt{candidate\_class}). Spectral and environmental values
+were written into a structured evidence card. Each patch became one
+JSONL record: images + evidence text + \texttt{candidate\_class}.
+
+\item \textbf{Freeze the dataset split.} Records were split
+256/55/55 (train/development/test) by stratified sampling on the
+label (seed 42; 70/15/15).
+
+\item \textbf{Run three separate experiments on the same 55 test
+patches.}
+\begin{itemize}
+\item \textbf{A. Classification.} Four VLMs received the images and
+the full evidence card (Condition~C). The run was repeated after
+removing the summary line that contains the label
+(\texttt{evidence\_only}). The measure is class accuracy.
+Supporting analyses on this track were the closed-set probe and the
+$\Delta$NDVI baselines.
+\item \textbf{B. Class LoRA.} Qwen2-VL-2B was fine-tuned on 16
+training patches for one epoch with the classification target, then
+tested on the same 55 patches. The measure is class accuracy.
+\item \textbf{C. Explanations.} The label was removed from the card
+and models were asked to justify a prediction. Free-form prompts,
+structured cite-only prompts and the explanation LoRA were compared.
+The measures are claim correctness and class accuracy.
+\end{itemize}
+\end{enumerate}
+
+The development set was used only for prompt wording, the closed-set
+bias and the explanation LoRA checkpoint. No headline result was
+chosen by looking at the test set.
+% ============================================================
+% 3. RESULTS AND DISCUSSION
+% ============================================================
+
+\section{Results and Discussion}
+
+\subsection{Dataset Characteristics}
+
+Table~\ref{tab:data} summarises the benchmark. The optical index changes
+move together: $\Delta$NDVI correlates with $\Delta$NBR, $\Delta$NDMI
+and $\Delta$EVI at 0.80, 0.77 and 0.78. Mean window rainfall fell from
+69.1\,mm in 2022 to 25.1\,mm in 2023, the temperature anomaly rose from
+$-1.52^\circ$C to $+0.88^\circ$C, and the soil-moisture anomaly fell
+from $+0.024$ to $-0.043$. Mean VV and VH backscatter changed by $-0.47$
+and $-0.48$\,dB. On average, therefore, the second dry season was drier
+and slightly less green, which is why ``increase'' is a relative rank
+and why many increase patches have $\Delta$ close to zero.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lr}
+\toprule
+Quantity & Value \\
+\midrule
+Study rectangle & 2,350.7\,km$^2$ \\
+Candidate pool / final patches & 1,200 / 366 \\
+Decline / stable / increase & 120 / 124 / 122 \\
+Train / development / test & 256 / 55 / 55 \\
+Test decline / stable / increase & 18 / 18 / 19 \\
+Majority baseline (test) & 34.5\% \\
+Human agreement & 8/19 (42\%) \\
+Mean $\Delta$NDVI (s.d.) & $-0.016$ (0.027) \\
+Patches with $|\Delta\mathrm{NDVI}| \ge 0.05$ & 34 \\
+Card trend words disagree with label & 108 \\
+\bottomrule
+\end{tabular}
+\caption{EcoExplain-VLM dataset summary. Labels are NDVI-change ranks
+within this region and pair of years.}
+\label{tab:data}
+\end{table}
+
+\subsection{Zero-Shot Model Performance}
+
+Table~\ref{tab:zeroshot} reports zero-shot accuracy on the test set.
+Qwen2-VL-2B is the only model above the majority baseline, at 56.4\%
+(31/55; 95\% interval 43.3--68.6\%). Even this margin is not
+statistically secure at $n = 55$: McNemar's test against always
+predicting ``increase'' gives $p = 0.12$. The other three models do not
+separate the classes. LLaVA-Interleave-0.5B answered ``decrease'' for
+all 55 patches, PaliGemma answered ``decline'' for 42 of 55, and BLIP-2
+repeated its own prompt, from which the parser read the first class word
+(``decline''). BLIP-2's 32.7\% is therefore a parsing artefact rather
+than a prediction.
+
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{llrcr}
+\toprule
+Model or baseline & Input & Acc. & 95\% CI & Macro-F1 \\
+\midrule
+Qwen2-VL-2B & images + full card & \textbf{56.4\%} & 43.3--68.6 & 0.466 \\
+PaliGemma-3B & images + NDVI line & 36.4\% & 24.9--49.6 & 0.271 \\
+LLaVA-Interleave-0.5B & images + full card & 32.7\% & 21.8--45.9 & 0.164 \\
+BLIP-2 OPT-2.7B & stitched image only & 32.7\% & 21.8--45.9 & 0.164 \\
+\midrule
+LLaVA-Interleave-0.5B, \texttt{evidence\_only} & images + card without label line & 36.4\% & 24.9--49.6 & 0.251 \\
+LLaVA-Interleave-0.5B, closed-set probe & class-word likelihood, dev-fitted bias & 60.0\% & 46.8--71.9 & 0.479 \\
+\midrule
+Majority class (always ``increase'') & --- & 34.5\% & 23.4--47.7 & 0.171 \\
+$\Delta$NDVI rule, $\pm 0.02$ cut-offs & card $\Delta$NDVI & 63.6\% & 50.4--75.1 & 0.606 \\
+$\Delta$NDVI rule, cut-offs fitted on train & card $\Delta$NDVI & 94.5\% & 85.1--98.1 & 0.945 \\
+\bottomrule
+\end{tabular}
+\caption{Classification on the test set ($n = 55$). The top block is
+generative zero-shot Condition~C. The middle block contains supporting
+runs that are not zero-shot generative results. The bottom block uses no
+model.}
+\label{tab:zeroshot}
+\end{table*}
