@@ -22,7 +22,7 @@
       "accuracy": 0.32727272727272727,
       "accuracy_pct": "32.7%",
       "n_eval": 55,
-      "seconds": 1089.2,
+      "seconds": 502.07,
       "error": ""
     }
   ],
@@ -39,7 +39,7 @@
       "accuracy": 0.32727272727272727,
       "accuracy_pct": "32.7%",
       "n_eval": 55,
-      "seconds": 1089.2,
+      "seconds": 502.07,
       "error": ""
     }
   ],

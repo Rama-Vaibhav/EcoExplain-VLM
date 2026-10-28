@@ -13,33 +13,47 @@
   },
   "status": "ok",
   "error": null,
-  "n_eval": 55,
-  "n_parsed_class": 55,
-  "accuracy": 0.43636363636363634,
-  "majority_class": "increase",
-  "majority_accuracy": 0.34545454545454546,
-  "seconds": 76.39,
+  "n_eval": 54,
+  "n_parsed_class": 54,
+  "accuracy": 0.2777777777777778,
+  "majority_class": "stable",
+  "majority_accuracy": 0.3888888888888889,
+  "seconds": 212.33,
   "predictions": [
     {
-      "id": "p00052",
-      "gold": "decline",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": true
-    },
-    {
-      "id": "p00086",
+      "id": "p00000",
       "gold": "stable",
       "pred_text": "increase",
       "pred": "increase",
       "correct": false
     },
     {
-      "id": "p00575",
+      "id": "p00100",
       "gold": "decline",
       "pred_text": "decrease",
       "pred": "decline",
       "correct": true
+    },
+    {
+      "id": "p00109",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p00312",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p00402",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
     },
     {
       "id": "p00701",
@@ -49,43 +63,57 @@
       "correct": false
     },
     {
-      "id": "p00850",
-      "gold": "stable",
-      "pred_text": "increase",
-      "pred": "increase",
+      "id": "p00719",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p00910",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p00916",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
       "correct": false
     },
     {
-      "id": "p00863",
+      "id": "p00919",
       "gold": "stable",
       "pred_text": "decrease",
       "pred": "decline",
       "correct": false
     },
     {
-      "id": "p00883",
-      "gold": "decline",
-      "pred_text": "increase",
-      "pred": "increase",
+      "id": "p01113",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
       "correct": false
     },
     {
-      "id": "p00937",
-      "gold": "decline",
-      "pred_text": "increase",
-      "pred": "increase",
+      "id": "p01116",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
       "correct": false
-    },
-    {
-      "id": "p01162",
-      "gold": "increase",
-      "pred_text": "increase",
-      "pred": "increase",
-      "correct": true
     },
     {
       "id": "p01206",
       "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p01210",
+      "gold": "increase",
       "pred_text": "decrease",
       "pred": "decline",
       "correct": false
@@ -98,18 +126,32 @@
       "correct": false
     },
     {
-      "id": "p01621",
+      "id": "p01788",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p01793",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p01890",
       "gold": "stable",
       "pred_text": "decrease",
       "pred": "decline",
       "correct": false
     },
     {
-      "id": "p01648",
-      "gold": "stable",
+      "id": "p01899",
+      "gold": "decline",
       "pred_text": "decrease",
       "pred": "decline",
-      "correct": false
+      "correct": true
     },
     {
       "id": "p01988",
@@ -119,43 +161,92 @@
       "correct": false
     },
     {
-      "id": "p02128",
+      "id": "p01992",
       "gold": "decline",
       "pred_text": "decrease",
       "pred": "decline",
       "correct": true
     },
     {
-      "id": "p02139",
+      "id": "p02084",
       "gold": "stable",
       "pred_text": "decrease",
       "pred": "decline",
       "correct": false
     },
     {
-      "id": "p02334",
+      "id": "p02090",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p02091",
       "gold": "stable",
       "pred_text": "decrease",
       "pred": "decline",
       "correct": false
     },
     {
-      "id": "p02668",
+      "id": "p02094",
+      "gold": "decline",
+      "pred_text": "increase",
+      "pred": "increase",
+      "correct": false
+    },
+    {
+      "id": "p02186",
+      "gold": "stable",
+      "pred_text": "increase",
+      "pred": "increase",
+      "correct": false
+    },
+    {
+      "id": "p02284",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p02382",
       "gold": "increase",
       "pred_text": "decrease",
       "pred": "decline",
       "correct": false
     },
     {
-      "id": "p02674",
+      "id": "p02393",
       "gold": "decline",
       "pred_text": "decrease",
       "pred": "decline",
       "correct": true
     },
     {
-      "id": "p02803",
+      "id": "p02580",
       "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p02698",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p02780",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p02783",
+      "gold": "increase",
       "pred_text": "decrease",
       "pred": "decline",
       "correct": false
@@ -168,140 +259,21 @@
       "correct": false
     },
     {
-      "id": "p03067",
-      "gold": "increase",
-      "pred_text": "increase",
-      "pred": "increase",
-      "correct": true
-    },
-    {
-      "id": "p03122",
-      "gold": "decline",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": true
-    },
-    {
-      "id": "p03228",
-      "gold": "decline",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": true
-    },
-    {
-      "id": "p03243",
-      "gold": "increase",
-      "pred_text": "increase",
-      "pred": "increase",
-      "correct": true
-    },
-    {
-      "id": "p03515",
-      "gold": "increase",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": false
-    },
-    {
-      "id": "p03538",
+      "id": "p04370",
       "gold": "stable",
       "pred_text": "decrease",
       "pred": "decline",
       "correct": false
     },
     {
-      "id": "p03592",
-      "gold": "decline",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": true
-    },
-    {
-      "id": "p03635",
-      "gold": "increase",
-      "pred_text": "increase",
-      "pred": "increase",
-      "correct": true
-    },
-    {
-      "id": "p03689",
-      "gold": "increase",
-      "pred_text": "increase",
-      "pred": "increase",
-      "correct": true
-    },
-    {
-      "id": "p03801",
-      "gold": "increase",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": false
-    },
-    {
-      "id": "p03867",
+      "id": "p04374",
       "gold": "stable",
       "pred_text": "decrease",
       "pred": "decline",
       "correct": false
     },
     {
-      "id": "p03991",
-      "gold": "stable",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": false
-    },
-    {
-      "id": "p04040",
-      "gold": "increase",
-      "pred_text": "increase",
-      "pred": "increase",
-      "correct": true
-    },
-    {
-      "id": "p04059",
-      "gold": "decline",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": true
-    },
-    {
-      "id": "p04145",
-      "gold": "stable",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": false
-    },
-    {
-      "id": "p04174",
-      "gold": "decline",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": true
-    },
-    {
-      "id": "p04203",
-      "gold": "increase",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": false
-    },
-    {
-      "id": "p04268",
-      "gold": "increase",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": false
-    },
-    {
-      "id": "p04399",
-      "gold": "decline",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": true
-    },
-    {
-      "id": "p04508",
+      "id": "p04574",
       "gold": "stable",
       "pred_text": "decrease",
       "pred": "decline",
@@ -322,6 +294,13 @@
       "correct": false
     },
     {
+      "id": "p04774",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
       "id": "p04777",
       "gold": "increase",
       "pred_text": "increase",
@@ -329,71 +308,85 @@
       "correct": true
     },
     {
-      "id": "p04806",
-      "gold": "decline",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": true
-    },
-    {
-      "id": "p04892",
-      "gold": "decline",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": true
-    },
-    {
-      "id": "p04898",
-      "gold": "decline",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": true
-    },
-    {
-      "id": "p04996",
-      "gold": "decline",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": true
-    },
-    {
-      "id": "p05015",
+      "id": "p04779",
       "gold": "increase",
       "pred_text": "decrease",
       "pred": "decline",
       "correct": false
     },
     {
-      "id": "p05082",
-      "gold": "decline",
-      "pred_text": "decrease",
-      "pred": "decline",
+      "id": "p04872",
+      "gold": "increase",
+      "pred_text": "increase",
+      "pred": "increase",
       "correct": true
     },
     {
-      "id": "p05117",
-      "gold": "increase",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": false
-    },
-    {
-      "id": "p05122",
-      "gold": "increase",
-      "pred_text": "decrease",
-      "pred": "decline",
-      "correct": false
-    },
-    {
-      "id": "p05384",
+      "id": "p04977",
       "gold": "stable",
       "pred_text": "decrease",
       "pred": "decline",
       "correct": false
     },
     {
-      "id": "p05511",
+      "id": "p05073",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p05075",
       "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p05273",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p05274",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p05279",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p05360",
+      "gold": "increase",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p05371",
+      "gold": "stable",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": false
+    },
+    {
+      "id": "p05472",
+      "gold": "decline",
+      "pred_text": "decrease",
+      "pred": "decline",
+      "correct": true
+    },
+    {
+      "id": "p05761",
+      "gold": "increase",
       "pred_text": "decrease",
       "pred": "decline",
       "correct": false

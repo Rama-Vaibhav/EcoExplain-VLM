@@ -125,23 +125,23 @@
       "protocol": "compact table (same for all models)",
       "source": "results/protocol/vlm_combo_llava15_clip_mlp_vicuna.json",
       "status": "ok",
-      "k": 24,
-      "n": 55,
-      "parsed": 55,
-      "accuracy": 0.43636363636363634,
+      "k": 15,
+      "n": 54,
+      "parsed": 54,
+      "accuracy": 0.2777777777777778,
       "ci95": [
-        0.314,
-        0.567
+        0.176,
+        0.409
       ],
-      "macro_f1": 0.347,
+      "macro_f1": 0.208,
       "per_class_correct": {
-        "decline": "16/18",
-        "stable": "0/18",
-        "increase": "8/19"
+        "decline": "12/13",
+        "stable": "0/21",
+        "increase": "3/20"
       },
       "answers": {
-        "decline": 43,
-        "increase": 12
+        "increase": 6,
+        "decline": 48
       },
       "prompt_mode": null
     },
@@ -151,22 +151,22 @@
       "protocol": "compact table",
       "source": "results/protocol/vlm_combo_qwen_vl_custom_mlp_qwen.json",
       "status": "ok",
-      "k": 18,
-      "n": 55,
-      "parsed": 55,
-      "accuracy": 0.32727272727272727,
+      "k": 21,
+      "n": 54,
+      "parsed": 54,
+      "accuracy": 0.3888888888888889,
       "ci95": [
-        0.218,
-        0.459
+        0.27,
+        0.522
       ],
-      "macro_f1": 0.164,
+      "macro_f1": 0.187,
       "per_class_correct": {
-        "decline": "0/18",
-        "stable": "18/18",
-        "increase": "0/19"
+        "decline": "0/13",
+        "stable": "21/21",
+        "increase": "0/20"
       },
       "answers": {
-        "stable": 55
+        "stable": 54
       },
       "prompt_mode": null
     },
@@ -184,7 +184,7 @@
       "protocol": "compact table (new anti-echo parser)",
       "source": "results/protocol/vlm_combo_blip2_clip_qformer_opt.json",
       "status": "no_parsed_answers",
-      "n": 55,
+      "n": 54,
       "parsed": 0
     },
     {
@@ -219,25 +219,25 @@
       "protocol": "full card at train and test",
       "source": "results/vlm_combo_qwen_vl_finetuned_ecoexplain.json",
       "status": "ok",
-      "k": 37,
+      "k": 19,
       "n": 55,
       "parsed": 55,
-      "accuracy": 0.6727272727272727,
+      "accuracy": 0.34545454545454546,
       "ci95": [
-        0.541,
-        0.782
+        0.234,
+        0.477
       ],
-      "macro_f1": 0.556,
+      "macro_f1": 0.202,
       "per_class_correct": {
-        "decline": "18/18",
-        "stable": "0/18",
-        "increase": "19/19"
+        "decline": "1/18",
+        "stable": "18/18",
+        "increase": "0/19"
       },
       "answers": {
-        "decline": 36,
-        "increase": 19
+        "stable": 54,
+        "decline": 1
       },
-      "prompt_mode": null
+      "prompt_mode": "evidence_only"
     },
     {
       "section": "C explanation",

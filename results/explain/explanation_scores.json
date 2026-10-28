@@ -1,6 +1,1850 @@
 {
-  "n_models": 3,
+  "n_models": 5,
   "models": [
+    {
+      "combo_id": "blip2_clip_qformer_opt",
+      "hf_model_id": "Salesforce/blip2-opt-2.7b",
+      "prompt_mode": "explain",
+      "prompt_style": "legacy",
+      "answer_format": "short",
+      "n_eval": 55,
+      "accuracy": 0.32727272727272727,
+      "mean_checkable_claims": 0.0,
+      "pct_correct_claims": null,
+      "hallucination_rate": 0.0,
+      "self_consistency": null,
+      "mean_rouge_l_evidence": 0.0,
+      "mean_rouge_l_template": 0.0,
+      "distinct_2": 0.01818181818181818,
+      "near_duplicate_share": 1.0,
+      "per_patch": {
+        "p00052": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p00086": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p00575": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p00701": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p00850": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p00863": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p00883": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p00937": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p01162": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p01206": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p01415": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p01621": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p01648": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p01988": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p02128": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p02139": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p02334": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p02668": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p02674": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p02803": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p02890": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03067": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03122": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03228": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03243": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03515": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03538": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03592": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03635": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03689": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03801": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03867": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03991": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04040": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04059": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04145": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04174": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04203": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04268": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04399": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04508": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04577": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04671": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04777": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04806": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04892": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04898": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04996": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p05015": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p05082": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p05117": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p05122": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p05384": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p05511": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p05771": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        }
+      },
+      "source_file": "explain_blip2_clip_qformer_opt.json",
+      "n_parsed_class": 55
+    },
+    {
+      "combo_id": "llava15_clip_mlp_vicuna",
+      "hf_model_id": "llava-hf/llava-interleave-qwen-0.5b-hf",
+      "prompt_mode": "explain",
+      "prompt_style": "structured",
+      "answer_format": "json",
+      "n_eval": 55,
+      "accuracy": 0.45098039215686275,
+      "mean_checkable_claims": 2.327272727272727,
+      "pct_correct_claims": 0.7109375,
+      "hallucination_rate": 0.34545454545454546,
+      "self_consistency": 0.9069767441860465,
+      "mean_rouge_l_evidence": 0.24993243254530811,
+      "mean_rouge_l_template": 0.1323226591527239,
+      "distinct_2": 0.1964229683087543,
+      "near_duplicate_share": 0.34545454545454546,
+      "per_patch": {
+        "p00052": {
+          "n_claims": 3,
+          "n_correct": 1,
+          "faithfulness": 0.3333333333333333,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.3611,
+          "rouge_l_template": 0.1477
+        },
+        "p00086": {
+          "n_claims": 2,
+          "n_correct": 2,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.1913,
+          "rouge_l_template": 0.1215
+        },
+        "p00575": {
+          "n_claims": 3,
+          "n_correct": 1,
+          "faithfulness": 0.3333333333333333,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2642,
+          "rouge_l_template": 0.1074
+        },
+        "p00701": {
+          "n_claims": 2,
+          "n_correct": 2,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.1913,
+          "rouge_l_template": 0.1129
+        },
+        "p00850": {
+          "n_claims": 4,
+          "n_correct": 1,
+          "faithfulness": 0.25,
+          "self_consistent": false,
+          "rouge_l_evidence": 0.188,
+          "rouge_l_template": 0.1205
+        },
+        "p00863": {
+          "n_claims": 2,
+          "n_correct": 2,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.1913,
+          "rouge_l_template": 0.1215
+        },
+        "p00883": {
+          "n_claims": 3,
+          "n_correct": 1,
+          "faithfulness": 0.3333333333333333,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2642,
+          "rouge_l_template": 0.1074
+        },
+        "p00937": {
+          "n_claims": 3,
+          "n_correct": 1,
+          "faithfulness": 0.3333333333333333,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2642,
+          "rouge_l_template": 0.1157
+        },
+        "p01162": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.3097,
+          "rouge_l_template": 0.1882
+        },
+        "p01206": {
+          "n_claims": 3,
+          "n_correct": 2,
+          "faithfulness": 0.6666666666666666,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2642,
+          "rouge_l_template": 0.1048
+        },
+        "p01415": {
+          "n_claims": 2,
+          "n_correct": 2,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.1913,
+          "rouge_l_template": 0.1215
+        },
+        "p01621": {
+          "n_claims": 3,
+          "n_correct": 1,
+          "faithfulness": 0.3333333333333333,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2642,
+          "rouge_l_template": 0.1057
+        },
+        "p01648": {
+          "n_claims": 3,
+          "n_correct": 1,
+          "faithfulness": 0.3333333333333333,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2642,
+          "rouge_l_template": 0.107
+        },
+        "p01988": {
+          "n_claims": 2,
+          "n_correct": 2,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.1913,
+          "rouge_l_template": 0.1129
+        },
+        "p02128": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.1909,
+          "rouge_l_template": 0.1473
+        },
+        "p02139": {
+          "n_claims": 15,
+          "n_correct": 15,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2375,
+          "rouge_l_template": 0.1616
+        },
+        "p02334": {
+          "n_claims": 4,
+          "n_correct": 1,
+          "faithfulness": 0.25,
+          "self_consistent": false,
+          "rouge_l_evidence": 0.188,
+          "rouge_l_template": 0.1124
+        },
+        "p02668": {
+          "n_claims": 2,
+          "n_correct": 2,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.1913,
+          "rouge_l_template": 0.121
+        },
+        "p02674": {
+          "n_claims": 3,
+          "n_correct": 1,
+          "faithfulness": 0.3333333333333333,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.3471,
+          "rouge_l_template": 0.1293
+        },
+        "p02803": {
+          "n_claims": 2,
+          "n_correct": 2,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.1913,
+          "rouge_l_template": 0.1176
+        },
+        "p02890": {
+          "n_claims": 3,
+          "n_correct": 1,
+          "faithfulness": 0.3333333333333333,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2642,
+          "rouge_l_template": 0.107
+        },
+        "p03067": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2424,
+          "rouge_l_template": 0.1611
+        },
+        "p03122": {
+          "n_claims": 3,
+          "n_correct": 2,
+          "faithfulness": 0.6666666666666666,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2642,
+          "rouge_l_template": 0.1088
+        },
+        "p03228": {
+          "n_claims": 3,
+          "n_correct": 2,
+          "faithfulness": 0.6666666666666666,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2642,
+          "rouge_l_template": 0.1088
+        },
+        "p03243": {
+          "n_claims": 4,
+          "n_correct": 1,
+          "faithfulness": 0.25,
+          "self_consistent": false,
+          "rouge_l_evidence": 0.2254,
+          "rouge_l_template": 0.1527
+        },
+        "p03515": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.2597,
+          "rouge_l_template": 0.1748
+        },
+        "p03538": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2545,
+          "rouge_l_template": 0.1616
+        },
+        "p03592": {
+          "n_claims": 3,
+          "n_correct": 1,
+          "faithfulness": 0.3333333333333333,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2642,
+          "rouge_l_template": 0.1066
+        },
+        "p03635": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2303,
+          "rouge_l_template": 0.16
+        },
+        "p03689": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6851,
+          "rouge_l_template": 0.2739
+        },
+        "p03801": {
+          "n_claims": 2,
+          "n_correct": 2,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.1913,
+          "rouge_l_template": 0.1181
+        },
+        "p03867": {
+          "n_claims": 4,
+          "n_correct": 1,
+          "faithfulness": 0.25,
+          "self_consistent": false,
+          "rouge_l_evidence": 0.2113,
+          "rouge_l_template": 0.146
+        },
+        "p03991": {
+          "n_claims": 2,
+          "n_correct": 2,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.1913,
+          "rouge_l_template": 0.1215
+        },
+        "p04040": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.2087,
+          "rouge_l_template": 0.1215
+        },
+        "p04059": {
+          "n_claims": 3,
+          "n_correct": 3,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.573,
+          "rouge_l_template": 0.2397
+        },
+        "p04145": {
+          "n_claims": 15,
+          "n_correct": 15,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.225,
+          "rouge_l_template": 0.1523
+        },
+        "p04174": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.172,
+          "rouge_l_template": 0.0693
+        },
+        "p04203": {
+          "n_claims": 2,
+          "n_correct": 2,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.1913,
+          "rouge_l_template": 0.12
+        },
+        "p04268": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2667,
+          "rouge_l_template": 0.16
+        },
+        "p04399": {
+          "n_claims": 3,
+          "n_correct": 1,
+          "faithfulness": 0.3333333333333333,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.283,
+          "rouge_l_template": 0.1157
+        },
+        "p04508": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.2479,
+          "rouge_l_template": 0.1344
+        },
+        "p04577": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2424,
+          "rouge_l_template": 0.16
+        },
+        "p04671": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2667,
+          "rouge_l_template": 0.1611
+        },
+        "p04777": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2424,
+          "rouge_l_template": 0.16
+        },
+        "p04806": {
+          "n_claims": 3,
+          "n_correct": 3,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.3472,
+          "rouge_l_template": 0.1588
+        },
+        "p04892": {
+          "n_claims": 3,
+          "n_correct": 2,
+          "faithfulness": 0.6666666666666666,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.5843,
+          "rouge_l_template": 0.2315
+        },
+        "p04898": {
+          "n_claims": 3,
+          "n_correct": 2,
+          "faithfulness": 0.6666666666666666,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2642,
+          "rouge_l_template": 0.1066
+        },
+        "p04996": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0322,
+          "rouge_l_template": 0.0268
+        },
+        "p05015": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.2727,
+          "rouge_l_template": 0.1818
+        },
+        "p05082": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.172,
+          "rouge_l_template": 0.0675
+        },
+        "p05117": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.1947,
+          "rouge_l_template": 0.1224
+        },
+        "p05122": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.1584,
+          "rouge_l_template": 0.0769
+        },
+        "p05384": {
+          "n_claims": 2,
+          "n_correct": 2,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.1913,
+          "rouge_l_template": 0.1102
+        },
+        "p05511": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.1418,
+          "rouge_l_template": 0.0806
+        },
+        "p05771": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.1739,
+          "rouge_l_template": 0.1359
+        }
+      },
+      "source_file": "explain_structured_llava15_clip_mlp_vicuna.json",
+      "n_parsed_class": 51
+    },
+    {
+      "combo_id": "paligemma_siglip_linear_gemma",
+      "hf_model_id": "google/paligemma-3b-mix-224",
+      "prompt_mode": "explain",
+      "prompt_style": "legacy",
+      "answer_format": "short",
+      "n_eval": 55,
+      "accuracy": 0.3333333333333333,
+      "mean_checkable_claims": 0.0,
+      "pct_correct_claims": null,
+      "hallucination_rate": 0.0,
+      "self_consistency": null,
+      "mean_rouge_l_evidence": 0.0,
+      "mean_rouge_l_template": 0.0028647989221939826,
+      "distinct_2": 0.0,
+      "near_duplicate_share": 1.0,
+      "per_patch": {
+        "p00052": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p00086": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p00575": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0093
+        },
+        "p00701": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p00850": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p00863": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p00883": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p00937": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0093
+        },
+        "p01162": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p01206": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0091
+        },
+        "p01415": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p01621": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0092
+        },
+        "p01648": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p01988": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p02128": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0095
+        },
+        "p02139": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0093
+        },
+        "p02334": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p02668": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p02674": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p02803": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p02890": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0093
+        },
+        "p03067": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03122": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03228": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03243": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03515": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03538": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03592": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0093
+        },
+        "p03635": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03689": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03801": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03867": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p03991": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04040": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04059": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0092
+        },
+        "p04145": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0091
+        },
+        "p04174": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0093
+        },
+        "p04203": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04268": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04399": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0093
+        },
+        "p04508": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04577": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04671": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04777": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04806": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0095
+        },
+        "p04892": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p04898": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0093
+        },
+        "p04996": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0093
+        },
+        "p05015": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p05082": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.009
+        },
+        "p05117": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p05122": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p05384": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p05511": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0
+        },
+        "p05771": {
+          "n_claims": 0,
+          "n_correct": 0,
+          "faithfulness": null,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.0,
+          "rouge_l_template": 0.0093
+        }
+      },
+      "source_file": "explain_paligemma_siglip_linear_gemma.json",
+      "n_parsed_class": 36
+    },
+    {
+      "combo_id": "qwen_vl_custom_mlp_qwen",
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "prompt_mode": "explain",
+      "prompt_style": "structured",
+      "answer_format": "json",
+      "n_eval": 55,
+      "accuracy": 0.6363636363636364,
+      "mean_checkable_claims": 2.8545454545454545,
+      "pct_correct_claims": 0.7579617834394905,
+      "hallucination_rate": 0.36363636363636365,
+      "self_consistency": 1.0,
+      "mean_rouge_l_evidence": 0.5656368874940424,
+      "mean_rouge_l_template": 0.23084633511023994,
+      "distinct_2": 0.20803212851405622,
+      "near_duplicate_share": 0.09090909090909091,
+      "per_patch": {
+        "p00052": {
+          "n_claims": 6,
+          "n_correct": 3,
+          "faithfulness": 0.5,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.678,
+          "rouge_l_template": 0.2538
+        },
+        "p00086": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6893,
+          "rouge_l_template": 0.2718
+        },
+        "p00575": {
+          "n_claims": 6,
+          "n_correct": 6,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.194,
+          "rouge_l_template": 0.1037
+        },
+        "p00701": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2128,
+          "rouge_l_template": 0.1241
+        },
+        "p00850": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6932,
+          "rouge_l_template": 0.2662
+        },
+        "p00863": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6893,
+          "rouge_l_template": 0.2654
+        },
+        "p00883": {
+          "n_claims": 6,
+          "n_correct": 3,
+          "faithfulness": 0.5,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6592,
+          "rouge_l_template": 0.2603
+        },
+        "p00937": {
+          "n_claims": 6,
+          "n_correct": 3,
+          "faithfulness": 0.5,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6704,
+          "rouge_l_template": 0.2603
+        },
+        "p01162": {
+          "n_claims": 3,
+          "n_correct": 3,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.7251,
+          "rouge_l_template": 0.2904
+        },
+        "p01206": {
+          "n_claims": 3,
+          "n_correct": 3,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6369,
+          "rouge_l_template": 0.2555
+        },
+        "p01415": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.3611,
+          "rouge_l_template": 0.1449
+        },
+        "p01621": {
+          "n_claims": 2,
+          "n_correct": 1,
+          "faithfulness": 0.5,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.6971,
+          "rouge_l_template": 0.2667
+        },
+        "p01648": {
+          "n_claims": 6,
+          "n_correct": 3,
+          "faithfulness": 0.5,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6901,
+          "rouge_l_template": 0.2597
+        },
+        "p01988": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2162,
+          "rouge_l_template": 0.121
+        },
+        "p02128": {
+          "n_claims": 6,
+          "n_correct": 4,
+          "faithfulness": 0.6666666666666666,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6556,
+          "rouge_l_template": 0.262
+        },
+        "p02139": {
+          "n_claims": 3,
+          "n_correct": 2,
+          "faithfulness": 0.6666666666666666,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.5604,
+          "rouge_l_template": 0.2571
+        },
+        "p02334": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6893,
+          "rouge_l_template": 0.2718
+        },
+        "p02668": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6893,
+          "rouge_l_template": 0.271
+        },
+        "p02674": {
+          "n_claims": 5,
+          "n_correct": 3,
+          "faithfulness": 0.6,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6556,
+          "rouge_l_template": 0.2547
+        },
+        "p02803": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6893,
+          "rouge_l_template": 0.265
+        },
+        "p02890": {
+          "n_claims": 6,
+          "n_correct": 3,
+          "faithfulness": 0.5,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6592,
+          "rouge_l_template": 0.2532
+        },
+        "p03067": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2128,
+          "rouge_l_template": 0.1168
+        },
+        "p03122": {
+          "n_claims": 3,
+          "n_correct": 2,
+          "faithfulness": 0.6666666666666666,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.5714,
+          "rouge_l_template": 0.254
+        },
+        "p03228": {
+          "n_claims": 3,
+          "n_correct": 2,
+          "faithfulness": 0.6666666666666666,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.3596,
+          "rouge_l_template": 0.1929
+        },
+        "p03243": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.1844,
+          "rouge_l_template": 0.1095
+        },
+        "p03515": {
+          "n_claims": 5,
+          "n_correct": 5,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.686,
+          "rouge_l_template": 0.2632
+        },
+        "p03538": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6893,
+          "rouge_l_template": 0.2783
+        },
+        "p03592": {
+          "n_claims": 6,
+          "n_correct": 3,
+          "faithfulness": 0.5,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6704,
+          "rouge_l_template": 0.265
+        },
+        "p03635": {
+          "n_claims": 4,
+          "n_correct": 4,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.1389,
+          "rouge_l_template": 0.086
+        },
+        "p03689": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6932,
+          "rouge_l_template": 0.2718
+        },
+        "p03801": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2128,
+          "rouge_l_template": 0.1143
+        },
+        "p03867": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6893,
+          "rouge_l_template": 0.2718
+        },
+        "p03991": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6932,
+          "rouge_l_template": 0.2727
+        },
+        "p04040": {
+          "n_claims": 3,
+          "n_correct": 2,
+          "faithfulness": 0.6666666666666666,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.7251,
+          "rouge_l_template": 0.2838
+        },
+        "p04059": {
+          "n_claims": 2,
+          "n_correct": 1,
+          "faithfulness": 0.5,
+          "self_consistent": null,
+          "rouge_l_evidence": 0.4238,
+          "rouge_l_template": 0.1862
+        },
+        "p04145": {
+          "n_claims": 6,
+          "n_correct": 4,
+          "faithfulness": 0.6666666666666666,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6901,
+          "rouge_l_template": 0.262
+        },
+        "p04174": {
+          "n_claims": 3,
+          "n_correct": 3,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6369,
+          "rouge_l_template": 0.2587
+        },
+        "p04203": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.2128,
+          "rouge_l_template": 0.1087
+        },
+        "p04268": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.1702,
+          "rouge_l_template": 0.1014
+        },
+        "p04399": {
+          "n_claims": 3,
+          "n_correct": 2,
+          "faithfulness": 0.6666666666666666,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.4719,
+          "rouge_l_template": 0.2102
+        },
+        "p04508": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6932,
+          "rouge_l_template": 0.2727
+        },
+        "p04577": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.1844,
+          "rouge_l_template": 0.1014
+        },
+        "p04671": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6932,
+          "rouge_l_template": 0.2718
+        },
+        "p04777": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6932,
+          "rouge_l_template": 0.2701
+        },
+        "p04806": {
+          "n_claims": 6,
+          "n_correct": 6,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6901,
+          "rouge_l_template": 0.2697
+        },
+        "p04892": {
+          "n_claims": 5,
+          "n_correct": 4,
+          "faithfulness": 0.8,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.5957,
+          "rouge_l_template": 0.2336
+        },
+        "p04898": {
+          "n_claims": 6,
+          "n_correct": 4,
+          "faithfulness": 0.6666666666666666,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6704,
+          "rouge_l_template": 0.265
+        },
+        "p04996": {
+          "n_claims": 3,
+          "n_correct": 2,
+          "faithfulness": 0.6666666666666666,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.5714,
+          "rouge_l_template": 0.2516
+        },
+        "p05015": {
+          "n_claims": 3,
+          "n_correct": 3,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.7251,
+          "rouge_l_template": 0.2838
+        },
+        "p05082": {
+          "n_claims": 6,
+          "n_correct": 3,
+          "faithfulness": 0.5,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6556,
+          "rouge_l_template": 0.2531
+        },
+        "p05117": {
+          "n_claims": 4,
+          "n_correct": 4,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.686,
+          "rouge_l_template": 0.2697
+        },
+        "p05122": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6893,
+          "rouge_l_template": 0.271
+        },
+        "p05384": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6893,
+          "rouge_l_template": 0.2658
+        },
+        "p05511": {
+          "n_claims": 1,
+          "n_correct": 1,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6932,
+          "rouge_l_template": 0.2662
+        },
+        "p05771": {
+          "n_claims": 3,
+          "n_correct": 3,
+          "faithfulness": 1.0,
+          "self_consistent": true,
+          "rouge_l_evidence": 0.6369,
+          "rouge_l_template": 0.265
+        }
+      },
+      "source_file": "explain_structured_qwen_vl_custom_mlp_qwen.json",
+      "n_parsed_class": 55
+    },
     {
       "combo_id": "qwen_vl_finetuned_ecoexplain",
       "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
@@ -461,128 +2305,6 @@
       },
       "source_file": "explain_qwen_vl_finetuned_ecoexplain.json",
       "n_parsed_class": 55
-    },
-    {
-      "combo_id": "blip2_clip_qformer_opt",
-      "hf_model_id": "Salesforce/blip2-opt-2.7b",
-      "prompt_mode": "explain",
-      "prompt_style": "structured",
-      "answer_format": "short",
-      "n_eval": 5,
-      "accuracy": 0.4,
-      "mean_checkable_claims": 0.0,
-      "pct_correct_claims": null,
-      "hallucination_rate": 0.0,
-      "self_consistency": null,
-      "mean_rouge_l_evidence": 0.024096385542168676,
-      "mean_rouge_l_template": 0.009087029815755,
-      "distinct_2": 0.2,
-      "near_duplicate_share": 1.0,
-      "per_patch": {
-        "p00052": {
-          "n_claims": 0,
-          "n_correct": 0,
-          "faithfulness": null,
-          "self_consistent": null,
-          "rouge_l_evidence": 0.0241,
-          "rouge_l_template": 0.0084
-        },
-        "p00086": {
-          "n_claims": 0,
-          "n_correct": 0,
-          "faithfulness": null,
-          "self_consistent": null,
-          "rouge_l_evidence": 0.0241,
-          "rouge_l_template": 0.0093
-        },
-        "p00575": {
-          "n_claims": 0,
-          "n_correct": 0,
-          "faithfulness": null,
-          "self_consistent": null,
-          "rouge_l_evidence": 0.0241,
-          "rouge_l_template": 0.0091
-        },
-        "p00701": {
-          "n_claims": 0,
-          "n_correct": 0,
-          "faithfulness": null,
-          "self_consistent": null,
-          "rouge_l_evidence": 0.0241,
-          "rouge_l_template": 0.0093
-        },
-        "p00850": {
-          "n_claims": 0,
-          "n_correct": 0,
-          "faithfulness": null,
-          "self_consistent": null,
-          "rouge_l_evidence": 0.0241,
-          "rouge_l_template": 0.0093
-        }
-      },
-      "source_file": "explain_structured_blip2_clip_qformer_opt.json",
-      "n_parsed_class": 5
-    },
-    {
-      "combo_id": "paligemma_siglip_linear_gemma",
-      "hf_model_id": "google/paligemma-3b-mix-224",
-      "prompt_mode": "explain",
-      "prompt_style": "structured",
-      "answer_format": "short",
-      "n_eval": 5,
-      "accuracy": 0.4,
-      "mean_checkable_claims": 0.0,
-      "pct_correct_claims": null,
-      "hallucination_rate": 0.0,
-      "self_consistency": null,
-      "mean_rouge_l_evidence": 0.0,
-      "mean_rouge_l_template": 0.003593296809539155,
-      "distinct_2": 0.0,
-      "near_duplicate_share": 1.0,
-      "per_patch": {
-        "p00052": {
-          "n_claims": 0,
-          "n_correct": 0,
-          "faithfulness": null,
-          "self_consistent": null,
-          "rouge_l_evidence": 0.0,
-          "rouge_l_template": 0.0086
-        },
-        "p00086": {
-          "n_claims": 0,
-          "n_correct": 0,
-          "faithfulness": null,
-          "self_consistent": null,
-          "rouge_l_evidence": 0.0,
-          "rouge_l_template": 0.0
-        },
-        "p00575": {
-          "n_claims": 0,
-          "n_correct": 0,
-          "faithfulness": null,
-          "self_consistent": null,
-          "rouge_l_evidence": 0.0,
-          "rouge_l_template": 0.0093
-        },
-        "p00701": {
-          "n_claims": 0,
-          "n_correct": 0,
-          "faithfulness": null,
-          "self_consistent": null,
-          "rouge_l_evidence": 0.0,
-          "rouge_l_template": 0.0
-        },
-        "p00850": {
-          "n_claims": 0,
-          "n_correct": 0,
-          "faithfulness": null,
-          "self_consistent": null,
-          "rouge_l_evidence": 0.0,
-          "rouge_l_template": 0.0
-        }
-      },
-      "source_file": "explain_structured_paligemma_siglip_linear_gemma.json",
-      "n_parsed_class": 5
     }
   ]
 }
