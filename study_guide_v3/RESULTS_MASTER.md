@@ -1,4 +1,4 @@
-# EcoExplain-VLM: master results (2026-10-20)
+# EcoExplain-VLM: master results (2026-10-28)
 
 Recomputed from the prediction files by `build_results_master.py`. Test set n = 55.
 **Rule:** never compare rows from different sections without naming the protocol.

@@ -1,0 +1,51 @@
+{
+  "created_utc": "2026-10-27T17:57:56.242973+00:00",
+  "repo": "/Users/vaibhav/Desktop/Independent Study/is work/DataSet Extractor/ecoexplain_vlm_dataset",
+  "files": [
+    {
+      "path": "dataset.jsonl",
+      "bytes": 3902368,
+      "sha256": "c09d3b8e09ea78e53afadcf1e9b093f267d635fabd5266cea8f3e97ec4406188"
+    },
+    {
+      "path": "data/raw_metadata/selected_patches.csv",
+      "bytes": 264301,
+      "sha256": "de3826c142da083b87141fe1090d03fe4d77238c4fd0c5277154621ec4a90bfe"
+    },
+    {
+      "path": "data/raw_metadata/composite_stats.csv",
+      "bytes": 884489,
+      "sha256": "2fe95851c6484f52dfceb848f3759c4ebbf1dee5b23606bf7f84156eef8f5863"
+    },
+    {
+      "path": "data/splits/train_patches.csv",
+      "bytes": 9108,
+      "sha256": "9c6d45b26a98e59e5ccd481a7bdf198f3ca2118f8b0da310e5bc474141e315c8"
+    },
+    {
+      "path": "data/splits/dev_patches.csv",
+      "bytes": 1992,
+      "sha256": "1aaa4e094beceff8ddae082e958abcfc62aed3f8eac41f462abfb1059e8d73cd"
+    },
+    {
+      "path": "data/splits/test_patches.csv",
+      "bytes": 1989,
+      "sha256": "29ea5abdf1258e7090fa3da0dfc58cb959ae879258d70d1127589d70605c2f42"
+    },
+    {
+      "path": "data/splits_spatial/train_patches.csv",
+      "bytes": 14393,
+      "sha256": "bf1d8f950e3b333962db487e973bef36a3e048876478cc5897f961e169bfd716"
+    },
+    {
+      "path": "data/splits_spatial/dev_patches.csv",
+      "bytes": 2480,
+      "sha256": "9eca4ae6bf75fd74bc3dadbaeafcd125160c616a95043e905b1779b7c35d2aed"
+    },
+    {
+      "path": "data/splits_spatial/test_patches.csv",
+      "bytes": 2963,
+      "sha256": "132a468d25608f19b71371db094eb38e5784cdb7d832ad72059345c0c6543561"
+    }
+  ]
+}
