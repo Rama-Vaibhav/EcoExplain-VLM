@@ -1,0 +1,9 @@
+== X8 Sat Oct 31 19:16:09 IST 2026
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:09<00:09,  9.93s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:10<00:00,  4.65s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:10<00:00,  5.44s/it]
+loaded Qwen/Qwen2-VL-2B-Instruct as AutoModelForImageTextToText on mps
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+qwen_vl_custom_mlp_qwen: status=ok acc=38.9% n=54 parsed=54 s=175.13
+wrote results/protocol/spatial_evidence_only/vlm_combo_comparison_evidence_only_384.json
+== done Sat Oct 31 19:19:05 IST 2026

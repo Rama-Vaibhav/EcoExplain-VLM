@@ -1486,6 +1486,341 @@
         "increase": 17
       }
     },
+    "class_lora_seed1": {
+      "status": "ok",
+      "track": "B",
+      "label": "Qwen2-VL-2B class LoRA, sample seed 1 (job 50809)",
+      "protocol": "evidence-only, 384 px, 16 balanced",
+      "split": "random",
+      "file": "results/vlm_combo_qwen_vl_finetuned_ecoexplain_seed1.json",
+      "max_side": 384,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false
+      },
+      "k": 19,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.34545454545454546,
+      "ci95": [
+        0.23362709466463594,
+        0.477460965978201
+      ],
+      "macro_f1": 0.20175438596491227,
+      "per_class": {
+        "decline": {
+          "precision": 1.0,
+          "recall": 0.05555555555555555,
+          "f1": 0.10526315789473684,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "f1": 0.5,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 1,
+          "stable": 17,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 19,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 54,
+        "decline": 1
+      }
+    },
+    "class_lora_seed2": {
+      "status": "ok",
+      "track": "B",
+      "label": "Qwen2-VL-2B class LoRA, sample seed 2 (job 50809)",
+      "protocol": "evidence-only, 384 px, 16 balanced",
+      "split": "random",
+      "file": "results/vlm_combo_qwen_vl_finetuned_ecoexplain_seed2.json",
+      "max_side": 384,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false
+      },
+      "k": 20,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.36363636363636365,
+      "ci95": [
+        0.24930531452101518,
+        0.49577238604619384
+      ],
+      "macro_f1": 0.2356807511737089,
+      "per_class": {
+        "decline": {
+          "precision": 1.0,
+          "recall": 0.1111111111111111,
+          "f1": 0.19999999999999998,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.33962264150943394,
+          "recall": 1.0,
+          "f1": 0.5070422535211268,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 2,
+          "stable": 16,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 19,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 53,
+        "decline": 2
+      }
+    },
+    "class_lora_seed3": {
+      "status": "ok",
+      "track": "B",
+      "label": "Qwen2-VL-2B class LoRA, sample seed 3 (job 50809)",
+      "protocol": "evidence-only, 384 px, 16 balanced",
+      "split": "random",
+      "file": "results/vlm_combo_qwen_vl_finetuned_ecoexplain_seed3.json",
+      "max_side": 384,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false
+      },
+      "k": 19,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.34545454545454546,
+      "ci95": [
+        0.23362709466463594,
+        0.477460965978201
+      ],
+      "macro_f1": 0.20175438596491227,
+      "per_class": {
+        "decline": {
+          "precision": 1.0,
+          "recall": 0.05555555555555555,
+          "f1": 0.10526315789473684,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "f1": 0.5,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 1,
+          "stable": 17,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 19,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 54,
+        "decline": 1
+      }
+    },
+    "class_lora_seed4": {
+      "status": "ok",
+      "track": "B",
+      "label": "Qwen2-VL-2B class LoRA, sample seed 4 (job 50809)",
+      "protocol": "evidence-only, 384 px, 16 balanced",
+      "split": "random",
+      "file": "results/vlm_combo_qwen_vl_finetuned_ecoexplain_seed4.json",
+      "max_side": 384,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false
+      },
+      "k": 20,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.36363636363636365,
+      "ci95": [
+        0.24930531452101518,
+        0.49577238604619384
+      ],
+      "macro_f1": 0.2356807511737089,
+      "per_class": {
+        "decline": {
+          "precision": 1.0,
+          "recall": 0.1111111111111111,
+          "f1": 0.19999999999999998,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.33962264150943394,
+          "recall": 1.0,
+          "f1": 0.5070422535211268,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 2,
+          "stable": 16,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 19,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 53,
+        "decline": 2
+      }
+    },
+    "class_lora_seed5": {
+      "status": "ok",
+      "track": "B",
+      "label": "Qwen2-VL-2B class LoRA, sample seed 5 (job 50809)",
+      "protocol": "evidence-only, 384 px, 16 balanced",
+      "split": "random",
+      "file": "results/vlm_combo_qwen_vl_finetuned_ecoexplain_seed5.json",
+      "max_side": 384,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false
+      },
+      "k": 20,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.36363636363636365,
+      "ci95": [
+        0.24930531452101518,
+        0.49577238604619384
+      ],
+      "macro_f1": 0.2356807511737089,
+      "per_class": {
+        "decline": {
+          "precision": 1.0,
+          "recall": 0.1111111111111111,
+          "f1": 0.19999999999999998,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.33962264150943394,
+          "recall": 1.0,
+          "f1": 0.5070422535211268,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 2,
+          "stable": 16,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 19,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 53,
+        "decline": 2
+      }
+    },
     "sp_qwen_compact": {
       "status": "ok",
       "track": "S",
@@ -1686,6 +2021,140 @@
       },
       "answers": {
         "none": 54
+      }
+    },
+    "sp_qwen_evid_384": {
+      "status": "ok",
+      "track": "S",
+      "label": "Qwen2-VL-2B",
+      "protocol": "evidence-only card, 384 px (X8)",
+      "split": "spatial",
+      "file": "results/protocol/spatial_evidence_only/vlm_combo_qwen_vl_custom_mlp_qwen_384.json",
+      "max_side": 384,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false,
+        "temperature": 1.0
+      },
+      "k": 21,
+      "n": 54,
+      "answered": 54,
+      "accuracy": 0.3888888888888889,
+      "ci95": [
+        0.27041933746990876,
+        0.522117015656544
+      ],
+      "macro_f1": 0.18666666666666668,
+      "per_class": {
+        "decline": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 13
+        },
+        "stable": {
+          "precision": 0.3888888888888889,
+          "recall": 1.0,
+          "f1": 0.56,
+          "support": 21
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 20
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 0,
+          "stable": 13,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 21,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 20,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 54
+      }
+    },
+    "sp_class_lora": {
+      "status": "ok",
+      "track": "S",
+      "label": "Qwen2-VL-2B class LoRA, spatial train (job 50743)",
+      "protocol": "evidence-only, 384 px, 16 balanced",
+      "split": "spatial",
+      "file": "results/vlm_combo_qwen_vl_finetuned_ecoexplain_spatial.json",
+      "max_side": 384,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false
+      },
+      "k": 22,
+      "n": 54,
+      "answered": 54,
+      "accuracy": 0.4074074074074074,
+      "ci95": [
+        0.28678212001394765,
+        0.5403315075914297
+      ],
+      "macro_f1": 0.2362252663622527,
+      "per_class": {
+        "decline": {
+          "precision": 0.5,
+          "recall": 0.07692307692307693,
+          "f1": 0.13333333333333336,
+          "support": 13
+        },
+        "stable": {
+          "precision": 0.40384615384615385,
+          "recall": 1.0,
+          "f1": 0.5753424657534247,
+          "support": 21
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 20
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 1,
+          "stable": 12,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 21,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 1,
+          "stable": 19,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 52,
+        "decline": 2
       }
     }
   },
@@ -2809,6 +3278,26 @@
       "expl_lora": {
         "k": 28,
         "n": 49
+      },
+      "class_lora_seed1": {
+        "k": 19,
+        "n": 49
+      },
+      "class_lora_seed2": {
+        "k": 20,
+        "n": 49
+      },
+      "class_lora_seed3": {
+        "k": 19,
+        "n": 49
+      },
+      "class_lora_seed4": {
+        "k": 20,
+        "n": 49
+      },
+      "class_lora_seed5": {
+        "k": 20,
+        "n": 49
       }
     },
     "rule_consistent_pairs": {
@@ -2930,6 +3419,26 @@
       "expl_lora": {
         "k": 33,
         "n": 52
+      },
+      "class_lora_seed1": {
+        "k": 18,
+        "n": 52
+      },
+      "class_lora_seed2": {
+        "k": 19,
+        "n": 52
+      },
+      "class_lora_seed3": {
+        "k": 18,
+        "n": 52
+      },
+      "class_lora_seed4": {
+        "k": 19,
+        "n": 52
+      },
+      "class_lora_seed5": {
+        "k": 19,
+        "n": 52
       }
     },
     "unclipped_pairs": {
@@ -2960,5 +3469,168 @@
       }
     }
   },
-  "holm_family_size": 9
+  "mcnemar_supplementary": [
+    {
+      "test": "sp_classlora_vs_matched",
+      "a": "sp_class_lora",
+      "b": "sp_qwen_evid_384",
+      "what": "Spatial class LoRA vs matched zero-shot (evidence-only, 384 px)",
+      "a_right_b_wrong": 1,
+      "b_right_a_wrong": 0,
+      "p_exact_two_sided": 1.0,
+      "p_holm": 1.0
+    },
+    {
+      "test": "sp_classlora_vs_const",
+      "a": "sp_class_lora",
+      "b": "const_spatial",
+      "what": "Spatial class LoRA vs constant",
+      "a_right_b_wrong": 1,
+      "b_right_a_wrong": 0,
+      "p_exact_two_sided": 1.0,
+      "p_holm": 1.0
+    },
+    {
+      "test": "seed1_vs_matched",
+      "a": "class_lora_seed1",
+      "b": "qwen_evid_384",
+      "what": "Class LoRA seed 1 vs matched zero-shot (evidence-only, 384 px)",
+      "a_right_b_wrong": 1,
+      "b_right_a_wrong": 0,
+      "p_exact_two_sided": 1.0,
+      "p_holm": 1.0
+    },
+    {
+      "test": "seed2_vs_matched",
+      "a": "class_lora_seed2",
+      "b": "qwen_evid_384",
+      "what": "Class LoRA seed 2 vs matched zero-shot (evidence-only, 384 px)",
+      "a_right_b_wrong": 2,
+      "b_right_a_wrong": 0,
+      "p_exact_two_sided": 0.5,
+      "p_holm": 1.0
+    },
+    {
+      "test": "seed3_vs_matched",
+      "a": "class_lora_seed3",
+      "b": "qwen_evid_384",
+      "what": "Class LoRA seed 3 vs matched zero-shot (evidence-only, 384 px)",
+      "a_right_b_wrong": 1,
+      "b_right_a_wrong": 0,
+      "p_exact_two_sided": 1.0,
+      "p_holm": 1.0
+    },
+    {
+      "test": "seed4_vs_matched",
+      "a": "class_lora_seed4",
+      "b": "qwen_evid_384",
+      "what": "Class LoRA seed 4 vs matched zero-shot (evidence-only, 384 px)",
+      "a_right_b_wrong": 2,
+      "b_right_a_wrong": 0,
+      "p_exact_two_sided": 0.5,
+      "p_holm": 1.0
+    },
+    {
+      "test": "seed5_vs_matched",
+      "a": "class_lora_seed5",
+      "b": "qwen_evid_384",
+      "what": "Class LoRA seed 5 vs matched zero-shot (evidence-only, 384 px)",
+      "a_right_b_wrong": 2,
+      "b_right_a_wrong": 0,
+      "p_exact_two_sided": 0.5,
+      "p_holm": 1.0
+    }
+  ],
+  "holm_family_size": 9,
+  "seed_sweep": {
+    "runs": {
+      "class_lora": {
+        "k": 20,
+        "n": 55,
+        "macro_f1": 0.2356807511737089,
+        "pred_counts": {
+          "decline": 2,
+          "stable": 53,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "class_lora_rep": {
+        "k": 19,
+        "n": 55,
+        "macro_f1": 0.20175438596491227,
+        "pred_counts": {
+          "decline": 1,
+          "stable": 54,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "class_lora_seed1": {
+        "k": 19,
+        "n": 55,
+        "macro_f1": 0.20175438596491227,
+        "pred_counts": {
+          "decline": 1,
+          "stable": 54,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "class_lora_seed2": {
+        "k": 20,
+        "n": 55,
+        "macro_f1": 0.2356807511737089,
+        "pred_counts": {
+          "decline": 2,
+          "stable": 53,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "class_lora_seed3": {
+        "k": 19,
+        "n": 55,
+        "macro_f1": 0.20175438596491227,
+        "pred_counts": {
+          "decline": 1,
+          "stable": 54,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "class_lora_seed4": {
+        "k": 20,
+        "n": 55,
+        "macro_f1": 0.2356807511737089,
+        "pred_counts": {
+          "decline": 2,
+          "stable": 53,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "class_lora_seed5": {
+        "k": 20,
+        "n": 55,
+        "macro_f1": 0.2356807511737089,
+        "pred_counts": {
+          "decline": 2,
+          "stable": 53,
+          "increase": 0,
+          "none": 0
+        }
+      }
+    },
+    "different_selection_k": [
+      19,
+      20,
+      19,
+      20,
+      20
+    ],
+    "min_k": 19,
+    "max_k": 20,
+    "mean_acc": 0.3563636363636364
+  }
 }

@@ -1,0 +1,406 @@
+{
+  "combo_id": "qwen_vl_custom_mlp_qwen",
+  "family": "Qwen2-VL",
+  "vision_encoder": "Custom ViT (dynamic resolution)",
+  "projector": "MLP / merger",
+  "text_decoder": "Qwen2",
+  "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+  "laptop": true,
+  "max_side": 384,
+  "split": "test",
+  "splits_dir": "data/splits_spatial",
+  "text_mode": "evidence_only",
+  "generation": {
+    "max_new_tokens": 48,
+    "do_sample": false,
+    "temperature": 1.0
+  },
+  "status": "ok",
+  "error": null,
+  "n_eval": 54,
+  "n_parsed_class": 54,
+  "accuracy": 0.3888888888888889,
+  "majority_class": "stable",
+  "majority_accuracy": 0.3888888888888889,
+  "seconds": 175.13,
+  "predictions": [
+    {
+      "id": "p00000",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p00100",
+      "gold": "decline",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p00109",
+      "gold": "decline",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p00312",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p00402",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p00701",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p00719",
+      "gold": "decline",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p00910",
+      "gold": "decline",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p00916",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p00919",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p01113",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p01116",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p01206",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p01210",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p01415",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p01788",
+      "gold": "decline",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p01793",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p01890",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p01899",
+      "gold": "decline",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p01988",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p01992",
+      "gold": "decline",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p02084",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p02090",
+      "gold": "decline",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p02091",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p02094",
+      "gold": "decline",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p02186",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p02284",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p02382",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p02393",
+      "gold": "decline",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p02580",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p02698",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p02780",
+      "gold": "decline",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p02783",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p02890",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p04370",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p04374",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p04574",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p04577",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p04671",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p04774",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p04777",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p04779",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p04872",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p04977",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p05073",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p05075",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p05273",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p05274",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p05279",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p05360",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p05371",
+      "gold": "stable",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": true
+    },
+    {
+      "id": "p05472",
+      "gold": "decline",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p05761",
+      "gold": "increase",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    },
+    {
+      "id": "p05771",
+      "gold": "decline",
+      "pred_text": "Stable",
+      "pred": "stable",
+      "correct": false
+    }
+  ]
+}

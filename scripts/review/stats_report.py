@@ -58,6 +58,22 @@ RUNS = [
     ("sp_qwen_compact", "S", "Qwen2-VL-2B", "compact table, 336 px", "spatial", "protocol/spatial_compact/vlm_combo_qwen_vl_custom_mlp_qwen.json"),
     ("sp_llava_compact", "S", "LLaVA-Interleave-0.5B", "compact table, 336 px", "spatial", "protocol/spatial_compact/vlm_combo_llava15_clip_mlp_vicuna.json"),
     ("sp_blip_compact", "S", "BLIP-2 OPT-2.7B", "compact table", "spatial", "protocol/spatial_compact/vlm_combo_blip2_clip_qformer_opt.json"),
+    # Added 31 Oct 2026 after the Holm family below was fixed (Ada jobs 50743 and 50809; Mac run X8).
+    ("sp_qwen_evid_384", "S", "Qwen2-VL-2B", "evidence-only card, 384 px (X8)", "spatial", "protocol/spatial_evidence_only/vlm_combo_qwen_vl_custom_mlp_qwen_384.json"),
+    ("sp_class_lora", "S", "Qwen2-VL-2B class LoRA, spatial train (job 50743)", "evidence-only, 384 px, 16 balanced", "spatial", "vlm_combo_qwen_vl_finetuned_ecoexplain_spatial.json"),
+] + [
+    (f"class_lora_seed{s}", "B", f"Qwen2-VL-2B class LoRA, sample seed {s} (job 50809)", "evidence-only, 384 px, 16 balanced", "random",
+     f"vlm_combo_qwen_vl_finetuned_ecoexplain_seed{s}.json") for s in range(1, 6)
+]
+
+# Tests added after the family was fixed. Reported with exact p and a Holm adjustment within this
+# separate family only; they never enter the nine-test family, so its adjusted p-values are unchanged.
+SUPPLEMENTARY = [
+    ("sp_classlora_vs_matched", "sp_class_lora", "sp_qwen_evid_384", "Spatial class LoRA vs matched zero-shot (evidence-only, 384 px)"),
+    ("sp_classlora_vs_const", "sp_class_lora", "const_spatial", "Spatial class LoRA vs constant"),
+] + [
+    (f"seed{s}_vs_matched", f"class_lora_seed{s}", "qwen_evid_384", f"Class LoRA seed {s} vs matched zero-shot (evidence-only, 384 px)")
+    for s in range(1, 6)
 ]
 
 # Every paired test reported in V6 (one Holm family). "const" = best constant predictor on that test set.
@@ -152,11 +168,38 @@ def main() -> None:
         gold_by = {scheme: gold}
         out.setdefault("_gold", {}).update({scheme: dict(zip(test, gold))})
 
-    # McNemar family.
+    # McNemar family, then the supplementary set (separate Holm adjustment).
+    out["mcnemar_supplementary"] = []
+    for family, dest in ((FAMILY, "mcnemar"), (SUPPLEMENTARY, "mcnemar_supplementary")):
+        _mcnemar_block(family, out, dest, preds_by_key)
+    out["holm_family_size"] = sum(1 for m in out["mcnemar"] if "p_holm" in m)
+    out["seed_sweep"] = _seed_sweep(out)
+
+    _sensitivity(recs, out, preds_by_key)
+    out.pop("_gold")
+
+    write_json("stats_report.json", out)
+    write_markdown(out)
+    write_tex(out)
+    print("wrote results/review/stats_report.{json,md} and", TEX_DIR)
+
+
+def _seed_sweep(out: dict) -> dict:
+    keys = ["class_lora", "class_lora_rep"] + [f"class_lora_seed{s}" for s in range(1, 6)]
+    ok = {k: out["runs"][k] for k in keys if out["runs"].get(k, {}).get("status") == "ok"}
+    sel = [out["runs"][f"class_lora_seed{s}"]["k"] for s in range(1, 6) if f"class_lora_seed{s}" in ok]
+    return {"runs": {k: {"k": r["k"], "n": r["n"], "macro_f1": r["macro_f1"],
+                         "pred_counts": {c: sum(r["confusion"][g][c] for g in CLASSES) for c in (*CLASSES, "none")}}
+                     for k, r in ok.items()},
+            "different_selection_k": sel, "min_k": min(sel) if sel else None, "max_k": max(sel) if sel else None,
+            "mean_acc": sum(sel) / (len(sel) * 55) if sel else None}
+
+
+def _mcnemar_block(family: list, out: dict, dest: str, preds_by_key: dict) -> None:
     raw = {}
-    for name, a, b, what in FAMILY:
+    for name, a, b, what in family:
         if a not in preds_by_key or b not in preds_by_key:
-            out["mcnemar"].append({"test": name, "a": a, "b": b, "what": what, "status": "pending"})
+            out[dest].append({"test": name, "a": a, "b": b, "what": what, "status": "pending"})
             continue
         scheme = "spatial" if a.startswith("sp_") else "random"
         gold = list(out["_gold"][scheme].values())
@@ -165,14 +208,15 @@ def main() -> None:
         b_only = sum(y == g != x for x, y, g in zip(pa, pb, gold))
         p = mcnemar_exact(a_only, b_only)
         raw[name] = p
-        out["mcnemar"].append({"test": name, "a": a, "b": b, "what": what, "a_right_b_wrong": a_only,
-                               "b_right_a_wrong": b_only, "p_exact_two_sided": p})
+        out[dest].append({"test": name, "a": a, "b": b, "what": what, "a_right_b_wrong": a_only,
+                          "b_right_a_wrong": b_only, "p_exact_two_sided": p})
     adj = holm(raw)
-    for row in out["mcnemar"]:
+    for row in out[dest]:
         if row["test"] in adj:
             row["p_holm"] = adj[row["test"]]
-    out["holm_family_size"] = len(raw)
 
+
+def _sensitivity(recs: dict, out: dict, preds_by_key: dict) -> None:
     # Sensitivity: rule-consistent test labels; without the three edge-clipped test patches.
     test = split_ids("test")
     gold = [recs[i]["candidate_class"] for i in test]
@@ -202,12 +246,6 @@ def main() -> None:
             y = sum(v == gg != u for u, v, gg in zip(pa, pb, g))
             pairs[name] = {"a_right_b_wrong": x, "b_right_a_wrong": y, "p_exact_unadjusted": mcnemar_exact(x, y)}
         out["sensitivity"][subset_name + "_pairs"] = pairs
-    out.pop("_gold")
-
-    write_json("stats_report.json", out)
-    write_markdown(out)
-    write_tex(out)
-    print("wrote results/review/stats_report.{json,md} and", TEX_DIR)
 
 
 def pct(x: float) -> str:
@@ -237,6 +275,22 @@ def write_markdown(out: dict) -> None:
         else:
             lines.append(f"| {m['test']} | {m['a']} | {m['b']} | {m['a_right_b_wrong']} | {m['b_right_a_wrong']} | "
                          f"{m['p_exact_two_sided']:.4f} | {m['p_holm']:.4f} |")
+    lines += ["", f"## Supplementary McNemar (added after the family was fixed; Holm within these {len(out['mcnemar_supplementary'])} only)", "",
+              "| Test | A | B | A right, B wrong | B right, A wrong | p | p (Holm, supplementary) |", "|---|---|---|---|---|---|---|"]
+    for m in out["mcnemar_supplementary"]:
+        if m.get("status") == "pending":
+            lines.append(f"| {m['test']} | {m['a']} | {m['b']} | pending | | | |")
+        else:
+            lines.append(f"| {m['test']} | {m['a']} | {m['b']} | {m['a_right_b_wrong']} | {m['b_right_a_wrong']} | "
+                         f"{m['p_exact_two_sided']:.4f} | {m['p_holm']:.4f} |")
+    ss = out["seed_sweep"]
+    lines += ["", "## Class-LoRA training-sample sweep (random test)", "",
+              f"Different selections (seeds 1-5): k = {ss['different_selection_k']}, mean accuracy "
+              f"{pct(ss['mean_acc']) if ss['mean_acc'] is not None else 'pending'}%", "",
+              "| Run | k/n | Macro-F1 | Predicted d / s / i / none |", "|---|---|---|---|"]
+    for k, r in ss["runs"].items():
+        pc = r["pred_counts"]
+        lines.append(f"| {k} | {r['k']}/{r['n']} | {r['macro_f1']:.3f} | {pc['decline']} / {pc['stable']} / {pc['increase']} / {pc['none']} |")
     lines += ["", "## Sensitivity (random test)", "", "| Run | 49 rule-consistent | 52 unclipped |", "|---|---|---|"]
     rc, uc = out["sensitivity"]["rule_consistent"], out["sensitivity"]["unclipped"]
     for key in rc:
@@ -249,14 +303,15 @@ def write_tex(out: dict) -> None:
     head = "% Generated by ecoexplain_vlm_dataset/scripts/review/stats_report.py -- do not edit by hand.\n"
     order = ["qwen_full", "qwen_full_rerun", "qwen_evid_336", "qwen_compact", "llava_full", "llava_compact", "pali_ndvi",
              "class_lora", "class_lora_rep", "qwen_evid_384", "qwen_struct", "llava_struct", "llava_freeform",
-             "qwen_expl_zs_384", "expl_lora", "sp_qwen_compact", "sp_llava_compact"]
+             "qwen_expl_zs_384", "expl_lora", "sp_qwen_compact", "sp_llava_compact", "sp_qwen_evid_384", "sp_class_lora"]
     names = {"qwen_full": "Qwen, full card", "qwen_full_rerun": "Qwen, full card (31 Oct re-run)",
              "qwen_evid_336": "Qwen, evidence-only (336)", "qwen_compact": "Qwen, compact",
              "llava_full": "LLaVA, full card", "llava_compact": "LLaVA, compact", "pali_ndvi": "PaliGemma, NDVI line",
              "class_lora": "Class LoRA (29575)", "class_lora_rep": "Class LoRA (44523)", "qwen_evid_384": "Qwen, evidence-only (384)",
              "qwen_struct": "Qwen, structured", "llava_struct": "LLaVA, structured", "llava_freeform": "LLaVA, free-form",
              "qwen_expl_zs_384": "Qwen zero-shot, free-form (384)", "expl_lora": "Explanation LoRA",
-             "sp_qwen_compact": "Spatial: Qwen, compact", "sp_llava_compact": "Spatial: LLaVA, compact"}
+             "sp_qwen_compact": "Spatial: Qwen, compact", "sp_llava_compact": "Spatial: LLaVA, compact",
+             "sp_qwen_evid_384": "Spatial: Qwen, evidence-only (384)", "sp_class_lora": "Spatial: class LoRA"}
     body = []
     for key in order:
         r = out["runs"].get(key, {})
@@ -289,6 +344,23 @@ def write_tex(out: dict) -> None:
         mc.append(f"{labels[m['test']]} & {m['a_right_b_wrong']} & {m['b_right_a_wrong']} & "
                   f"{m['p_exact_two_sided']:.3f} & {m['p_holm']:.3f} \\\\")
     (TEX_DIR / "mcnemar_rows.tex").write_text(head + "\n".join(mc) + "\n")
+
+    sup_labels = {"sp_classlora_vs_matched": "Spatial: class LoRA vs zero-shot (384)",
+                  "sp_classlora_vs_const": "Spatial: class LoRA vs constant",
+                  **{f"seed{s}_vs_matched": f"Class LoRA, sample seed {s}, vs zero-shot (384)" for s in range(1, 6)}}
+    sup = [f"{sup_labels[m['test']]} & {m['a_right_b_wrong']} & {m['b_right_a_wrong']} & "
+           f"{m['p_exact_two_sided']:.3f} & {m['p_holm']:.3f} \\\\"
+           for m in out["mcnemar_supplementary"] if m.get("status") != "pending"]
+    (TEX_DIR / "mcnemar_supplementary_rows.tex").write_text(head + "\n".join(sup) + "\n")
+
+    seed_names = {"class_lora": "Reported selection, job 29575", "class_lora_rep": "Reported selection, job 44523",
+                  **{f"class_lora_seed{s}": f"Sample seed {s}" for s in range(1, 6)}}
+    seeds = []
+    for k, r in out["seed_sweep"]["runs"].items():
+        pc = r["pred_counts"]
+        seeds.append(f"{seed_names[k]} & {pct(r['k'] / r['n'])} ({r['k']}) & {r['macro_f1']:.2f} & "
+                     f"{pc['decline']} & {pc['stable']} & {pc['increase']} \\\\")
+    (TEX_DIR / "seed_rows.tex").write_text(head + "\n".join(seeds) + "\n")
     write_main_tables(out, head)
 
 
@@ -337,10 +409,15 @@ def write_main_tables(out: dict, head: str) -> None:
 
     sp = []
     for key, name in (("sp_qwen_compact", "Qwen2-VL-2B, compact"), ("sp_llava_compact", "LLaVA-Interleave-0.5B, compact"),
+                      ("sp_qwen_evid_384", "Qwen2-VL-2B, evidence-only (384)"),
+                      ("sp_class_lora", "Qwen2-VL-2B class LoRA, spatial train"),
                       ("spatial:const", "Best constant (always stable)"), ("spatial:train_majority", "Training majority (always increase)"),
                       ("spatial:fixed_card", "Fixed $\\pm0.02$ rule, card"), ("spatial:label_rule_ee", "Eq.~(\\ref{eq:label}), Earth Engine $\\Delta$"),
                       ("spatial:fitted_card", "Rule fitted on spatial train, card"), ("spatial:fitted_true", "Rule fitted on spatial train, unpadded")):
         r = runs.get(key) or base.get(key)
+        if r.get("status", "ok") != "ok":
+            sp.append(f"{name} & \\multicolumn{{3}}{{l}}{{pending}} \\\\")
+            continue
         sp.append(f"{name} & {pct(r['accuracy'])} ({r['k']}) & {pct(r['ci95'][0])}--{pct(r['ci95'][1])} & {r['macro_f1']:.2f} \\\\")
     (TEX_DIR / "spatial_rows.tex").write_text(head + "\n".join(sp) + "\n")
 

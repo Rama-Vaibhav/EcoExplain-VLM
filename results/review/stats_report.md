@@ -24,9 +24,16 @@
 | Qwen2-VL-2B zero-shot | random | free-form JSON explanation, 336 px | 41.8 (23/55) | 29.7-55.0 | 55/55 | 0.387 | 13/18 / 2/18 / 8/19 |
 | Qwen2-VL-2B zero-shot | random | free-form JSON explanation, 384 px | 43.6 (24/55) | 31.4-56.7 | 55/55 | 0.404 | 14/18 / 2/18 / 8/19 |
 | Qwen2-VL-2B explanation LoRA (job 24389) | random | free-form JSON explanation, 384 px | 61.8 (34/55) | 48.6-73.5 | 55/55 | 0.525 | 17/18 / 0/18 / 17/19 |
+| Qwen2-VL-2B class LoRA, sample seed 1 (job 50809) | random | evidence-only, 384 px, 16 balanced | 34.5 (19/55) | 23.4-47.7 | 55/55 | 0.202 | 1/18 / 18/18 / 0/19 |
+| Qwen2-VL-2B class LoRA, sample seed 2 (job 50809) | random | evidence-only, 384 px, 16 balanced | 36.4 (20/55) | 24.9-49.6 | 55/55 | 0.236 | 2/18 / 18/18 / 0/19 |
+| Qwen2-VL-2B class LoRA, sample seed 3 (job 50809) | random | evidence-only, 384 px, 16 balanced | 34.5 (19/55) | 23.4-47.7 | 55/55 | 0.202 | 1/18 / 18/18 / 0/19 |
+| Qwen2-VL-2B class LoRA, sample seed 4 (job 50809) | random | evidence-only, 384 px, 16 balanced | 36.4 (20/55) | 24.9-49.6 | 55/55 | 0.236 | 2/18 / 18/18 / 0/19 |
+| Qwen2-VL-2B class LoRA, sample seed 5 (job 50809) | random | evidence-only, 384 px, 16 balanced | 36.4 (20/55) | 24.9-49.6 | 55/55 | 0.236 | 2/18 / 18/18 / 0/19 |
 | Qwen2-VL-2B | spatial | compact table, 336 px | 38.9 (21/54) | 27.0-52.2 | 54/54 | 0.187 | 0/13 / 21/21 / 0/20 |
 | LLaVA-Interleave-0.5B | spatial | compact table, 336 px | 27.8 (15/54) | 17.6-40.9 | 54/54 | 0.208 | 12/13 / 0/21 / 3/20 |
 | BLIP-2 OPT-2.7B | spatial | compact table | 0.0 (0/54) | 0.0-6.6 | 0/54 | 0.000 | 0/13 / 0/21 / 0/20 |
+| Qwen2-VL-2B | spatial | evidence-only card, 384 px (X8) | 38.9 (21/54) | 27.0-52.2 | 54/54 | 0.187 | 0/13 / 21/21 / 0/20 |
+| Qwen2-VL-2B class LoRA, spatial train (job 50743) | spatial | evidence-only, 384 px, 16 balanced | 40.7 (22/54) | 28.7-54.0 | 54/54 | 0.236 | 1/13 / 21/21 / 0/20 |
 
 ## Baselines
 
@@ -61,6 +68,32 @@
 | sp_llava_vs_const | sp_llava_compact | const_spatial | 15 | 21 | 0.4050 | 1.0000 |
 | sp_qwen_vs_const | sp_qwen_compact | const_spatial | 0 | 0 | 1.0000 | 1.0000 |
 
+## Supplementary McNemar (added after the family was fixed; Holm within these 7 only)
+
+| Test | A | B | A right, B wrong | B right, A wrong | p | p (Holm, supplementary) |
+|---|---|---|---|---|---|---|
+| sp_classlora_vs_matched | sp_class_lora | sp_qwen_evid_384 | 1 | 0 | 1.0000 | 1.0000 |
+| sp_classlora_vs_const | sp_class_lora | const_spatial | 1 | 0 | 1.0000 | 1.0000 |
+| seed1_vs_matched | class_lora_seed1 | qwen_evid_384 | 1 | 0 | 1.0000 | 1.0000 |
+| seed2_vs_matched | class_lora_seed2 | qwen_evid_384 | 2 | 0 | 0.5000 | 1.0000 |
+| seed3_vs_matched | class_lora_seed3 | qwen_evid_384 | 1 | 0 | 1.0000 | 1.0000 |
+| seed4_vs_matched | class_lora_seed4 | qwen_evid_384 | 2 | 0 | 0.5000 | 1.0000 |
+| seed5_vs_matched | class_lora_seed5 | qwen_evid_384 | 2 | 0 | 0.5000 | 1.0000 |
+
+## Class-LoRA training-sample sweep (random test)
+
+Different selections (seeds 1-5): k = [19, 20, 19, 20, 20], mean accuracy 35.6%
+
+| Run | k/n | Macro-F1 | Predicted d / s / i / none |
+|---|---|---|---|
+| class_lora | 20/55 | 0.236 | 2 / 53 / 0 / 0 |
+| class_lora_rep | 19/55 | 0.202 | 1 / 54 / 0 / 0 |
+| class_lora_seed1 | 19/55 | 0.202 | 1 / 54 / 0 / 0 |
+| class_lora_seed2 | 20/55 | 0.236 | 2 / 53 / 0 / 0 |
+| class_lora_seed3 | 19/55 | 0.202 | 1 / 54 / 0 / 0 |
+| class_lora_seed4 | 20/55 | 0.236 | 2 / 53 / 0 / 0 |
+| class_lora_seed5 | 20/55 | 0.236 | 2 / 53 / 0 / 0 |
+
 ## Sensitivity (random test)
 
 | Run | 49 rule-consistent | 52 unclipped |
@@ -88,3 +121,8 @@
 | qwen_expl_zs_336 | 21/49 | 20/52 |
 | qwen_expl_zs_384 | 22/49 | 21/52 |
 | expl_lora | 28/49 | 33/52 |
+| class_lora_seed1 | 19/49 | 18/52 |
+| class_lora_seed2 | 20/49 | 19/52 |
+| class_lora_seed3 | 19/49 | 18/52 |
+| class_lora_seed4 | 20/49 | 19/52 |
+| class_lora_seed5 | 20/49 | 19/52 |
