@@ -244,6 +244,10 @@ def train_lora(
     import torch
 
     cfg = cfg or FinetuneConfig()
+    # Seed the training-order shuffle and torch so a re-run with the same seed is repeatable
+    # (runs before 31 Oct 2026 left this unseeded).
+    random.seed(cfg.train_sample_seed)
+    torch.manual_seed(cfg.train_sample_seed)
     adapter_path = root / cfg.adapter_dir
     best_path = adapter_path / "best"
     adapter_path.mkdir(parents=True, exist_ok=True)
@@ -383,6 +387,7 @@ def eval_finetuned(
     cfg: Optional[FinetuneConfig] = None,
     text_mode: str = "minimal",
     combo_id_suffix: str = "",
+    out_tag: str = "",
 ) -> dict[str, Any]:
     cfg = cfg or FinetuneConfig()
     if text_mode == "full":
@@ -436,6 +441,9 @@ def eval_finetuned(
         "adapter_dir": str(cfg.adapter_dir),
         "laptop": False,
         "finetuned": True,
+        "splits_dir": cfg.splits_dir,
+        "max_side": cfg.max_side,
+        "train_sample_seed": cfg.train_sample_seed,
         "generation": gen_kw,
         "status": "ok",
         "error": None,
@@ -447,8 +455,11 @@ def eval_finetuned(
         "seconds": round(time.time() - t0, 2),
         "predictions": preds,
     }
-    out = root / "results" / f"vlm_combo_{combo_id}.json"
+    from src.vlm_eval import no_clobber_path
+
+    out = root / "results" / f"vlm_combo_{combo_id}{out_tag}.json"
     out.parent.mkdir(parents=True, exist_ok=True)
+    out = no_clobber_path(out)
     out.write_text(json.dumps(report, indent=2, ensure_ascii=False))
     print(
         f"{combo_id}: acc={format_accuracy_pct(acc)} prompt={text_mode} "
@@ -542,7 +553,9 @@ def eval_explain_finetuned(
         "predictions": rows,
         "note": "Scored further by scripts/score_explanations.py. Does not replace class-only result JSON.",
     }
-    out = root / "results" / "explain" / f"explain_{FINETUNE_COMBO_ID}.json"
+    from src.vlm_eval import no_clobber_path
+
+    out = no_clobber_path(root / "results" / "explain" / f"explain_{FINETUNE_COMBO_ID}.json")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(report, indent=2, ensure_ascii=False))
     print(f"wrote {out} accuracy={format_accuracy_pct(acc)} unload={unload_ok}")

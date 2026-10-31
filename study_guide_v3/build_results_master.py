@@ -121,10 +121,10 @@ RUNS = [
     ("A legacy", "PaliGemma-3B", "images + one NDVI line", "vlm_combo_paligemma_siglip_linear_gemma.json"),
     ("A legacy", "LLaVA-Interleave-0.5B", "images + full card", "vlm_combo_llava15_clip_mlp_vicuna.json"),
     ("A legacy", "BLIP-2 OPT-2.7B", "stitched image, no card (old parser read the echo)", "vlm_combo_blip2_clip_qformer_opt.json"),
-    ("A leak-free", "LLaVA-Interleave-0.5B", "compact table (same for all models)", "protocol/vlm_combo_llava15_clip_mlp_vicuna.json"),
-    ("A leak-free", "Qwen2-VL-2B", "compact table", "protocol/vlm_combo_qwen_vl_custom_mlp_qwen.json"),
-    ("A leak-free", "PaliGemma-3B", "compact table", "protocol/vlm_combo_paligemma_siglip_linear_gemma.json"),
-    ("A leak-free", "BLIP-2 OPT-2.7B", "compact table (new anti-echo parser)", "protocol/vlm_combo_blip2_clip_qformer_opt.json"),
+    ("A leak-free", "LLaVA-Interleave-0.5B", "compact table (same for all models)", "protocol/random_compact/vlm_combo_llava15_clip_mlp_vicuna.json"),
+    ("A leak-free", "Qwen2-VL-2B", "compact table", "protocol/random_compact/vlm_combo_qwen_vl_custom_mlp_qwen.json"),
+    ("A leak-free", "PaliGemma-3B", "compact table", "protocol/random_compact/vlm_combo_paligemma_siglip_linear_gemma.json"),
+    ("A leak-free", "BLIP-2 OPT-2.7B", "compact table (new anti-echo parser)", "protocol/random_compact/vlm_combo_blip2_clip_qformer_opt.json"),
     ("B class LoRA", "Qwen2-VL-2B, balanced 16 (Ada 29575)", "evidence_only at train and test", "protocol/qwen_balanced_leakfree_lora.json"),
     ("B class LoRA (superseded)", "Qwen2-VL-2B, first 16 by ID (Ada 2722446)", "full card at train and test", "vlm_combo_qwen_vl_finetuned_ecoexplain.json"),
     ("C explanation", "Qwen2-VL-2B structured", "label-free table + ALLOWED_FACTS + CLASS_RULE", "explain/explain_structured_qwen_vl_custom_mlp_qwen.json"),
@@ -139,18 +139,12 @@ def main() -> None:
         s = score(RESULTS / rel) or {"status": "missing"}
         rows.append({"section": section, "label": label, "protocol": protocol, "source": f"results/{rel}", **s})
 
-    # Qwen leak-free evidence_only: only the comparison summary survives
-    # (its per-model predictions were overwritten by the compact run).
-    ev = json.loads((RESULTS / "protocol/vlm_combo_comparison_evidence_only.json").read_text())
-    for r in ev.get("ranking", []):
-        acc = r.get("accuracy")
-        rows.insert(4, {
-            "section": "A leak-free", "label": "Qwen2-VL-2B", "protocol": "evidence_only card (label line removed)",
-            "source": "results/protocol/vlm_combo_comparison_evidence_only.json", "status": r.get("status"),
-            "k": round(acc * r["n_eval"]), "n": r["n_eval"], "accuracy": acc,
-            "ci95": [round(x, 3) for x in wilson(round(acc * r["n_eval"]), r["n_eval"])],
-            "note": "summary only; per-model predictions were overwritten by the compact run",
-        })
+    # Qwen leak-free evidence_only (re-run 31 Oct 2026 at 336 px; the 28 Oct per-patch file was overwritten).
+    rows.insert(4, {"section": "A leak-free", "label": "Qwen2-VL-2B",
+                    "protocol": "evidence_only card (summary line removed), 336 px",
+                    "source": "results/protocol/random_evidence_only/vlm_combo_qwen_vl_custom_mlp_qwen_336.json",
+                    **(score(RESULTS / "protocol/random_evidence_only/vlm_combo_qwen_vl_custom_mlp_qwen_336.json")
+                       or {"status": "missing"})})
 
     claims = {}
     csv_path = RESULTS / "explain/explanation_scores.csv"
@@ -197,7 +191,9 @@ def main() -> None:
     md = [
         f"# EcoExplain-VLM: master results ({manifest['generated']})",
         "",
-        "Recomputed from the prediction files by `build_results_master.py`. Test set n = 55.",
+        "Recomputed from the prediction files by `build_results_master.py`. Random test set n = 55. "
+        "Spatial-split runs, matched controls, McNemar/Holm and per-class tables: "
+        "`ecoexplain_vlm_dataset/results/review/stats_report.md`.",
         "**Rule:** never compare rows from different sections without naming the protocol.",
         "",
         "| Section | Run | Protocol | Accuracy | 95% CI | Macro-F1 | Correct per class (d / s / i) | Claims correct | Source |",

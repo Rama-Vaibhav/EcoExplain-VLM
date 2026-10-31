@@ -1,0 +1,12 @@
+{
+  "correct_simple": true,
+  "wrong_direction_detected": true,
+  "small_change_scored_stable": true,
+  "copied_rule_is_consistent_by_construction": true,
+  "limitation_negation_read_as_assertion": true,
+  "limitation_hedge_scored_as_firm": true,
+  "limitation_compound_scored_per_indicator": true,
+  "limitation_repeated_mention_counts_twice": true,
+  "limitation_mention_without_direction_unscored": true,
+  "limitation_causal_claim_not_scored_as_cause": true
+}

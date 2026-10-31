@@ -1,0 +1,202 @@
+{
+  "llava_freeform": {
+    "file": "results/explain/explain_llava15_clip_mlp_vicuna.json",
+    "outputs": 55,
+    "unclosed_json": 55,
+    "fallback_parse": 55,
+    "mentions": 147,
+    "negation_nearby": 5,
+    "hedge_nearby": 0,
+    "from_rule_line": 0,
+    "scored": 60,
+    "consistent": 34,
+    "unscored_no_direction": 87,
+    "inconsistent": 26,
+    "consistency": 0.5666666666666667,
+    "scored_excluding_rule": 60,
+    "consistent_excluding_rule": 34,
+    "consistency_excluding_rule_lines": 0.5666666666666667,
+    "rule_line_claims": 0,
+    "inconsistency_types": {
+      "beyond_deadband_opposite_sign": 10,
+      "said_stable_beyond_deadband": 15,
+      "within_deadband_opposite_sign": 1
+    },
+    "self_consistency": [
+      4,
+      39
+    ]
+  },
+  "qwen_struct": {
+    "file": "results/explain/explain_structured_qwen_vl_custom_mlp_qwen.json",
+    "outputs": 55,
+    "unclosed_json": 42,
+    "fallback_parse": 42,
+    "mentions": 614,
+    "negation_nearby": 11,
+    "hedge_nearby": 9,
+    "from_rule_line": 73,
+    "scored": 157,
+    "consistent": 119,
+    "unscored_no_direction": 457,
+    "inconsistent": 38,
+    "consistency": 0.7579617834394905,
+    "scored_excluding_rule": 84,
+    "consistent_excluding_rule": 46,
+    "consistency_excluding_rule_lines": 0.5476190476190477,
+    "rule_line_claims": 73,
+    "inconsistency_types": {
+      "within_deadband_same_sign": 22,
+      "within_deadband_opposite_sign": 13,
+      "beyond_deadband_opposite_sign": 1,
+      "said_stable_beyond_deadband": 2
+    },
+    "self_consistency": [
+      53,
+      53
+    ]
+  },
+  "qwen_struct_512": {
+    "file": "results/explain/explain_structured_qwen_vl_custom_mlp_qwen_tok512.json",
+    "outputs": 55,
+    "unclosed_json": 0,
+    "fallback_parse": 0,
+    "mentions": 629,
+    "negation_nearby": 37,
+    "hedge_nearby": 9,
+    "from_rule_line": 73,
+    "scored": 182,
+    "consistent": 144,
+    "unscored_no_direction": 447,
+    "inconsistent": 38,
+    "consistency": 0.7912087912087912,
+    "scored_excluding_rule": 109,
+    "consistent_excluding_rule": 71,
+    "consistency_excluding_rule_lines": 0.6513761467889908,
+    "rule_line_claims": 73,
+    "inconsistency_types": {
+      "within_deadband_same_sign": 22,
+      "within_deadband_opposite_sign": 13,
+      "beyond_deadband_opposite_sign": 1,
+      "said_stable_beyond_deadband": 2
+    },
+    "self_consistency": [
+      53,
+      53
+    ]
+  },
+  "llava_struct": {
+    "file": "results/explain/explain_structured_llava15_clip_mlp_vicuna.json",
+    "outputs": 55,
+    "unclosed_json": 45,
+    "fallback_parse": 19,
+    "mentions": 499,
+    "negation_nearby": 0,
+    "hedge_nearby": 0,
+    "from_rule_line": 68,
+    "scored": 128,
+    "consistent": 91,
+    "unscored_no_direction": 371,
+    "inconsistent": 37,
+    "consistency": 0.7109375,
+    "scored_excluding_rule": 60,
+    "consistent_excluding_rule": 31,
+    "consistency_excluding_rule_lines": 0.5166666666666667,
+    "rule_line_claims": 68,
+    "inconsistency_types": {
+      "within_deadband_same_sign": 22,
+      "within_deadband_opposite_sign": 13,
+      "beyond_deadband_opposite_sign": 2
+    },
+    "self_consistency": [
+      39,
+      43
+    ]
+  },
+  "qwen_expl_zs_336": {
+    "file": "results/explain/explain_qwen_vl_custom_mlp_qwen.json",
+    "outputs": 55,
+    "unclosed_json": 14,
+    "fallback_parse": 14,
+    "mentions": 627,
+    "negation_nearby": 9,
+    "hedge_nearby": 89,
+    "from_rule_line": 0,
+    "scored": 411,
+    "consistent": 173,
+    "unscored_no_direction": 216,
+    "inconsistent": 238,
+    "consistency": 0.4209245742092457,
+    "scored_excluding_rule": 411,
+    "consistent_excluding_rule": 173,
+    "consistency_excluding_rule_lines": 0.4209245742092457,
+    "rule_line_claims": 0,
+    "inconsistency_types": {
+      "within_deadband_same_sign": 139,
+      "within_deadband_opposite_sign": 57,
+      "beyond_deadband_opposite_sign": 39,
+      "said_stable_beyond_deadband": 3
+    },
+    "self_consistency": [
+      47,
+      51
+    ]
+  },
+  "qwen_expl_zs_384": {
+    "file": "results/explain/explain_qwen_vl_custom_mlp_qwen_384.json",
+    "outputs": 55,
+    "unclosed_json": 14,
+    "fallback_parse": 14,
+    "mentions": 636,
+    "unscored_no_direction": 247,
+    "negation_nearby": 10,
+    "hedge_nearby": 94,
+    "from_rule_line": 0,
+    "scored": 389,
+    "consistent": 164,
+    "inconsistent": 225,
+    "consistency": 0.42159383033419023,
+    "scored_excluding_rule": 389,
+    "consistent_excluding_rule": 164,
+    "consistency_excluding_rule_lines": 0.42159383033419023,
+    "rule_line_claims": 0,
+    "inconsistency_types": {
+      "within_deadband_same_sign": 131,
+      "within_deadband_opposite_sign": 46,
+      "beyond_deadband_opposite_sign": 42,
+      "said_stable_beyond_deadband": 6
+    },
+    "self_consistency": [
+      49,
+      52
+    ]
+  },
+  "expl_lora": {
+    "file": "results/explain/explain_qwen_vl_finetuned_ecoexplain.json",
+    "outputs": 55,
+    "unclosed_json": 6,
+    "fallback_parse": 8,
+    "mentions": 533,
+    "negation_nearby": 12,
+    "hedge_nearby": 60,
+    "from_rule_line": 0,
+    "scored": 376,
+    "consistent": 190,
+    "unscored_no_direction": 157,
+    "inconsistent": 186,
+    "consistency": 0.5053191489361702,
+    "scored_excluding_rule": 376,
+    "consistent_excluding_rule": 190,
+    "consistency_excluding_rule_lines": 0.5053191489361702,
+    "rule_line_claims": 0,
+    "inconsistency_types": {
+      "within_deadband_same_sign": 126,
+      "within_deadband_opposite_sign": 13,
+      "beyond_deadband_opposite_sign": 47
+    },
+    "self_consistency": [
+      53,
+      55
+    ]
+  }
+}

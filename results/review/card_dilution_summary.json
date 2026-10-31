@@ -1,0 +1,81 @@
+{
+  "n": 366,
+  "clipped": {
+    "n": 14,
+    "ids": [
+      "p00000",
+      "p00028",
+      "p00031",
+      "p00044",
+      "p00052",
+      "p00086",
+      "p00100",
+      "p00799",
+      "p01299",
+      "p01899",
+      "p03400",
+      "p04399",
+      "p05299",
+      "p05499"
+    ],
+    "in_test": [
+      "p00052",
+      "p00086",
+      "p04399"
+    ]
+  },
+  "typical_shape": [
+    70,
+    65
+  ],
+  "ndvi_t0_card_over_true": {
+    "median_all": 0.9285933633235399,
+    "median_unclipped": 0.9285965162472317,
+    "min_clipped": 0.4284746717363153
+  },
+  "dndvi_card_over_true_median_unclipped": 0.9289537733461823,
+  "true_dndvi_vs_ee_dndvi": {
+    "corr": 0.9999595745991618,
+    "max_abs_diff": 0.0013894416023129928
+  },
+  "vv_t0_card_vs_true_median_db": [
+    -8.2945,
+    -8.917308309080827
+  ],
+  "class_changes_pm0.02_card_vs_true": 14,
+  "examples": [
+    {
+      "patch_id": "p00052",
+      "width": 70,
+      "height": 30,
+      "card_NDVI_t0": 0.3145,
+      "true_NDVI_t0": 0.734,
+      "card_dNDVI": -0.0211,
+      "true_dNDVI": -0.0492,
+      "card_VV_t0": -3.681,
+      "true_VV_t0": -8.5891
+    },
+    {
+      "patch_id": "p00086",
+      "width": 70,
+      "height": 32,
+      "card_NDVI_t0": 0.346,
+      "true_NDVI_t0": 0.7569,
+      "card_dNDVI": -0.0076,
+      "true_dNDVI": -0.0165,
+      "card_VV_t0": -3.76,
+      "true_VV_t0": -8.2252
+    },
+    {
+      "patch_id": "p04399",
+      "width": 56,
+      "height": 65,
+      "card_NDVI_t0": 0.656,
+      "true_NDVI_t0": 0.7614,
+      "card_dNDVI": -0.0354,
+      "true_dNDVI": -0.0411,
+      "card_VV_t0": -6.33,
+      "true_VV_t0": -7.3475
+    }
+  ]
+}

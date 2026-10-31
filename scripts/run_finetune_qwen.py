@@ -58,6 +58,8 @@ def main() -> None:
     p.add_argument("--base-model", default="Qwen/Qwen2-VL-2B-Instruct")
     p.add_argument("--no-4bit", action="store_true")
     p.add_argument("--eval-dev", action="store_true", help="also eval on dev after train")
+    p.add_argument("--adapter-dir", default=None, help="where to save/load the adapter (default per target)")
+    p.add_argument("--out-tag", default="", help="suffix for result file names, e.g. _spatial or _seed7")
     args = p.parse_args()
 
     if not (args.train or args.eval_only or args.merge):
@@ -82,6 +84,8 @@ def main() -> None:
     )
     if args.target == "explain":
         cfg.adapter_dir = "results/checkpoints/qwen2vl_lora_explain"
+    if args.adapter_dir:
+        cfg.adapter_dir = args.adapter_dir
 
     if args.train:
         train_lora(ROOT, cfg)
@@ -99,6 +103,7 @@ def main() -> None:
             cfg=cfg,
             text_mode=args.eval_prompt,
             combo_id_suffix="_dev",
+            out_tag=args.out_tag,
         )
     if args.eval or args.eval_only:
         eval_finetuned(
@@ -107,6 +112,7 @@ def main() -> None:
             max_eval=args.max_eval,
             cfg=cfg,
             text_mode=args.eval_prompt,
+            out_tag=args.out_tag,
         )
     if args.merge:
         c = merge_with_baselines(ROOT)

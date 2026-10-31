@@ -1,0 +1,234 @@
+{
+  "thresholds": {
+    "batch1_pool_n": 1200,
+    "q15": -0.03772188685026876,
+    "q85": 0.0031162771305832705,
+    "batch2_pool_n": 900,
+    "q15_batch2": -0.03392914949504852,
+    "q85_batch2": -0.0013796692505873805
+  },
+  "batches": {
+    "batch1": {
+      "exported": 300,
+      "kept": 296,
+      "classes": {
+        "stable": 100,
+        "decline": 98,
+        "increase": 98
+      },
+      "match_own_rule": 296
+    },
+    "batch2": {
+      "exported": 72,
+      "kept": 70,
+      "classes": {
+        "stable": 24,
+        "decline": 22,
+        "increase": 24
+      },
+      "match_own_rule": 70
+    }
+  },
+  "stated_rule_reproduces": {
+    "all": 338,
+    "n": 366,
+    "test_random": 49,
+    "test_spatial": 48
+  },
+  "off_rule": {
+    "n": 28,
+    "classes": {
+      "decline": 13,
+      "increase": 15
+    },
+    "random_split": {
+      "test": 6,
+      "dev": 4,
+      "train": 18
+    },
+    "spatial_split": {
+      "train": 19,
+      "dev": 3,
+      "test": 6
+    },
+    "increase_with_negative_dndvi": 5
+  },
+  "relabel_with_stated_rule": {
+    "stable": 152,
+    "decline": 107,
+    "increase": 107
+  },
+  "pool_classes_stated_rule": {
+    "stable": 840,
+    "increase": 180,
+    "decline": 180
+  },
+  "pool_uncertain_band_candidates": 0,
+  "label_dndvi_ranges": {
+    "decline": [
+      -0.0713684246993366,
+      -0.0343100016583177
+    ],
+    "stable": [
+      -0.0360038186323075,
+      0.0029324759154727
+    ],
+    "increase": [
+      -0.0008597658338947,
+      0.0753945437283986
+    ]
+  },
+  "masked_fraction_selected": [
+    0.0078346442045365,
+    0.0233775994732657
+  ],
+  "spacing_m": {
+    "min_within_class_batch1": 1278.944017005314,
+    "min_cross_class": 639.2867310777466,
+    "pairs_below_960": 26,
+    "pairs_below_960_same_class": 0
+  },
+  "threshold_sensitivity": {
+    "p15_p85 (stated)": {
+      "cutoffs": [
+        -0.03772,
+        0.00312
+      ],
+      "labels_changed": 28,
+      "class_counts": {
+        "stable": 152,
+        "decline": 107,
+        "increase": 107
+      }
+    },
+    "p10_p90": {
+      "cutoffs": [
+        -0.042,
+        0.0086
+      ],
+      "labels_changed": 99,
+      "class_counts": {
+        "stable": 223,
+        "decline": 68,
+        "increase": 75
+      }
+    },
+    "p20_p80": {
+      "cutoffs": [
+        -0.0339,
+        -0.00089
+      ],
+      "labels_changed": 10,
+      "class_counts": {
+        "stable": 114,
+        "decline": 123,
+        "increase": 129
+      }
+    },
+    "symmetric_about_zero_+-0.02": {
+      "cutoffs": [
+        -0.02,
+        0.02
+      ],
+      "labels_changed": 142,
+      "class_counts": {
+        "decline": 174,
+        "stable": 158,
+        "increase": 34
+      }
+    },
+    "symmetric_about_pool_median_+-0.02": {
+      "cutoffs": [
+        -0.04022,
+        -0.00022
+      ],
+      "labels_changed": 53,
+      "class_counts": {
+        "stable": 165,
+        "increase": 123,
+        "decline": 78
+      }
+    }
+  },
+  "human_reference": {
+    "n": 19,
+    "agree": 8,
+    "cohen_kappa": 0.15725806451612898,
+    "kappa_bootstrap95": [
+      -0.15420560747663553,
+      0.4549180327868852
+    ],
+    "crosstab_auto_to_human": {
+      "decline": {
+        "decline": 3,
+        "stable": 2,
+        "increase": 1
+      },
+      "stable": {
+        "stable": 2,
+        "increase": 1
+      },
+      "increase": {
+        "increase": 3,
+        "stable": 3,
+        "decline": 4
+      }
+    },
+    "split": {
+      "test": 3,
+      "train": 13,
+      "dev": 3
+    }
+  },
+  "flow": [
+    {
+      "step": "Regular grid at 640 m spacing over the 2,350.7 km2 rectangle",
+      "count": 5800,
+      "source": "pilot notebook cell 12 output (.ipynb_checkpoints/Dataset_Extraction-checkpoint.ipynb); IDs run p00000-p05799"
+    },
+    {
+      "step": "ESA WorldCover v200: tree cover >= 0.6 and water <= 0.05 per footprint",
+      "count": 3668,
+      "source": "pilot notebook cell 13 output; re-checked by scripts/review/worldcover_grid_check.py"
+    },
+    {
+      "step": "Random sample scored in Earth Engine (3 x FULL_TARGET of 400)",
+      "count": 1200,
+      "source": "data/raw_metadata/composite_stats.csv"
+    },
+    {
+      "step": "Masked fraction > 0.15 in either year (would be 'uncertain')",
+      "count": 0,
+      "source": "composite_stats.csv"
+    },
+    {
+      "step": "Batch 1: per-class sampling after >= 960 m spacing within class",
+      "count": 300,
+      "source": "selected_patches.csv + export log"
+    },
+    {
+      "step": "Batch 2: added with percentiles recomputed on the remaining pool",
+      "count": 72,
+      "source": "local_export_log.txt 'BATCH 300:372'"
+    },
+    {
+      "step": "Dropped: incomplete exports (batch 1 / batch 2)",
+      "count": "4 / 2",
+      "source": "data/outcasts/"
+    },
+    {
+      "step": "Final benchmark",
+      "count": 366,
+      "source": "dataset.jsonl"
+    }
+  ],
+  "pool_mean_sd": [
+    -0.01796539561644926,
+    0.020376723327981596
+  ],
+  "selected_mean_sd": [
+    -0.01581705213727333,
+    0.02677861634820259
+  ],
+  "selected_abs_ge_0.05": 34
+}

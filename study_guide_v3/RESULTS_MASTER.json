@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-28",
+  "generated": "2026-10-31",
   "test_n": 55,
   "rows": [
     {
@@ -107,41 +107,51 @@
     {
       "section": "A leak-free",
       "label": "Qwen2-VL-2B",
-      "protocol": "evidence_only card (label line removed)",
-      "source": "results/protocol/vlm_combo_comparison_evidence_only.json",
+      "protocol": "evidence_only card (summary line removed), 336 px",
+      "source": "results/protocol/random_evidence_only/vlm_combo_qwen_vl_custom_mlp_qwen_336.json",
       "status": "ok",
       "k": 18,
       "n": 55,
+      "parsed": 55,
       "accuracy": 0.32727272727272727,
       "ci95": [
         0.218,
         0.459
       ],
-      "note": "summary only; per-model predictions were overwritten by the compact run"
+      "macro_f1": 0.164,
+      "per_class_correct": {
+        "decline": "0/18",
+        "stable": "18/18",
+        "increase": "0/19"
+      },
+      "answers": {
+        "stable": 55
+      },
+      "prompt_mode": null
     },
     {
       "section": "A leak-free",
       "label": "LLaVA-Interleave-0.5B",
       "protocol": "compact table (same for all models)",
-      "source": "results/protocol/vlm_combo_llava15_clip_mlp_vicuna.json",
+      "source": "results/protocol/random_compact/vlm_combo_llava15_clip_mlp_vicuna.json",
       "status": "ok",
-      "k": 15,
-      "n": 54,
-      "parsed": 54,
-      "accuracy": 0.2777777777777778,
+      "k": 24,
+      "n": 55,
+      "parsed": 55,
+      "accuracy": 0.43636363636363634,
       "ci95": [
-        0.176,
-        0.409
+        0.314,
+        0.567
       ],
-      "macro_f1": 0.208,
+      "macro_f1": 0.347,
       "per_class_correct": {
-        "decline": "12/13",
-        "stable": "0/21",
-        "increase": "3/20"
+        "decline": "16/18",
+        "stable": "0/18",
+        "increase": "8/19"
       },
       "answers": {
-        "increase": 6,
-        "decline": 48
+        "decline": 43,
+        "increase": 12
       },
       "prompt_mode": null
     },
@@ -149,24 +159,24 @@
       "section": "A leak-free",
       "label": "Qwen2-VL-2B",
       "protocol": "compact table",
-      "source": "results/protocol/vlm_combo_qwen_vl_custom_mlp_qwen.json",
+      "source": "results/protocol/random_compact/vlm_combo_qwen_vl_custom_mlp_qwen.json",
       "status": "ok",
-      "k": 21,
-      "n": 54,
-      "parsed": 54,
-      "accuracy": 0.3888888888888889,
+      "k": 18,
+      "n": 55,
+      "parsed": 55,
+      "accuracy": 0.32727272727272727,
       "ci95": [
-        0.27,
-        0.522
+        0.218,
+        0.459
       ],
-      "macro_f1": 0.187,
+      "macro_f1": 0.164,
       "per_class_correct": {
-        "decline": "0/13",
-        "stable": "21/21",
-        "increase": "0/20"
+        "decline": "0/18",
+        "stable": "18/18",
+        "increase": "0/19"
       },
       "answers": {
-        "stable": 54
+        "stable": 55
       },
       "prompt_mode": null
     },
@@ -174,7 +184,7 @@
       "section": "A leak-free",
       "label": "PaliGemma-3B",
       "protocol": "compact table",
-      "source": "results/protocol/vlm_combo_paligemma_siglip_linear_gemma.json",
+      "source": "results/protocol/random_compact/vlm_combo_paligemma_siglip_linear_gemma.json",
       "status": "load_failed",
       "note": "model not loaded (gated on Hugging Face)"
     },
@@ -182,9 +192,9 @@
       "section": "A leak-free",
       "label": "BLIP-2 OPT-2.7B",
       "protocol": "compact table (new anti-echo parser)",
-      "source": "results/protocol/vlm_combo_blip2_clip_qformer_opt.json",
+      "source": "results/protocol/random_compact/vlm_combo_blip2_clip_qformer_opt.json",
       "status": "no_parsed_answers",
-      "n": 54,
+      "n": 55,
       "parsed": 0
     },
     {
@@ -219,25 +229,25 @@
       "protocol": "full card at train and test",
       "source": "results/vlm_combo_qwen_vl_finetuned_ecoexplain.json",
       "status": "ok",
-      "k": 19,
+      "k": 37,
       "n": 55,
       "parsed": 55,
-      "accuracy": 0.34545454545454546,
+      "accuracy": 0.6727272727272727,
       "ci95": [
-        0.234,
-        0.477
+        0.541,
+        0.782
       ],
-      "macro_f1": 0.202,
+      "macro_f1": 0.556,
       "per_class_correct": {
-        "decline": "1/18",
-        "stable": "18/18",
-        "increase": "0/19"
+        "decline": "18/18",
+        "stable": "0/18",
+        "increase": "19/19"
       },
       "answers": {
-        "stable": 54,
-        "decline": 1
+        "decline": 36,
+        "increase": 19
       },
-      "prompt_mode": "evidence_only"
+      "prompt_mode": null
     },
     {
       "section": "C explanation",

@@ -574,6 +574,16 @@ def unload(model, processor) -> None:
         pass
 
 
+def no_clobber_path(path: Path) -> Path:
+    """Return ``path``, or a timestamped sibling if it already exists (never overwrite results)."""
+    if not path.exists():
+        return path
+    stamp = time.strftime("%Y%m%d-%H%M%S")
+    alt = path.with_name(f"{path.stem}_{stamp}{path.suffix}")
+    print(f"WARNING: {path.name} exists; writing {alt.name} instead")
+    return alt
+
+
 def eval_combo(
     combo: VLMCombo,
     batch: list[dict[str, Any]],
@@ -582,8 +592,12 @@ def eval_combo(
     *,
     laptop: bool = False,
     purge_after: bool = False,
+    max_side: Optional[int] = None,
+    tag: str = "",
+    run_meta: Optional[dict[str, Any]] = None,
 ) -> dict[str, Any]:
     combo = resolve_checkpoint(combo, laptop=laptop)
+    side = max_side if max_side is not None else (336 if laptop else None)
     gen_kw = dict(COMBO_GEN.get(combo.combo_id, DEFAULT_GEN))
     if laptop:
         gen_kw["max_new_tokens"] = min(int(gen_kw.get("max_new_tokens", 64)), 48)
@@ -613,9 +627,7 @@ def eval_combo(
             processor, model, device = load_hf_model(combo)
             for s in batch:
                 try:
-                    text = generate_one(
-                        processor, model, s, gen_kw, max_side=336 if laptop else None
-                    )
+                    text = generate_one(processor, model, s, gen_kw, max_side=side)
                 except Exception as exc:
                     text = f"[generate_error] {exc}"
                 pred_cls = parse_class(text)
@@ -668,6 +680,8 @@ def eval_combo(
         "text_decoder": combo.text_decoder,
         "hf_model_id": combo.hf_model_id,
         "laptop": laptop,
+        "max_side": side,
+        **(run_meta or {}),
         "generation": gen_kw,
         "status": status,
         "error": error,
@@ -680,7 +694,7 @@ def eval_combo(
         "predictions": preds,
     }
     results_dir.mkdir(parents=True, exist_ok=True)
-    path = results_dir / f"vlm_combo_{combo.combo_id}.json"
+    path = no_clobber_path(results_dir / f"vlm_combo_{combo.combo_id}{tag}.json")
     path.write_text(json.dumps(report, indent=2, ensure_ascii=False))
     print(
         f"{combo.combo_id}: status={status} acc={format_accuracy_pct(acc)} "
@@ -738,6 +752,8 @@ def run_all(
     splits_dir: Optional[Path] = None,
     text_mode: str = "full",
     results_subdir: str = "results",
+    max_side: Optional[int] = None,
+    tag: str = "",
 ) -> dict[str, Any]:
     jsonl = root / "dataset.jsonl"
     splits = splits_dir or (root / "data" / "splits")
@@ -745,6 +761,7 @@ def run_all(
     records = records_for_split(jsonl, splits, split)
     batch = collate(records, root, n=max_eval, text_mode=text_mode)
     ids = combo_ids or [c.combo_id for c in COMBOS if c.hf_model_id]
+    run_meta = {"split": split, "splits_dir": str(splits.relative_to(root) if splits.is_relative_to(root) else splits), "text_mode": text_mode}
     reports = []
     for cid in ids:
         combo = get_combo(cid)
@@ -756,6 +773,9 @@ def run_all(
                 dry_run=dry_run,
                 laptop=laptop,
                 purge_after=purge_after,
+                max_side=max_side,
+                tag=tag,
+                run_meta=run_meta,
             )
         )
     comparison = compare_reports(reports)
@@ -765,8 +785,8 @@ def run_all(
     comparison["text_mode"] = text_mode
     comparison["splits_dir"] = str(splits)
     comparison["same_patch_ids"] = [s["id"] for s in batch]
-    out_name = "vlm_combo_comparison.json"
+    out_name = f"vlm_combo_comparison{tag}.json"
     if text_mode != "full":
-        out_name = f"vlm_combo_comparison_{text_mode}.json"
-    (results / out_name).write_text(json.dumps(comparison, indent=2))
+        out_name = f"vlm_combo_comparison_{text_mode}{tag}.json"
+    no_clobber_path(results / out_name).write_text(json.dumps(comparison, indent=2))
     return comparison

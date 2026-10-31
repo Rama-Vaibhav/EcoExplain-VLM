@@ -1,0 +1,25 @@
+{
+  "footprint_m": 640.0,
+  "touching_pairs": 26,
+  "edge": 15,
+  "corner": 11,
+  "same_class_touching": 0,
+  "random": {
+    "touching_pairs_crossing_splits": 15,
+    "crossing_pairs_with_test": 5,
+    "test_patches_touching_train_or_dev": 4,
+    "min_test_train_distance_m": 640.0166907431558
+  },
+  "spatial": {
+    "touching_pairs_crossing_splits": 0,
+    "crossing_pairs_with_test": 0,
+    "test_patches_touching_train_or_dev": 0,
+    "min_test_train_distance_m": 1280.0000000004657
+  },
+  "nn_same_class": {
+    "observed": 0.4644808743169399,
+    "null_mean": 0.33189207650273234,
+    "null_p95": 0.3825136612021858,
+    "perm_p_one_sided": 0.0004997501249375312
+  }
+}

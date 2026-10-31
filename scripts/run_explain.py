@@ -33,6 +33,7 @@ from src.vlm_eval import (  # noqa: E402
     explain_ask_suffix,
     generate_one,
     load_hf_model,
+    no_clobber_path,
     parse_class,
     parse_explanation,
     unload,
@@ -87,6 +88,9 @@ def _run_combo(
     mode: str,
     laptop: bool,
     prompt_style: str,
+    max_side: int | None = None,
+    tag: str = "",
+    max_new_tokens: int | None = None,
 ) -> None:
     combo = resolve_checkpoint(get_combo(combo_id), laptop=laptop)
     answer_format = "classify"
@@ -94,14 +98,15 @@ def _run_combo(
     prompt_mode = "evidence_only"
     if mode == "explain":
         answer_format = "short" if combo_id in SHORT_EXPLAIN_COMBOS else "json"
-        max_new = EXPLAIN_MAX_NEW_TOKENS.get(combo_id, 256)
+        max_new = max_new_tokens or EXPLAIN_MAX_NEW_TOKENS.get(combo_id, 256)
         prompt_mode = "explain"
     gen_kw = {"max_new_tokens": max_new, "do_sample": False}
     out_dir = root / "results" / "explain"
     out_dir.mkdir(parents=True, exist_ok=True)
     name = "explain" if mode == "explain" else "oneword"
     prefix = f"{name}_structured" if mode == "explain" and prompt_style == "structured" else name
-    out_path = out_dir / f"{prefix}_{combo.combo_id}.json"
+    out_path = no_clobber_path(out_dir / f"{prefix}_{combo.combo_id}{tag}.json")
+    side = max_side if max_side is not None else (336 if laptop else None)
 
     processor, model, device = load_hf_model(combo)
     print(f"{combo.combo_id}: {mode} on {device} n={len(records)} format={answer_format}")
@@ -136,7 +141,7 @@ def _run_combo(
                     model,
                     sample,
                     gen_kw,
-                    max_side=336 if laptop else None,
+                    max_side=side,
                     answer_format=answer_format,
                 )
             except Exception as exc:
@@ -167,6 +172,9 @@ def _run_combo(
         "combo_id": combo.combo_id,
         "hf_model_id": combo.hf_model_id,
         "laptop": laptop,
+        "max_side": side,
+        "split": "test",
+        "splits_dir": "data/splits",
         "mode": mode,
         "prompt_mode": prompt_mode,
         "prompt_style": prompt_style if mode == "explain" else None,
@@ -195,6 +203,9 @@ def main() -> None:
         default="structured",
         help="Explain prompts: structured = cite-only from ALLOWED_FACTS (default); legacy = original ask.",
     )
+    p.add_argument("--max-side", type=int, default=None, help="longest image side in px (default 336 on laptop)")
+    p.add_argument("--tag", default="", help="suffix for the output file name, e.g. _384")
+    p.add_argument("--max-new-tokens", type=int, default=None, help="explain mode only; default 256 (80 for short-format models)")
     args = p.parse_args()
     combos = args.combos or list(DEFAULT_COMBOS)
     if args.dry_run:
@@ -212,6 +223,9 @@ def main() -> None:
                     mode,
                     laptop=not args.no_laptop,
                     prompt_style=args.prompt_style,
+                    max_side=args.max_side,
+                    tag=args.tag,
+                    max_new_tokens=args.max_new_tokens,
                 )
             except Exception as exc:
                 print(f"{combo_id} {mode}: FAILED {exc}")

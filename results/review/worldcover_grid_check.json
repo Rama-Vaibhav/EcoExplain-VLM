@@ -1,0 +1,82 @@
+{
+  "grid_cells": 5800,
+  "pool_ids_on_grid": 1200,
+  "pool_coordinate_max_error_deg": 6.447959748356883e-07,
+  "passing_filter": 3668,
+  "pilot_notebook_reported": 3668,
+  "pool_all_pass": true,
+  "pool_failing_ids": [],
+  "strip_80.75_80.85": {
+    "cells": 928,
+    "pass_rate": 0.32435344827586204,
+    "tree_mean": 0.3732228122823481
+  },
+  "rest_pass_rate": 0.6910919540229885,
+  "by_longitude": {
+    "(80.4, 80.45]": {
+      "cells": 174.0,
+      "pass_rate": 0.54,
+      "tree_mean": 0.59
+    },
+    "(80.45, 80.5]": {
+      "cells": 464.0,
+      "pass_rate": 0.489,
+      "tree_mean": 0.556
+    },
+    "(80.5, 80.55]": {
+      "cells": 464.0,
+      "pass_rate": 0.696,
+      "tree_mean": 0.707
+    },
+    "(80.55, 80.6]": {
+      "cells": 464.0,
+      "pass_rate": 0.838,
+      "tree_mean": 0.853
+    },
+    "(80.6, 80.65]": {
+      "cells": 464.0,
+      "pass_rate": 0.853,
+      "tree_mean": 0.862
+    },
+    "(80.65, 80.7]": {
+      "cells": 464.0,
+      "pass_rate": 0.731,
+      "tree_mean": 0.755
+    },
+    "(80.7, 80.75]": {
+      "cells": 522.0,
+      "pass_rate": 0.515,
+      "tree_mean": 0.563
+    },
+    "(80.75, 80.8]": {
+      "cells": 464.0,
+      "pass_rate": 0.237,
+      "tree_mean": 0.294
+    },
+    "(80.8, 80.85]": {
+      "cells": 464.0,
+      "pass_rate": 0.412,
+      "tree_mean": 0.453
+    },
+    "(80.85, 80.9]": {
+      "cells": 464.0,
+      "pass_rate": 0.647,
+      "tree_mean": 0.667
+    },
+    "(80.9, 80.95]": {
+      "cells": 464.0,
+      "pass_rate": 0.619,
+      "tree_mean": 0.644
+    },
+    "(80.95, 81.0]": {
+      "cells": 464.0,
+      "pass_rate": 0.834,
+      "tree_mean": 0.828
+    },
+    "(81.0, 81.05]": {
+      "cells": 464.0,
+      "pass_rate": 0.767,
+      "tree_mean": 0.783
+    }
+  }
+}

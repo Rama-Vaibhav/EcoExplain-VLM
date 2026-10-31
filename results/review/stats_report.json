@@ -1,0 +1,2964 @@
+{
+  "runs": {
+    "qwen_full": {
+      "status": "ok",
+      "track": "A",
+      "label": "Qwen2-VL-2B",
+      "protocol": "full card incl. summary line, 336 px",
+      "split": "random",
+      "file": "results/vlm_combo_qwen_vl_custom_mlp_qwen.json",
+      "max_side": null,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false,
+        "temperature": 1.0
+      },
+      "k": 31,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.5636363636363636,
+      "ci95": [
+        0.4326981624671141,
+        0.6862655772681886
+      ],
+      "macro_f1": 0.46601626016260167,
+      "per_class": {
+        "decline": {
+          "precision": 0.782608695652174,
+          "recall": 1.0,
+          "f1": 0.878048780487805,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.40625,
+          "recall": 0.7222222222222222,
+          "f1": 0.52,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 18,
+          "stable": 0,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 5,
+          "stable": 13,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 19,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 23,
+        "stable": 32
+      }
+    },
+    "qwen_full_rerun": {
+      "status": "ok",
+      "track": "A",
+      "label": "Qwen2-VL-2B",
+      "protocol": "full card incl. summary line, 336 px (31 Oct re-run)",
+      "split": "random",
+      "file": "results/protocol/random_full_card/vlm_combo_qwen_vl_custom_mlp_qwen_336_rerun.json",
+      "max_side": 336,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false,
+        "temperature": 1.0
+      },
+      "k": 31,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.5636363636363636,
+      "ci95": [
+        0.4326981624671141,
+        0.6862655772681886
+      ],
+      "macro_f1": 0.46601626016260167,
+      "per_class": {
+        "decline": {
+          "precision": 0.782608695652174,
+          "recall": 1.0,
+          "f1": 0.878048780487805,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.40625,
+          "recall": 0.7222222222222222,
+          "f1": 0.52,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 18,
+          "stable": 0,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 5,
+          "stable": 13,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 19,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 23,
+        "stable": 32
+      }
+    },
+    "qwen_compact_repro": {
+      "status": "ok",
+      "track": "A",
+      "label": "Qwen2-VL-2B",
+      "protocol": "compact table, 336 px (31 Oct re-run)",
+      "split": "random",
+      "file": "results/protocol/repro_gate/vlm_combo_qwen_vl_custom_mlp_qwen_qwen_repro336.json",
+      "max_side": 336,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false,
+        "temperature": 1.0
+      },
+      "k": 18,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.32727272727272727,
+      "ci95": [
+        0.21813065522234926,
+        0.45896776549611545
+      ],
+      "macro_f1": 0.16438356164383564,
+      "per_class": {
+        "decline": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.32727272727272727,
+          "recall": 1.0,
+          "f1": 0.4931506849315069,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 19,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 55
+      }
+    },
+    "llava_full": {
+      "status": "ok",
+      "track": "A",
+      "label": "LLaVA-Interleave-0.5B",
+      "protocol": "full card incl. summary line, 336 px",
+      "split": "random",
+      "file": "results/vlm_combo_llava15_clip_mlp_vicuna.json",
+      "max_side": null,
+      "hf_model_id": "llava-hf/llava-interleave-qwen-0.5b-hf",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false,
+        "temperature": 1.0
+      },
+      "k": 18,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.32727272727272727,
+      "ci95": [
+        0.21813065522234926,
+        0.45896776549611545
+      ],
+      "macro_f1": 0.16438356164383564,
+      "per_class": {
+        "decline": {
+          "precision": 0.32727272727272727,
+          "recall": 1.0,
+          "f1": 0.4931506849315069,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 18,
+          "stable": 0,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 18,
+          "stable": 0,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 19,
+          "stable": 0,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 55
+      }
+    },
+    "pali_ndvi": {
+      "status": "ok",
+      "track": "A",
+      "label": "PaliGemma-3B",
+      "protocol": "card NDVI line only (adapted), 224 px",
+      "split": "random",
+      "file": "results/vlm_combo_paligemma_siglip_linear_gemma.json",
+      "max_side": null,
+      "hf_model_id": "google/paligemma-3b-mix-224",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false,
+        "temperature": 1.0
+      },
+      "k": 20,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.36363636363636365,
+      "ci95": [
+        0.24930531452101518,
+        0.49577238604619384
+      ],
+      "macro_f1": 0.2708333333333333,
+      "per_class": {
+        "decline": {
+          "precision": 0.35714285714285715,
+          "recall": 0.8333333333333334,
+          "f1": 0.5,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.38461538461538464,
+          "recall": 0.2631578947368421,
+          "f1": 0.3125,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 15,
+          "stable": 0,
+          "increase": 3,
+          "none": 0
+        },
+        "stable": {
+          "decline": 13,
+          "stable": 0,
+          "increase": 5,
+          "none": 0
+        },
+        "increase": {
+          "decline": 14,
+          "stable": 0,
+          "increase": 5,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 42,
+        "increase": 13
+      }
+    },
+    "blip_img": {
+      "status": "ok",
+      "track": "A",
+      "label": "BLIP-2 OPT-2.7B",
+      "protocol": "stitched images, no card (adapted); old parser read the echo",
+      "split": "random",
+      "file": "results/vlm_combo_blip2_clip_qformer_opt.json",
+      "max_side": null,
+      "hf_model_id": "Salesforce/blip2-opt-2.7b",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false,
+        "temperature": 1.0
+      },
+      "k": 18,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.32727272727272727,
+      "ci95": [
+        0.21813065522234926,
+        0.45896776549611545
+      ],
+      "macro_f1": 0.16438356164383564,
+      "per_class": {
+        "decline": {
+          "precision": 0.32727272727272727,
+          "recall": 1.0,
+          "f1": 0.4931506849315069,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 18,
+          "stable": 0,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 18,
+          "stable": 0,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 19,
+          "stable": 0,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 55
+      }
+    },
+    "qwen_evid_336": {
+      "status": "ok",
+      "track": "A",
+      "label": "Qwen2-VL-2B",
+      "protocol": "evidence-only card, 336 px",
+      "split": "random",
+      "file": "results/protocol/random_evidence_only/vlm_combo_qwen_vl_custom_mlp_qwen_336.json",
+      "max_side": 336,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false,
+        "temperature": 1.0
+      },
+      "k": 18,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.32727272727272727,
+      "ci95": [
+        0.21813065522234926,
+        0.45896776549611545
+      ],
+      "macro_f1": 0.16438356164383564,
+      "per_class": {
+        "decline": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.32727272727272727,
+          "recall": 1.0,
+          "f1": 0.4931506849315069,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 19,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 55
+      }
+    },
+    "qwen_evid_384": {
+      "status": "ok",
+      "track": "A",
+      "label": "Qwen2-VL-2B",
+      "protocol": "evidence-only card, 384 px",
+      "split": "random",
+      "file": "results/protocol/random_evidence_only/vlm_combo_qwen_vl_custom_mlp_qwen_384.json",
+      "max_side": 384,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false,
+        "temperature": 1.0
+      },
+      "k": 18,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.32727272727272727,
+      "ci95": [
+        0.21813065522234926,
+        0.45896776549611545
+      ],
+      "macro_f1": 0.16438356164383564,
+      "per_class": {
+        "decline": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.32727272727272727,
+          "recall": 1.0,
+          "f1": 0.4931506849315069,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 19,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 55
+      }
+    },
+    "qwen_compact": {
+      "status": "ok",
+      "track": "A",
+      "label": "Qwen2-VL-2B",
+      "protocol": "compact table, 336 px",
+      "split": "random",
+      "file": "results/protocol/random_compact/vlm_combo_qwen_vl_custom_mlp_qwen.json",
+      "max_side": null,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false,
+        "temperature": 1.0
+      },
+      "k": 18,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.32727272727272727,
+      "ci95": [
+        0.21813065522234926,
+        0.45896776549611545
+      ],
+      "macro_f1": 0.16438356164383564,
+      "per_class": {
+        "decline": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.32727272727272727,
+          "recall": 1.0,
+          "f1": 0.4931506849315069,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 19,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 55
+      }
+    },
+    "llava_compact": {
+      "status": "ok",
+      "track": "A",
+      "label": "LLaVA-Interleave-0.5B",
+      "protocol": "compact table, 336 px",
+      "split": "random",
+      "file": "results/protocol/random_compact/vlm_combo_llava15_clip_mlp_vicuna.json",
+      "max_side": null,
+      "hf_model_id": "llava-hf/llava-interleave-qwen-0.5b-hf",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false,
+        "temperature": 1.0
+      },
+      "k": 24,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.43636363636363634,
+      "ci95": [
+        0.31373442273181157,
+        0.567301837532886
+      ],
+      "macro_f1": 0.3469063987308303,
+      "per_class": {
+        "decline": {
+          "precision": 0.37209302325581395,
+          "recall": 0.8888888888888888,
+          "f1": 0.5245901639344261,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.6666666666666666,
+          "recall": 0.42105263157894735,
+          "f1": 0.5161290322580646,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 16,
+          "stable": 0,
+          "increase": 2,
+          "none": 0
+        },
+        "stable": {
+          "decline": 16,
+          "stable": 0,
+          "increase": 2,
+          "none": 0
+        },
+        "increase": {
+          "decline": 11,
+          "stable": 0,
+          "increase": 8,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 43,
+        "increase": 12
+      }
+    },
+    "llava_compact_repro": {
+      "status": "ok",
+      "track": "A",
+      "label": "LLaVA-Interleave-0.5B",
+      "protocol": "compact table, 336 px (31 Oct re-run)",
+      "split": "random",
+      "file": "results/protocol/repro_gate/vlm_combo_llava15_clip_mlp_vicuna_repro336.json",
+      "max_side": 336,
+      "hf_model_id": "llava-hf/llava-interleave-qwen-0.5b-hf",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false,
+        "temperature": 1.0
+      },
+      "k": 24,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.43636363636363634,
+      "ci95": [
+        0.31373442273181157,
+        0.567301837532886
+      ],
+      "macro_f1": 0.3469063987308303,
+      "per_class": {
+        "decline": {
+          "precision": 0.37209302325581395,
+          "recall": 0.8888888888888888,
+          "f1": 0.5245901639344261,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.6666666666666666,
+          "recall": 0.42105263157894735,
+          "f1": 0.5161290322580646,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 16,
+          "stable": 0,
+          "increase": 2,
+          "none": 0
+        },
+        "stable": {
+          "decline": 16,
+          "stable": 0,
+          "increase": 2,
+          "none": 0
+        },
+        "increase": {
+          "decline": 11,
+          "stable": 0,
+          "increase": 8,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 43,
+        "increase": 12
+      }
+    },
+    "blip_compact": {
+      "status": "ok",
+      "track": "A",
+      "label": "BLIP-2 OPT-2.7B",
+      "protocol": "compact table, stitched images",
+      "split": "random",
+      "file": "results/protocol/random_compact/vlm_combo_blip2_clip_qformer_opt.json",
+      "max_side": null,
+      "hf_model_id": "Salesforce/blip2-opt-2.7b",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false,
+        "temperature": 1.0
+      },
+      "k": 0,
+      "n": 55,
+      "answered": 0,
+      "accuracy": 0.0,
+      "ci95": [
+        0.0,
+        0.06528490207976623
+      ],
+      "macro_f1": 0.0,
+      "per_class": {
+        "decline": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 0,
+          "stable": 0,
+          "increase": 0,
+          "none": 18
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 0,
+          "increase": 0,
+          "none": 18
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 0,
+          "increase": 0,
+          "none": 19
+        }
+      },
+      "answers": {
+        "none": 55
+      }
+    },
+    "class_lora": {
+      "status": "ok",
+      "track": "B",
+      "label": "Qwen2-VL-2B class LoRA (job 29575)",
+      "protocol": "evidence-only, 384 px, 16 balanced",
+      "split": "random",
+      "file": "results/protocol/qwen_balanced_leakfree_lora.json",
+      "max_side": null,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false
+      },
+      "k": 20,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.36363636363636365,
+      "ci95": [
+        0.24930531452101518,
+        0.49577238604619384
+      ],
+      "macro_f1": 0.2356807511737089,
+      "per_class": {
+        "decline": {
+          "precision": 1.0,
+          "recall": 0.1111111111111111,
+          "f1": 0.19999999999999998,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.33962264150943394,
+          "recall": 1.0,
+          "f1": 0.5070422535211268,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 2,
+          "stable": 16,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 19,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 53,
+        "decline": 2
+      }
+    },
+    "class_lora_rep": {
+      "status": "ok",
+      "track": "B",
+      "label": "Qwen2-VL-2B class LoRA (job 44523, repeat)",
+      "protocol": "evidence-only, 384 px, same 16",
+      "split": "random",
+      "file": "results/protocol/class_lora_repeats/qwen_balanced_leakfree_lora_job44523.json",
+      "max_side": null,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false
+      },
+      "k": 19,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.34545454545454546,
+      "ci95": [
+        0.23362709466463594,
+        0.477460965978201
+      ],
+      "macro_f1": 0.20175438596491227,
+      "per_class": {
+        "decline": {
+          "precision": 1.0,
+          "recall": 0.05555555555555555,
+          "f1": 0.10526315789473684,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "f1": 0.5,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 1,
+          "stable": 17,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 19,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 54,
+        "decline": 1
+      }
+    },
+    "class_lora_fullcard": {
+      "status": "ok",
+      "track": "B",
+      "label": "Qwen2-VL-2B class LoRA, first 16 by ID (superseded)",
+      "protocol": "full card at train and test",
+      "split": "random",
+      "file": "results/vlm_combo_qwen_vl_finetuned_ecoexplain.json",
+      "max_side": null,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false
+      },
+      "k": 37,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.6727272727272727,
+      "ci95": [
+        0.5410322345038847,
+        0.7818693447776508
+      ],
+      "macro_f1": 0.5555555555555555,
+      "per_class": {
+        "decline": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "increase": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 18,
+          "stable": 0,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 18,
+          "stable": 0,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 0,
+          "increase": 19,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 36,
+        "increase": 19
+      }
+    },
+    "llava_freeform": {
+      "status": "ok",
+      "track": "C",
+      "label": "LLaVA-Interleave-0.5B",
+      "protocol": "free-form JSON explanation, 336 px",
+      "split": "random",
+      "file": "results/explain/explain_llava15_clip_mlp_vicuna.json",
+      "max_side": null,
+      "hf_model_id": "llava-hf/llava-interleave-qwen-0.5b-hf",
+      "generation": {
+        "max_new_tokens": 256,
+        "do_sample": false
+      },
+      "k": 16,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.2909090909090909,
+      "ci95": [
+        0.18771193486761795,
+        0.42140720600210246
+      ],
+      "macro_f1": 0.1523809523809524,
+      "per_class": {
+        "decline": {
+          "precision": 0.3076923076923077,
+          "recall": 0.8888888888888888,
+          "f1": 0.4571428571428572,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 16,
+          "stable": 2,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 18,
+          "stable": 0,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 18,
+          "stable": 1,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 52,
+        "stable": 3
+      }
+    },
+    "qwen_struct": {
+      "status": "ok",
+      "track": "C",
+      "label": "Qwen2-VL-2B",
+      "protocol": "structured cite-only, 256 tokens, 336 px",
+      "split": "random",
+      "file": "results/explain/explain_structured_qwen_vl_custom_mlp_qwen.json",
+      "max_side": null,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 256,
+        "do_sample": false
+      },
+      "k": 35,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.6363636363636364,
+      "ci95": [
+        0.5042276139538063,
+        0.750694685478985
+      ],
+      "macro_f1": 0.6106280193236715,
+      "per_class": {
+        "decline": {
+          "precision": 0.7727272727272727,
+          "recall": 0.9444444444444444,
+          "f1": 0.85,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.4642857142857143,
+          "recall": 0.7222222222222222,
+          "f1": 0.5652173913043479,
+          "support": 18
+        },
+        "increase": {
+          "precision": 1.0,
+          "recall": 0.2631578947368421,
+          "f1": 0.4166666666666667,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 17,
+          "stable": 1,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 5,
+          "stable": 13,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 14,
+          "increase": 5,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 22,
+        "stable": 28,
+        "increase": 5
+      }
+    },
+    "qwen_struct_512": {
+      "status": "ok",
+      "track": "C",
+      "label": "Qwen2-VL-2B",
+      "protocol": "structured cite-only, 512 tokens, 336 px",
+      "split": "random",
+      "file": "results/explain/explain_structured_qwen_vl_custom_mlp_qwen_tok512.json",
+      "max_side": 336,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 512,
+        "do_sample": false
+      },
+      "k": 35,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.6363636363636364,
+      "ci95": [
+        0.5042276139538063,
+        0.750694685478985
+      ],
+      "macro_f1": 0.6106280193236715,
+      "per_class": {
+        "decline": {
+          "precision": 0.7727272727272727,
+          "recall": 0.9444444444444444,
+          "f1": 0.85,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.4642857142857143,
+          "recall": 0.7222222222222222,
+          "f1": 0.5652173913043479,
+          "support": 18
+        },
+        "increase": {
+          "precision": 1.0,
+          "recall": 0.2631578947368421,
+          "f1": 0.4166666666666667,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 17,
+          "stable": 1,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 5,
+          "stable": 13,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 14,
+          "increase": 5,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 22,
+        "stable": 28,
+        "increase": 5
+      }
+    },
+    "llava_struct": {
+      "status": "ok",
+      "track": "C",
+      "label": "LLaVA-Interleave-0.5B",
+      "protocol": "structured cite-only, 256 tokens, 336 px",
+      "split": "random",
+      "file": "results/explain/explain_structured_llava15_clip_mlp_vicuna.json",
+      "max_side": null,
+      "hf_model_id": "llava-hf/llava-interleave-qwen-0.5b-hf",
+      "generation": {
+        "max_new_tokens": 256,
+        "do_sample": false
+      },
+      "k": 23,
+      "n": 55,
+      "answered": 51,
+      "accuracy": 0.41818181818181815,
+      "ci95": [
+        0.29737765668213967,
+        0.5496689636581857
+      ],
+      "macro_f1": 0.35519421860885275,
+      "per_class": {
+        "decline": {
+          "precision": 0.48148148148148145,
+          "recall": 0.7222222222222222,
+          "f1": 0.5777777777777777,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.43478260869565216,
+          "recall": 0.5555555555555556,
+          "f1": 0.4878048780487805,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 13,
+          "stable": 0,
+          "increase": 1,
+          "none": 4
+        },
+        "stable": {
+          "decline": 8,
+          "stable": 10,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 6,
+          "stable": 13,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 27,
+        "stable": 23,
+        "none": 4,
+        "increase": 1
+      }
+    },
+    "qwen_expl_zs_336": {
+      "status": "ok",
+      "track": "C",
+      "label": "Qwen2-VL-2B zero-shot",
+      "protocol": "free-form JSON explanation, 336 px",
+      "split": "random",
+      "file": "results/explain/explain_qwen_vl_custom_mlp_qwen.json",
+      "max_side": null,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 256,
+        "do_sample": false
+      },
+      "k": 23,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.41818181818181815,
+      "ci95": [
+        0.29737765668213967,
+        0.5496689636581857
+      ],
+      "macro_f1": 0.3868470746133558,
+      "per_class": {
+        "decline": {
+          "precision": 0.37142857142857144,
+          "recall": 0.7222222222222222,
+          "f1": 0.490566037735849,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.25,
+          "recall": 0.1111111111111111,
+          "f1": 0.15384615384615383,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.6666666666666666,
+          "recall": 0.42105263157894735,
+          "f1": 0.5161290322580646,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 13,
+          "stable": 3,
+          "increase": 2,
+          "none": 0
+        },
+        "stable": {
+          "decline": 14,
+          "stable": 2,
+          "increase": 2,
+          "none": 0
+        },
+        "increase": {
+          "decline": 8,
+          "stable": 3,
+          "increase": 8,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 35,
+        "stable": 8,
+        "increase": 12
+      }
+    },
+    "qwen_expl_zs_384": {
+      "status": "ok",
+      "track": "C",
+      "label": "Qwen2-VL-2B zero-shot",
+      "protocol": "free-form JSON explanation, 384 px",
+      "split": "random",
+      "file": "results/explain/explain_qwen_vl_custom_mlp_qwen_384.json",
+      "max_side": 384,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 256,
+        "do_sample": false
+      },
+      "k": 24,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.43636363636363634,
+      "ci95": [
+        0.31373442273181157,
+        0.567301837532886
+      ],
+      "macro_f1": 0.40390804597701147,
+      "per_class": {
+        "decline": {
+          "precision": 0.3684210526315789,
+          "recall": 0.7777777777777778,
+          "f1": 0.5,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.2857142857142857,
+          "recall": 0.1111111111111111,
+          "f1": 0.16,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.8,
+          "recall": 0.42105263157894735,
+          "f1": 0.5517241379310345,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 14,
+          "stable": 3,
+          "increase": 1,
+          "none": 0
+        },
+        "stable": {
+          "decline": 15,
+          "stable": 2,
+          "increase": 1,
+          "none": 0
+        },
+        "increase": {
+          "decline": 9,
+          "stable": 2,
+          "increase": 8,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 38,
+        "stable": 7,
+        "increase": 10
+      }
+    },
+    "expl_lora": {
+      "status": "ok",
+      "track": "C",
+      "label": "Qwen2-VL-2B explanation LoRA (job 24389)",
+      "protocol": "free-form JSON explanation, 384 px",
+      "split": "random",
+      "file": "results/explain/explain_qwen_vl_finetuned_ecoexplain.json",
+      "max_side": null,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 256,
+        "do_sample": false
+      },
+      "k": 34,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.6181818181818182,
+      "ci95": [
+        0.4860922012905995,
+        0.7348404582178194
+      ],
+      "macro_f1": 0.5246913580246914,
+      "per_class": {
+        "decline": {
+          "precision": 0.4722222222222222,
+          "recall": 0.9444444444444444,
+          "f1": 0.6296296296296297,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "increase": {
+          "precision": 1.0,
+          "recall": 0.8947368421052632,
+          "f1": 0.9444444444444444,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 17,
+          "stable": 1,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 18,
+          "stable": 0,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 1,
+          "stable": 1,
+          "increase": 17,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 2,
+        "decline": 36,
+        "increase": 17
+      }
+    },
+    "sp_qwen_compact": {
+      "status": "ok",
+      "track": "S",
+      "label": "Qwen2-VL-2B",
+      "protocol": "compact table, 336 px",
+      "split": "spatial",
+      "file": "results/protocol/spatial_compact/vlm_combo_qwen_vl_custom_mlp_qwen.json",
+      "max_side": null,
+      "hf_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false,
+        "temperature": 1.0
+      },
+      "k": 21,
+      "n": 54,
+      "answered": 54,
+      "accuracy": 0.3888888888888889,
+      "ci95": [
+        0.27041933746990876,
+        0.522117015656544
+      ],
+      "macro_f1": 0.18666666666666668,
+      "per_class": {
+        "decline": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 13
+        },
+        "stable": {
+          "precision": 0.3888888888888889,
+          "recall": 1.0,
+          "f1": 0.56,
+          "support": 21
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 20
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 0,
+          "stable": 13,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 21,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 20,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 54
+      }
+    },
+    "sp_llava_compact": {
+      "status": "ok",
+      "track": "S",
+      "label": "LLaVA-Interleave-0.5B",
+      "protocol": "compact table, 336 px",
+      "split": "spatial",
+      "file": "results/protocol/spatial_compact/vlm_combo_llava15_clip_mlp_vicuna.json",
+      "max_side": null,
+      "hf_model_id": "llava-hf/llava-interleave-qwen-0.5b-hf",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false,
+        "temperature": 1.0
+      },
+      "k": 15,
+      "n": 54,
+      "answered": 54,
+      "accuracy": 0.2777777777777778,
+      "ci95": [
+        0.17616827587686873,
+        0.4089044303760367
+      ],
+      "macro_f1": 0.20807061790668346,
+      "per_class": {
+        "decline": {
+          "precision": 0.25,
+          "recall": 0.9230769230769231,
+          "f1": 0.39344262295081966,
+          "support": 13
+        },
+        "stable": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 21
+        },
+        "increase": {
+          "precision": 0.5,
+          "recall": 0.15,
+          "f1": 0.23076923076923075,
+          "support": 20
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 12,
+          "stable": 0,
+          "increase": 1,
+          "none": 0
+        },
+        "stable": {
+          "decline": 19,
+          "stable": 0,
+          "increase": 2,
+          "none": 0
+        },
+        "increase": {
+          "decline": 17,
+          "stable": 0,
+          "increase": 3,
+          "none": 0
+        }
+      },
+      "answers": {
+        "increase": 6,
+        "decline": 48
+      }
+    },
+    "sp_blip_compact": {
+      "status": "ok",
+      "track": "S",
+      "label": "BLIP-2 OPT-2.7B",
+      "protocol": "compact table",
+      "split": "spatial",
+      "file": "results/protocol/spatial_compact/vlm_combo_blip2_clip_qformer_opt.json",
+      "max_side": null,
+      "hf_model_id": "Salesforce/blip2-opt-2.7b",
+      "generation": {
+        "max_new_tokens": 48,
+        "do_sample": false,
+        "temperature": 1.0
+      },
+      "k": 0,
+      "n": 54,
+      "answered": 0,
+      "accuracy": 0.0,
+      "ci95": [
+        0.0,
+        0.06641358906903712
+      ],
+      "macro_f1": 0.0,
+      "per_class": {
+        "decline": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 13
+        },
+        "stable": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 21
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 20
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 0,
+          "stable": 0,
+          "increase": 0,
+          "none": 13
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 0,
+          "increase": 0,
+          "none": 21
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 0,
+          "increase": 0,
+          "none": 20
+        }
+      },
+      "answers": {
+        "none": 54
+      }
+    }
+  },
+  "baselines": {
+    "random:const": {
+      "what": "best constant predictor on this test set (always increase)",
+      "k": 19,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.34545454545454546,
+      "ci95": [
+        0.23362709466463594,
+        0.477460965978201
+      ],
+      "macro_f1": 0.17117117117117117,
+      "per_class": {
+        "decline": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.34545454545454546,
+          "recall": 1.0,
+          "f1": 0.5135135135135135,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 0,
+          "stable": 0,
+          "increase": 18,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 0,
+          "increase": 18,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 0,
+          "increase": 19,
+          "none": 0
+        }
+      },
+      "answers": {
+        "increase": 55
+      }
+    },
+    "random:train_majority": {
+      "what": "training-set majority (always stable)",
+      "k": 18,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.32727272727272727,
+      "ci95": [
+        0.21813065522234926,
+        0.45896776549611545
+      ],
+      "macro_f1": 0.16438356164383564,
+      "per_class": {
+        "decline": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.32727272727272727,
+          "recall": 1.0,
+          "f1": 0.4931506849315069,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 19,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 55
+      }
+    },
+    "random:fixed_card": {
+      "what": "fixed +-0.02 on card dNDVI (the structured prompt's CLASS_RULE)",
+      "k": 35,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.6363636363636364,
+      "ci95": [
+        0.5042276139538063,
+        0.750694685478985
+      ],
+      "macro_f1": 0.6064213564213564,
+      "per_class": {
+        "decline": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.46153846153846156,
+          "recall": 0.6666666666666666,
+          "f1": 0.5454545454545455,
+          "support": 18
+        },
+        "increase": {
+          "precision": 1.0,
+          "recall": 0.2631578947368421,
+          "f1": 0.4166666666666667,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 18,
+          "stable": 0,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 6,
+          "stable": 12,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 14,
+          "increase": 5,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 24,
+        "stable": 26,
+        "increase": 5
+      }
+    },
+    "random:label_rule_ee": {
+      "what": "Eq. label (batch-1 q15/q85) on the Earth Engine dNDVI that made the labels",
+      "k": 49,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.8909090909090909,
+      "ci95": [
+        0.7817445080840346,
+        0.9490327502899663
+      ],
+      "macro_f1": 0.8935064935064935,
+      "per_class": {
+        "decline": {
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "f1": 0.9090909090909091,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "support": 18
+        },
+        "increase": {
+          "precision": 1.0,
+          "recall": 0.8421052631578947,
+          "f1": 0.9142857142857143,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 15,
+          "stable": 3,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 3,
+          "increase": 16,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 15,
+        "stable": 24,
+        "increase": 16
+      }
+    },
+    "random:label_rule_card": {
+      "what": "Eq. label (batch-1 q15/q85) on card dNDVI",
+      "k": 40,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.7272727272727273,
+      "ci95": [
+        0.5976780178042617,
+        0.8271924812503902
+      ],
+      "macro_f1": 0.7160784313725491,
+      "per_class": {
+        "decline": {
+          "precision": 1.0,
+          "recall": 0.3888888888888889,
+          "f1": 0.56,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.5454545454545454,
+          "recall": 1.0,
+          "f1": 0.7058823529411764,
+          "support": 18
+        },
+        "increase": {
+          "precision": 1.0,
+          "recall": 0.7894736842105263,
+          "f1": 0.8823529411764706,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 7,
+          "stable": 11,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 18,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 4,
+          "increase": 15,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 33,
+        "decline": 7,
+        "increase": 15
+      }
+    },
+    "random:fitted_card": {
+      "what": "two cut-offs fitted on random train (card dNDVI), first best pair kept",
+      "cutoffs": [
+        -0.032,
+        -0.0011
+      ],
+      "train_correct": 246,
+      "train_n": 256,
+      "n_tied_pairs": 2,
+      "tied_test_correct": [
+        52,
+        53
+      ],
+      "misses": [
+        {
+          "id": "p00052",
+          "gold": "decline",
+          "pred": "stable",
+          "card": -0.0211,
+          "ee": -0.0495
+        },
+        {
+          "id": "p00937",
+          "gold": "decline",
+          "pred": "stable",
+          "card": -0.0318,
+          "ee": -0.0343
+        },
+        {
+          "id": "p03538",
+          "gold": "stable",
+          "pred": "increase",
+          "card": -0.0006,
+          "ee": -0.0008
+        }
+      ],
+      "k": 52,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.9454545454545454,
+      "ci95": [
+        0.8514693935560297,
+        0.981276784591088
+      ],
+      "macro_f1": 0.9448181212887096,
+      "per_class": {
+        "decline": {
+          "precision": 1.0,
+          "recall": 0.8888888888888888,
+          "f1": 0.9411764705882353,
+          "support": 18
+        },
+        "stable": {
+          "precision": 0.8947368421052632,
+          "recall": 0.9444444444444444,
+          "f1": 0.918918918918919,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.95,
+          "recall": 1.0,
+          "f1": 0.9743589743589743,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 16,
+          "stable": 2,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 17,
+          "increase": 1,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 0,
+          "increase": 19,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 19,
+        "decline": 16,
+        "increase": 20
+      }
+    },
+    "random:fitted_true": {
+      "what": "two cut-offs fitted on random train (true patch-mean dNDVI), first best pair kept",
+      "cutoffs": [
+        -0.0341,
+        -0.0012
+      ],
+      "train_correct": 247,
+      "train_n": 256,
+      "n_tied_pairs": 3,
+      "tied_test_correct": [
+        53,
+        54
+      ],
+      "misses": [
+        {
+          "id": "p03538",
+          "gold": "stable",
+          "pred": "increase",
+          "card": -0.0006,
+          "ee": -0.0008
+        }
+      ],
+      "k": 54,
+      "n": 55,
+      "answered": 55,
+      "accuracy": 0.9818181818181818,
+      "ci95": [
+        0.9039422384151328,
+        0.9967832195807291
+      ],
+      "macro_f1": 0.981929181929182,
+      "per_class": {
+        "decline": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 18
+        },
+        "stable": {
+          "precision": 1.0,
+          "recall": 0.9444444444444444,
+          "f1": 0.9714285714285714,
+          "support": 18
+        },
+        "increase": {
+          "precision": 0.95,
+          "recall": 1.0,
+          "f1": 0.9743589743589743,
+          "support": 19
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 18,
+          "stable": 0,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 17,
+          "increase": 1,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 0,
+          "increase": 19,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 18,
+        "stable": 17,
+        "increase": 20
+      }
+    },
+    "spatial:const": {
+      "what": "best constant predictor on this test set (always stable)",
+      "k": 21,
+      "n": 54,
+      "answered": 54,
+      "accuracy": 0.3888888888888889,
+      "ci95": [
+        0.27041933746990876,
+        0.522117015656544
+      ],
+      "macro_f1": 0.18666666666666668,
+      "per_class": {
+        "decline": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 13
+        },
+        "stable": {
+          "precision": 0.3888888888888889,
+          "recall": 1.0,
+          "f1": 0.56,
+          "support": 21
+        },
+        "increase": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 20
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 0,
+          "stable": 13,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 21,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 20,
+          "increase": 0,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 54
+      }
+    },
+    "spatial:train_majority": {
+      "what": "training-set majority (always increase)",
+      "k": 20,
+      "n": 54,
+      "answered": 54,
+      "accuracy": 0.37037037037037035,
+      "ci95": [
+        0.25423375112039415,
+        0.503725327527134
+      ],
+      "macro_f1": 0.1801801801801802,
+      "per_class": {
+        "decline": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 13
+        },
+        "stable": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 21
+        },
+        "increase": {
+          "precision": 0.37037037037037035,
+          "recall": 1.0,
+          "f1": 0.5405405405405406,
+          "support": 20
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 0,
+          "stable": 0,
+          "increase": 13,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 0,
+          "increase": 21,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 0,
+          "increase": 20,
+          "none": 0
+        }
+      },
+      "answers": {
+        "increase": 54
+      }
+    },
+    "spatial:fixed_card": {
+      "what": "fixed +-0.02 on card dNDVI (the structured prompt's CLASS_RULE)",
+      "k": 27,
+      "n": 54,
+      "answered": 54,
+      "accuracy": 0.5,
+      "ci95": [
+        0.3711458294533728,
+        0.6288541705466272
+      ],
+      "macro_f1": 0.4501700051089618,
+      "per_class": {
+        "decline": {
+          "precision": 0.6190476190476191,
+          "recall": 1.0,
+          "f1": 0.7647058823529412,
+          "support": 13
+        },
+        "stable": {
+          "precision": 0.40625,
+          "recall": 0.6190476190476191,
+          "f1": 0.49056603773584906,
+          "support": 21
+        },
+        "increase": {
+          "precision": 1.0,
+          "recall": 0.05,
+          "f1": 0.09523809523809523,
+          "support": 20
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 13,
+          "stable": 0,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 8,
+          "stable": 13,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 19,
+          "increase": 1,
+          "none": 0
+        }
+      },
+      "answers": {
+        "decline": 21,
+        "stable": 32,
+        "increase": 1
+      }
+    },
+    "spatial:label_rule_ee": {
+      "what": "Eq. label (batch-1 q15/q85) on the Earth Engine dNDVI that made the labels",
+      "k": 48,
+      "n": 54,
+      "answered": 54,
+      "accuracy": 0.8888888888888888,
+      "ci95": [
+        0.7780529887240111,
+        0.9480697753334044
+      ],
+      "macro_f1": 0.8935185185185186,
+      "per_class": {
+        "decline": {
+          "precision": 1.0,
+          "recall": 0.8461538461538461,
+          "f1": 0.9166666666666666,
+          "support": 13
+        },
+        "stable": {
+          "precision": 0.7777777777777778,
+          "recall": 1.0,
+          "f1": 0.8750000000000001,
+          "support": 21
+        },
+        "increase": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.888888888888889,
+          "support": 20
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 11,
+          "stable": 2,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 21,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 4,
+          "increase": 16,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 27,
+        "decline": 11,
+        "increase": 16
+      }
+    },
+    "spatial:label_rule_card": {
+      "what": "Eq. label (batch-1 q15/q85) on card dNDVI",
+      "k": 42,
+      "n": 54,
+      "answered": 54,
+      "accuracy": 0.7777777777777778,
+      "ci95": [
+        0.6506132823082645,
+        0.8680458348756038
+      ],
+      "macro_f1": 0.7407407407407408,
+      "per_class": {
+        "decline": {
+          "precision": 1.0,
+          "recall": 0.38461538461538464,
+          "f1": 0.5555555555555556,
+          "support": 13
+        },
+        "stable": {
+          "precision": 0.6363636363636364,
+          "recall": 1.0,
+          "f1": 0.7777777777777778,
+          "support": 21
+        },
+        "increase": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.888888888888889,
+          "support": 20
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 5,
+          "stable": 8,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 0,
+          "stable": 21,
+          "increase": 0,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 4,
+          "increase": 16,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 33,
+        "decline": 5,
+        "increase": 16
+      }
+    },
+    "spatial:fitted_card": {
+      "what": "two cut-offs fitted on spatial train (card dNDVI), first best pair kept",
+      "cutoffs": [
+        -0.0318,
+        -0.0011
+      ],
+      "train_correct": 258,
+      "train_n": 266,
+      "n_tied_pairs": 2,
+      "tied_test_correct": [
+        48,
+        49
+      ],
+      "misses": [
+        {
+          "id": "p00100",
+          "gold": "decline",
+          "pred": "stable",
+          "card": -0.027,
+          "ee": -0.0504
+        },
+        {
+          "id": "p00910",
+          "gold": "decline",
+          "pred": "stable",
+          "card": -0.0317,
+          "ee": -0.0344
+        },
+        {
+          "id": "p01116",
+          "gold": "stable",
+          "pred": "increase",
+          "card": 0.0024,
+          "ee": 0.0028
+        },
+        {
+          "id": "p01890",
+          "gold": "stable",
+          "pred": "decline",
+          "card": -0.0319,
+          "ee": -0.0346
+        },
+        {
+          "id": "p05273",
+          "gold": "stable",
+          "pred": "increase",
+          "card": 0.0011,
+          "ee": 0.0014
+        }
+      ],
+      "k": 49,
+      "n": 54,
+      "answered": 54,
+      "accuracy": 0.9074074074074074,
+      "ci95": [
+        0.8009011730389517,
+        0.9597988654973886
+      ],
+      "macro_f1": 0.9034765776229191,
+      "per_class": {
+        "decline": {
+          "precision": 0.9166666666666666,
+          "recall": 0.8461538461538461,
+          "f1": 0.8799999999999999,
+          "support": 13
+        },
+        "stable": {
+          "precision": 0.9,
+          "recall": 0.8571428571428571,
+          "f1": 0.8780487804878048,
+          "support": 21
+        },
+        "increase": {
+          "precision": 0.9090909090909091,
+          "recall": 1.0,
+          "f1": 0.9523809523809523,
+          "support": 20
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 11,
+          "stable": 2,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 1,
+          "stable": 18,
+          "increase": 2,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 0,
+          "increase": 20,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 20,
+        "decline": 12,
+        "increase": 22
+      }
+    },
+    "spatial:fitted_true": {
+      "what": "two cut-offs fitted on spatial train (true patch-mean dNDVI), first best pair kept",
+      "cutoffs": [
+        -0.0343,
+        -0.0012
+      ],
+      "train_correct": 260,
+      "train_n": 266,
+      "n_tied_pairs": 6,
+      "tied_test_correct": [
+        49,
+        50
+      ],
+      "misses": [
+        {
+          "id": "p00910",
+          "gold": "decline",
+          "pred": "stable",
+          "card": -0.0317,
+          "ee": -0.0344
+        },
+        {
+          "id": "p01116",
+          "gold": "stable",
+          "pred": "increase",
+          "card": 0.0024,
+          "ee": 0.0028
+        },
+        {
+          "id": "p01890",
+          "gold": "stable",
+          "pred": "decline",
+          "card": -0.0319,
+          "ee": -0.0346
+        },
+        {
+          "id": "p05273",
+          "gold": "stable",
+          "pred": "increase",
+          "card": 0.0011,
+          "ee": 0.0014
+        }
+      ],
+      "k": 50,
+      "n": 54,
+      "answered": 54,
+      "accuracy": 0.9259259259259259,
+      "ci95": [
+        0.8244588405779678,
+        0.970818472437297
+      ],
+      "macro_f1": 0.9251526251526251,
+      "per_class": {
+        "decline": {
+          "precision": 0.9230769230769231,
+          "recall": 0.9230769230769231,
+          "f1": 0.9230769230769231,
+          "support": 13
+        },
+        "stable": {
+          "precision": 0.9473684210526315,
+          "recall": 0.8571428571428571,
+          "f1": 0.9,
+          "support": 21
+        },
+        "increase": {
+          "precision": 0.9090909090909091,
+          "recall": 1.0,
+          "f1": 0.9523809523809523,
+          "support": 20
+        }
+      },
+      "confusion": {
+        "decline": {
+          "decline": 12,
+          "stable": 1,
+          "increase": 0,
+          "none": 0
+        },
+        "stable": {
+          "decline": 1,
+          "stable": 18,
+          "increase": 2,
+          "none": 0
+        },
+        "increase": {
+          "decline": 0,
+          "stable": 0,
+          "increase": 20,
+          "none": 0
+        }
+      },
+      "answers": {
+        "stable": 19,
+        "decline": 13,
+        "increase": 22
+      }
+    }
+  },
+  "mcnemar": [
+    {
+      "test": "leak_primary",
+      "a": "qwen_full_rerun",
+      "b": "qwen_evid_336",
+      "what": "RQ1 primary leakage test: only the summary line and closing class-list instruction differ",
+      "a_right_b_wrong": 18,
+      "b_right_a_wrong": 5,
+      "p_exact_two_sided": 0.010622024536132812,
+      "p_holm": 0.0849761962890625
+    },
+    {
+      "test": "leak_secondary",
+      "a": "qwen_full",
+      "b": "qwen_compact",
+      "what": "RQ1 secondary: summary line and layout differ",
+      "a_right_b_wrong": 18,
+      "b_right_a_wrong": 5,
+      "p_exact_two_sided": 0.010622024536132812,
+      "p_holm": 0.0849761962890625
+    },
+    {
+      "test": "llava_vs_const",
+      "a": "llava_compact",
+      "b": "const_random",
+      "what": "RQ1 equal-input: best leak-free model vs constant",
+      "a_right_b_wrong": 16,
+      "b_right_a_wrong": 11,
+      "p_exact_two_sided": 0.44206833839416504,
+      "p_holm": 1.0
+    },
+    {
+      "test": "classlora_vs_matched",
+      "a": "class_lora",
+      "b": "qwen_evid_384",
+      "what": "RQ2 class LoRA vs matched zero-shot (evidence-only, 384 px)",
+      "a_right_b_wrong": 2,
+      "b_right_a_wrong": 0,
+      "p_exact_two_sided": 0.5,
+      "p_holm": 1.0
+    },
+    {
+      "test": "classlora_vs_const",
+      "a": "class_lora",
+      "b": "const_random",
+      "what": "RQ2 class LoRA vs constant",
+      "a_right_b_wrong": 20,
+      "b_right_a_wrong": 19,
+      "p_exact_two_sided": 1.0,
+      "p_holm": 1.0
+    },
+    {
+      "test": "expllora_vs_matched",
+      "a": "expl_lora",
+      "b": "qwen_expl_zs_384",
+      "what": "RQ3 explanation LoRA vs matched zero-shot (same prompt, 384 px)",
+      "a_right_b_wrong": 13,
+      "b_right_a_wrong": 3,
+      "p_exact_two_sided": 0.021270751953125,
+      "p_holm": 0.12762451171875
+    },
+    {
+      "test": "expllora_vs_const",
+      "a": "expl_lora",
+      "b": "const_random",
+      "what": "RQ3 explanation LoRA vs constant",
+      "a_right_b_wrong": 17,
+      "b_right_a_wrong": 2,
+      "p_exact_two_sided": 0.000728607177734375,
+      "p_holm": 0.006557464599609375
+    },
+    {
+      "test": "sp_llava_vs_const",
+      "a": "sp_llava_compact",
+      "b": "const_spatial",
+      "what": "Spatial: LLaVA compact vs constant",
+      "a_right_b_wrong": 15,
+      "b_right_a_wrong": 21,
+      "p_exact_two_sided": 0.40503224614076316,
+      "p_holm": 1.0
+    },
+    {
+      "test": "sp_qwen_vs_const",
+      "a": "sp_qwen_compact",
+      "b": "const_spatial",
+      "what": "Spatial: Qwen compact vs constant",
+      "a_right_b_wrong": 0,
+      "b_right_a_wrong": 0,
+      "p_exact_two_sided": 1.0,
+      "p_holm": 1.0
+    }
+  ],
+  "sensitivity": {
+    "rule_consistent": {
+      "const_random": {
+        "k": 16,
+        "n": 49
+      },
+      "qwen_full": {
+        "k": 28,
+        "n": 49
+      },
+      "qwen_full_rerun": {
+        "k": 28,
+        "n": 49
+      },
+      "qwen_compact_repro": {
+        "k": 18,
+        "n": 49
+      },
+      "llava_full": {
+        "k": 15,
+        "n": 49
+      },
+      "pali_ndvi": {
+        "k": 17,
+        "n": 49
+      },
+      "blip_img": {
+        "k": 15,
+        "n": 49
+      },
+      "qwen_evid_336": {
+        "k": 18,
+        "n": 49
+      },
+      "qwen_evid_384": {
+        "k": 18,
+        "n": 49
+      },
+      "qwen_compact": {
+        "k": 18,
+        "n": 49
+      },
+      "llava_compact": {
+        "k": 21,
+        "n": 49
+      },
+      "llava_compact_repro": {
+        "k": 21,
+        "n": 49
+      },
+      "blip_compact": {
+        "k": 0,
+        "n": 49
+      },
+      "class_lora": {
+        "k": 20,
+        "n": 49
+      },
+      "class_lora_rep": {
+        "k": 19,
+        "n": 49
+      },
+      "class_lora_fullcard": {
+        "k": 31,
+        "n": 49
+      },
+      "llava_freeform": {
+        "k": 15,
+        "n": 49
+      },
+      "qwen_struct": {
+        "k": 33,
+        "n": 49
+      },
+      "qwen_struct_512": {
+        "k": 33,
+        "n": 49
+      },
+      "llava_struct": {
+        "k": 21,
+        "n": 49
+      },
+      "qwen_expl_zs_336": {
+        "k": 21,
+        "n": 49
+      },
+      "qwen_expl_zs_384": {
+        "k": 22,
+        "n": 49
+      },
+      "expl_lora": {
+        "k": 28,
+        "n": 49
+      }
+    },
+    "rule_consistent_pairs": {
+      "leak_primary": {
+        "a_right_b_wrong": 15,
+        "b_right_a_wrong": 5,
+        "p_exact_unadjusted": 0.04138946533203125
+      },
+      "llava_vs_const": {
+        "a_right_b_wrong": 14,
+        "b_right_a_wrong": 9,
+        "p_exact_unadjusted": 0.4048728942871094
+      },
+      "classlora_vs_matched": {
+        "a_right_b_wrong": 2,
+        "b_right_a_wrong": 0,
+        "p_exact_unadjusted": 0.5
+      },
+      "expllora_vs_matched": {
+        "a_right_b_wrong": 9,
+        "b_right_a_wrong": 3,
+        "p_exact_unadjusted": 0.14599609375
+      },
+      "expllora_vs_const": {
+        "a_right_b_wrong": 14,
+        "b_right_a_wrong": 2,
+        "p_exact_unadjusted": 0.004180908203125
+      }
+    },
+    "unclipped": {
+      "const_random": {
+        "k": 19,
+        "n": 52
+      },
+      "qwen_full": {
+        "k": 28,
+        "n": 52
+      },
+      "qwen_full_rerun": {
+        "k": 28,
+        "n": 52
+      },
+      "qwen_compact_repro": {
+        "k": 17,
+        "n": 52
+      },
+      "llava_full": {
+        "k": 16,
+        "n": 52
+      },
+      "pali_ndvi": {
+        "k": 18,
+        "n": 52
+      },
+      "blip_img": {
+        "k": 16,
+        "n": 52
+      },
+      "qwen_evid_336": {
+        "k": 17,
+        "n": 52
+      },
+      "qwen_evid_384": {
+        "k": 17,
+        "n": 52
+      },
+      "qwen_compact": {
+        "k": 17,
+        "n": 52
+      },
+      "llava_compact": {
+        "k": 22,
+        "n": 52
+      },
+      "llava_compact_repro": {
+        "k": 22,
+        "n": 52
+      },
+      "blip_compact": {
+        "k": 0,
+        "n": 52
+      },
+      "class_lora": {
+        "k": 19,
+        "n": 52
+      },
+      "class_lora_rep": {
+        "k": 18,
+        "n": 52
+      },
+      "class_lora_fullcard": {
+        "k": 35,
+        "n": 52
+      },
+      "llava_freeform": {
+        "k": 14,
+        "n": 52
+      },
+      "qwen_struct": {
+        "k": 32,
+        "n": 52
+      },
+      "qwen_struct_512": {
+        "k": 32,
+        "n": 52
+      },
+      "llava_struct": {
+        "k": 20,
+        "n": 52
+      },
+      "qwen_expl_zs_336": {
+        "k": 20,
+        "n": 52
+      },
+      "qwen_expl_zs_384": {
+        "k": 21,
+        "n": 52
+      },
+      "expl_lora": {
+        "k": 33,
+        "n": 52
+      }
+    },
+    "unclipped_pairs": {
+      "leak_primary": {
+        "a_right_b_wrong": 16,
+        "b_right_a_wrong": 5,
+        "p_exact_unadjusted": 0.02660369873046875
+      },
+      "llava_vs_const": {
+        "a_right_b_wrong": 14,
+        "b_right_a_wrong": 11,
+        "p_exact_unadjusted": 0.6900379657745361
+      },
+      "classlora_vs_matched": {
+        "a_right_b_wrong": 2,
+        "b_right_a_wrong": 0,
+        "p_exact_unadjusted": 0.5
+      },
+      "expllora_vs_matched": {
+        "a_right_b_wrong": 13,
+        "b_right_a_wrong": 1,
+        "p_exact_unadjusted": 0.0018310546875
+      },
+      "expllora_vs_const": {
+        "a_right_b_wrong": 16,
+        "b_right_a_wrong": 2,
+        "p_exact_unadjusted": 0.001312255859375
+      }
+    }
+  },
+  "holm_family_size": 9
+}

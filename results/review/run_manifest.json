@@ -1,0 +1,631 @@
+{
+  "runs": [
+    {
+      "key": "qwen_full",
+      "track": "A",
+      "model": "Qwen2-VL-2B",
+      "split": "random",
+      "file": "results/vlm_combo_qwen_vl_custom_mlp_qwen.json",
+      "date": "2026-09-26",
+      "checkpoint": "Qwen/Qwen2-VL-2B-Instruct",
+      "adapter": "none",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 336,
+      "text": "full evidence card, ending with the summary line that prints the label",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "qwen_full_rerun",
+      "track": "A",
+      "model": "Qwen2-VL-2B",
+      "split": "random",
+      "file": "results/protocol/random_full_card/vlm_combo_qwen_vl_custom_mlp_qwen_336_rerun.json",
+      "date": "uncommitted",
+      "checkpoint": "Qwen/Qwen2-VL-2B-Instruct",
+      "adapter": "none",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 336,
+      "text": "full evidence card, ending with the summary line that prints the label",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "qwen_compact_repro",
+      "track": "A",
+      "model": "Qwen2-VL-2B",
+      "split": "random",
+      "file": "results/protocol/repro_gate/vlm_combo_qwen_vl_custom_mlp_qwen_qwen_repro336.json",
+      "date": "uncommitted",
+      "checkpoint": "Qwen/Qwen2-VL-2B-Instruct",
+      "adapter": "none",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 336,
+      "text": "label-free compact table (same text for every model)",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "llava_full",
+      "track": "A",
+      "model": "LLaVA-Interleave-0.5B",
+      "split": "random",
+      "file": "results/vlm_combo_llava15_clip_mlp_vicuna.json",
+      "date": "2026-09-26",
+      "checkpoint": "llava-hf/llava-interleave-qwen-0.5b-hf",
+      "adapter": "none",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 336,
+      "text": "full evidence card, ending with the summary line that prints the label",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "pali_ndvi",
+      "track": "A",
+      "model": "PaliGemma-3B",
+      "split": "random",
+      "file": "results/vlm_combo_paligemma_siglip_linear_gemma.json",
+      "date": "2026-09-26",
+      "checkpoint": "google/paligemma-3b-mix-224",
+      "adapter": "none",
+      "images": "T0 and T1 chips, resized by the PaliGemma processor to 224 px",
+      "image_max_side_px": 336,
+      "text": "the card's NDVI line (label-free) + fixed one-word instruction",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "blip_img",
+      "track": "A",
+      "model": "BLIP-2 OPT-2.7B",
+      "split": "random",
+      "file": "results/vlm_combo_blip2_clip_qformer_opt.json",
+      "date": "2026-09-26",
+      "checkpoint": "Salesforce/blip2-opt-2.7b",
+      "adapter": "none",
+      "images": "T0|T1 stitched side by side into one image (BLIP-2 takes one image)",
+      "image_max_side_px": 336,
+      "text": "fixed one-word instruction only",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "qwen_evid_336",
+      "track": "A",
+      "model": "Qwen2-VL-2B",
+      "split": "random",
+      "file": "results/protocol/random_evidence_only/vlm_combo_qwen_vl_custom_mlp_qwen_336.json",
+      "date": "uncommitted",
+      "checkpoint": "Qwen/Qwen2-VL-2B-Instruct",
+      "adapter": "none",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 336,
+      "text": "full card without the summary line and without label words",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "qwen_evid_384",
+      "track": "A",
+      "model": "Qwen2-VL-2B",
+      "split": "random",
+      "file": "results/protocol/random_evidence_only/vlm_combo_qwen_vl_custom_mlp_qwen_384.json",
+      "date": "uncommitted",
+      "checkpoint": "Qwen/Qwen2-VL-2B-Instruct",
+      "adapter": "none",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 384,
+      "text": "full card without the summary line and without label words",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "qwen_compact",
+      "track": "A",
+      "model": "Qwen2-VL-2B",
+      "split": "random",
+      "file": "results/protocol/random_compact/vlm_combo_qwen_vl_custom_mlp_qwen.json",
+      "date": "uncommitted",
+      "checkpoint": "Qwen/Qwen2-VL-2B-Instruct",
+      "adapter": "none",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 336,
+      "text": "label-free compact table (same text for every model)",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "llava_compact",
+      "track": "A",
+      "model": "LLaVA-Interleave-0.5B",
+      "split": "random",
+      "file": "results/protocol/random_compact/vlm_combo_llava15_clip_mlp_vicuna.json",
+      "date": "uncommitted",
+      "checkpoint": "llava-hf/llava-interleave-qwen-0.5b-hf",
+      "adapter": "none",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 336,
+      "text": "label-free compact table (same text for every model)",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "llava_compact_repro",
+      "track": "A",
+      "model": "LLaVA-Interleave-0.5B",
+      "split": "random",
+      "file": "results/protocol/repro_gate/vlm_combo_llava15_clip_mlp_vicuna_repro336.json",
+      "date": "uncommitted",
+      "checkpoint": "llava-hf/llava-interleave-qwen-0.5b-hf",
+      "adapter": "none",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 336,
+      "text": "label-free compact table (same text for every model)",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "blip_compact",
+      "track": "A",
+      "model": "BLIP-2 OPT-2.7B",
+      "split": "random",
+      "file": "results/protocol/random_compact/vlm_combo_blip2_clip_qformer_opt.json",
+      "date": "uncommitted",
+      "checkpoint": "Salesforce/blip2-opt-2.7b",
+      "adapter": "none",
+      "images": "T0|T1 stitched side by side into one image",
+      "image_max_side_px": 336,
+      "text": "label-free compact table (same text for every model)",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 55,
+      "answered": 0
+    },
+    {
+      "key": "class_lora",
+      "track": "B",
+      "model": "Qwen2-VL-2B class LoRA (job 29575)",
+      "split": "random",
+      "file": "results/protocol/qwen_balanced_leakfree_lora.json",
+      "date": "2026-10-20",
+      "checkpoint": "Qwen/Qwen2-VL-2B-Instruct",
+      "adapter": "LoRA r=8, alpha=16 (adapter weights on Ada)",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 384,
+      "text": "full card without the summary line and without label words",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 base + LoRA (CUDA, Ada)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "class_lora_rep",
+      "track": "B",
+      "model": "Qwen2-VL-2B class LoRA (job 44523, repeat)",
+      "split": "random",
+      "file": "results/protocol/class_lora_repeats/qwen_balanced_leakfree_lora_job44523.json",
+      "date": "uncommitted",
+      "checkpoint": "Qwen/Qwen2-VL-2B-Instruct",
+      "adapter": "LoRA r=8, alpha=16 (adapter weights on Ada)",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 384,
+      "text": "full card without the summary line and without label words",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 base + LoRA (CUDA, Ada)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "class_lora_fullcard",
+      "track": "B",
+      "model": "Qwen2-VL-2B class LoRA, first 16 by ID (superseded)",
+      "split": "random",
+      "file": "results/vlm_combo_qwen_vl_finetuned_ecoexplain.json",
+      "date": "2026-10-17",
+      "checkpoint": "Qwen/Qwen2-VL-2B-Instruct",
+      "adapter": "LoRA r=8, alpha=16 (adapter weights on Ada)",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 384,
+      "text": "full card (with summary line)",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 base + LoRA (CUDA, Ada)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "llava_freeform",
+      "track": "C",
+      "model": "LLaVA-Interleave-0.5B",
+      "split": "random",
+      "file": "results/explain/explain_llava15_clip_mlp_vicuna.json",
+      "date": "2026-10-17",
+      "checkpoint": "llava-hf/llava-interleave-qwen-0.5b-hf",
+      "adapter": "none",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 336,
+      "text": "compact table + free-form JSON explanation request (no rule)",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 256
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "JSON change_class field, else class word (src/vlm_eval.py::parse_explanation)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "qwen_struct",
+      "track": "C",
+      "model": "Qwen2-VL-2B",
+      "split": "random",
+      "file": "results/explain/explain_structured_qwen_vl_custom_mlp_qwen.json",
+      "date": "2026-10-17",
+      "checkpoint": "Qwen/Qwen2-VL-2B-Instruct",
+      "adapter": "none",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 336,
+      "text": "compact table + ALLOWED_FACTS + CLASS_RULE (\u00b10.02 on card \u0394NDVI) + JSON template",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 256
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "JSON change_class field, else class word (src/vlm_eval.py::parse_explanation)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "qwen_struct_512",
+      "track": "C",
+      "model": "Qwen2-VL-2B",
+      "split": "random",
+      "file": "results/explain/explain_structured_qwen_vl_custom_mlp_qwen_tok512.json",
+      "date": "uncommitted",
+      "checkpoint": "Qwen/Qwen2-VL-2B-Instruct",
+      "adapter": "none",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 336,
+      "text": "compact table + ALLOWED_FACTS + CLASS_RULE (\u00b10.02 on card \u0394NDVI) + JSON template",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 512
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "JSON change_class field, else class word (src/vlm_eval.py::parse_explanation)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "llava_struct",
+      "track": "C",
+      "model": "LLaVA-Interleave-0.5B",
+      "split": "random",
+      "file": "results/explain/explain_structured_llava15_clip_mlp_vicuna.json",
+      "date": "2026-10-17",
+      "checkpoint": "llava-hf/llava-interleave-qwen-0.5b-hf",
+      "adapter": "none",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 336,
+      "text": "compact table + ALLOWED_FACTS + CLASS_RULE (\u00b10.02 on card \u0394NDVI) + JSON template",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 256
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "JSON change_class field, else class word (src/vlm_eval.py::parse_explanation)",
+      "status": "ok",
+      "n": 55,
+      "answered": 51
+    },
+    {
+      "key": "qwen_expl_zs_336",
+      "track": "C",
+      "model": "Qwen2-VL-2B zero-shot",
+      "split": "random",
+      "file": "results/explain/explain_qwen_vl_custom_mlp_qwen.json",
+      "date": "2026-10-28",
+      "checkpoint": "Qwen/Qwen2-VL-2B-Instruct",
+      "adapter": "none",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 336,
+      "text": "compact table + free-form JSON explanation request (no rule)",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 256
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "JSON change_class field, else class word (src/vlm_eval.py::parse_explanation)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "qwen_expl_zs_384",
+      "track": "C",
+      "model": "Qwen2-VL-2B zero-shot",
+      "split": "random",
+      "file": "results/explain/explain_qwen_vl_custom_mlp_qwen_384.json",
+      "date": "uncommitted",
+      "checkpoint": "Qwen/Qwen2-VL-2B-Instruct",
+      "adapter": "none",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 384,
+      "text": "compact table + free-form JSON explanation request (no rule)",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 256
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "JSON change_class field, else class word (src/vlm_eval.py::parse_explanation)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "expl_lora",
+      "track": "C",
+      "model": "Qwen2-VL-2B explanation LoRA (job 24389)",
+      "split": "random",
+      "file": "results/explain/explain_qwen_vl_finetuned_ecoexplain.json",
+      "date": "2026-10-17",
+      "checkpoint": "Qwen/Qwen2-VL-2B-Instruct",
+      "adapter": "LoRA r=8, alpha=16 (adapter weights on Ada)",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 384,
+      "text": "compact table + free-form JSON explanation request (no rule)",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 256
+      },
+      "precision": "fp16 base + LoRA (CUDA, Ada)",
+      "parser": "JSON change_class field, else class word (src/vlm_eval.py::parse_explanation)",
+      "status": "ok",
+      "n": 55,
+      "answered": 55
+    },
+    {
+      "key": "sp_qwen_compact",
+      "track": "S",
+      "model": "Qwen2-VL-2B",
+      "split": "spatial",
+      "file": "results/protocol/spatial_compact/vlm_combo_qwen_vl_custom_mlp_qwen.json",
+      "date": "uncommitted",
+      "checkpoint": "Qwen/Qwen2-VL-2B-Instruct",
+      "adapter": "none",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 336,
+      "text": "label-free compact table (same text for every model)",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 54,
+      "answered": 54
+    },
+    {
+      "key": "sp_llava_compact",
+      "track": "S",
+      "model": "LLaVA-Interleave-0.5B",
+      "split": "spatial",
+      "file": "results/protocol/spatial_compact/vlm_combo_llava15_clip_mlp_vicuna.json",
+      "date": "uncommitted",
+      "checkpoint": "llava-hf/llava-interleave-qwen-0.5b-hf",
+      "adapter": "none",
+      "images": "T0 and T1 chips as two images via the model's chat template",
+      "image_max_side_px": 336,
+      "text": "label-free compact table (same text for every model)",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 54,
+      "answered": 54
+    },
+    {
+      "key": "sp_blip_compact",
+      "track": "S",
+      "model": "BLIP-2 OPT-2.7B",
+      "split": "spatial",
+      "file": "results/protocol/spatial_compact/vlm_combo_blip2_clip_qformer_opt.json",
+      "date": "uncommitted",
+      "checkpoint": "Salesforce/blip2-opt-2.7b",
+      "adapter": "none",
+      "images": "T0|T1 stitched side by side into one image",
+      "image_max_side_px": 336,
+      "text": "label-free compact table (same text for every model)",
+      "decoding": {
+        "greedy": true,
+        "max_new_tokens": 48
+      },
+      "precision": "fp16 (Apple MPS)",
+      "parser": "first word / class word (src/vlm_eval.py::parse_class)",
+      "status": "ok",
+      "n": 54,
+      "answered": 0
+    }
+  ],
+  "card_schema": [
+    {
+      "field": "NDVI T0, T1 and \u0394NDVI",
+      "source": "Sentinel-2 L2A median composite; mean over the zero-padded 512\u00d7512 canvas",
+      "unit": "unitless",
+      "rounding": "3 decimals",
+      "note": "diluted by padding"
+    },
+    {
+      "field": "Share of pixels with \u0394NDVI < \u22120.05",
+      "source": "padded \u0394NDVI raster (padding counts as 0)",
+      "unit": "%",
+      "rounding": "1 decimal",
+      "note": "diluted by padding"
+    },
+    {
+      "field": "\u0394EVI, \u0394NDMI, \u0394NBR",
+      "source": "as NDVI",
+      "unit": "unitless",
+      "rounding": "3 decimals, signed",
+      "note": "diluted by padding"
+    },
+    {
+      "field": "Green cover in RGB, T0 and T1",
+      "source": "share of native RGB pixels whose green band dominates",
+      "unit": "fraction",
+      "rounding": "2 decimals",
+      "note": "native pixels (not padded)"
+    },
+    {
+      "field": "SAR \u0394VV, \u0394VH",
+      "source": "Sentinel-1 GRD IW descending median, dB; mean over padded canvas",
+      "unit": "dB",
+      "rounding": "2 decimals, signed",
+      "note": "diluted by padding"
+    },
+    {
+      "field": "Rainfall Jan\u2013Feb, T0 and T1",
+      "source": "CHIRPS daily sum over the window; mean of a 5,566 m box at the patch centre",
+      "unit": "mm",
+      "rounding": "1 decimal",
+      "note": "regional context"
+    },
+    {
+      "field": "Soil-moisture anomaly, T0 and T1",
+      "source": "ERA5-Land top layer, month-matched vs 2015\u20132021; 11,132 m box",
+      "unit": "m\u00b3/m\u00b3",
+      "rounding": "3 decimals, signed",
+      "note": "regional context"
+    },
+    {
+      "field": "Temperature anomaly, T0 and T1",
+      "source": "ERA5-Land 2 m air temperature, month-matched vs 2015\u20132021; 11,132 m box",
+      "unit": "\u00b0C",
+      "rounding": "1 decimal, signed",
+      "note": "regional context"
+    },
+    {
+      "field": "Elevation, slope",
+      "source": "NASADEM mean over the footprint at 30 m",
+      "unit": "m, \u00b0",
+      "rounding": "0 decimals",
+      "note": "static"
+    }
+  ],
+  "software": {
+    "mac": "transformers 4.57.6, torch 2.8.0, Python 3.9 (.venv)",
+    "ada": "peft 0.21.0 (adapter_config.json); other versions not recorded",
+    "earth_engine_collections": [
+      "COPERNICUS/S2_SR_HARMONIZED",
+      "COPERNICUS/S1_GRD",
+      "UCSB-CHG/CHIRPS/DAILY",
+      "ECMWF/ERA5_LAND/MONTHLY_AGGR",
+      "NASA/NASADEM_HGT/001",
+      "ESA/WorldCover/v200"
+    ]
+  }
+}
