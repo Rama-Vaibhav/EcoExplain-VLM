@@ -48,3 +48,6 @@ study_guide_v3/**/*.log
 
 # Archive that duplicates scripts/
 scripts.zip
+
+# Map boundaries (Natural Earth) and DEM cache for report figures; re-downloaded by make_v8_figures.py
+data/reference/

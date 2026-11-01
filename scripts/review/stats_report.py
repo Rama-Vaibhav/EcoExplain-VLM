@@ -388,6 +388,12 @@ def write_main_tables(out: dict, head: str) -> None:
         ("llava_compact", "LLaVA-Interleave-0.5B", "compact"),
         ("blip_compact", "BLIP-2 OPT-2.7B", "compact, stitched"),
     ]))
+    # v9 onwards: runs without a single parsable answer (BLIP-2 compact, 0/55) are reported in the text only.
+    (TEX_DIR / "zeroshot_leakfree_parsed_rows.tex").write_text(rows([
+        ("qwen_evid_336", "Qwen2-VL-2B", "evidence-only"),
+        ("qwen_compact", "Qwen2-VL-2B", "compact"),
+        ("llava_compact", "LLaVA-Interleave-0.5B", "compact"),
+    ]))
     (TEX_DIR / "zeroshot_adapted_rows.tex").write_text(rows([
         ("pali_ndvi", "PaliGemma-3B", "card NDVI line only"),
         ("blip_img", "BLIP-2 OPT-2.7B$^b$", "stitched images, no card"),
@@ -436,6 +442,20 @@ def write_main_tables(out: dict, head: str) -> None:
                   f"{pct(c['consistent'] / c['scored'])} & {pct(c['consistent_excluding_rule'] / c['scored_excluding_rule'])} "
                   f"({c['consistent_excluding_rule']}/{c['scored_excluding_rule']}) & {sc[0]}/{sc[1]} & {c['unclosed_json']} \\\\")
     (TEX_DIR / "explain_rows.tex").write_text(head + "\n".join(ex) + "\n")
+
+    # Claim coverage: every indicator mention, scored or not (sir's 4.3).
+    cov = []
+    for key, name in (("llava_freeform", "LLaVA, free-form"), ("qwen_expl_zs_336", "Qwen zero-shot, free-form"),
+                      ("qwen_expl_zs_384", "Qwen zero-shot, free-form (384)"), ("expl_lora", "Explanation LoRA (384)"),
+                      ("qwen_struct", "Qwen, structured"), ("qwen_struct_512", "Qwen, structured, 512 tok."),
+                      ("llava_struct", "LLaVA, structured")):
+        c = claims.get(key, {})
+        if c.get("status") == "pending" or "mentions" not in c:
+            continue
+        assert c["scored"] + c["unscored_no_direction"] == c["mentions"]
+        cov.append(f"{name} & {c['mentions']} & {c['scored']} & {c['consistent']} & {c['inconsistent']} & "
+                   f"{c['unscored_no_direction']} & {c['rule_line_claims']} & {c['negation_nearby']} & {c['hedge_nearby']} \\\\")
+    (TEX_DIR / "claim_coverage_rows.tex").write_text(head + "\n".join(cov) + "\n")
 
     sens_names = {"const_random": "Best constant", "qwen_full": "Qwen, full card", "qwen_full_rerun": "Qwen, full card (re-run)",
                   "qwen_evid_336": "Qwen, evidence-only", "qwen_compact": "Qwen, compact", "llava_compact": "LLaVA, compact",
